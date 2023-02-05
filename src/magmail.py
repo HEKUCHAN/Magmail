@@ -18,7 +18,7 @@ class Magmail:
     ):
         self.mbox_path: Path = Path(mbox_path)
         self.auto_clean = auto_clean
-        self.content_type = filter_content_type
+        self.filter_content_type = filter_content_type
         if not os.path.exists(self.mbox_path):
             raise FileNotFoundError()
 
