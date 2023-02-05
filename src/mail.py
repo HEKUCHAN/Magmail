@@ -13,10 +13,16 @@ from typing import Optional, Tuple, Union, List, Dict, overload
 class Mail:
     decode_error_count = 0
 
-    def __init__(self, message: Union[Message, mboxMessage], auto_clean: bool = True):
+    def __init__(
+        self,
+        message: Union[Message, mboxMessage],
+        auto_clean: bool = True,
+        filter_content_type: Union[List[str], Optional[str]] = None,
+    ):
         self.message: Union[Message, mboxMessage] = message
         self.auto_clean: bool = auto_clean
         self.is_multipart: bool = False
+        self.filter_content_type: Union[List[str], Optional[str]] = filter_content_type
         self.generaly_charset_list: List[str] = [
             "utf-8",
             "cp932",
@@ -53,9 +59,13 @@ class Mail:
                 continue
 
             if self.attach_fname is not None:
-                self.attach_file_list.append(
-                    self._get_header(self.attach_fname)
-                )
+                self.attach_file_list.append(self._get_header(self.attach_fname))
+                continue
+
+            if (
+                self.filter_content_type
+                and part.get_content_type() not in self.filter_content_type
+            ):
                 continue
 
             self.payload = part.get_payload(decode=True)
@@ -85,7 +95,7 @@ class Mail:
                 else:
                     self.__cannot_decode_body(self.payload, detected_charset)
 
-        if auto_clean:
+        if self.auto_clean:
             self.body = self._body_clean_text(self.body)
 
     @property
@@ -123,7 +133,7 @@ class Mail:
     def _get_header(self, name: str) -> Optional[str]:
         if not self.message[name]:
             return None
-    
+
         for byte, charset in decode_header(self.message[name]):
             header = ""
             if isinstance(byte, bytes):
@@ -135,17 +145,13 @@ class Mail:
                     except:
                         pass
 
-                (decoded_header, detected_charset) = self.__decode_unknown_charset(
-                    byte
-                )
+                (decoded_header, detected_charset) = self.__decode_unknown_charset(byte)
 
                 if isinstance(decoded_header, str):
                     self.detected_header_charset = detected_charset
                     header += decoded_header
                 else:
-                    self.__cannot_decode_header(
-                        name, decoded_header, detected_charset
-                    )
+                    self.__cannot_decode_header(name, decoded_header, detected_charset)
                     continue
             elif isinstance(byte, str):
                 header += byte
@@ -185,9 +191,9 @@ class Mail:
             # 小文字化
             clean_text = clean_text.lower()
             # Styleタグの削除
-            clean_text = re.sub(r"<style(.|\s)*?<\/(no)?style>", "", clean_text)
+            clean_text = re.sub(r"<style[^>]*?>[\\s\\S]*?<\\/style>", "", clean_text)
             # Scriptタグの削除
-            clean_text = re.sub(r"<(no)?script(.|\s)*?<\/(no)?script>", "", clean_text)
+            clean_text = re.sub(r"<script[^>]*?>[\\s\\S]*?<\\/script>", "", clean_text)
             # HTMLタグの削除
             clean_text = re.sub(r"<(\"[^\"]*\"|\'[^\']*\'|[^\'\">])*>", "", clean_text)
             # 行末記号を統一
@@ -197,7 +203,11 @@ class Mail:
             # Unicodeの全角スペースを削除
             clean_text = re.sub(r"\u3000", "", clean_text)
             # URLの除去
-            clean_text = re.sub(r"http\S+", " ", clean_text)
+            clean_text = re.sub(
+                r"(https?|ftp)(:\/\/[-_\.!~*\'()a-zA-Z0-9;\/?:\@&=\+\$,%#]+)",
+                "",
+                clean_text,
+            )
             # メールアドレスの除去
             clean_text = re.sub(
                 r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+", " ", clean_text
@@ -211,7 +221,7 @@ class Mail:
             # 複数タブ削除
             clean_text = re.sub(r"\t+", "", clean_text)
             # スペース削除
-            clean_text = re.sub(r"\s+", "", clean_text)
+            clean_text = re.sub(r"\s+", " ", clean_text)
             # 全角空白の除去
             clean_text = re.sub(r"　", " ", clean_text)
 
