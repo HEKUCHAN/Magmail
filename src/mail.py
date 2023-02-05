@@ -28,6 +28,10 @@ class Mail:
         self.payload: bytes = b""
         self.body: Union[str, bytes, None] = ""
         self.content_charset: Optional[str] = ""
+        self.body_charset: Optional[str] = ""
+        self.header_charset: Optional[str] = ""
+        self.detected_header_charset: Optional[str] = ""
+
         self.__subject = self._get_header("Subject")
         self.__date = self._get_header("Date")
         self.__to_address = self._get_header("To")
@@ -35,8 +39,10 @@ class Mail:
         self.__from_address = self._get_header("From")
 
         for part in self.message.walk():
+            self.attach_fname = part.get_filename()
             self.content_maintype = part.get_content_maintype()
             self.content_subtype = part.get_content_subtype()
+            self.attach_file_list: List[Optional[str]] = []
 
             if self.content_maintype == "multipart":
                 self.is_multipart = True
@@ -46,40 +52,38 @@ class Mail:
                 self.images.append(part.get_payload())
                 continue
 
-            self.attach_file_list: List[Dict[str, Union[str, bytes]]] = []
+            if self.attach_fname is not None:
+                self.attach_file_list.append(
+                    self._get_header(self.attach_fname)
+                )
+                continue
 
-            attach_fname = part.get_filename()
+            self.payload = part.get_payload(decode=True)
+            self.content_charset = part.get_content_charset()
 
-            if attach_fname is None:
-                self.payload = part.get_payload(decode=True)
-                self.content_charset = part.get_content_charset()
-
-                try:
-                    if self.payload and self.content_charset:
-                        try:
-                            self.body = codecs.decode(
-                                self.payload, encoding=self.content_charset
-                            )
-                        except:
-                            if not self.__is_canable_decode_body():
-                                continue
-                    elif self.payload:
+            try:
+                if self.payload and self.content_charset:
+                    try:
+                        self.body = codecs.decode(
+                            self.payload, encoding=self.content_charset
+                        )
+                        self.body_charset = self.content_charset
+                    except:
                         if not self.__is_canable_decode_body():
                             continue
-                    else:
-                        self.body = ""
-                except:
-                    decoded_payload, detected_charset = self.__generaly_charset_decode(
-                        self.payload
-                    )
-                    if isinstance(decoded_payload, bytes):
-                        self.body = decoded_payload
-                    else:
-                        self.__cannot_decode_body(self.payload, detected_charset)
-            else:
-                self.attach_file_list.append(
-                    {"name": attach_fname, "data": part.get_payload(decode=True)}
+                elif self.payload:
+                    if not self.__is_canable_decode_body():
+                        continue
+                else:
+                    self.body = ""
+            except:
+                decoded_payload, detected_charset = self.__generaly_charset_decode(
+                    self.payload
                 )
+                if isinstance(decoded_payload, bytes):
+                    self.body = decoded_payload
+                else:
+                    self.__cannot_decode_body(self.payload, detected_charset)
 
         if auto_clean:
             self.body = self._body_clean_text(self.body)
@@ -117,34 +121,36 @@ class Mail:
         return len(self.images) > 0
 
     def _get_header(self, name: str) -> Optional[str]:
-        if self.message[name]:
-            for byte, charset in decode_header(self.message[name]):
-                header = ""
-                if isinstance(byte, bytes):
-                    if charset:
-                        self.header_charset = charset
-                        try:
-                            header += codecs.decode(byte, charset)
-                            continue
-                        except:
-                            pass
-
-                    (decoded_header, detected_charset) = self.__decode_unknown_charset(
-                        byte
-                    )
-
-                    if isinstance(decoded_header, str):
-                        header += decoded_header
-                    else:
-                        self.__cannot_decode_header(
-                            name, decoded_header, detected_charset
-                        )
+        if not self.message[name]:
+            return None
+    
+        for byte, charset in decode_header(self.message[name]):
+            header = ""
+            if isinstance(byte, bytes):
+                if charset:
+                    self.header_charset = charset
+                    try:
+                        header += codecs.decode(byte, charset)
                         continue
-                elif isinstance(byte, str):
-                    header += byte
+                    except:
+                        pass
 
-            return header
-        return None
+                (decoded_header, detected_charset) = self.__decode_unknown_charset(
+                    byte
+                )
+
+                if isinstance(decoded_header, str):
+                    self.detected_header_charset = detected_charset
+                    header += decoded_header
+                else:
+                    self.__cannot_decode_header(
+                        name, decoded_header, detected_charset
+                    )
+                    continue
+            elif isinstance(byte, str):
+                header += byte
+
+        return header
 
     @overload
     def _header_clean_text(self, header_values: Optional[str]) -> Optional[str]:
@@ -184,10 +190,6 @@ class Mail:
             clean_text = re.sub(r"<(no)?script(.|\s)*?<\/(no)?script>", "", clean_text)
             # HTMLタグの削除
             clean_text = re.sub(r"<(\"[^\"]*\"|\'[^\']*\'|[^\'\">])*>", "", clean_text)
-            # 複数タブ削除
-            clean_text = re.sub(r"\t+", "", clean_text)
-            # スペース削除
-            clean_text = re.sub(r"\s+", "", clean_text)
             # 行末記号を統一
             clean_text = clean_text.replace("\r\n", "\n")
             # 行末記号を統一
@@ -200,14 +202,18 @@ class Mail:
             clean_text = re.sub(
                 r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+", " ", clean_text
             )
-            # 全角空白の除去
-            clean_text = re.sub(r"　", " ", clean_text)
             # {}の中身を消す
             clean_text = re.sub(r"{.*?}", " ", clean_text)
             # &と;の中身を消す
             clean_text = re.sub(r"&.*?;", " ", clean_text)
             # 末尾の空白・改行コードの削除
             clean_text = "".join(clean_text.splitlines())
+            # 複数タブ削除
+            clean_text = re.sub(r"\t+", "", clean_text)
+            # スペース削除
+            clean_text = re.sub(r"\s+", "", clean_text)
+            # 全角空白の除去
+            clean_text = re.sub(r"　", " ", clean_text)
 
         return clean_text
 
@@ -227,6 +233,7 @@ class Mail:
         ) = self.__decode_unknown_charset(self.payload)
         if isinstance(decoded_string, str):
             self.body = decoded_string
+            self.body_charset = detected_charset
             return True
         else:
             self.__cannot_decode_body(self.payload, detected_charset)
