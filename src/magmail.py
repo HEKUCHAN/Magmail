@@ -4,6 +4,7 @@ import mailbox
 import numpy as np
 import pandas as pd
 from pathlib import Path
+from mailbox import mboxMessage
 from typing import List, Optional
 
 from .mail import Mail
@@ -35,7 +36,7 @@ class Magmail:
         return len(self.emails)
 
     def _parse(self) -> None:
-        def add_email(message):
+        def add_email(message: mboxMessage) -> None:
             self.emails.append(
                 Mail(
                     message,
