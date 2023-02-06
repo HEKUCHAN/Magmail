@@ -35,7 +35,7 @@ class Magmail:
         return len(self.emails)
 
     def _parse(self) -> None:
-        def add_email():
+        def add_email(message):
             self.emails.append(
                 Mail(
                     message,
@@ -49,12 +49,12 @@ class Magmail:
         if not self.is_dir:
             mail_box = mailbox.mbox(self.mbox_path)
             for message in mail_box:
-                add_email()
+                add_email(message)
         else:
             for file in os.listdir(self.mbox_path):
                 mail_box = mailbox.mbox(self.mbox_path / file)
                 for message in mail_box:
-                    add_email()
+                    add_email(message)
 
     def total(self) -> int:
         return self.__len__()
