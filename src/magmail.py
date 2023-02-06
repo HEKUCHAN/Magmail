@@ -15,10 +15,14 @@ class Magmail:
         mbox_path: str,
         auto_clean: bool = True,
         filter_content_type: Optional[str] = None,
+        trial_charset_list: Optional[List[str]] = None,
+        extends_trial_charset_list: List[str] = [],
     ):
         self.mbox_path: Path = Path(mbox_path)
         self.auto_clean = auto_clean
         self.filter_content_type = filter_content_type
+        self.trial_charset_list = trial_charset_list
+        self.extends_trial_charset_list = extends_trial_charset_list
         if not os.path.exists(self.mbox_path):
             raise FileNotFoundError()
 
@@ -39,6 +43,8 @@ class Magmail:
                         message,
                         auto_clean=self.auto_clean,
                         filter_content_type=self.filter_content_type,
+                        trial_charset_list=self.trial_charset_list,
+                        extends_trial_charset_list=self.extends_trial_charset_list
                     )
                 )
         else:
@@ -50,6 +56,8 @@ class Magmail:
                             message,
                             auto_clean=self.auto_clean,
                             filter_content_type=self.filter_content_type,
+                            trial_charset_list=self.trial_charset_list,
+                            extends_trial_charset_list=self.extends_trial_charset_list
                         )
                     )
 

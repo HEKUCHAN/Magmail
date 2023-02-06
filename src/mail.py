@@ -11,24 +11,32 @@ from typing import Optional, Tuple, Union, List, Dict, overload
 
 
 class Mail:
-    decode_error_count = 0
+    failed_decode_count = 0
 
     def __init__(
         self,
         message: Union[Message, mboxMessage],
         auto_clean: bool = True,
         filter_content_type: Union[List[str], Optional[str]] = None,
+        trial_charset_list: Optional[List[str]] = None,
+        extends_trial_charset_list: List[str] = []
     ):
         self.message: Union[Message, mboxMessage] = message
         self.auto_clean: bool = auto_clean
         self.is_multipart: bool = False
         self.filter_content_type: Union[List[str], Optional[str]] = filter_content_type
-        self.generaly_charset_list: List[str] = [
-            "utf-8",
-            "cp932",
-            "shift-jis",
-            "base64",
-        ]
+
+        if trial_charset_list is not None:
+            self.trial_charset_list: List[str] = trial_charset_list
+        else:
+            self.trial_charset_list: List[str] = [
+                "utf-8",
+                "cp932",
+                "shift-jis",
+                "base64",
+            ]
+        self.trial_charset_list.extend(extends_trial_charset_list)
+
         self.images: List[bytes] = []
 
         self.payload: bytes = b""
@@ -88,7 +96,7 @@ class Mail:
                 else:
                     self.body = ""
             except:
-                decoded_payload, detected_charset = self.__generaly_charset_decode(
+                decoded_payload, detected_charset = self.__trial_charset_decode(
                     self.payload
                 )
                 if isinstance(decoded_payload, bytes):
@@ -264,14 +272,14 @@ class Mail:
                     detected_charset,
                 )
             else:
-                return self.__generaly_charset_decode(byte)
+                return self.__trial_charset_decode(byte)
         except:
-            return self.__generaly_charset_decode(byte)
+            return self.__trial_charset_decode(byte)
 
-    def __generaly_charset_decode(
+    def __trial_charset_decode(
         self, byte: bytes
     ) -> Union[Tuple[str, str], Tuple[bytes, None]]:
-        for charset in self.generaly_charset_list:
+        for charset in self.trial_charset_list:
             try:
                 decoded_str = codecs.decode(byte, encoding=charset)
                 return (decoded_str, charset)
@@ -287,7 +295,7 @@ class Mail:
         default_byte: Union[str, bytes, None],
         detected_charset: Optional[str],
     ) -> None:
-        Mail.decode_error_count += 1
+        Mail.failed_decode_count += 1
         print(f'---------- Skipped Because cannot decode header ("{name}") ----------')
         print("Text:")
         print(default_byte)
@@ -301,7 +309,7 @@ class Mail:
         default_byte: Union[str, bytes, None],
         detected_charset: Optional[str],
     ) -> None:
-        Mail.decode_error_count += 1
+        Mail.failed_decode_count += 1
         print("---------- Skipped Because cannot decode body. ----------")
         print("Subject:")
         print(self.subject)
