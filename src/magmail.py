@@ -70,6 +70,12 @@ class Magmail:
             "cc_address",
             "from_address",
             "body",
+            "has_file",
+            "attach_file_list",
+            "has_image",
+            "images",
+            "is_multipart",
+            "has_delivered_to",
         ],
     ) -> None:
         with open(path, "w", encoding=encoding) as f:
@@ -84,10 +90,12 @@ class Magmail:
                         mail.cc_address,
                         mail.from_address,
                         mail.body,
-                        mail.has_file(),
+                        mail.has_file,
                         mail.attach_file_list,
-                        mail.has_image(),
+                        mail.has_image,
                         mail.images,
+                        mail.is_multipart,
+                        mail.has_delivered_to
                     ]
                 )
 
@@ -104,6 +112,7 @@ class Magmail:
             "has_image",
             "images",
             "is_multipart",
+            "has_delivered_to",
         ]
         dataframe: pd.DataFrame = pd.DataFrame(columns=col_names)
 
@@ -116,11 +125,12 @@ class Magmail:
                     mail.cc_address,
                     mail.from_address,
                     mail.body,
-                    mail.has_file(),
+                    mail.has_file,
                     mail.attach_file_list,
-                    mail.has_image(),
+                    mail.has_image,
                     mail.images,
                     mail.is_multipart,
+                    mail.has_delivered_to,
                 ]
             )
             dataframe = pd.DataFrame(

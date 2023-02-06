@@ -134,11 +134,20 @@ class Mail:
     def from_address(self) -> Optional[str]:
         return self.__from_address
 
+    @property
     def has_file(self) -> bool:
         return len(self.attach_file_list) > 0
 
+    @property
     def has_image(self) -> bool:
         return len(self.images) > 0
+
+    @property
+    def has_delivered_to(self) -> bool:
+        delivered_to = self._get_header('Delivered-To')
+        if delivered_to is not None:
+            return True
+        return False
 
     def _get_header(self, name: str) -> Optional[str]:
         if not self.message[name]:
