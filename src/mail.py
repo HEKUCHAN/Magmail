@@ -33,6 +33,7 @@ class Mail:
 
         self.payload: bytes = b""
         self.body: Union[str, bytes, None] = ""
+        self.original_body: Union[str, bytes, None] = ""
         self.content_charset: Optional[str] = ""
         self.body_charset: Optional[str] = ""
         self.header_charset: Optional[str] = ""
@@ -95,6 +96,7 @@ class Mail:
                 else:
                     self.__cannot_decode_body(self.payload, detected_charset)
 
+        self.original_body = self.body
         if self.auto_clean:
             self.body = self._body_clean_text(self.body)
 

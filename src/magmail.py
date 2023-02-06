@@ -14,11 +14,11 @@ class Magmail:
         self,
         mbox_path: str,
         auto_clean: bool = True,
-        content_type: Optional[str] = None,
+        filter_content_type: Optional[str] = None,
     ):
         self.mbox_path: Path = Path(mbox_path)
         self.auto_clean = auto_clean
-        self.content_type = content_type
+        self.filter_content_type = filter_content_type
         if not os.path.exists(self.mbox_path):
             raise FileNotFoundError()
 
@@ -38,7 +38,7 @@ class Magmail:
                     Mail(
                         message,
                         auto_clean=self.auto_clean,
-                        content_type=self.content_type,
+                        filter_content_type=self.filter_content_type,
                     )
                 )
         else:
@@ -49,7 +49,7 @@ class Magmail:
                         Mail(
                             message,
                             auto_clean=self.auto_clean,
-                            content_type=self.content_type,
+                            filter_content_type=self.filter_content_type,
                         )
                     )
 
