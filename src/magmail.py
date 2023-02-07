@@ -62,6 +62,9 @@ class Magmail:
                 for message in mail_box:
                     self._add_message(message)
 
+        print("Total of successfully parsed files: %d" % len(self))
+        print("Total of failed to decode body or header: %d" % Mail.failed_decode_count)
+
     def add_mail(self, eml_path: str) -> None:
         with open(eml_path, 'rb') as email_file:
             message = email.message_from_bytes(email_file.read())
