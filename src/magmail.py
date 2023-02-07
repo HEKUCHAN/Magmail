@@ -43,7 +43,7 @@ class Magmail:
                     auto_clean=self.auto_clean,
                     filter_content_type=self.filter_content_type,
                     trial_charset_list=self.trial_charset_list,
-                    extends_trial_charset_list=self.extends_trial_charset_list
+                    extends_trial_charset_list=self.extends_trial_charset_list,
                 )
             )
 
@@ -87,16 +87,16 @@ class Magmail:
                     [
                         mail.subject,
                         mail.date,
-                        mail.to_address,
-                        mail.cc_address,
-                        mail.from_address,
+                        mail.to_header,
+                        mail.cc_header,
+                        mail.from_header,
                         mail.body,
                         mail.has_file,
                         mail.attach_file_list,
                         mail.has_image,
                         mail.images,
                         mail.is_multipart,
-                        mail.has_delivered_to
+                        mail.has_delivered_to,
                     ]
                 )
 
@@ -122,9 +122,9 @@ class Magmail:
                 [
                     mail.subject,
                     mail.date,
-                    mail.to_address,
-                    mail.cc_address,
-                    mail.from_address,
+                    mail.to_header,
+                    mail.cc_header,
+                    mail.from_header,
                     mail.body,
                     mail.has_file,
                     mail.attach_file_list,
