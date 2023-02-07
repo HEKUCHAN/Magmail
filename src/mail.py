@@ -123,18 +123,18 @@ class Mail:
         return self.__to_header
 
     def to_header_list(self) -> List[Tuple[Optional[str], Optional[str]]]:
-        header_list = self.__split_address_header(self.__to_header)
+        header_list = self._split_address_header(self.__to_header)
         return [header for header in header_list]
 
     @property
     def to_header_names(self) -> List[Optional[str]]:
-        to_header_list = self.__split_address_header(self.__to_header)
+        to_header_list = self._split_address_header(self.__to_header)
 
         return [name for name, _address in to_header_list]
 
     @property
     def to_header_address(self) -> List[Optional[str]]:
-        to_header_list = self.__split_address_header(self.__to_header)
+        to_header_list = self._split_address_header(self.__to_header)
 
         return [address for _name, address in to_header_list]
 
@@ -143,19 +143,19 @@ class Mail:
         return self.__cc_header
 
     def cc_header_list(self) -> List[Tuple[Optional[str], Optional[str]]]:
-        header_list = self.__split_address_header(self.__cc_header)
+        header_list = self._split_address_header(self.__cc_header)
 
         return [header for header in header_list]
 
     @property
     def cc_header_names(self) -> List[Optional[str]]:
-        cc_header_list = self.__split_address_header(self.__cc_header)
+        cc_header_list = self._split_address_header(self.__cc_header)
 
         return [name for name, _address in cc_header_list]
 
     @property
     def cc_header_address(self) -> List[Optional[str]]:
-        cc_header_list = self.__split_address_header(self.__cc_header)
+        cc_header_list = self._split_address_header(self.__cc_header)
 
         return [address for _name, address in cc_header_list]
 
@@ -164,19 +164,19 @@ class Mail:
         return self.__from_header
 
     def from_header_list(self) -> List[Tuple[Optional[str], Optional[str]]]:
-        header_list = self.__split_address_header(self.__from_header)
+        header_list = self._split_address_header(self.__from_header)
 
         return [header for header in header_list]
 
     @property
     def from_header_names(self) -> List[Optional[str]]:
-        from_header_list = self.__split_address_header(self.__from_header)
+        from_header_list = self._split_address_header(self.__from_header)
 
         return [name for name, _address in from_header_list]
 
     @property
     def from_header_address(self) -> List[Optional[str]]:
-        from_header_list = self.__split_address_header(self.__from_header)
+        from_header_list = self._split_address_header(self.__from_header)
 
         return [address for _name, address in from_header_list]
 
@@ -292,15 +292,7 @@ class Mail:
 
         return clean_text
 
-    # @overload
-    # def __split_address_header(self, header_text: None) -> List[Tuple[None, None]]:
-    #     ...
-
-    # @overload
-    # def __split_address_header(self, header_text: str) -> List[Tuple[Optional[str], Optional[str]]]:
-    #     ...
-
-    def __split_address_header(
+    def _split_address_header(
         self, header_text: Optional[str]
     ) -> List[Tuple[Optional[str], Optional[str]]]:
         if header_text is not None:
