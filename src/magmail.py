@@ -7,7 +7,7 @@ import pandas as pd
 from pathlib import Path
 from mailbox import mboxMessage
 from email.message import Message
-from typing import List, Optional, Union
+from typing import List, Optional, Union, Callable
 
 from .mail import Mail
 
@@ -20,12 +20,14 @@ class Magmail:
         filter_content_type: Optional[str] = None,
         trial_charset_list: Optional[List[str]] = None,
         extends_trial_charset_list: List[str] = [],
+        custom_clean_function: Optional[Callable[[str], str]] = None,
     ):
         self.mbox_path: Path = Path(mbox_path)
         self.auto_clean = auto_clean
         self.filter_content_type = filter_content_type
         self.trial_charset_list = trial_charset_list
         self.extends_trial_charset_list = extends_trial_charset_list
+        self.custom_clean_function: Optional[Callable[[str], str]] = custom_clean_function
         if not os.path.exists(self.mbox_path):
             raise FileNotFoundError()
 
@@ -47,7 +49,8 @@ class Magmail:
                 auto_clean=self.auto_clean,
                 filter_content_type=self.filter_content_type,
                 trial_charset_list=self.trial_charset_list,
-                extends_trial_charset_list=self.extends_trial_charset_list
+                extends_trial_charset_list=self.extends_trial_charset_list,
+                custom_clean_function=self.custom_clean_function,
             )
         )
 

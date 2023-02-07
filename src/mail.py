@@ -7,7 +7,7 @@ from email.message import Message
 from email.header import decode_header
 from email.iterators import _structure
 from email.utils import parsedate_to_datetime
-from typing import Optional, Tuple, Union, List, overload
+from typing import Optional, Callable, Tuple, Union, List, overload
 
 
 class Mail:
@@ -20,11 +20,13 @@ class Mail:
         filter_content_type: Union[List[str], Optional[str]] = None,
         trial_charset_list: Optional[List[str]] = None,
         extends_trial_charset_list: List[str] = [],
+        custom_clean_function: Optional[Callable[[str], str]] = None,
     ):
         self.message: Union[Message, mboxMessage] = message
         self.auto_clean: bool = auto_clean
         self.is_multipart: bool = False
         self.trial_charset_list: List[str] = []
+        self.custom_clean_function: Optional[Callable[[str], str]] = custom_clean_function
         self.filter_content_type: Union[List[str], Optional[str]] = filter_content_type
 
         if trial_charset_list is not None:
@@ -103,6 +105,9 @@ class Mail:
         self.original_body = self.body
         if self.auto_clean:
             self.body = self._body_clean_text(self.body)
+
+        if self.custom_clean_function is not None:
+            self.body = self.custom_clean_function(self.body)
 
     @property
     def subject(self) -> Union[List[str], Optional[str]]:
