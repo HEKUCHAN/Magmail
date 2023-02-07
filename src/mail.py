@@ -7,7 +7,7 @@ from email.message import Message
 from email.header import decode_header
 from email.iterators import _structure
 from email.utils import parsedate_to_datetime
-from typing import Optional, Tuple, Union, List, Dict, overload
+from typing import Optional, Tuple, Union, List, overload
 
 
 class Mail:
@@ -19,22 +19,18 @@ class Mail:
         auto_clean: bool = True,
         filter_content_type: Union[List[str], Optional[str]] = None,
         trial_charset_list: Optional[List[str]] = None,
-        extends_trial_charset_list: List[str] = []
+        extends_trial_charset_list: List[str] = [],
     ):
         self.message: Union[Message, mboxMessage] = message
         self.auto_clean: bool = auto_clean
         self.is_multipart: bool = False
+        self.trial_charset_list: List[str] = []
         self.filter_content_type: Union[List[str], Optional[str]] = filter_content_type
 
         if trial_charset_list is not None:
-            self.trial_charset_list: List[str] = trial_charset_list
+            self.trial_charset_list = trial_charset_list
         else:
-            self.trial_charset_list: List[str] = [
-                "utf-8",
-                "cp932",
-                "shift-jis",
-                "base64",
-            ]
+            self.trial_charset_list = ["utf-8", "cp932", "shift-jis", "base64"]
         self.trial_charset_list.extend(extends_trial_charset_list)
 
         self.images: List[bytes] = []
@@ -49,9 +45,9 @@ class Mail:
 
         self.__subject = self._get_header("Subject")
         self.__date = self._get_header("Date")
-        self.__to_address = self._get_header("To")
-        self.__cc_address = self._get_header("Cc")
-        self.__from_address = self._get_header("From")
+        self.__to_header = self._get_header("To")
+        self.__cc_header = self._get_header("Cc")
+        self.__from_header = self._get_header("From")
 
         for part in self.message.walk():
             self.attach_fname = part.get_filename()
@@ -123,29 +119,88 @@ class Mail:
         return self.__date
 
     @property
-    def to_address(self) -> Optional[str]:
-        return self.__to_address
+    def to_header(self) -> Optional[str]:
+        return self.__to_header
+
+    def to_header_list(self) -> List[Tuple[Optional[str], Optional[str]]]:
+        header_list = self._split_address_header(self.__to_header)
+        return [header for header in header_list]
 
     @property
-    def cc_address(self) -> Optional[str]:
-        return self.__cc_address
+    def to_header_names(self) -> List[Optional[str]]:
+        to_header_list = self._split_address_header(self.__to_header)
+
+        return [name for name, _address in to_header_list]
 
     @property
-    def from_address(self) -> Optional[str]:
-        return self.__from_address
+    def to_header_address(self) -> List[Optional[str]]:
+        to_header_list = self._split_address_header(self.__to_header)
 
+        return [address for _name, address in to_header_list]
+
+    @property
+    def cc_header(self) -> Optional[str]:
+        return self.__cc_header
+
+    def cc_header_list(self) -> List[Tuple[Optional[str], Optional[str]]]:
+        header_list = self._split_address_header(self.__cc_header)
+
+        return [header for header in header_list]
+
+    @property
+    def cc_header_names(self) -> List[Optional[str]]:
+        cc_header_list = self._split_address_header(self.__cc_header)
+
+        return [name for name, _address in cc_header_list]
+
+    @property
+    def cc_header_address(self) -> List[Optional[str]]:
+        cc_header_list = self._split_address_header(self.__cc_header)
+
+        return [address for _name, address in cc_header_list]
+
+    @property
+    def from_header(self) -> Optional[str]:
+        return self.__from_header
+
+    def from_header_list(self) -> List[Tuple[Optional[str], Optional[str]]]:
+        header_list = self._split_address_header(self.__from_header)
+
+        return [header for header in header_list]
+
+    @property
+    def from_header_names(self) -> List[Optional[str]]:
+        from_header_list = self._split_address_header(self.__from_header)
+
+        return [name for name, _address in from_header_list]
+
+    @property
+    def from_header_address(self) -> List[Optional[str]]:
+        from_header_list = self._split_address_header(self.__from_header)
+
+        return [address for _name, address in from_header_list]
+
+    @property
     def has_file(self) -> bool:
         return len(self.attach_file_list) > 0
 
+    @property
     def has_image(self) -> bool:
         return len(self.images) > 0
+
+    @property
+    def has_delivered_to(self) -> bool:
+        delivered_to = self._get_header("Delivered-To")
+        if delivered_to is not None:
+            return True
+        return False
 
     def _get_header(self, name: str) -> Optional[str]:
         if not self.message[name]:
             return None
 
+        header = ""
         for byte, charset in decode_header(self.message[name]):
-            header = ""
             if isinstance(byte, bytes):
                 if charset:
                     self.header_charset = charset
@@ -237,6 +292,38 @@ class Mail:
 
         return clean_text
 
+    def _split_address_header(
+        self, header_text: Optional[str]
+    ) -> List[Tuple[Optional[str], Optional[str]]]:
+        if header_text is not None:
+            address_header_regex = r"[^, ].+?<[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}>|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            header_name_regex = r".*?[^\s](?=<|\s+<)"
+            header_address_regex = r"([^<>](?<=<)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?=>)|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})"
+            header_list: List[str] = re.findall(address_header_regex, header_text)
+            splited_list: List[Tuple[Optional[str], Optional[str]]] = []
+
+            for header in header_list:
+                splited_name: List[Optional[str]] = re.findall(
+                    header_name_regex, header
+                )
+                splited_address: List[Optional[str]] = re.findall(
+                    header_address_regex, header
+                )
+
+                if splited_name and splited_name[0]:
+                    name: Optional[str] = splited_name[0].strip()
+                else:
+                    name = None
+
+                if splited_address and splited_address[0]:
+                    address: Optional[str] = splited_address[0].strip()
+                else:
+                    address = None
+
+                splited_list.append((name, address))
+            return splited_list
+        return [(None, None)]
+
     def __detect_charset(self, byte: bytes) -> Union[str, None]:
         detected_charset = chardet.detect(byte)["encoding"]
         if detected_charset == "SHIFT_JIS":
@@ -247,10 +334,7 @@ class Mail:
         return detected_charset
 
     def __is_canable_decode_body(self) -> bool:
-        (
-            decoded_string,
-            detected_charset,
-        ) = self.__decode_unknown_charset(self.payload)
+        (decoded_string, detected_charset) = self.__decode_unknown_charset(self.payload)
         if isinstance(decoded_string, str):
             self.body = decoded_string
             self.body_charset = detected_charset
@@ -305,9 +389,7 @@ class Mail:
         print(detected_charset)
 
     def __cannot_decode_body(
-        self,
-        default_byte: Union[str, bytes, None],
-        detected_charset: Optional[str],
+        self, default_byte: Union[str, bytes, None], detected_charset: Optional[str]
     ) -> None:
         Mail.failed_decode_count += 1
         print("---------- Skipped Because cannot decode body. ----------")
@@ -330,9 +412,9 @@ class Mail:
             for i in [
                 self.subject,
                 self.date,
-                self.to_address,
-                self.cc_address,
-                self.from_address,
+                self.to_header,
+                self.cc_header,
+                self.from_header,
                 self.body,
                 self.attach_file_list,
             ]
