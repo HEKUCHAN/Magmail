@@ -7,7 +7,7 @@ import pandas as pd
 from pathlib import Path
 from mailbox import mboxMessage
 from email.message import Message
-from typing import List, Optional, Union, Callable
+from typing import List, Optional, Union, Callable, Dict
 
 from .mail import Mail
 
@@ -21,13 +21,17 @@ class Magmail:
         trial_charset_list: Optional[List[str]] = None,
         extends_trial_charset_list: List[str] = [],
         custom_clean_function: Optional[Callable[[str], str]] = None,
+        extension_charset_list: Optional[Dict[str, str]] = None,
+        extends_extension_charset_list: Optional[Dict[str, str]] = None,
     ):
         self.mbox_path: Path = Path(mbox_path)
         self.auto_clean = auto_clean
         self.filter_content_type = filter_content_type
         self.trial_charset_list = trial_charset_list
         self.extends_trial_charset_list = extends_trial_charset_list
-        self.custom_clean_function: Optional[Callable[[str], str]] = custom_clean_function
+        self.custom_clean_function: Optional[
+            Callable[[str], str]
+        ] = custom_clean_function
         if not os.path.exists(self.mbox_path):
             raise FileNotFoundError()
 
@@ -69,7 +73,7 @@ class Magmail:
         print("Total of failed to decode body or header: %d" % Mail.failed_decode_count)
 
     def add_mail(self, eml_path: str) -> None:
-        with open(eml_path, 'rb') as email_file:
+        with open(eml_path, "rb") as email_file:
             message = email.message_from_bytes(email_file.read())
             self._add_message(message)
 
