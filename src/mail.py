@@ -7,7 +7,7 @@ from email.message import Message
 from email.header import decode_header
 from email.iterators import _structure
 from email.utils import parsedate_to_datetime
-from typing import Optional, Callable, Tuple, Union, List, overload
+from typing import Optional, Callable, Tuple, Union, List, overload, Dict
 
 
 class Mail:
@@ -21,19 +21,41 @@ class Mail:
         trial_charset_list: Optional[List[str]] = None,
         extends_trial_charset_list: List[str] = [],
         custom_clean_function: Optional[Callable[[str], str]] = None,
+        extension_charset_list: Optional[Dict[str, str]] = None,
+        extends_extension_charset_list: Dict[str, str] = {},
     ):
         self.message: Union[Message, mboxMessage] = message
         self.auto_clean: bool = auto_clean
         self.is_multipart: bool = False
         self.trial_charset_list: List[str] = []
-        self.custom_clean_function: Optional[Callable[[str], str]] = custom_clean_function
+        self.custom_clean_function: Optional[
+            Callable[[str], str]
+        ] = custom_clean_function
         self.filter_content_type: Union[List[str], Optional[str]] = filter_content_type
+        self.extension_charset_list: Optional[Dict[str, str]] = None
+        self.extends_extension_charset_list: Optional[
+            Dict[str, str]
+        ] = extends_extension_charset_list
 
         if trial_charset_list is not None:
             self.trial_charset_list = trial_charset_list
         else:
             self.trial_charset_list = ["utf-8", "cp932", "shift-jis", "base64"]
         self.trial_charset_list.extend(extends_trial_charset_list)
+
+        if extension_charset_list is not None:
+            self.extension_charset_list = extension_charset_list
+        else:
+            self.extension_charset_list = {
+                "SHIFT_JIS": "CP932",
+                "ISO-2022-JP": "CP932",
+            }
+            extends_extension_charset_list = {
+                key.upper(): value.upper()
+                for key, value in extends_extension_charset_list.items()
+            }
+            self.extension_charset_list.update(extends_extension_charset_list)
+
 
         self.images: List[bytes] = []
 
@@ -331,10 +353,10 @@ class Mail:
 
     def __detect_charset(self, byte: bytes) -> Union[str, None]:
         detected_charset = chardet.detect(byte)["encoding"]
-        if detected_charset == "SHIFT_JIS":
-            detected_charset = "CP932"
-        if detected_charset == "ISO-2022-JP":
-            detected_charset = "CP932"
+
+        for charset, extension_charset in self.extension_charset_list.items():
+            if detected_charset == charset:
+                detected_charset = extension_charset
 
         return detected_charset
 
