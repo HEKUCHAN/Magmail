@@ -174,6 +174,7 @@ class Mail:
                     self.__cannot_decode_header(name, decoded_header, detected_charset)
                     continue
             elif isinstance(byte, str):
+                self.detected_header_charset = detected_charset
                 header += byte
 
         return header
