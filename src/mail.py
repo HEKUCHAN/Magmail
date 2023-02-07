@@ -20,9 +20,9 @@ class Mail:
         filter_content_type: Union[List[str], Optional[str]] = None,
         trial_charset_list: Optional[List[str]] = None,
         extends_trial_charset_list: List[str] = [],
-        custom_clean_function: Optional[Callable[[str], str]] = None,
         extension_charset_list: Optional[Dict[str, str]] = None,
         extends_extension_charset_list: Dict[str, str] = {},
+        custom_clean_function: Optional[Callable[[str], str]] = None,
     ):
         self.message: Union[Message, mboxMessage] = message
         self.auto_clean: bool = auto_clean
@@ -32,7 +32,6 @@ class Mail:
             Callable[[str], str]
         ] = custom_clean_function
         self.filter_content_type: Union[List[str], Optional[str]] = filter_content_type
-        self.extension_charset_list: Optional[Dict[str, str]] = None
         self.extends_extension_charset_list: Optional[
             Dict[str, str]
         ] = extends_extension_charset_list
@@ -44,7 +43,7 @@ class Mail:
         self.trial_charset_list.extend(extends_trial_charset_list)
 
         if extension_charset_list is not None:
-            self.extension_charset_list = extension_charset_list
+            self.extension_charset_list: Dict[str, str] = extension_charset_list
         else:
             self.extension_charset_list = {
                 "SHIFT_JIS": "CP932",
@@ -55,7 +54,6 @@ class Mail:
                 for key, value in extends_extension_charset_list.items()
             }
             self.extension_charset_list.update(extends_extension_charset_list)
-
 
         self.images: List[bytes] = []
 
