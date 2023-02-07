@@ -132,3 +132,4 @@ dmypy.json
 sample_mbox/
 test_area.ipynb
 .vscode
+.DS_Store
