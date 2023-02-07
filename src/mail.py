@@ -367,7 +367,7 @@ class Mail:
             try:
                 decoded_str = codecs.decode(byte, encoding=charset)
                 return (decoded_str, charset)
-            except UnicodeDecodeError:
+            except:
                 print(f"generaly charset decoding failed: {charset}")
                 continue
         else:
