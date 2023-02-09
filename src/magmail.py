@@ -47,7 +47,7 @@ class Magmail:
                 auto_clean=self.auto_clean,
                 filter_content_type=self.filter_content_type,
                 trial_charset_list=self.trial_charset_list,
-                extends_trial_charset_list=self.extends_trial_charset_list
+                extends_trial_charset_list=self.extends_trial_charset_list,
             )
         )
 
@@ -63,49 +63,50 @@ class Magmail:
                     self._add_message(message)
 
     def add_mail(self, eml_path: str) -> None:
-        with open(eml_path, 'rb') as email_file:
+        with open(eml_path, "rb") as email_file:
             message = email.message_from_bytes(email_file.read())
             self._add_message(message)
+
+    @classmethod
+    def gets_instance_variable(self, obj: object) -> List[str]:
+        variables: List[str] = []
+        for variable in obj.emails[0].__dir__():
+            if not variable[0] == "_":
+                variables.append(variable)
+
+        return variables
 
     def export_csv(
         self,
         path: str = "./mbox.csv",
         encoding: str = "utf-8",
-        header: List[str] = [
-            "subject",
-            "date",
-            "to_address",
-            "cc_address",
-            "from_address",
-            "body",
-            "has_file",
-            "attach_file_list",
-            "has_image",
-            "images",
-            "is_multipart",
-            "has_delivered_to",
-        ],
+        colums: Optional[List[str]] = None,
+        extends_colums: List[str] = []
     ) -> None:
         with open(path, "w", encoding=encoding) as f:
             writer = csv.writer(f, quotechar='"')
-            writer.writerow(header)
+            if colums is None:
+                colums: List[str] = [
+                    "subject",
+                    "date",
+                    "to_header",
+                    "cc_header",
+                    "from_header",
+                    "body",
+                    "has_file",
+                    "attach_file_list",
+                    "has_image",
+                    "is_multipart",
+                    "has_delivered_to"
+                ]
+                colums.extend(extends_colums)
+            writer.writerow(colums)
+
             for mail in self.emails:
-                writer.writerow(
-                    [
-                        mail.subject,
-                        mail.date,
-                        mail.to_header,
-                        mail.cc_header,
-                        mail.from_header,
-                        mail.body,
-                        mail.has_file,
-                        mail.attach_file_list,
-                        mail.has_image,
-                        mail.images,
-                        mail.is_multipart,
-                        mail.has_delivered_to,
-                    ]
-                )
+                rows = []
+                for row in colums:
+                    rows.append(getattr(mail, row, None))
+                writer.writerow(rows)
 
     def dataframe(self) -> pd.DataFrame:
         col_names = [
