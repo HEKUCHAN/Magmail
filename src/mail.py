@@ -255,10 +255,12 @@ class Mail:
         if clean_text is not None:
             # 小文字化
             clean_text = clean_text.lower()
+            # HTMLのコメントを削除
+            clean_text = re.sub(r"<!--[\s\S]*?-->*", "", clean_text)
             # Styleタグの削除
-            clean_text = re.sub(r"<style[^>]*?>[\\s\\S]*?<\\/style>", "", clean_text)
+            clean_text = re.sub(r"<style.*?>[\s\S]*<\/style>*", "", clean_text)
             # Scriptタグの削除
-            clean_text = re.sub(r"<script[^>]*?>[\\s\\S]*?<\\/script>", "", clean_text)
+            clean_text = re.sub(r"<script.*?>[\s\S]*<\/script>*", "", clean_text)
             # HTMLタグの削除
             clean_text = re.sub(r"<(\"[^\"]*\"|\'[^\']*\'|[^\'\">])*>", "", clean_text)
             # 行末記号を統一
