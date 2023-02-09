@@ -433,16 +433,15 @@ class Mail:
 
     def __str__(self) -> str:
         str_list = [
-            str(i)
-            for i in [
-                self.subject,
-                self.date,
-                self.to_header,
-                self.cc_header,
-                self.from_header,
-                self.body,
-                self.attach_file_list,
-            ]
+            "-" * 10,
+            "Subject: " + str(self.subject),
+            "Date: " + str(self.date),
+            "To: " + str(self.to_header),
+            "From: " + str(self.from_header),
+            "cc: " + str(self.cc_header),
+            "-" * 10,
+            "Body:",
+            str(self.body)
         ]
 
         return "\n".join(str_list)
