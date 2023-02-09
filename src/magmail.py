@@ -15,13 +15,17 @@ from .mail import Mail
 class Magmail:
     def __init__(
         self,
-        mbox_path: str,
+        mbox_path: Union[str, Path],
         auto_clean: bool = True,
         filter_content_type: Optional[str] = None,
         trial_charset_list: Optional[List[str]] = None,
         extends_trial_charset_list: List[str] = [],
     ):
-        self.mbox_path: Path = Path(mbox_path)
+        if isinstance(mbox_path, str):
+            self.mbox_path = Path(mbox_path)
+        else:
+            self.mbox_path = mbox_path
+
         self.auto_clean = auto_clean
         self.filter_content_type = filter_content_type
         self.trial_charset_list = trial_charset_list
@@ -62,14 +66,18 @@ class Magmail:
                 for message in mail_box:
                     self._add_message(message)
 
-    def add_mail(self, eml_path: str) -> None:
+    def add_mail(self, eml_path: Union[str, Path]) -> None:
+        if isinstance(eml_path, str):
+            self.eml_path = Path(eml_path)
+        else:
+            self.eml_path = eml_path
         with open(eml_path, 'rb') as email_file:
             message = email.message_from_bytes(email_file.read())
             self._add_message(message)
 
     def export_csv(
         self,
-        path: str = "./mbox.csv",
+        path: Union[str, Path] = "./mbox.csv",
         encoding: str = "utf-8",
         header: List[str] = [
             "subject",
@@ -86,6 +94,11 @@ class Magmail:
             "has_delivered_to",
         ],
     ) -> None:
+        if isinstance(path, str):
+            self.path = Path(path)
+        else:
+            self.path = path
+
         with open(path, "w", encoding=encoding) as f:
             writer = csv.writer(f, quotechar='"')
             writer.writerow(header)
