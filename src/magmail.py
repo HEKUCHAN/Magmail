@@ -16,7 +16,7 @@ from .mail import Mail
 class Magmail:
     def __init__(
         self,
-        mbox_path: str,
+        mbox_path: Union[str, Path],
         auto_clean: bool = True,
         filter_content_type: Optional[str] = None,
         trial_charset_list: Optional[List[str]] = None,
@@ -25,7 +25,11 @@ class Magmail:
         extends_extension_charset_list: Dict[str, str] = {},
         custom_clean_function: Optional[Callable[[str], str]] = None,
     ):
-        self.mbox_path: Path = Path(mbox_path)
+        if isinstance(mbox_path, str):
+            self.mbox_path = Path(mbox_path)
+        else:
+            self.mbox_path = mbox_path
+
         self.auto_clean = auto_clean
         self.filter_content_type = filter_content_type
         self.trial_charset_list = trial_charset_list
@@ -73,12 +77,15 @@ class Magmail:
                 mail_box = mailbox.mbox(self.mbox_path / file)
                 for message in mail_box:
                     self._add_message(message)
-
         print("Total of successfully parsed files: %d" % len(self))
         print("Total of failed to decode body or header: %d" % Mail.failed_decode_count)
 
-    def add_mail(self, eml_path: str) -> None:
-        with open(eml_path, "rb") as email_file:
+    def add_mail(self, eml_path: Union[str, Path]) -> None:
+        if isinstance(eml_path, str):
+            self.eml_path = Path(eml_path)
+        else:
+            self.eml_path = eml_path
+        with open(eml_path, 'rb') as email_file:
             message = email.message_from_bytes(email_file.read())
             self._add_message(message)
 
@@ -94,42 +101,76 @@ class Magmail:
     def export_csv(
         self,
         path: Union[str, Path] = "./mbox.csv",
-        filename: Optional[str] = None,
+        filename: Optional[Union[str, Path]] = None,
         encoding: str = "utf-8",
         columns: Optional[List[str]] = None,
         extends_columns: List[str] = [],
-        slice_rows: Optional[int] = None
+        slice_files: int = 1
     ) -> None:
+        files: List[TextIOWrapper] = []
+        files_path: List[Path] = []
 
         if not isinstance(path, Path):
-            self.path = Path(path)
+            csv_path: Path = Path(path)
+        else:
+            csv_path = path
 
-        if slice_rows is not None:
-            files: List[TextIOWrapper] = []
-            files_path: List[Path] = []
-            for _i in range(slice_rows):
-                files.append(
-                    open(path, 'w', encoding=encoding)
-                )
-        writer = csv.writer(f, quotechar='"')
-        if columns is None:
-            columns: List[str] = [
-                "subject",
-                "date",
-                "to_header",
-                "cc_header",
-                "from_header",
-                "body",
-                "has_file",
-                "attach_file_list",
-                "has_image",
-                "is_multipart",
-                "has_delivered_to",
-            ]
-            columns.extend(extends_columns)
-        writer.writerow(columns)
+        if slice_files > 1:
+            if os.path.isdir(path):
+                if filename is None:
+                    filename: Path = Path("mbox.csv")
 
-        for mail in self.emails:
+                if not isinstance(filename, Path):
+                    csv_filename: Path = Path(filename)
+                else:
+                    csv_filename = filename
+
+                for i in range(1, slice_files+1):
+                    csv_filename = csv_filename.with_suffix(".csv")
+                    files_path.append(
+                        csv_path / (csv_filename.stem + f"-{i}" + csv_filename.suffix)
+                    )
+            else:
+                csv_filename = csv_path.with_suffix(".csv")
+                for i in range(1, slice_files+1):
+                    files_path.append(
+                        csv_path.parent / (csv_filename.stem + f"-{i}" + csv_filename.suffix)
+                    )
+        else:
+            csv_path = csv_path.with_suffix(".csv")
+            files_path.append(
+                csv_path
+            )
+
+        for path in files_path:
+            files.append(
+                open(path, 'w', encoding=encoding)
+            )
+
+        for i, mail in enumerate(self.emails):
+            total = self.total()
+            split_amount = total // slice_files
+
+            writer = csv.writer(files[i // split_amount - 1], quotechar='"')
+
+            if (i / split_amount).is_integer():
+                if columns is None:
+                    columns: List[str] = [
+                        "subject",
+                        "date",
+                        "to_header",
+                        "cc_header",
+                        "from_header",
+                        "body",
+                        "has_file",
+                        "attach_file_list",
+                        "has_image",
+                        "is_multipart",
+                        "has_delivered_to",
+                    ]
+                    columns.extend(extends_columns)
+                writer.writerow(columns)
+
             rows = []
             for row in columns:
                 rows.append(getattr(mail, row, None))

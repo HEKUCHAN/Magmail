@@ -423,7 +423,7 @@ class Mail:
         print("{!r:.128}".format(default_byte))
         print("Structure:")
         _structure(self.message)
-        print("Last content minetype:")
+        print("Last content mimetype:")
         print(self.content_maintype, "/", self.content_subtype)
         print("Content charset:")
         print(self.content_charset)
