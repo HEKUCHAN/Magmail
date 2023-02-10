@@ -327,28 +327,28 @@ class Mail:
             header_name_regex = r".*?[^\s](?=<|\s+<)"
             header_address_regex = r"([^<>](?<=<)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?=>)|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})"
             header_list: List[str] = re.findall(address_header_regex, header_text)
-            splited_list: List[Tuple[Optional[str], Optional[str]]] = []
+            splitted_list: List[Tuple[Optional[str], Optional[str]]] = []
 
             for header in header_list:
-                splited_name: List[Optional[str]] = re.findall(
+                splitted_name: List[Optional[str]] = re.findall(
                     header_name_regex, header
                 )
-                splited_address: List[Optional[str]] = re.findall(
+                splitted_address: List[Optional[str]] = re.findall(
                     header_address_regex, header
                 )
 
-                if splited_name and splited_name[0]:
-                    name: Optional[str] = splited_name[0].strip()
+                if splitted_name and splitted_name[0]:
+                    name: Optional[str] = splitted_name[0].strip()
                 else:
                     name = None
 
-                if splited_address and splited_address[0]:
-                    address: Optional[str] = splited_address[0].strip()
+                if splitted_address and splitted_address[0]:
+                    address: Optional[str] = splitted_address[0].strip()
                 else:
                     address = None
 
-                splited_list.append((name, address))
-            return splited_list
+                splitted_list.append((name, address))
+            return splitted_list
         return [(None, None)]
 
     def __detect_charset(self, byte: bytes) -> Union[str, None]:
