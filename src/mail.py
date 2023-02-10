@@ -45,10 +45,7 @@ class Mail:
         if extension_charset_list is not None:
             self.extension_charset_list: Dict[str, str] = extension_charset_list
         else:
-            self.extension_charset_list = {
-                "SHIFT_JIS": "CP932",
-                "ISO-2022-JP": "CP932",
-            }
+            self.extension_charset_list = {"SHIFT_JIS": "CP932", "ISO-2022-JP": "CP932"}
             extends_extension_charset_list = {
                 key.upper(): value.upper()
                 for key, value in extends_extension_charset_list.items()
@@ -280,10 +277,12 @@ class Mail:
         if clean_text is not None:
             # 小文字化
             clean_text = clean_text.lower()
+            # HTMLのコメントを削除
+            clean_text = re.sub(r"<!--[\s\S]*?-->*", "", clean_text)
             # Styleタグの削除
-            clean_text = re.sub(r"<style[^>]*?>[\\s\\S]*?<\\/style>", "", clean_text)
+            clean_text = re.sub(r"<style.*?>[\s\S]*<\/style>*", "", clean_text)
             # Scriptタグの削除
-            clean_text = re.sub(r"<script[^>]*?>[\\s\\S]*?<\\/script>", "", clean_text)
+            clean_text = re.sub(r"<script.*?>[\s\S]*<\/script>*", "", clean_text)
             # HTMLタグの削除
             clean_text = re.sub(r"<(\"[^\"]*\"|\'[^\']*\'|[^\'\">])*>", "", clean_text)
             # 行末記号を統一
@@ -441,7 +440,7 @@ class Mail:
             "cc: " + str(self.cc_header),
             "-" * 10,
             "Body:",
-            str(self.body)
+            str(self.body),
         ]
 
         return "\n".join(str_list)
