@@ -7,7 +7,7 @@ import pandas as pd
 from pathlib import Path
 from mailbox import mboxMessage
 from email.message import Message
-from typing import List, Optional, Union
+from typing import List, Optional, Union, Callable, Dict
 
 from .mail import Mail
 
@@ -20,12 +20,20 @@ class Magmail:
         filter_content_type: Optional[str] = None,
         trial_charset_list: Optional[List[str]] = None,
         extends_trial_charset_list: List[str] = [],
+        extension_charset_list: Optional[Dict[str, str]] = None,
+        extends_extension_charset_list: Dict[str, str] = {},
+        custom_clean_function: Optional[Callable[[str], str]] = None,
     ):
         self.mbox_path: Path = Path(mbox_path)
         self.auto_clean = auto_clean
         self.filter_content_type = filter_content_type
         self.trial_charset_list = trial_charset_list
         self.extends_trial_charset_list = extends_trial_charset_list
+        self.extension_charset_list = extension_charset_list
+        self.extends_extension_charset_list = extends_extension_charset_list
+        self.custom_clean_function: Optional[
+            Callable[[str], str]
+        ] = custom_clean_function
         if not os.path.exists(self.mbox_path):
             raise FileNotFoundError()
 
@@ -48,6 +56,9 @@ class Magmail:
                 filter_content_type=self.filter_content_type,
                 trial_charset_list=self.trial_charset_list,
                 extends_trial_charset_list=self.extends_trial_charset_list,
+                custom_clean_function=self.custom_clean_function,
+                extension_charset_list=self.extension_charset_list,
+                extends_extension_charset_list=self.extends_extension_charset_list,
             )
         )
 
@@ -61,6 +72,9 @@ class Magmail:
                 mail_box = mailbox.mbox(self.mbox_path / file)
                 for message in mail_box:
                     self._add_message(message)
+
+        print("Total of successfully parsed files: %d" % len(self))
+        print("Total of failed to decode body or header: %d" % Mail.failed_decode_count)
 
     def add_mail(self, eml_path: str) -> None:
         with open(eml_path, "rb") as email_file:
