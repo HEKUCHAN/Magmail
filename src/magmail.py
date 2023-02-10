@@ -5,6 +5,7 @@ import mailbox
 import numpy as np
 import pandas as pd
 from pathlib import Path
+from io import TextIOWrapper
 from mailbox import mboxMessage
 from email.message import Message
 from typing import List, Optional, Union, Callable, Dict
@@ -92,51 +93,66 @@ class Magmail:
 
     def export_csv(
         self,
-        path: str = "./mbox.csv",
+        path: Union[str, Path] = "./mbox.csv",
+        filename: Optional[str] = None,
         encoding: str = "utf-8",
         columns: Optional[List[str]] = None,
-        extends_columns: List[str] = []
+        extends_columns: List[str] = [],
+        slice_rows: Optional[int] = None
     ) -> None:
-        with open(path, "w", encoding=encoding) as f:
-            writer = csv.writer(f, quotechar='"')
-            if columns is None:
-                columns: List[str] = [
-                    "subject",
-                    "date",
-                    "to_header",
-                    "cc_header",
-                    "from_header",
-                    "body",
-                    "has_file",
-                    "attach_file_list",
-                    "has_image",
-                    "is_multipart",
-                    "has_delivered_to"
-                ]
-                columns.extend(extends_columns)
-            writer.writerow(columns)
 
-            for mail in self.emails:
-                rows = []
-                for row in columns:
-                    rows.append(getattr(mail, row, None))
-                writer.writerow(rows)
+        if not isinstance(path, Path):
+            self.path = Path(path)
 
-    def dataframe(self) -> pd.DataFrame:
-        col_names = [
-            "subject",
-            "date",
-            "to_address",
-            "cc_address",
-            "from_address",
-            "body",
-            "has_file",
-            "attach_file_list",
-            "has_image",
-            "images",
-            "is_multipart",
-            "has_delivered_to",
-        ]
+        if slice_rows is not None:
+            files: List[TextIOWrapper] = []
+            files_path: List[Path] = []
+            for _i in range(slice_rows):
+                files.append(
+                    open(path, 'w', encoding=encoding)
+                )
+        writer = csv.writer(f, quotechar='"')
+        if columns is None:
+            columns: List[str] = [
+                "subject",
+                "date",
+                "to_header",
+                "cc_header",
+                "from_header",
+                "body",
+                "has_file",
+                "attach_file_list",
+                "has_image",
+                "is_multipart",
+                "has_delivered_to",
+            ]
+            columns.extend(extends_columns)
+        writer.writerow(columns)
+
+        for mail in self.emails:
+            rows = []
+            for row in columns:
+                rows.append(getattr(mail, row, None))
+            writer.writerow(rows)
+
+    def dataframe(
+        self, columns: Optional[List[str]], extends_columns: List[str] = []
+    ) -> pd.DataFrame:
+        if columns is None:
+            columns: List[str] = [
+                "subject",
+                "date",
+                "to_header",
+                "cc_header",
+                "from_header",
+                "body",
+                "has_file",
+                "attach_file_list",
+                "has_image",
+                "is_multipart",
+                "has_delivered_to",
+            ]
+            columns.extend(extends_columns)
         dataframe: pd.DataFrame = pd.DataFrame(columns=col_names)
 
         for mail in self.emails:

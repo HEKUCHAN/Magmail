@@ -45,10 +45,7 @@ class Mail:
         if extension_charset_list is not None:
             self.extension_charset_list: Dict[str, str] = extension_charset_list
         else:
-            self.extension_charset_list = {
-                "SHIFT_JIS": "CP932",
-                "ISO-2022-JP": "CP932",
-            }
+            self.extension_charset_list = {"SHIFT_JIS": "CP932", "ISO-2022-JP": "CP932"}
             extends_extension_charset_list = {
                 key.upper(): value.upper()
                 for key, value in extends_extension_charset_list.items()
@@ -443,7 +440,7 @@ class Mail:
             "cc: " + str(self.cc_header),
             "-" * 10,
             "Body:",
-            str(self.body)
+            str(self.body),
         ]
 
         return "\n".join(str_list)
