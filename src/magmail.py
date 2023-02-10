@@ -80,13 +80,13 @@ class Magmail:
         self,
         path: str = "./mbox.csv",
         encoding: str = "utf-8",
-        colums: Optional[List[str]] = None,
-        extends_colums: List[str] = []
+        columns: Optional[List[str]] = None,
+        extends_columns: List[str] = []
     ) -> None:
         with open(path, "w", encoding=encoding) as f:
             writer = csv.writer(f, quotechar='"')
-            if colums is None:
-                colums: List[str] = [
+            if columns is None:
+                columns: List[str] = [
                     "subject",
                     "date",
                     "to_header",
@@ -99,12 +99,12 @@ class Magmail:
                     "is_multipart",
                     "has_delivered_to"
                 ]
-                colums.extend(extends_colums)
-            writer.writerow(colums)
+                columns.extend(extends_columns)
+            writer.writerow(columns)
 
             for mail in self.emails:
                 rows = []
-                for row in colums:
+                for row in columns:
                     rows.append(getattr(mail, row, None))
                 writer.writerow(rows)
 
