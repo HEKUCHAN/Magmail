@@ -10,6 +10,15 @@ from email.utils import parsedate_to_datetime
 from typing import Optional, Callable, Tuple, Union, List, overload, Dict
 
 
+from .static import (
+    HEADER_NAME_REGEX,
+    HEADER_MAIL_REGEX,
+    TRIAL_CHARSET_LIST,
+    ADDRESS_HEADER_REGEX,
+    EXTENSION_CHARSET_DICT,
+)
+
+
 class Mail:
     failed_decode_count = 0
 
@@ -39,18 +48,18 @@ class Mail:
         if trial_charset_list is not None:
             self.trial_charset_list = trial_charset_list
         else:
-            self.trial_charset_list = ["utf-8", "cp932", "shift-jis", "base64"]
+            self.trial_charset_list = TRIAL_CHARSET_LIST
         self.trial_charset_list.extend(extends_trial_charset_list)
 
         if extension_charset_list is not None:
-            self.extension_charset_list: Dict[str, str] = extension_charset_list
+            self.extension_charset_dict: Dict[str, str] = extension_charset_list
         else:
-            self.extension_charset_list = {"SHIFT_JIS": "CP932", "ISO-2022-JP": "CP932"}
+            self.extension_charset_dict = EXTENSION_CHARSET_DICT
             extends_extension_charset_list = {
                 key.upper(): value.upper()
                 for key, value in extends_extension_charset_list.items()
             }
-            self.extension_charset_list.update(extends_extension_charset_list)
+            self.extension_charset_dict.update(extends_extension_charset_list)
 
         self.images: List[bytes] = []
 
@@ -79,7 +88,7 @@ class Mail:
                 continue
 
             if self.content_maintype == "image":
-                self.images.append(part.get_payload())
+                self.images.append(part.get_payload(decode=True))
                 continue
 
             if self.attach_fname is not None:
@@ -213,9 +222,8 @@ class Mail:
     @property
     def has_delivered_to(self) -> bool:
         delivered_to = self._get_header("Delivered-To")
-        if delivered_to is not None:
-            return True
-        return False
+
+        return delivered_to is not None
 
     def _get_header(self, name: str) -> Optional[str]:
         if not self.message[name]:
@@ -320,9 +328,9 @@ class Mail:
         self, header_text: Optional[str]
     ) -> List[Tuple[Optional[str], Optional[str]]]:
         if header_text is not None:
-            address_header_regex = r"[^, ].+?<[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}>|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-            header_name_regex = r".*?[^\s](?=<|\s+<)"
-            header_address_regex = r"([^<>](?<=<)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?=>)|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})"
+            address_header_regex = ADDRESS_HEADER_REGEX
+            header_name_regex = HEADER_NAME_REGEX
+            header_mail_regex = HEADER_MAIL_REGEX
             header_list: List[str] = re.findall(address_header_regex, header_text)
             splitted_list: List[Tuple[Optional[str], Optional[str]]] = []
 
@@ -331,7 +339,7 @@ class Mail:
                     header_name_regex, header
                 )
                 splitted_address: List[Optional[str]] = re.findall(
-                    header_address_regex, header
+                    header_mail_regex, header
                 )
 
                 if splitted_name and splitted_name[0]:
@@ -351,7 +359,7 @@ class Mail:
     def __detect_charset(self, byte: bytes) -> Union[str, None]:
         detected_charset = chardet.detect(byte)["encoding"]
 
-        for charset, extension_charset in self.extension_charset_list.items():
+        for charset, extension_charset in self.extension_charset_dict.items():
             if detected_charset == charset:
                 detected_charset = extension_charset
 
@@ -392,7 +400,7 @@ class Mail:
                 decoded_str = codecs.decode(byte, encoding=charset)
                 return (decoded_str, charset)
             except:
-                print(f"generaly charset decoding failed: {charset}")
+                print(f"generally charset decoding failed: {charset}")
                 continue
         else:
             return (byte, None)
