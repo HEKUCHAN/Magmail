@@ -168,23 +168,15 @@ class Magmail:
             columns.extend(extends_columns)
         dataframe: pd.DataFrame = pd.DataFrame(columns=columns)
 
+        if not extends_columns:
+            columns.extend(extends_columns)
+
         for mail in self.emails:
-            series = pd.Series(
-                [
-                    mail.subject,
-                    mail.date,
-                    mail.to_header,
-                    mail.cc_header,
-                    mail.from_header,
-                    mail.body,
-                    mail.has_file,
-                    mail.attach_file_list,
-                    mail.has_image,
-                    mail.images,
-                    mail.is_multipart,
-                    mail.has_delivered_to,
-                ]
-            )
+            rows = []
+            for row in columns:
+                rows.append(getattr(mail, row, None))
+
+            series = pd.Series(rows)
             dataframe = pd.DataFrame(
                 np.vstack([dataframe.values, series.values]), columns=dataframe.columns
             )
