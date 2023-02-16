@@ -163,9 +163,7 @@ class Magmail:
         for mail in self.emails:
             rows = []
             for row in columns:
-                rows.append(
-                    getattr(mail, row, None)
-                )
+                rows.append(getattr(mail, row, None))
 
             series = pd.Series(rows)
             dataframe = pd.DataFrame(
