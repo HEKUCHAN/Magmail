@@ -138,6 +138,14 @@ class Mail:
         if self.custom_clean_function is not None:
             self.body = self.custom_clean_function(self.body)
 
+    def gets_instance_variable(self) -> List[str]:
+        variables: List[str] = []
+        for variable in self.__dir__():
+            if not variable.startswith("__"):
+                variables.append(variable)
+
+        return variables
+
     @property
     def subject(self) -> Union[List[str], Optional[str]]:
         return self.__subject

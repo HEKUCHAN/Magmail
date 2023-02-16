@@ -89,15 +89,6 @@ class Magmail:
             message = email.message_from_bytes(email_file.read())
             self._add_message(message)
 
-    @classmethod
-    def gets_instance_variable(self) -> List[str]:
-        variables: List[str] = []
-        for variable in self.emails[0].__dir__():
-            if not variable[0] == "_":
-                variables.append(variable)
-
-        return variables
-
     def export_csv(
         self,
         path: Union[str, Path] = "./mbox.csv",
