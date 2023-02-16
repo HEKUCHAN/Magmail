@@ -283,6 +283,10 @@ class Mail:
             text = text.replace("\n", "")
             text = text.strip()
             text = re.sub(r"http\S+", " ", text)
+            text = re.sub('\s+', ' ', text)
+
+            if self.custom_clean_function is not None:
+                text = self.custom_clean_function(text)
 
             return text
 
@@ -295,8 +299,6 @@ class Mail:
 
     def _body_clean_text(self, clean_text: str) -> str:
         if clean_text is not None:
-            # 小文字化
-            clean_text = clean_text.lower()
             # HTMLのコメントを削除
             clean_text = re.sub(r"<!--[\s\S]*?-->*", "", clean_text)
             # Styleタグの削除
@@ -306,11 +308,9 @@ class Mail:
             # HTMLタグの削除
             clean_text = re.sub(r"<(\"[^\"]*\"|\'[^\']*\'|[^\'\">])*>", "", clean_text)
             # 行末記号を統一
-            clean_text = clean_text.replace("\r\n", "\n")
-            # 行末記号を統一
-            clean_text = clean_text.replace("\r", "\n")
+            clean_text = clean_text.replace("/\R/", "\n")
             # Unicodeの全角スペースを削除
-            clean_text = re.sub(r"\u3000", "", clean_text)
+            clean_text = re.sub(r"\u3000", " ", clean_text)
             # URLの除去
             clean_text = re.sub(
                 r"(https?|ftp)(:\/\/[-_\.!~*\'()a-zA-Z0-9;\/?:\@&=\+\$,%#]+)",
@@ -329,10 +329,10 @@ class Mail:
             clean_text = "".join(clean_text.splitlines())
             # 複数タブ削除
             clean_text = re.sub(r"\t+", "", clean_text)
-            # スペース削除
-            clean_text = re.sub(r"\s+", " ", clean_text)
             # 全角空白の除去
             clean_text = re.sub(r"　", " ", clean_text)
+            # スペース削除
+            clean_text = re.sub(r"\s+", " ", clean_text)
 
         return clean_text
 
