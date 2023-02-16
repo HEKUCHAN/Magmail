@@ -110,10 +110,7 @@ class Magmail:
                 if filename is None:
                     filename = Path("mbox.csv")
 
-                if not isinstance(filename, Path):
-                    csv_filename: Path = Path(filename)
-                else:
-                    csv_filename = filename
+                csv_filename = Utils.str_to_Path(filename)
 
                 for i in range(1, slice_files + 1):
                     csv_filename = csv_filename.with_suffix(".csv")
@@ -135,8 +132,7 @@ class Magmail:
             files.append(open(path, "w", encoding=encoding, newline=""))
 
         for i, mail in enumerate(self.emails):
-            total = self.total()
-            split_amount = total // slice_files
+            split_amount = self.total() // slice_files
             file_index = i // split_amount - 1
             float_index = i / split_amount
 
@@ -163,9 +159,7 @@ class Magmail:
         for mail in self.emails:
             rows = []
             for row in columns:
-                rows.append(
-                    getattr(mail, row, None)
-                )
+                rows.append(getattr(mail, row, None))
 
             series = pd.Series(rows)
             dataframe = pd.DataFrame(
