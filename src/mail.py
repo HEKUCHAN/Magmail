@@ -268,7 +268,7 @@ class Mail:
         self, header_values: Union[Optional[str], List[str]]
     ) -> Union[Optional[str], List[str]]:
         def clean(text: str) -> str:
-            text = text.replace("\r", "\n")
+            text = text.replace("/\R/", "\n")
             text = text.replace("\n", "")
             text = "".join(text.splitlines())
             text = text.strip()
