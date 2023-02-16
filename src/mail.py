@@ -21,6 +21,7 @@ from .static import (
 
 class Mail:
     failed_decode_count = 0
+    mail_count = 0
 
     def __init__(
         self,
@@ -33,6 +34,8 @@ class Mail:
         extends_extension_charset_list: Dict[str, str] = {},
         custom_clean_function: Optional[Callable[[str], str]] = None,
     ):
+        self.id = Mail.mail_count
+        Mail.mail_count += 1
         self.message: Union[Message, mboxMessage] = message
         self.auto_clean: bool = auto_clean
         self.is_multipart: bool = False
