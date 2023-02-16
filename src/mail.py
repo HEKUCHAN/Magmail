@@ -137,11 +137,7 @@ class Mail:
 
     @property
     def subject(self) -> Union[List[str], Optional[str]]:
-        subject = self.__subject
-        if self.auto_clean:
-            subject = self._header_clean_text(subject)
-
-        return subject
+        return self.__subject
 
     @property
     def date(self) -> Union[datetime, Optional[str]]:
@@ -251,10 +247,17 @@ class Mail:
             elif isinstance(byte, str):
                 header += byte
 
+        if self.auto_clean:
+            header = self._header_clean_text(header)
+
         return header
 
     @overload
-    def _header_clean_text(self, header_values: Optional[str]) -> Optional[str]:
+    def _header_clean_text(self, header_values: str) -> str:
+        ...
+
+    @overload
+    def _header_clean_text(self, header_values: None) -> None:
         ...
 
     @overload
