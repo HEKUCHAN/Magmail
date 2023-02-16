@@ -281,7 +281,6 @@ class Mail:
         def clean(text: str) -> str:
             text = text.replace("/\R/", "\n")
             text = text.replace("\n", "")
-            text = "".join(text.splitlines())
             text = text.strip()
             text = re.sub(r"http\S+", " ", text)
 
