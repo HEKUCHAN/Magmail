@@ -284,7 +284,6 @@ class Mail:
             text = "".join(text.splitlines())
             text = text.strip()
             text = re.sub(r"http\S+", " ", text)
-            text = re.sub(r"\u3000", "", text)
 
             return text
 
