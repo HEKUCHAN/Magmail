@@ -281,10 +281,12 @@ class Mail:
         def clean(text: str) -> str:
             text = text.replace("/\R/", "\n")
             text = text.replace("\n", "")
-            text = "".join(text.splitlines())
             text = text.strip()
             text = re.sub(r"http\S+", " ", text)
-            text = re.sub(r"\u3000", "", text)
+            text = re.sub('\s+', ' ', text)
+
+            if self.custom_clean_function is not None:
+                text = self.custom_clean_function(text)
 
             return text
 
@@ -297,8 +299,6 @@ class Mail:
 
     def _body_clean_text(self, clean_text: str) -> str:
         if clean_text is not None:
-            # 小文字化
-            clean_text = clean_text.lower()
             # HTMLのコメントを削除
             clean_text = re.sub(r"<!--[\s\S]*?-->*", "", clean_text)
             # Styleタグの削除
@@ -308,11 +308,7 @@ class Mail:
             # HTMLタグの削除
             clean_text = re.sub(r"<(\"[^\"]*\"|\'[^\']*\'|[^\'\">])*>", "", clean_text)
             # 行末記号を統一
-            clean_text = clean_text.replace("\r\n", "\n")
-            # 行末記号を統一
-            clean_text = clean_text.replace("\r", "\n")
-            # Unicodeの全角スペースを削除
-            clean_text = re.sub(r"\u3000", "", clean_text)
+            clean_text = clean_text.replace("/\R/", "\n")
             # URLの除去
             clean_text = re.sub(
                 r"(https?|ftp)(:\/\/[-_\.!~*\'()a-zA-Z0-9;\/?:\@&=\+\$,%#]+)",
@@ -323,18 +319,16 @@ class Mail:
             clean_text = re.sub(
                 r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+", " ", clean_text
             )
-            # {}の中身を消す
-            clean_text = re.sub(r"{.*?}", " ", clean_text)
-            # &と;の中身を消す
-            clean_text = re.sub(r"&.*?;", " ", clean_text)
-            # 末尾の空白・改行コードの削除
-            clean_text = "".join(clean_text.splitlines())
+            # 末尾の空白・最初の空白削除
+            clean_text = clean_text.strip()
             # 複数タブ削除
             clean_text = re.sub(r"\t+", "", clean_text)
-            # スペース削除
-            clean_text = re.sub(r"\s+", " ", clean_text)
             # 全角空白の除去
             clean_text = re.sub(r"　", " ", clean_text)
+            # Unicodeの全角スペースを削除
+            clean_text = re.sub(r"\u3000", " ", clean_text)
+            # スペース削除
+            clean_text = re.sub(r"\s+", " ", clean_text)
 
         return clean_text
 
