@@ -1,5 +1,6 @@
 import os
 import csv
+import math
 import email
 import mailbox
 import numpy as np
@@ -8,7 +9,7 @@ from pathlib import Path
 from io import TextIOWrapper
 from mailbox import mboxMessage
 from email.message import Message
-from typing import List, Optional, Union, Callable, Dict
+from typing import Generator, List, Optional, Union, Callable, Dict
 
 
 from .mail import Mail
@@ -250,6 +251,10 @@ class Magmail:
                     for message in mail_box:
                         self._append_mail(message)
 
+    def split_emails(self, n: int) -> Generator[list[Mail], None, None]:
+        for idx in range(0, self.total(), n):
+            yield self.emails[idx:idx + n]
+
     def export_csv(
         self,
         path: Union[str, Path] = "./mbox.csv",
@@ -270,7 +275,7 @@ class Magmail:
         csv_path = Utils.str_to_Path(path)
 
         if slice_files > 1:
-            if os.path.isdir(path):
+            if csv_path.is_dir():
                 if filename is None:
                     filename = Path("mbox.csv")
 
@@ -295,20 +300,16 @@ class Magmail:
         for path in files_path:
             files.append(open(path, "w", encoding=encoding, newline=""))
 
-        for i, mail in enumerate(self.emails):
-            split_amount = self.total() // slice_files
-            file_index = i // split_amount - 1
-            float_index = i / split_amount
-
+        file_index = 0
+        for splitted_emails in self.split_emails(math.ceil(self.total() / slice_files)):
             writer = csv.writer(files[file_index], quotechar='"')
-
-            if float_index.is_integer():
-                writer.writerow(columns)
-
-            rows = []
-            for row in columns:
-                rows.append(getattr(mail, row, None))
-            writer.writerow(rows)
+            writer.writerow(columns)
+            for mail in splitted_emails:
+                rows = []
+                for row in columns:
+                    rows.append(getattr(mail, row, None))
+                writer.writerow(rows)
+            file_index += 1
 
     def dataframe(
         self,
