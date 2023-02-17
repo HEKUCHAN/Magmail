@@ -148,10 +148,10 @@ class Magmail:
         self.custom_clean_function: Optional[
             Callable[[str], str]
         ] = custom_clean_function
-        if not os.path.exists(self.mbox_path):
+        if not self.mbox_path.exists():
             raise FileNotFoundError()
 
-        self.is_dir: bool = os.path.isdir(self.mbox_path)
+        self.is_dir: bool = self.mbox_path.is_dir()
         self.emails: List[Mail] = []
 
         self._parse()
@@ -212,13 +212,20 @@ class Magmail:
         """保留
         """
         self.eml_path = Utils.str_to_Path(eml_path)
-        if isinstance(eml_path, str):
-            self.eml_path = Path(eml_path)
+
+        if not self.mbox_path.exists():
+            raise FileNotFoundError()
+
+        if not self.eml_path.is_dir() and self.eml_path.suffix == ".eml":
+            with open(eml_path, "rb") as email_file:
+                message = email.message_from_bytes(email_file.read())
+                self._add_message(message)
         else:
-            self.eml_path = eml_path
-        with open(eml_path, "rb") as email_file:
-            message = email.message_from_bytes(email_file.read())
-            self._add_message(message)
+            for file in self.eml_path.iterdir():
+                if file.suffix == ".eml":
+                    with open(file, "rb") as email_file:
+                        message = email.message_from_bytes(email_file.read())
+                        self._add_message(message)
 
     def export_csv(
         self,
@@ -230,7 +237,7 @@ class Magmail:
         slice_files: int = 1,
     ) -> None:
         """Export all mails of this class to csv
-        
+
         """
         files: List[TextIOWrapper] = []
         files_path: List[Path] = []
