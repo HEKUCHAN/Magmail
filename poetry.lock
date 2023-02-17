@@ -696,6 +696,21 @@ sphinx = ">=2.0"
 dev = ["black (==19.10b0)"]
 
 [[package]]
+name = "sphinx-press-theme"
+version = "0.8.0"
+description = "A Sphinx-doc theme based on Vuepress"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "sphinx_press_theme-0.8.0-py3-none-any.whl", hash = "sha256:ddf877d414a2c66e13396d726115aa3f0c94d1ac9133b4df028c261bf388ab25"},
+    {file = "sphinx_press_theme-0.8.0.tar.gz", hash = "sha256:2884caab1dc01ecb11d158d4dd6d3179e2dd97cd48516c769cc27360272e62b3"},
+]
+
+[package.dependencies]
+sphinx = ">=4.0.1"
+
+[[package]]
 name = "sphinxcontrib-applehelp"
 version = "1.0.4"
 description = "sphinxcontrib-applehelp is a Sphinx extension which outputs Apple help books"
@@ -850,4 +865,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "7e9906f795d115828b148f8cbd4f70f781183fa8249862a30ee8ebd58acaf31e"
+content-hash = "7ffd53d92ee13be28397b390f9d381efbdbf0c144d390a2b4f91f7701739c4d7"
