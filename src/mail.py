@@ -309,8 +309,6 @@ class Mail:
             clean_text = re.sub(r"<(\"[^\"]*\"|\'[^\']*\'|[^\'\">])*>", "", clean_text)
             # 行末記号を統一
             clean_text = clean_text.replace("/\R/", "\n")
-            # Unicodeの全角スペースを削除
-            clean_text = re.sub(r"\u3000", " ", clean_text)
             # URLの除去
             clean_text = re.sub(
                 r"(https?|ftp)(:\/\/[-_\.!~*\'()a-zA-Z0-9;\/?:\@&=\+\$,%#]+)",
@@ -321,16 +319,14 @@ class Mail:
             clean_text = re.sub(
                 r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+", " ", clean_text
             )
-            # {}の中身を消す
-            clean_text = re.sub(r"{.*?}", " ", clean_text)
-            # &と;の中身を消す
-            clean_text = re.sub(r"&.*?;", " ", clean_text)
-            # 末尾の空白・改行コードの削除
-            clean_text = "".join(clean_text.splitlines())
+            # 末尾の空白・最初の空白削除
+            clean_text = clean_text.strip()
             # 複数タブ削除
             clean_text = re.sub(r"\t+", "", clean_text)
             # 全角空白の除去
             clean_text = re.sub(r"　", " ", clean_text)
+            # Unicodeの全角スペースを削除
+            clean_text = re.sub(r"\u3000", " ", clean_text)
             # スペース削除
             clean_text = re.sub(r"\s+", " ", clean_text)
 
