@@ -148,9 +148,6 @@ class Magmail:
         self.custom_clean_function: Optional[
             Callable[[str], str]
         ] = custom_clean_function
-        if not self.mbox_path.exists():
-            raise FileNotFoundError()
-
         self.is_dir: bool = self.mbox_path.is_dir()
         self.emails: List[Mail] = []
 
@@ -165,8 +162,20 @@ class Magmail:
             int: The number of decoded emails
         """
         return self.__len__()
+    
+    def _create_mail(self, message: Union[Message, mboxMessage]) -> Mail:
+        return Mail(
+            message,
+            auto_clean=self.auto_clean,
+            filter_content_type=self.filter_content_type,
+            trial_charset_list=self.trial_charset_list,
+            extends_trial_charset_list=self.extends_trial_charset_list,
+            custom_clean_function=self.custom_clean_function,
+            extension_charset_list=self.extension_charset_list,
+            extends_extension_charset_list=self.extends_extension_charset_list,
+        )
 
-    def _add_message(self, message: Union[Message, mboxMessage]) -> None:
+    def _append_mail(self, message: Union[Message, mboxMessage]) -> None:
         """Adds a mail in emails attribute.
 
         Change `Message` or `mboxMessage` class to `Mail` class and add instance was created in `emails` attribute
@@ -176,16 +185,7 @@ class Magmail:
                 Add `Message` or `mboxMessage` class to change to `Mail` class and add this instance in `emails` attribute
         """
         self.emails.append(
-            Mail(
-                message,
-                auto_clean=self.auto_clean,
-                filter_content_type=self.filter_content_type,
-                trial_charset_list=self.trial_charset_list,
-                extends_trial_charset_list=self.extends_trial_charset_list,
-                custom_clean_function=self.custom_clean_function,
-                extension_charset_list=self.extension_charset_list,
-                extends_extension_charset_list=self.extends_extension_charset_list,
-            )
+            self._create_mail(message)
         )
 
     def _parse(self) -> None:
@@ -196,36 +196,49 @@ class Magmail:
         Also, if any extensions other than `.mbox` exist in the directory, they are ignored.
 
         """
-        if not self.is_dir:
-            mail_box = mailbox.mbox(self.mbox_path)
-            for message in mail_box:
-                self._add_message(message)
-        else:
-            for file in os.listdir(self.mbox_path):
-                mail_box = mailbox.mbox(self.mbox_path / file)
-                for message in mail_box:
-                    self._add_message(message)
+        
+        self.add_mbox(self.mbox_path)
+
         print("Total of successfully parsed files: %d" % len(self))
         print("Total of failed to decode body or header: %d" % Mail.failed_decode_count)
 
     def add_mail(self, eml_path: Union[str, Path]) -> None:
         """保留
         """
-        self.eml_path = Utils.str_to_Path(eml_path)
+        eml_path = Utils.str_to_Path(eml_path)
+        filter_suffix = ".eml"
 
-        if not self.mbox_path.exists():
+        if not eml_path.exists():
             raise FileNotFoundError()
 
-        if not self.eml_path.is_dir() and self.eml_path.suffix == ".eml":
+        if eml_path.is_file() and eml_path.suffix == filter_suffix:
             with open(eml_path, "rb") as email_file:
                 message = email.message_from_bytes(email_file.read())
-                self._add_message(message)
-        else:
-            for file in self.eml_path.iterdir():
-                if file.suffix == ".eml":
+                self._append_mail(message)
+        elif eml_path.is_dir():
+            for file in eml_path.iterdir():
+                if file.suffix == filter_suffix:
                     with open(file, "rb") as email_file:
                         message = email.message_from_bytes(email_file.read())
-                        self._add_message(message)
+                        self._append_mail(message)
+
+    def add_mbox(self, mbox_path):
+        mbox_path = Utils.str_to_Path(mbox_path)
+        filter_suffix = ".mbox"
+
+        if not mbox_path.exists():
+            raise FileNotFoundError()
+
+        if mbox_path.is_file() and mbox_path.suffix == filter_suffix:
+            mail_box = mailbox.mbox(mbox_path)
+            for message in mail_box:
+                self._append_mail(message)
+        elif self.mbox_path.is_dir():
+            for file in mbox_path.iterdir():
+                if file.suffix == filter_suffix:
+                    mail_box = mailbox.mbox(file)
+                    for message in mail_box:
+                        self._append_mail(message)
 
     def export_csv(
         self,
