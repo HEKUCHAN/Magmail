@@ -9,7 +9,7 @@ from pathlib import Path
 from io import TextIOWrapper
 from mailbox import mboxMessage
 from email.message import Message
-from typing import List, Optional, Union, Callable, Dict
+from typing import Generator, List, Optional, Union, Callable, Dict
 
 
 from .mail import Mail
@@ -251,7 +251,7 @@ class Magmail:
                     for message in mail_box:
                         self._append_mail(message)
 
-    def split_emails(self, n: int):
+    def split_emails(self, n: int) -> Generator[list[Mail], None, None]:
         for idx in range(0, self.total(), n):
             yield self.emails[idx:idx + n]
 
