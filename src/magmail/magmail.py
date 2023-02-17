@@ -232,7 +232,7 @@ class Magmail:
                         message = email.message_from_bytes(email_file.read())
                         self._append_mail(message)
 
-    def add_mbox(self, mbox_path):
+    def add_mbox(self, mbox_path: Union[str, Path]) -> None:
         mbox_path = Utils.str_to_Path(mbox_path)
         filter_suffix = ".mbox"
 
