@@ -17,11 +17,121 @@ from .static import DEFAULT_COLUMNS
 
 
 class Magmail:
+    """Magmail class is a class to change `.mbox` file to csv file or `pandas.dataframe`
+
+    Magmail class is a class that can be used to gets email has in `.mbox` files.
+    Mails of `.mbox` files will automatically decode and if you want, you can clean them.
+    You can add mails of `.eml` or `.mbox` files in instantiated class.
+    if you add new mails in instantiated class, These emails will be added in the `emails` attribute of this class.
+
+    Attributes:
+        mbox_path (Union[str, Path]): Path of the `.mbox` file
+        auto_clean (bool):
+            Clean or not clean the body and header of the email in the `.mbox` file.
+            If you change to True, headers and body of mails will be automatically cleaned.
+            The following will be cleaned
+            Headers:
+                - Newlines will be removed
+                - First and last space will be removed
+                - Urls will be removed
+                - More than a blank will be a blank
+            Body:
+                - More than a blank will be a blank
+                - Comments of html will be removed
+                - HTML tags will be removed
+                - URLs will be removed
+                - Tabs will be removed
+                - Email addresses will be removed
+        filter_content_type (Union[List[str], Optional[str]])
+            You can filter the `Content-Type` header of emails
+            if set `text/plain` only plains text will be added in `body` attribute of Mail class.
+        trial_charset_list (:obj:`Optional[List[str]]`):
+            If failed to detect the charset of body or charset, The charsets of this list will be tried.
+        extends_trial_charset_list (:obj:`Optional[List[str]]`):
+            You can extends list of `trial_charset_list` attribute of Mail class.
+        extension_charset_list (:obj:`Optional[Dict[str, str]]`):
+            Sometimes `chardet` detect charset before extension,
+            You can change to extended charset.
+            Example, shift-jis and cp932
+        extends_extension_charset_list (Dict[str, str]):
+            You can extends default dict of `extension_charset_list` attribute of Mail class.
+        custom_clean_function (Callable[[str], str]):
+            
+        is_dir (bool):
+            if `mbox_path` attribute of this class is path of directory will be true
+        emails (List[Mail]):
+            All mails decoded from `.mbox` file will added in this list
+
+    Args:
+        mbox_path (Union[str, Path]):
+            path to the `.mbox` file
+            You can set directory path or `.mbox` file path.
+            If you set directory path, are mails of `.mbox` files in the directory will be changed to `Mail` class and it will add in the `emails` attribute of this class.
+        auto_clean (:obj:`bool`, Optional):
+            Default is False, if you want to clean the mails in `.mbox` files change to True.
+            If you change to True, headers and body of mails will be automatically cleaned.
+            The following will be cleaned.
+            Headers:
+                - Newlines will be removed
+                - First and last space will be removed
+                - Urls will be removed
+                - More than a blank will be a blank
+            Body:
+                - More than a blank will be a blank
+                - Comments of html will be removed
+                - HTML tags will be removed
+                - URLs will be removed
+                - Tabs will be removed
+                - Emails addresses will be removed
+        filter_content_type (:obj:`Union[List[str], Optional[str]]`, Optional):
+            Default value is `None`, You can filter the `Content-Type` header of emails
+        trial_charset_list (:obj:`Optional[List[str]]`, Optional):
+            Default value is `None`.
+            If failed to detect the charset of body or charset, The charsets of this list will be tried.
+        extends_trial_charset_list (:obj:`List[str]`, Optional):
+            Default value is `[]`, You can add new charsets in `trial_charset_list` attribute
+        extension_charset_list (:obj:`Optional[Dict[str, str]]`, Optional):
+            If you wants to change `extension_charset_list` attribute of Mail class, set the value type was documetioned
+        extends_extension_charset_list (Dict[str, str], Optional):
+            Default value is `{}`.
+            You can extends default dict of `extension_charset_list` attribute of Mail class.
+        custom_clean_function (:obj:`Optional[Callable[[str], str]]`, Optional):
+            You can set custom cleanup function.
+            This custom function will clean headers and body of mails.
+            The function has to return str, and the first argument should to can able to set str.
+
+    Raises:
+        FileNotFoundError: When not found mbox file will be raised.
+    
+    Examples:
+        If you want to add a custom cleanup function.
+        >>> def ecample_clean(text):
+                return text
+        >>> Magmail(
+                "path/to/mbox",
+                custom_clean_function=example_clean
+            )
+
+        If you want to filter `Content-Type` header of mail.
+        >>> Magmail(
+                "path/to/mbox",
+                filter_content_type="text/plain"
+            )
+        Also, if you want to filter many types of content, use the list
+        >>> Magmail(
+                "path/to/mbox",
+                filter_content_type=[
+                    "text/plain",
+                    "text/html"
+                ]
+            )
+
+    """
     def __init__(
         self,
         mbox_path: Union[str, Path],
         auto_clean: bool = True,
-        filter_content_type: Optional[str] = None,
+        filter_content_type: Union[List[str], Optional[str]] = None,
         trial_charset_list: Optional[List[str]] = None,
         extends_trial_charset_list: List[str] = [],
         extension_charset_list: Optional[Dict[str, str]] = None,
@@ -50,9 +160,21 @@ class Magmail:
         return len(self.emails)
 
     def total(self) -> int:
+        """Returns the number of decoded emails.
+        Returns:
+            int: The number of decoded emails
+        """
         return self.__len__()
 
     def _add_message(self, message: Union[Message, mboxMessage]) -> None:
+        """Adds a mail in emails attribute.
+
+        Change `Message` or `mboxMessage` class to `Mail` class and add instance was created in `emails` attribute
+
+        Args:
+            message (Union[Message, mboxMessage]):
+                Add `Message` or `mboxMessage` class to change to `Mail` class and add this instance in `emails` attribute
+        """
         self.emails.append(
             Mail(
                 message,
@@ -67,6 +189,13 @@ class Magmail:
         )
 
     def _parse(self) -> None:
+        """Change `.mbox`'s mail to `Mail` class
+
+        The mails of `.mbox` file will be changed to `Mail` class and it will be added in `emails` attribute of this class.
+        If path of `.mbox` is directory,  are mails of `.mbox` files in the directory will be changed to `Mail` class and it will add in the `emails` attribute of this class.
+        Also, if any extensions other than `.mbox` exist in the directory, they are ignored.
+
+        """
         if not self.is_dir:
             mail_box = mailbox.mbox(self.mbox_path)
             for message in mail_box:
@@ -80,6 +209,8 @@ class Magmail:
         print("Total of failed to decode body or header: %d" % Mail.failed_decode_count)
 
     def add_mail(self, eml_path: Union[str, Path]) -> None:
+        """保留
+        """
         self.eml_path = Utils.str_to_Path(eml_path)
         if isinstance(eml_path, str):
             self.eml_path = Path(eml_path)
@@ -98,6 +229,9 @@ class Magmail:
         extends_columns: List[str] = [],
         slice_files: int = 1,
     ) -> None:
+        """Export all mails of this class to csv
+        
+        """
         files: List[TextIOWrapper] = []
         files_path: List[Path] = []
         if extends_columns:
