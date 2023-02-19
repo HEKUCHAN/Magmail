@@ -1,1 +1,0 @@
-from .magmail import Magmail
