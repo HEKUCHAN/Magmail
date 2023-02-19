@@ -131,6 +131,7 @@ dmypy.json
 *.mbox
 sample_mbox/
 sample_csv/
+trash_sources/
 test_area.ipynb
 .vscode
 .DS_Store
