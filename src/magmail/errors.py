@@ -1,0 +1,2 @@
+class CannotDetectEncodingError(Exception):
+    pass
