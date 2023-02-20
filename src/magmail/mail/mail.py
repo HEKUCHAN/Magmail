@@ -27,11 +27,12 @@ class Mail:
 
         self.custom_clean_function = custom_clean_function
         self.headers: List[_Header] = []
+        self.add_header: Callable[[_Header], None] = self.headers.append
         self._get_headers()
 
     def _get_headers(self) -> None:
         for header in self.message.items():
-            self.headers.append(
+            self.add_header(
                 _Header(
                     header=header,
                     auto_clean=self.auto_clean,
