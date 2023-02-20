@@ -8,7 +8,7 @@ from typing import Any, Optional, Union, List, Dict, Callable
 
 from magmail.mail import Mail
 from magmail.utils import to_Path
-from magmail.static import DEFAULT_AUTO_CLEAN, DEFAULT_CUSTOM_FUNCTIONS_DICT
+from magmail.static import DEFAULT_AUTO_CLEAN, DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT
 
 
 class Magmail:
@@ -19,7 +19,7 @@ class Magmail:
         filter_contents: Dict[str, str] = {},
         custom_functions: Dict[
             str, Callable[[Any], Any]
-        ] = DEFAULT_CUSTOM_FUNCTIONS_DICT,
+        ] = DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT,
     ):
         self.mbox_path: Path = to_Path(mbox_path)
         self.auto_clean: bool = auto_clean
@@ -45,18 +45,12 @@ class Magmail:
         message: Union[Message, mboxMessage],
         path: Optional[Union[str, Path]] = None,
     ) -> Mail:
-        custom_function: Optional[Callable[[str], str]] = None
-
-        if self.custom_functions["all"] is not None:
-            custom_function = self.custom_functions["clean"]
-        elif self.custom_functions["headers"] is not None:
-            custom_function = self.custom_functions["headers"]
 
         return Mail(
             message=message,
             path=path,
             auto_clean=self.auto_clean,
-            custom_clean_function=custom_function,
+            custom_clean_functions=self.custom_functions,
         )
 
     def _append_mail(

@@ -21,6 +21,32 @@ NEW_LINE_REGEX: Pattern[str] = re.compile(r"\\R")
 
 URL_REGEX: Pattern[str] = re.compile(r"https?://[\w/:%#\$&\?\(\)~\.=\+\-]+")
 
+HTML_TAG_REGEX: Pattern[str] = re.compile(
+    r"<(\"[^\"]*\"|\'[^\']*\'|[^\'\">])*>"
+)
+
+HTML_COMMENTS_REGEX: Pattern[str] = re.compile(r"<!--[\s\S]*?-->*")
+
+HTML_STYLE_TAG_REGEX: Pattern[str] = re.compile(r"<style.*?>[\s\S]*<\/style>*")
+
+HTML_SCRIPT_TAG_REGEX: Pattern[str] = re.compile(r"<script.*?>[\s\S]*<\/script>*")
+
+MAIL_ADDRESS_REGEX: Pattern[str] = re.compile(
+    r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+"
+)
+
+TABS_REGEX: Pattern[str] = re.compile(
+    r"\t+"
+)
+
+FULL_WITH_SPACE_REGEX: Pattern[str] = re.compile(
+    r"　"
+)
+
+UNICODE_FULL_WITH_SPACE_REGEX: Pattern[str] = re.compile(
+    r"\u3000"
+)
+
 SPACES_REGEX: Pattern[str] = re.compile(r"\s+")
 
 # List
@@ -39,7 +65,7 @@ DEFAULT_COLUMNS: List[str] = [
 ]
 
 # Dict
-DEFAULT_CUSTOM_FUNCTIONS_DICT: Dict[str, Optional[Callable[[str], str]]] = {
+DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT: Dict[str, Optional[Callable[[str], str]]] = {
     "all": None,
     "headers": None,
     "body": None,

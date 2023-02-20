@@ -26,18 +26,18 @@ class _Header:
         body_parts = []
         for byte, encoding in decode_header(self.body):
             if isinstance(byte, bytes):
-                decoder: Decoder = Decoder(byte=byte, encoding=encoding)
-                decoder.decode()
+                self.decoder: Decoder = Decoder(byte=byte, encoding=encoding)
+                self.decoder.decode()
 
-                self.encoding.append(decoder.encoding)
-                body_parts.append(decoder.decoded)
+                self.encoding.append(self.decoder.encoding)
+                body_parts.append(self.decoder.decoded)
             elif isinstance(byte, str):
                 self.encoding.append(None)
                 body_parts.append(byte)
 
         self.body = "".join(body_parts)
 
-        if self.auto_clean and self.body is not None:
+        if self.auto_clean:
             self.body = self.clean_header_value(self.body)
 
     def clean_header_value(self, header_values: str) -> str:
@@ -52,7 +52,4 @@ class _Header:
 
             return value
 
-        if header_values is not None:
-            return clean(header_values)
-
-        return header_values
+        return clean(header_values)
