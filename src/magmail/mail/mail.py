@@ -1,12 +1,10 @@
-from typing import Callable, Optional, Union
 from mailbox import mboxMessage
 from email.message import Message
+from typing import Callable, List, Optional, Union
 
 
-from magmail.static import (
-    DEFAULT_AUTO_CLEAN
-)
 from .header import _Header
+from magmail.static import DEFAULT_AUTO_CLEAN
 
 
 class Mail:
@@ -16,7 +14,7 @@ class Mail:
         self,
         message: Union[Message, mboxMessage],
         auto_clean: bool = DEFAULT_AUTO_CLEAN,
-        custom_clean_function: Optional[Callable[[str], str]] = None
+        custom_clean_function: Optional[Callable[[str], str]] = None,
     ):
         self.index = Mail.total_instantiated
         Mail.total_instantiated += 1
@@ -26,17 +24,15 @@ class Mail:
         self.is_multipart = False
 
         self.custom_clean_function = custom_clean_function
-        self.headers = []
+        self.headers: List[_Header] = []
         self._get_headers()
 
-    def _get_headers(self):
+    def _get_headers(self) -> None:
         for header in self.message.items():
             self.headers.append(
                 _Header(
                     header=header,
                     auto_clean=self.auto_clean,
-                    custom_clean_function=self.custom_clean_function
+                    custom_clean_function=self.custom_clean_function,
                 )
             )
-
-

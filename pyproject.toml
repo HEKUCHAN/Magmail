@@ -18,3 +18,17 @@ sphinx-press-theme = "^0.8.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+warn_return_any = 'True'
+mypy_path = './out'
+
+[tool.mypy-numpy]
+ignore_missing_imports = 'True'
+
+[tool.mypy-pandas]
+ignore_missing_imports = 'True'
+
+[[tool.mypy.overrides]]
+module = "magmail.*"
+implicit_reexport = true

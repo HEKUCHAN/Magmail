@@ -11,25 +11,17 @@ ADDRESS_HEADER_REGEX: Pattern[str] = re.compile(
     r"[^, ].+?<[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}>|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
 )
 
-HEADER_NAME_REGEX: Pattern[str] = re.compile(
-    r".*?[^\s](?=<|\s+<)"
-)
+HEADER_NAME_REGEX: Pattern[str] = re.compile(r".*?[^\s](?=<|\s+<)")
 
 HEADER_MAIL_REGEX: Pattern[str] = re.compile(
     r"([^<>](?<=<)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?=>)|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})"
 )
 
-NEW_LINE_REGEX: Pattern[str] = re.compile(
-    r"\\R"
-)
+NEW_LINE_REGEX: Pattern[str] = re.compile(r"\\R")
 
-URL_REGEX: Pattern[str] = re.compile(
-    r"https?://[\w/:%#\$&\?\(\)~\.=\+\-]+"
-)
+URL_REGEX: Pattern[str] = re.compile(r"https?://[\w/:%#\$&\?\(\)~\.=\+\-]+")
 
-SPACES_REGEX: Pattern[str] = re.compile(
-    r"\s+"
-)
+SPACES_REGEX: Pattern[str] = re.compile(r"\s+")
 
 # List
 DEFAULT_COLUMNS: List[str] = [
