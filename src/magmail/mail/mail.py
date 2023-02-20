@@ -23,7 +23,6 @@ class Mail:
         self.message: Union[Message, mboxMessage] = message
         self.auto_clean = auto_clean
 
-        print(self.auto_clean, auto_clean)
         self.is_multipart = False
 
         self.custom_clean_function = custom_clean_function

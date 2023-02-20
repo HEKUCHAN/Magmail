@@ -20,7 +20,7 @@ HEADER_MAIL_REGEX: Pattern[str] = re.compile(
 )
 
 NEW_LINE_REGEX: Pattern[str] = re.compile(
-    r"/ \\R/"
+    r"\\R"
 )
 
 URL_REGEX: Pattern[str] = re.compile(
@@ -28,7 +28,7 @@ URL_REGEX: Pattern[str] = re.compile(
 )
 
 SPACES_REGEX: Pattern[str] = re.compile(
-    r"\\s+"
+    r"\s+"
 )
 
 # List
