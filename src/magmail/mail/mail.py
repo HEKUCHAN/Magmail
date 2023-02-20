@@ -1,7 +1,7 @@
+from pathlib import Path
 from mailbox import mboxMessage
 from email.message import Message
 from typing import Callable, List, Optional, Union
-
 
 from .header import _Header
 from magmail.static import DEFAULT_AUTO_CLEAN
@@ -14,8 +14,10 @@ class Mail:
         self,
         message: Union[Message, mboxMessage],
         auto_clean: bool = DEFAULT_AUTO_CLEAN,
+        path: Optional[Union[str, Path]] = None,
         custom_clean_function: Optional[Callable[[str], str]] = None,
     ):
+        self.path = path
         self.index = Mail.total_instantiated
         Mail.total_instantiated += 1
         self.message: Union[Message, mboxMessage] = message

@@ -1,6 +1,6 @@
 import re
 from re import Pattern
-from typing import List
+from typing import Callable, Dict, List, Optional
 
 # VARIABLES
 DEFAULT_AUTO_CLEAN = False
@@ -37,3 +37,10 @@ DEFAULT_COLUMNS: List[str] = [
     "is_multipart",
     "has_delivered_to",
 ]
+
+# Dict
+DEFAULT_CUSTOM_FUNCTIONS_DICT: Dict[str, Optional[Callable[[str], str]]] = {
+    "all": None,
+    "headers": None,
+    "body": None,
+}
