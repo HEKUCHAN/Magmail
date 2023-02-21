@@ -20,6 +20,7 @@ from magmail.static import (
     UNICODE_FULL_WITH_SPACE_REGEX,
 )
 
+
 class _Body:
     def __init__(
         self,
@@ -27,10 +28,7 @@ class _Body:
         auto_clean: bool = DEFAULT_AUTO_CLEAN,
         custom_clean_function: Optional[Callable[[str], str]] = None,
     ) -> None:
-        self.body: Dict[str, str] = {
-            "html": "",
-            "text": "",
-        }
+        self.body: Dict[str, str] = {"html": "", "text": ""}
         self.total_urls = 0
         self.total_addresses = 0
         self.message: Union[Message, mboxMessage] = message
@@ -40,9 +38,7 @@ class _Body:
         ] = custom_clean_function
 
         self.walk()
-        self.body = {
-            key:self.clean(value) for key, value in self.body.items()
-        }
+        self.body = {key: self.clean(value) for key, value in self.body.items()}
 
     def walk(self):
         def get_body():
@@ -100,7 +96,9 @@ class _Body:
 
             value, self.total_urls = URL_REGEX.subn("%URL%", value)
 
-            value, self.total_addresses = MAIL_ADDRESS_REGEX.subn("%MAIL_ADDRESS%", value)
+            value, self.total_addresses = MAIL_ADDRESS_REGEX.subn(
+                "%MAIL_ADDRESS%", value
+            )
 
             value = value.strip()
             value = TABS_REGEX.sub("", value)

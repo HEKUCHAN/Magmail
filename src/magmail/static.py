@@ -21,9 +21,7 @@ NEW_LINE_REGEX: Pattern[str] = re.compile(r"\\R")
 
 URL_REGEX: Pattern[str] = re.compile(r"https?://[\w/:%#\$&\?\(\)~\.=\+\-]+")
 
-HTML_TAG_REGEX: Pattern[str] = re.compile(
-    r"<(\"[^\"]*\"|\'[^\']*\'|[^\'\">])*>"
-)
+HTML_TAG_REGEX: Pattern[str] = re.compile(r"<(\"[^\"]*\"|\'[^\']*\'|[^\'\">])*>")
 
 HTML_COMMENTS_REGEX: Pattern[str] = re.compile(r"<!--[\s\S]*?-->*")
 
@@ -35,17 +33,13 @@ MAIL_ADDRESS_REGEX: Pattern[str] = re.compile(
     r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+"
 )
 
-TABS_REGEX: Pattern[str] = re.compile(
-    r"\t+"
-)
+TABS_REGEX: Pattern[str] = re.compile(r"\t+")
 
-FULL_WITH_SPACE_REGEX: Pattern[str] = re.compile(
-    r"　"
-)
+FULL_WITH_SPACE_REGEX: Pattern[str] = re.compile(r"　")
 
-UNICODE_FULL_WITH_SPACE_REGEX: Pattern[str] = re.compile(
-    r"\u3000"
-)
+UNICODE_FULL_WITH_SPACE_REGEX: Pattern[str] = re.compile(r"\u3000")
+
+IDENTIFIER = re.compile(r"^[^\d\W]\w*\Z", re.UNICODE)
 
 SPACES_REGEX: Pattern[str] = re.compile(r"\s+")
 

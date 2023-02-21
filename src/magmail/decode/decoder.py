@@ -7,11 +7,7 @@ from magmail.variant_charset import VARIANT_CHARSETS, STR_OR_CALLABLE_DICT_TYPE
 
 
 class Decoder:
-    def __init__(
-        self,
-        byte: bytes,
-        encoding: Optional[str],
-    ) -> None:
+    def __init__(self, byte: bytes, encoding: Optional[str]) -> None:
         self.byte = byte
         self.encoding: Optional[str] = encoding
         self.original_encoding: Optional[str] = None
