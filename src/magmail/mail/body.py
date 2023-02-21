@@ -1,3 +1,4 @@
+import html
 from pathlib import Path
 from mailbox import mboxMessage
 from email.message import Message
@@ -5,6 +6,7 @@ from typing import Callable, Dict, Optional, Union
 
 
 from magmail.decode import Decoder
+from magmail.magmail.filter import _Filter
 from magmail.static import (
     URL_REGEX,
     TABS_REGEX,
@@ -15,6 +17,7 @@ from magmail.static import (
     DEFAULT_AUTO_CLEAN,
     HTML_COMMENTS_REGEX,
     HTML_STYLE_TAG_REGEX,
+    FILTER_CONTENTS_TYPE,
     HTML_SCRIPT_TAG_REGEX,
     FULL_WITH_SPACE_REGEX,
     UNICODE_FULL_WITH_SPACE_REGEX,
@@ -26,19 +29,25 @@ class _Body:
         self,
         message: Union[Message, mboxMessage],
         auto_clean: bool = DEFAULT_AUTO_CLEAN,
+        filters: Dict[str, FILTER_CONTENTS_TYPE] = {},
         custom_clean_function: Optional[Callable[[str], str]] = None,
     ) -> None:
         self.body: Dict[str, str] = {"html": "", "text": ""}
+        self.original_body: Dict[str, str] = {"html": "", "text": ""}
         self.total_urls = 0
         self.total_addresses = 0
         self.message: Union[Message, mboxMessage] = message
         self.auto_clean = auto_clean
+        self.filters = _Filter(filters)
         self.custom_clean_function: Optional[
             Callable[[str], str]
         ] = custom_clean_function
 
         self.walk()
-        self.body = {key: self.clean(value) for key, value in self.body.items()}
+
+        if self.auto_clean:
+            self.original_body = self.body.copy()
+            self.body = {key: self.clean_body_value(value) for key, value in self.body.items()}
 
     def walk(self):
         def get_body():
@@ -64,6 +73,12 @@ class _Body:
             content_maintype = part.get_content_maintype()
             # self.attach_files = []
 
+            if (
+                self.filters.is_has("content_type")
+                and content_type not in self.filters["content_type"]
+            ):
+                continue
+
             if content_maintype == "multipart":
                 self.has_multipart = True
                 continue
@@ -82,10 +97,7 @@ class _Body:
             elif content_type == "text/html":
                 self.body["html"] = get_body()
 
-        if self.auto_clean:
-            self.body = self.clean_body_value(self.body)
-
-    def clean(self, body_value: str) -> str:
+    def clean_body_value(self, body_value: str) -> str:
         def clean(value: str) -> str:
             value = HTML_COMMENTS_REGEX.sub("", value)
             value = HTML_STYLE_TAG_REGEX.sub("", value)
@@ -99,6 +111,8 @@ class _Body:
             value, self.total_addresses = MAIL_ADDRESS_REGEX.subn(
                 "%MAIL_ADDRESS%", value
             )
+
+            value = html.unescape(value)
 
             value = value.strip()
             value = TABS_REGEX.sub("", value)

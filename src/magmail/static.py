@@ -1,9 +1,9 @@
 import re
 from re import Pattern
-from typing import Callable, Dict, List, Optional
+from typing import Callable, Dict, List, Optional, Union
 
 # VARIABLES
-DEFAULT_AUTO_CLEAN = False
+DEFAULT_AUTO_CLEAN = True
 
 
 # REGEX
@@ -19,7 +19,7 @@ HEADER_MAIL_REGEX: Pattern[str] = re.compile(
 
 NEW_LINE_REGEX: Pattern[str] = re.compile(r"\\R")
 
-URL_REGEX: Pattern[str] = re.compile(r"https?://[\w/:%#\$&\?\(\)~\.=\+\-]+")
+URL_REGEX: Pattern[str] = re.compile(r"(https?)(:\/\/[-_\.!~*\'()a-zA-Z0-9;\/?:\@&=\+\$,%#]+)")
 
 HTML_TAG_REGEX: Pattern[str] = re.compile(r"<(\"[^\"]*\"|\'[^\']*\'|[^\'\">])*>")
 
@@ -64,3 +64,6 @@ DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT: Dict[str, Optional[Callable[[str], str]]] =
     "headers": None,
     "body": None,
 }
+
+FILTER_CONTENTS_TYPE = Union[str, List[str]]
+DEFAULT_FILTER_CONTENTS_DICT: Dict[str, FILTER_CONTENTS_TYPE] = {"content_type": []}

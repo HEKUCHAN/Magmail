@@ -1,3 +1,4 @@
+import keyword
 from pathlib import Path
 from typing import Union
 
@@ -12,8 +13,10 @@ def to_attribute_name(name: str) -> str:
     name = name.lower()
     name = name.replace("-", "_")
 
-    if name.isidentifier():
-        return str
-    else:
+    if not name.isidentifier():
         name = name.replace(r"[^\x00-\x7F]", "")
-        return name
+
+    if name in keyword.kwlist:
+        name = f"h_{name}"
+
+    return name

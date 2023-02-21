@@ -4,11 +4,17 @@ import mailbox
 from pathlib import Path
 from mailbox import mboxMessage
 from email.message import Message
-from typing import Any, Optional, Union, List, Dict, Callable
+from typing import Any, Iterator, Optional, Union, List, Dict, Callable
 
+from .filter import _Filter
 from magmail.mail import Mail
 from magmail.utils import to_Path
-from magmail.static import DEFAULT_AUTO_CLEAN, DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT
+from magmail.static import (
+    DEFAULT_AUTO_CLEAN,
+    DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT,
+    DEFAULT_FILTER_CONTENTS_DICT,
+    FILTER_CONTENTS_TYPE,
+)
 
 
 class Magmail:
@@ -16,14 +22,14 @@ class Magmail:
         self,
         mbox_path: Union[str, Path],
         auto_clean: bool = DEFAULT_AUTO_CLEAN,
-        filter_contents: Dict[str, str] = {},
+        filters: Dict[str, FILTER_CONTENTS_TYPE] = DEFAULT_FILTER_CONTENTS_DICT.copy(),
         custom_functions: Dict[
             str, Callable[[Any], Any]
-        ] = DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT,
+        ] = DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT.copy(),
     ):
         self.mbox_path: Path = to_Path(mbox_path)
         self.auto_clean: bool = auto_clean
-        self.filter_contents: Dict[str, str] = filter_contents
+        self.filters: _Filter = _Filter(filters)
 
         self.emails: List[Mail] = []
         self.add_mail: Callable[[Mail], None] = self.emails.append
@@ -33,12 +39,20 @@ class Magmail:
 
     def __len__(self) -> int:
         return len(self.emails)
+    
+    def __iter__(self) -> Iterator[Mail]:
+        return iter(self.emails)
 
     def total(self) -> int:
         return self.__len__()
 
     def _parse(self) -> None:
-        self.add_mbox(self.mbox_path)
+        if self.mbox_path.suffix == ".mbox":
+            self.add_mbox(self.mbox_path)
+        elif self.mbox_path.suffix == ".eml":
+            self.add_eml(self.mbox_path)
+        else:
+            raise TypeError("Only supported .eml or .mbox files.")
 
     def _create_mail(
         self,
@@ -50,6 +64,7 @@ class Magmail:
             message=message,
             path=path,
             auto_clean=self.auto_clean,
+            filters=self.filters.filter_dict.copy(),
             custom_clean_functions=self.custom_functions,
         )
 

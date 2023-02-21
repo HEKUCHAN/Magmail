@@ -15,4 +15,4 @@ class _Filter:
         raise IndexError
 
     def is_has(self, key: str) -> bool:
-        return key in self.filter_dicts
+        return key in self.filter_dict
