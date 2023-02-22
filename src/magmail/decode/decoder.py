@@ -1,31 +1,37 @@
 import codecs
 import chardet
+from enum import Enum
 from typing import Callable, Optional, Union
 
 from magmail.errors import CannotDetectEncodingError
 from magmail.variant_charset import VARIANT_CHARSETS, STR_OR_CALLABLE_DICT_TYPE
 
 
-class Decoder:
-    def __init__(self, byte: bytes, encoding: Optional[str]) -> None:
+class _Decoder:
+    def __init__(
+            self,
+            byte: bytes,
+            encoding: Optional[str],
+            errors: Optional[str] = None,
+        ) -> None:
         self.byte = byte
         self.encoding: Optional[str] = encoding
+        self.errors = errors
         self.original_encoding: Optional[str] = None
+        # self.decoded: str = ""
 
     def detect_charset(self) -> None:
         self.original_encoding = self.encoding
         self.encoding = chardet.detect(self.byte)["encoding"]
 
         if self.encoding is None:
-            raise CannotDetectEncodingError(
-                "Can't detect encoding, Please tell to owner."
-            )
+            self._decode_error()
 
     def decode(self) -> None:
         if self.encoding:
             try:
                 self.decoded = codecs.decode(self.byte, encoding=self.encoding)
-            except UnicodeDecodeError:
+            except (UnicodeDecodeError, LookupError):
                 self.variant_decode()
         else:
             self.detect_charset()
@@ -42,14 +48,8 @@ class Decoder:
 
                 codecs.decode(self.byte, encoding=decoder)
                 self.encoding = decoder
-            except UnicodeDecodeError:
-                if self.original_encoding is None:
-                    self.detect_charset()
-                    self.decode()
-
-                raise CannotDetectEncodingError(
-                    "Can't detect encoding, Please tell to owner."
-                )
+            except (UnicodeDecodeError, LookupError):
+                pass
 
         if self.encoding is None:
             self.detect_charset()
@@ -64,4 +64,22 @@ class Decoder:
             for variant_charset in variant_decoder.values():
                 try_decode(self.byte, variant_charset)
 
-        raise CannotDetectEncodingError("Can't detect encoding, Please tell to owner.")
+        if self.original_encoding is None:
+            self.detect_charset()
+            self.decode()
+
+        self._decode_error()
+
+    def _warning_decode(self):
+        print("Warning!!! Decoding")
+        print(self.byte)
+        print(self.encoding)
+        self.decoded = ""
+
+    def _decode_error(self):
+        if self.errors is None or self.errors == "warning":
+            self._warning_decode()
+        elif self.errors == "ignore":
+            pass
+        elif self.errors == "exception":
+            raise CannotDetectEncodingError("Can't detect charset, so cannot to decode")

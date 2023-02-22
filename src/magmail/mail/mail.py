@@ -43,6 +43,7 @@ class Mail:
         self.filters = _Filter(filters)
         self.headers: List[_Header] = []
         self.add_header: Callable[[_Header], None] = self.headers.append
+
         self._get_headers()
         self._get_body()
 

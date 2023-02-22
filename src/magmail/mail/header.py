@@ -1,7 +1,7 @@
 from email.header import decode_header
 from typing import Any, Callable, Iterator, Optional, List, Tuple
 
-from magmail.decode import Decoder
+from magmail.decode import _Decoder
 from magmail.static import NEW_LINE_REGEX, URL_REGEX, SPACES_REGEX, DEFAULT_AUTO_CLEAN
 
 
@@ -26,10 +26,11 @@ class _Header:
         body_parts = []
         for byte, encoding in decode_header(self.body):
             if isinstance(byte, bytes):
-                self.decoder: Decoder = Decoder(byte=byte, encoding=encoding)
+                self.decoder: _Decoder = _Decoder(byte=byte, encoding=encoding)
                 self.decoder.decode()
 
                 self.encoding.append(self.decoder.encoding)
+
                 body_parts.append(self.decoder.decoded)
             elif isinstance(byte, str):
                 self.encoding.append(None)

@@ -5,7 +5,7 @@ from email.message import Message
 from typing import Callable, Dict, Optional, Union
 
 
-from magmail.decode import Decoder
+from magmail.decode import _Decoder
 from magmail.magmail.filter import _Filter
 from magmail.static import (
     URL_REGEX,
@@ -55,7 +55,7 @@ class _Body:
                 if isinstance(self.payload, str):
                     return self.payload
 
-                self.decoder: Decoder = Decoder(
+                self.decoder: _Decoder = _Decoder(
                     byte=self.payload, encoding=self.content_charset
                 )
                 self.decoder.decode()
