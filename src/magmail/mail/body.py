@@ -97,32 +97,29 @@ class _Body:
             elif content_type == "text/html":
                 self.body["html"] = get_body()
 
-    def clean_body_value(self, body_value: str) -> str:
-        def clean(value: str) -> str:
-            value = HTML_COMMENTS_REGEX.sub("", value)
-            value = HTML_STYLE_TAG_REGEX.sub("", value)
-            value = HTML_SCRIPT_TAG_REGEX.sub("", value)
-            value = HTML_TAG_REGEX.sub("", value)
+    def clean_body_value(self, value: str) -> str:
+        value = HTML_COMMENTS_REGEX.sub("", value)
+        value = HTML_STYLE_TAG_REGEX.sub("", value)
+        value = HTML_SCRIPT_TAG_REGEX.sub("", value)
+        value = HTML_TAG_REGEX.sub("", value)
 
-            value = NEW_LINE_REGEX.sub("\n", value)
+        value = NEW_LINE_REGEX.sub("\n", value)
 
-            value, self.total_urls = URL_REGEX.subn("%URL%", value)
+        value, self.total_urls = URL_REGEX.subn("%URL%", value)
 
-            value, self.total_addresses = MAIL_ADDRESS_REGEX.subn(
-                "%MAIL_ADDRESS%", value
-            )
+        value, self.total_addresses = MAIL_ADDRESS_REGEX.subn(
+            "%MAIL_ADDRESS%", value
+        )
 
-            value = html.unescape(value)
+        value = html.unescape(value)
 
-            value = value.strip()
-            value = TABS_REGEX.sub("", value)
-            value = FULL_WITH_SPACE_REGEX.sub("", value)
-            value = UNICODE_FULL_WITH_SPACE_REGEX.sub("", value)
-            value = SPACES_REGEX.sub(" ", value)
+        value = value.strip()
+        value = TABS_REGEX.sub("", value)
+        value = FULL_WITH_SPACE_REGEX.sub("", value)
+        value = UNICODE_FULL_WITH_SPACE_REGEX.sub("", value)
+        value = SPACES_REGEX.sub(" ", value)
 
-            if self.custom_clean_function is not None:
-                value = self.custom_clean_function(value)
+        if self.custom_clean_function is not None:
+            value = self.custom_clean_function(value)
 
-            return value
-
-        return clean(body_value)
+        return value
