@@ -32,8 +32,9 @@ class _Body:
         filters: Dict[str, FILTER_CONTENTS_TYPE] = {},
         custom_clean_function: Optional[Callable[[str], str]] = None,
     ) -> None:
-        self.body: Dict[str, str] = {"html": "", "text": ""}
-        self.original_body: Dict[str, str] = {"html": "", "text": ""}
+        self.body: Dict[str, str] = {"html": "", "plain": ""}
+        self.original_body: Dict[str, str] = {"html": "", "plain": ""}
+        self.content_charset: Dict[str, str] = {"html": "", "plain": ""}
         self.total_urls = 0
         self.total_addresses = 0
         self.message: Union[Message, mboxMessage] = message
@@ -46,17 +47,23 @@ class _Body:
         self.walk()
 
         if self.auto_clean:
-            self.original_body = self.body.copy()
-            self.body = {key: self.clean_body_value(value) for key, value in self.body.items()}
+            self.body = {key: self.clean_body_value(value) for key, value in self.body.items() if value is not None}
 
     def walk(self):
         def get_body():
-            if self.payload:
-                if isinstance(self.payload, str):
-                    return self.payload
+            payload = part.get_payload(decode=True)
+            content_charset = part.get_content_charset()
+            content_subtype = part.get_content_subtype()
+    
+            self.content_charset[content_subtype] = content_charset
+            self.original_body[content_subtype] = payload
+
+            if payload:
+                if isinstance(payload, str):
+                    return payload
 
                 self.decoder: _Decoder = _Decoder(
-                    byte=self.payload, encoding=self.content_charset
+                    byte=payload, encoding=self.content_charset[content_subtype]
                 )
                 self.decoder.decode()
 
@@ -89,11 +96,8 @@ class _Body:
             if attach_fname is not None:
                 continue
 
-            self.payload = part.get_payload(decode=True)
-            self.content_charset = part.get_content_charset()
-
             if content_type == "text/plain":
-                self.body["text"] = get_body()
+                self.body["plain"] = get_body()
             elif content_type == "text/html":
                 self.body["html"] = get_body()
 
