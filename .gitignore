@@ -137,3 +137,4 @@ test_area.ipynb
 .vscode
 .DS_Store
 debug.py
+.tmp.driveupload
