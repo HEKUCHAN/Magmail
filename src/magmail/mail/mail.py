@@ -1,14 +1,15 @@
 from pathlib import Path
 from mailbox import mboxMessage
 from email.message import Message
+from email.utils import parsedate_to_datetime
 from typing import Any, Callable, Dict, List, Optional, Union
 
-from magmail.utils import to_attribute_name
 
 from .body import _Body
 from .header import _Header
 from .custom import _CustomsFunctions
 from magmail.magmail.filter import _Filter
+from magmail.utils import to_attribute_name
 from magmail.static import (
     DEFAULT_AUTO_CLEAN,
     DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT,
@@ -46,6 +47,7 @@ class Mail:
 
         self._get_headers()
         self._get_body()
+        self._add_property()
 
     def __getitem__(self, key: str) -> Optional[str]:
         key = to_attribute_name(key)
@@ -53,6 +55,15 @@ class Mail:
             return getattr(self, key)
         else:
             return None
+        
+    def _add_property(self):
+        self.body = self._body.body
+        self.body_html = self._body.body_html
+        self.body_plain = self._body.body_plain
+
+        if type(self.date) is str:
+            self.date = parsedate_to_datetime(self.date)
+
 
     def _get_headers(self) -> None:
         for header in self.message.items():
@@ -74,6 +85,7 @@ class Mail:
         for field, body in self.headers:
             if not hasattr(self, to_attribute_name(field)):
                 setattr(self, to_attribute_name(field), body)
+
 
     def _get_body(self) -> None:
         custom_clean_function: Optional[Callable[[str], str]] = None

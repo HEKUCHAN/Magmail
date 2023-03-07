@@ -49,11 +49,15 @@ class _Body:
         if self.auto_clean:
             self.body = {key: self.clean_body_value(value) for key, value in self.body.items() if value is not None}
 
+        self.body_html = self.body['html']
+        self.body_plain = self.body['plain']
+
     def walk(self):
         def get_body():
             payload = part.get_payload(decode=True)
             content_charset = part.get_content_charset()
             content_subtype = part.get_content_subtype()
+            
     
             self.content_charset[content_subtype] = content_charset
             self.original_body[content_subtype] = payload
@@ -82,7 +86,7 @@ class _Body:
 
             if (
                 self.filters.is_has("content_type")
-                and content_type not in self.filters["content_type"]
+                and content_type in self.filters["content_type"]
             ):
                 continue
 

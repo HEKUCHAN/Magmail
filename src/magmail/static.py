@@ -47,16 +47,12 @@ SPACES_REGEX: Pattern = re.compile(r"\s+")
 DEFAULT_COLUMNS: List[str] = [
     "subject",
     "date",
-    "to_header",
-    "cc_header",
-    "from_header",
-    "body",
-    "has_file",
-    "attach_file_list",
-    "has_image",
-    "is_multipart",
-    "has_delivered_to",
+    "to",
+    "cc",
+    "h_from",
+    "body_plain"
 ]
+
 
 # Dict
 DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT: Dict[str, Optional[Callable[[str], str]]] = {
@@ -66,4 +62,6 @@ DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT: Dict[str, Optional[Callable[[str], str]]] =
 }
 
 FILTER_CONTENTS_TYPE = Union[str, List[str]]
-DEFAULT_FILTER_CONTENTS_DICT: Dict[str, FILTER_CONTENTS_TYPE] = {"content_type": []}
+DEFAULT_FILTER_CONTENTS_DICT: Dict[str, FILTER_CONTENTS_TYPE] = {
+    "content_type": []
+}

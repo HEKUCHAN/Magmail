@@ -103,7 +103,6 @@ def decode(byte, error="strict"):
                     ):
                         # NEC特殊文字 (`ESC $ B`)
                         joined_byte = join_hex(byte_1, byte_2)
-                        print(joined_byte)
                         byte_decoded.append(
                             chr(nec_map.get(joined_byte, 0x0000))
                         )
@@ -117,7 +116,8 @@ def decode(byte, error="strict"):
                             chr(nec_ibm_map.get(joined_byte, 0x0000))
                         )
     except StopIteration:
-        return "".join(byte_decoded)
+        decoded_string = "".join(byte_decoded)
+        return decoded_string, len(decoded_string)
 
 def search_iso_2022_jp_ms(name):
     alias_name = [

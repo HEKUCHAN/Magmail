@@ -37,9 +37,9 @@ class _Decoder:
                 if self.encoding == "unknown-8bit":
                     self.encoding = "shift-jis"
 
-                decoder = codecs.lookup(self.encoding)
+                codecs.lookup(self.encoding)
                 try:
-                    decoder.decode(self.byte)
+                    self.decoded = codecs.decode(self.byte, encoding=self.encoding)
                 except (UnicodeDecodeError, LookupError):
                     self.variant_decode()
             except LookupError:
