@@ -4,7 +4,11 @@ from enum import Enum
 from typing import Callable, Optional, Union
 
 from magmail.errors import CannotDetectEncodingError, UnknownEncodingType
+from magmail.decode.charsets import search_iso_2022_jp_ms
 from magmail.similar_charset import SIMILAR_CHARSET_DICT
+
+
+codecs.register(search_iso_2022_jp_ms)
 
 
 class _Decoder:
@@ -18,7 +22,7 @@ class _Decoder:
         self.encoding: Optional[str] = encoding
         self.errors = errors
         self.original_encoding: Optional[str] = None
-        self.decoded = None
+        self.decoded = ""
 
     def detect_charset(self) -> None:
         self.original_encoding = self.encoding
@@ -30,6 +34,9 @@ class _Decoder:
     def decode(self) -> None:
         if self.encoding:
             try:
+                if self.encoding == "unknown-8bit":
+                    self.encoding = "shift-jis"
+
                 decoder = codecs.lookup(self.encoding)
                 try:
                     decoder.decode(self.byte)
