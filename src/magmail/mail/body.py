@@ -47,18 +47,21 @@ class _Body:
         self.walk()
 
         if self.auto_clean:
-            self.body = {key: self.clean_body_value(value) for key, value in self.body.items() if value is not None}
+            self.body = {
+                key: self.clean_body_value(value)
+                for key, value in self.body.items()
+                if value is not None
+            }
 
-        self.body_html = self.body['html']
-        self.body_plain = self.body['plain']
+        self.body_html = self.body["html"]
+        self.body_plain = self.body["plain"]
 
     def walk(self):
         def get_body():
             payload = part.get_payload(decode=True)
             content_charset = part.get_content_charset()
             content_subtype = part.get_content_subtype()
-            
-    
+
             self.content_charset[content_subtype] = content_charset
             self.original_body[content_subtype] = payload
 
@@ -115,9 +118,7 @@ class _Body:
 
         value, self.total_urls = URL_REGEX.subn("%URL%", value)
 
-        value, self.total_addresses = MAIL_ADDRESS_REGEX.subn(
-            "%MAIL_ADDRESS%", value
-        )
+        value, self.total_addresses = MAIL_ADDRESS_REGEX.subn("%MAIL_ADDRESS%", value)
 
         value = html.unescape(value)
 

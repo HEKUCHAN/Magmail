@@ -55,7 +55,7 @@ class Mail:
             return getattr(self, key)
         else:
             return None
-        
+
     def _add_property(self):
         self.body = self._body.body
         self.body_html = self._body.body_html
@@ -63,7 +63,6 @@ class Mail:
 
         if type(self.date) is str:
             self.date = parsedate_to_datetime(self.date)
-
 
     def _get_headers(self) -> None:
         for header in self.message.items():
@@ -85,7 +84,6 @@ class Mail:
         for field, body in self.headers:
             if not hasattr(self, to_attribute_name(field)):
                 setattr(self, to_attribute_name(field), body)
-
 
     def _get_body(self) -> None:
         custom_clean_function: Optional[Callable[[str], str]] = None

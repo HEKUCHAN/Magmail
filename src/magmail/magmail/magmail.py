@@ -42,7 +42,7 @@ class Magmail:
 
     def __len__(self) -> int:
         return len(self.emails)
-    
+
     def __iter__(self) -> Iterator[Mail]:
         return iter(self.emails)
 
@@ -117,7 +117,7 @@ class Magmail:
 
     def split_emails(self, n: int) -> Generator[list[Mail], None, None]:
         for idx in range(0, self.total(), n):
-            yield self.emails[idx:idx + n]
+            yield self.emails[idx : idx + n]
 
     def export_csv(
         self,
@@ -128,15 +128,13 @@ class Magmail:
         extends_columns: List[str] = [],
         slice_files: int = 1,
     ) -> None:
-        """Export all mails of this class to csv
-
-        """
+        """Export all mails of this class to csv"""
         files: List[TextIOWrapper] = []
         files_path: List[Path] = []
         if extends_columns:
             columns.extend(extends_columns)
 
-        csv_path =to_Path(path)
+        csv_path = to_Path(path)
 
         if slice_files > 1:
             if csv_path.is_dir():

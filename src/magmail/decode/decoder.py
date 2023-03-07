@@ -13,11 +13,11 @@ codecs.register(search_iso_2022_jp_ms)
 
 class _Decoder:
     def __init__(
-            self,
-            byte: bytes,
-            encoding: Optional[str],
-            errors: Optional[str] = None,
-        ) -> None:
+        self,
+        byte: bytes,
+        encoding: Optional[str],
+        errors: Optional[str] = None,
+    ) -> None:
         self.byte = byte
         self.encoding: Optional[str] = encoding
         self.errors = errors

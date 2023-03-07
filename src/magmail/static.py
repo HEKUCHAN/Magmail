@@ -19,7 +19,9 @@ HEADER_MAIL_REGEX: Pattern = re.compile(
 
 NEW_LINE_REGEX: Pattern = re.compile(r"\\R")
 
-URL_REGEX: Pattern = re.compile(r"(https?)(:\/\/[-_\.!~*\'()a-zA-Z0-9;\/?:\@&=\+\$,%#]+)")
+URL_REGEX: Pattern = re.compile(
+    r"(https?)(:\/\/[-_\.!~*\'()a-zA-Z0-9;\/?:\@&=\+\$,%#]+)"
+)
 
 HTML_TAG_REGEX: Pattern = re.compile(r"<(\"[^\"]*\"|\'[^\']*\'|[^\'\">])*>")
 
@@ -44,14 +46,7 @@ IDENTIFIER = re.compile(r"^[^\d\W]\w*\Z", re.UNICODE)
 SPACES_REGEX: Pattern = re.compile(r"\s+")
 
 # List
-DEFAULT_COLUMNS: List[str] = [
-    "subject",
-    "date",
-    "to",
-    "cc",
-    "h_from",
-    "body_plain"
-]
+DEFAULT_COLUMNS: List[str] = ["subject", "date", "to", "cc", "h_from", "body_plain"]
 
 
 # Dict
@@ -62,6 +57,4 @@ DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT: Dict[str, Optional[Callable[[str], str]]] =
 }
 
 FILTER_CONTENTS_TYPE = Union[str, List[str]]
-DEFAULT_FILTER_CONTENTS_DICT: Dict[str, FILTER_CONTENTS_TYPE] = {
-    "content_type": []
-}
+DEFAULT_FILTER_CONTENTS_DICT: Dict[str, FILTER_CONTENTS_TYPE] = {"content_type": []}
