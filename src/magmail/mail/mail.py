@@ -56,12 +56,12 @@ class Mail:
         else:
             return None
 
-    def _add_property(self):
+    def _add_property(self) -> None:
         self.body = self._body.body
         self.body_html = self._body.body_html
         self.body_plain = self._body.body_plain
 
-        if type(self.date) is str:
+        if isinstance(self.date, str):
             self.date = parsedate_to_datetime(self.date)
 
     def _get_headers(self) -> None:

@@ -74,14 +74,14 @@ class _Decoder:
 
         self.__decode_error()
 
-    def _warning_decode(self):
+    def _warning_decode(self) -> None:
         print("Warning!!! Decoding")
         print("Encoding: ", self.encoding)
         print("Body: ")
         print(self.byte)
         print("=" * 32)
 
-    def __unknown_encoding_error(self):
+    def __unknown_encoding_error(self) -> None:
         if self.errors == "warning" or self.errors is None:
             print("UNKNOWN")
             self._warning_decode()
@@ -90,7 +90,7 @@ class _Decoder:
         elif self.errors == "ignore":
             pass
 
-    def __decode_error(self):
+    def __decode_error(self) -> None:
         if self.errors == "warning" or self.errors is None:
             print("ERROR")
             self._warning_decode()

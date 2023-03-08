@@ -56,8 +56,8 @@ class _Body:
         self.body_html = self.body["html"]
         self.body_plain = self.body["plain"]
 
-    def walk(self):
-        def get_body():
+    def walk(self) -> None:
+        def get_body() -> str:
             payload = part.get_payload(decode=True)
             content_charset = part.get_content_charset()
             content_subtype = part.get_content_subtype()
