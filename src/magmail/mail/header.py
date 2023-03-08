@@ -41,16 +41,13 @@ class _Header:
         if self.auto_clean:
             self.body = self.clean_header_value(self.body)
 
-    def clean_header_value(self, header_values: str) -> str:
-        def clean(value: str) -> str:
-            value = NEW_LINE_REGEX.sub("", value)
-            value = value.strip()
-            value = URL_REGEX.sub(" ", value)
-            value = SPACES_REGEX.sub(" ", value)
+    def clean_header_value(self, value: str) -> str:
+        value = NEW_LINE_REGEX.sub("", value)
+        value = value.strip()
+        value = URL_REGEX.sub(" ", value)
+        value = SPACES_REGEX.sub(" ", value)
 
-            if self.custom_clean_function is not None:
-                value = self.custom_clean_function(value)
+        if self.custom_clean_function is not None:
+            value = self.custom_clean_function(value)
 
-            return value
-
-        return clean(header_values)
+        return value
