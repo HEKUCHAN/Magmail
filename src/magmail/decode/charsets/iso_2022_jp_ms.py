@@ -12,7 +12,7 @@ from magmail.decode.mappings import (
 )
 
 
-def decode(byte: bytes, error: str="strict") -> Tuple[str, int]:
+def decode(byte: Union[bytes, str], error: str="strict") -> Tuple[str, int]:
     if isinstance(byte, str):
         return (byte, len(byte))
 
