@@ -129,9 +129,12 @@ dmypy.json
 .pyre/
 
 *.mbox
+sample_notes/
 sample_mbox/
 sample_csv/
+trash_sources/
 test_area.ipynb
 .vscode
 .DS_Store
 debug.py
+.tmp.driveupload
