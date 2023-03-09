@@ -57,7 +57,7 @@ CUSTOM_FUNCTIONS_DICT: Dict[str, Dict[str, Callable[[Any], Any]]] = {
         "all": None,
         "body": None,
         "header": None,
-    }
+    },
 }
 
 CHANGE_HEADER_TYPE_FUNCTIONS = {

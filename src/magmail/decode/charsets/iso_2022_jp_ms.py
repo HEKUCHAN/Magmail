@@ -12,13 +12,18 @@ from magmail.decode.mappings import (
 )
 
 
-def decode(byte: Union[bytes, str], error: str="strict") -> Tuple[str, int]:
+def decode(byte: Union[bytes, str], error: str = "strict") -> Tuple[str, int]:
     if isinstance(byte, str):
         return (byte, len(byte))
 
     byte_decoded: List[str] = []
-    byte_array: Iterator[int] = iter(array.array("B", byte)) 
-    decode_type: Dict[str, bool] = {"ascii": False, "katakana": False, "jis78": False, "jis90": False}
+    byte_array: Iterator[int] = iter(array.array("B", byte))
+    decode_type: Dict[str, bool] = {
+        "ascii": False,
+        "katakana": False,
+        "jis78": False,
+        "jis90": False,
+    }
 
     def set_decode_type(key: str) -> None:
         for value in decode_type.keys():

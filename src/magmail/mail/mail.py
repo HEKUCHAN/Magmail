@@ -5,7 +5,6 @@ from email.utils import parsedate_to_datetime
 from typing import Any, Callable, Dict, List, Optional, Union
 
 
-
 from .body import _Body
 from .header import _Header
 from .headers import _Headers
@@ -42,7 +41,9 @@ class Mail:
 
         self.custom_functions: CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = custom_functions
         self.filters = _Filter(filters)
-        self.headers: _Headers = _Headers(custom_functions=self.custom_functions["headers"].copy())
+        self.headers: _Headers = _Headers(
+            custom_functions=self.custom_functions["headers"].copy()
+        )
         self.add_header: Callable[[_Header], None] = self.headers.add_header
 
         self._get_headers()
@@ -65,9 +66,13 @@ class Mail:
 
             if "clean_functions" in self.custom_functions:
                 if "all" in self.custom_functions["clean_functions"]:
-                    custom_clean_function = self.custom_functions["clean_functions"]["all"]
+                    custom_clean_function = self.custom_functions["clean_functions"][
+                        "all"
+                    ]
                 elif "headers" in self.custom_functions["clean_functions"]:
-                    custom_clean_function = self.custom_functions["clean_functions"]["headers"]
+                    custom_clean_function = self.custom_functions["clean_functions"][
+                        "headers"
+                    ]
 
             self.add_header(
                 _Header(

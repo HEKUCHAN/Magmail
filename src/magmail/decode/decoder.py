@@ -76,7 +76,7 @@ class _Decoder:
 
     def _warning_decode(self) -> None:
         print("Warning!!! Decoding")
-        print("Encoding: ", self.encoding)
+        print("Encoding:", self.encoding)
         print("Body: ")
         print(self.byte)
         print("=" * 32)

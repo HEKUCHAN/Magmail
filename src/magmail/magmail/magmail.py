@@ -29,19 +29,20 @@ class Magmail:
         custom_functions: Dict[
             str, Dict[str, Callable[[Any], Any]]
         ] = CUSTOM_FUNCTIONS_DICT.copy(),
-        drop_duplicates: bool=True,
+        drop_duplicates: bool = True,
     ):
         self.mbox_path: Path = to_Path(mbox_path)
         self.auto_clean: bool = auto_clean
         self.filters: _Filter = _Filter(filters)
-        self.custom_functions: Dict[str, Dict[str, Callable[[Any], Any]]] = custom_functions
+        self.custom_functions: Dict[
+            str, Dict[str, Callable[[Any], Any]]
+        ] = custom_functions
         self.drop_duplicates = drop_duplicates
 
         self.emails: List[Mail] = []
         self.add_mail: Callable[[Mail], None] = self.emails.append
 
         self._parse()
-
 
     def __len__(self) -> int:
         return len(self.emails)
@@ -78,7 +79,7 @@ class Magmail:
         self,
         message: Union[Message, mboxMessage],
         path: Optional[Union[str, Path]] = None,
-        drop_duplicates=True
+        drop_duplicates=True,
     ) -> None:
         if drop_duplicates and self.is_mail_exist(message):
             return
@@ -102,13 +103,19 @@ class Magmail:
             mail_box = mailbox.mbox(mbox_path)
 
             for message in mail_box:
-                self._append_mail(message, self.mbox_path, drop_duplicates=self.drop_duplicates)
+                self._append_mail(
+                    message, self.mbox_path, drop_duplicates=self.drop_duplicates
+                )
         elif self.mbox_path.is_dir():
             for file in mbox_path.iterdir():
                 if mbox_path.suffix == filter_suffix:
                     mail_box = mailbox.mbox(file)
                     for message in mail_box:
-                        self._append_mail(message, self.mbox_path, drop_duplicates=self.drop_duplicates)
+                        self._append_mail(
+                            message,
+                            self.mbox_path,
+                            drop_duplicates=self.drop_duplicates,
+                        )
 
     def add_eml(self, eml_path: Union[str, Path]) -> None:
         eml_path = to_Path(eml_path)
@@ -120,13 +127,17 @@ class Magmail:
         if eml_path.is_file() and eml_path.suffix == filter_suffix:
             with open(eml_path, "rb") as email_file:
                 message = email.message_from_bytes(email_file.read())
-                self._append_mail(message, eml_path, drop_duplicates=self.drop_duplicates)
+                self._append_mail(
+                    message, eml_path, drop_duplicates=self.drop_duplicates
+                )
         elif eml_path.is_dir():
             for file in eml_path.iterdir():
                 if file.suffix == filter_suffix:
                     with open(file, "rb") as email_file:
                         message = email.message_from_bytes(email_file.read())
-                        self._append_mail(message, eml_path, drop_duplicates=self.drop_duplicates)
+                        self._append_mail(
+                            message, eml_path, drop_duplicates=self.drop_duplicates
+                        )
 
     def split_emails(self, n: int) -> Generator[list[Mail], None, None]:
         for idx in range(0, self.total(), n):
