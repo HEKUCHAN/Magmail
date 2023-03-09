@@ -69,7 +69,7 @@ class _Headers:
 
     def __dict__(self):
         return {field:body for field, body in self.__headers}
-    
+
     def __iter__(self):
         self.i = 0
         return self
