@@ -47,7 +47,10 @@ class Mail:
 
         self._get_headers()
         self._get_body()
-        self._add_property()
+
+        self.body = self._body.body
+        self.body_html = self._body.body_html
+        self.body_plain = self._body.body_plain
 
     def __getitem__(self, key: str) -> Optional[str]:
         key = to_attribute_name(key)
@@ -55,11 +58,6 @@ class Mail:
             return getattr(self, key)
         else:
             return None
-
-    def _add_property(self) -> None:
-        self.body = self._body.body
-        self.body_html = self._body.body_html
-        self.body_plain = self._body.body_plain
 
     def _get_headers(self) -> None:
         for header in self.message.items():
