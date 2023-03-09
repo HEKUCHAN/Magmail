@@ -5,15 +5,17 @@ from email.utils import parsedate_to_datetime
 from typing import Any, Callable, Dict, List, Optional, Union
 
 
+
 from .body import _Body
 from .header import _Header
-from .custom import _CustomsFunctions
+from .headers import _Headers
 from magmail.magmail.filter import _Filter
 from magmail.utils import to_attribute_name
 from magmail.static import (
     DEFAULT_AUTO_CLEAN,
-    DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT,
     FILTER_CONTENTS_TYPE,
+    CUSTOM_FUNCTIONS_DICT,
+    CUSTOM_FUNCTIONS_ROOT_DICT_TYPE,
 )
 
 
@@ -26,9 +28,9 @@ class Mail:
         auto_clean: bool = DEFAULT_AUTO_CLEAN,
         path: Optional[Union[str, Path]] = None,
         filters: Dict[str, FILTER_CONTENTS_TYPE] = {},
-        custom_clean_functions: Dict[
-            str, Optional[Callable[[Any], Any]]
-        ] = DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT.copy(),
+        custom_functions: Dict[
+            str, Dict[str, Callable[[Any], Any]]
+        ] = CUSTOM_FUNCTIONS_DICT.copy(),
     ):
         self.path = path
         self.index = Mail.total_instantiated
@@ -38,12 +40,10 @@ class Mail:
 
         self.has_multipart: bool = False
 
-        self.custom_clean_function: _CustomsFunctions = _CustomsFunctions(
-            custom_clean_functions
-        )
+        self.custom_functions: CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = custom_functions
         self.filters = _Filter(filters)
-        self.headers: List[_Header] = []
-        self.add_header: Callable[[_Header], None] = self.headers.append
+        self.headers: _Headers = _Headers(custom_functions=self.custom_functions["headers"].copy())
+        self.add_header: Callable[[_Header], None] = self.headers.add_header
 
         self._get_headers()
         self._get_body()
@@ -61,17 +61,15 @@ class Mail:
         self.body_html = self._body.body_html
         self.body_plain = self._body.body_plain
 
-        if isinstance(self.date, str):
-            self.date = parsedate_to_datetime(self.date)
-
     def _get_headers(self) -> None:
         for header in self.message.items():
             custom_clean_function: Optional[Callable[[str], str]] = None
 
-            if self.custom_clean_function.is_has("all"):
-                custom_clean_function = self.custom_clean_function["all"]
-            elif self.custom_clean_function.is_has("headers"):
-                custom_clean_function = self.custom_clean_function["headers"]
+            if "clean_functions" in self.custom_functions:
+                if "all" in self.custom_functions["clean_functions"]:
+                    custom_clean_function = self.custom_functions["clean_functions"]["all"]
+                elif "headers" in self.custom_functions["clean_functions"]:
+                    custom_clean_function = self.custom_functions["clean_functions"]["headers"]
 
             self.add_header(
                 _Header(
@@ -81,17 +79,14 @@ class Mail:
                 )
             )
 
-        for field, body in self.headers:
-            if not hasattr(self, to_attribute_name(field)):
-                setattr(self, to_attribute_name(field), body)
-
     def _get_body(self) -> None:
         custom_clean_function: Optional[Callable[[str], str]] = None
 
-        if self.custom_clean_function.is_has("all"):
-            custom_clean_function = self.custom_clean_function["all"]
-        elif self.custom_clean_function.is_has("body"):
-            custom_clean_function = self.custom_clean_function["body"]
+        if "clean_functions" in self.custom_functions:
+            if "all" in self.custom_functions["clean_functions"]:
+                custom_clean_function = self.custom_functions["clean_functions"]["all"]
+            elif "body" in self.custom_functions["clean_functions"]:
+                custom_clean_function = self.custom_functions["clean_functions"]["body"]
 
         self._body: _Body = _Body(
             self.message,

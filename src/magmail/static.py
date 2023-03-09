@@ -1,6 +1,7 @@
 import re
 from re import Pattern
-from typing import Callable, Dict, List, Optional, Union
+from email.utils import parsedate_to_datetime
+from typing import Any, Callable, Dict, List, Optional, Union
 
 # VARIABLES
 DEFAULT_AUTO_CLEAN = True
@@ -50,11 +51,22 @@ DEFAULT_COLUMNS: List[str] = ["subject", "date", "to", "cc", "h_from", "body_pla
 
 
 # Dict
-DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT: Dict[str, Optional[Callable[[str], str]]] = {
-    "all": None,
-    "headers": None,
-    "body": None,
+CUSTOM_FUNCTIONS_DICT: Dict[str, Dict[str, Callable[[Any], Any]]] = {
+    "headers": {},
+    "clean_functions": {
+        "all": None,
+        "body": None,
+        "header": None,
+    }
 }
 
+CHANGE_HEADER_TYPE_FUNCTIONS = {
+    "Date": parsedate_to_datetime,
+}
+
+
+# Type
 FILTER_CONTENTS_TYPE = Union[str, List[str]]
+CUSTOM_FUNCTIONS_DICT_TYPE = Dict[str, Callable[[Any], Any]]
+CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = Dict[str, CUSTOM_FUNCTIONS_DICT_TYPE]
 DEFAULT_FILTER_CONTENTS_DICT: Dict[str, FILTER_CONTENTS_TYPE] = {"content_type": []}

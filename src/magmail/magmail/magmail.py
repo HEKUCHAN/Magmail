@@ -14,7 +14,7 @@ from magmail.utils import to_Path
 from magmail.static import (
     DEFAULT_AUTO_CLEAN,
     DEFAULT_COLUMNS,
-    DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT,
+    CUSTOM_FUNCTIONS_DICT,
     DEFAULT_FILTER_CONTENTS_DICT,
     FILTER_CONTENTS_TYPE,
 )
@@ -27,8 +27,8 @@ class Magmail:
         auto_clean: bool = DEFAULT_AUTO_CLEAN,
         filters: Dict[str, FILTER_CONTENTS_TYPE] = DEFAULT_FILTER_CONTENTS_DICT.copy(),
         custom_functions: Dict[
-            str, Callable[[Any], Any]
-        ] = DEFAULT_CUSTOM_CLEAN_FUNCTIONS_DICT.copy(),
+            str, Dict[str, Callable[[Any], Any]]
+        ] = CUSTOM_FUNCTIONS_DICT.copy(),
     ):
         self.mbox_path: Path = to_Path(mbox_path)
         self.auto_clean: bool = auto_clean
@@ -36,7 +36,7 @@ class Magmail:
 
         self.emails: List[Mail] = []
         self.add_mail: Callable[[Mail], None] = self.emails.append
-        self.custom_functions: Dict[str, Callable[[Any], Any]] = custom_functions
+        self.custom_functions: Dict[str, Dict[str, Callable[[Any], Any]]] = custom_functions
 
         self._parse()
 
@@ -68,7 +68,7 @@ class Magmail:
             path=path,
             auto_clean=self.auto_clean,
             filters=self.filters.filter_dict.copy(),
-            custom_clean_functions=self.custom_functions,
+            custom_functions=self.custom_functions,
         )
 
     def _append_mail(
