@@ -127,4 +127,4 @@ def search_iso_2022_jp_ms(name: str) -> Union[None, CodecInfo]:
     if name not in alias_name:
         return None
 
-    return CodecInfo(name="iso2022_jp_ms", encode=None, decode=decode)
+    return CodecInfo(name="iso2022_jp_ms", decode=decode)

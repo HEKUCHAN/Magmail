@@ -32,9 +32,9 @@ class _Body:
         filters: Dict[str, FILTER_CONTENTS_TYPE] = {},
         custom_clean_function: Optional[Callable[[str], str]] = None,
     ) -> None:
-        self.body: Dict[str, str] = {"html": "", "plain": ""}
-        self.original_body: Dict[str, str] = {"html": "", "plain": ""}
-        self.content_charset: Dict[str, str] = {"html": "", "plain": ""}
+        self.body: Dict[str, Optional[str]] = {"html": "", "plain": ""}
+        self.original_body: Dict[str, Optional[str]] = {"html": "", "plain": ""}
+        self.content_charset: Dict[str, Optional[str]] = {"html": "", "plain": ""}
         self.total_urls = 0
         self.total_addresses = 0
         self.message: Union[Message, mboxMessage] = message

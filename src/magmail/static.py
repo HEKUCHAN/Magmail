@@ -6,6 +6,11 @@ from typing import Any, Callable, Dict, List, Optional, Union
 # VARIABLES
 DEFAULT_AUTO_CLEAN = True
 
+# Type
+FILTER_CONTENTS_TYPE = Union[str, List[str]]
+CUSTOM_FUNCTIONS_DICT_TYPE = Dict[str, Optional[Callable[[Any], Any]]]
+CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = Dict[str, CUSTOM_FUNCTIONS_DICT_TYPE]
+DEFAULT_FILTER_CONTENTS_DICT: Dict[str, FILTER_CONTENTS_TYPE] = {"content_type": []}
 
 # REGEX
 ADDRESS_HEADER_REGEX: Pattern[str] = re.compile(
@@ -51,7 +56,7 @@ DEFAULT_COLUMNS: List[str] = ["subject", "date", "to", "cc", "h_from", "body_pla
 
 
 # Dict
-CUSTOM_FUNCTIONS_DICT: Dict[str, Dict[str, Callable[[Any], Any]]] = {
+CUSTOM_FUNCTIONS_DICT: CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = {
     "headers": {},
     "clean_functions": {
         "all": None,
@@ -63,10 +68,3 @@ CUSTOM_FUNCTIONS_DICT: Dict[str, Dict[str, Callable[[Any], Any]]] = {
 CHANGE_HEADER_TYPE_FUNCTIONS = {
     "Date": parsedate_to_datetime,
 }
-
-
-# Type
-FILTER_CONTENTS_TYPE = Union[str, List[str]]
-CUSTOM_FUNCTIONS_DICT_TYPE = Dict[str, Callable[[Any], Any]]
-CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = Dict[str, CUSTOM_FUNCTIONS_DICT_TYPE]
-DEFAULT_FILTER_CONTENTS_DICT: Dict[str, FILTER_CONTENTS_TYPE] = {"content_type": []}

@@ -1,11 +1,10 @@
-from typing import List, Optional
+from typing import Any, Dict, List, Optional, Tuple, Union, Self
 
 from magmail.static import CUSTOM_FUNCTIONS_DICT_TYPE, CHANGE_HEADER_TYPE_FUNCTIONS
 from magmail.utils import to_attribute_name
 
 
 from .mail import _Header
-
 
 class _Headers:
     def __init__(
@@ -16,7 +15,7 @@ class _Headers:
         self.__headers: List[_Header] = headers.copy()
         self.__custom_functions: Optional[CUSTOM_FUNCTIONS_DICT_TYPE] = custom_functions
 
-    def add_header(self, header: _Header):
+    def add_header(self, header: _Header) -> None:
         self.__custom_headers(header)
 
         key = to_attribute_name(header.field)
@@ -24,37 +23,37 @@ class _Headers:
 
         return self.__headers.append(header)
 
-    def search_header(self, key):
+    def search_header(self, key: str) -> Optional[str]:
         for field, body in self.__headers:
             if field == key:
                 return body
         return None
 
-    def get_header(self, key):
+    def get_header(self, key: str) -> Optional[_Header]:
         for i, header in enumerate(self.__headers):
             if header.field == key:
                 return self.__headers[i]
         return None
 
-    def has_header(self, key):
+    def has_header(self, key: str) -> bool:
         return self.search_header(key) is not None
 
-    def set_header(self, key, value):
+    def set_header(self, key: str, value: Any) -> None:
         for i, header in enumerate(self.__headers):
             if header.field == key:
                 self.__headers[i] = value
         raise AttributeError(key)
 
-    def __custom_headers(self, header):
-        def change_type(function_dict, header):
-            if header.field in function_dict:
+    def __custom_headers(self, header: _Header) -> None:
+        def change_type(function_dict: Optional[CUSTOM_FUNCTIONS_DICT_TYPE], header: _Header) -> None:
+            if not isinstance(function_dict,type(None)) and header.field in function_dict:
                 func = function_dict[header.field]
                 header.body = func(header.body)
 
         change_type(CHANGE_HEADER_TYPE_FUNCTIONS, header)
         change_type(self.__custom_functions, header)
 
-    def __getitem__(self, key):
+    def __getitem__(self, key: str) -> Union[Optional[str], _Header]:
         if isinstance(key, str):
             if self.has_header(key):
                 return self.search_header(key)
@@ -63,19 +62,24 @@ class _Headers:
         else:
             return self.__headers[key]
 
-    def __setitem__(self, key, value):
+    def __setitem__(self, key: str, value: Any) -> None:
         for i, header in enumerate(self.__headers):
             if header.field == key:
                 self.__headers[i] = value
 
-    def __dict__(self):
+    @property
+    def __dict__(self) -> Dict[str, Any]:
         return {field: body for field, body in self.__headers}
 
-    def __iter__(self):
+    @__dict__.setter
+    def __dict__(self, value: Dict[str, Any]) -> None:
+        self.__dict__ = value
+
+    def __iter__(self) -> Self:
         self.i = 0
         return self
 
-    def __next__(self):
+    def __next__(self) -> Tuple[str, Union[Any, str]]:
         if self.i < len(self.__headers):
             value = self.__headers[self.i]
             self.i += 1

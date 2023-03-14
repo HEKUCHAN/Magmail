@@ -15,6 +15,7 @@ from magmail.static import (
     DEFAULT_AUTO_CLEAN,
     DEFAULT_COLUMNS,
     CUSTOM_FUNCTIONS_DICT,
+    CUSTOM_FUNCTIONS_DICT_TYPE,
     DEFAULT_FILTER_CONTENTS_DICT,
     FILTER_CONTENTS_TYPE,
 )
@@ -26,9 +27,7 @@ class Magmail:
         mbox_path: Union[str, Path],
         auto_clean: bool = DEFAULT_AUTO_CLEAN,
         filters: Dict[str, FILTER_CONTENTS_TYPE] = DEFAULT_FILTER_CONTENTS_DICT.copy(),
-        custom_functions: Dict[
-            str, Dict[str, Callable[[Any], Any]]
-        ] = CUSTOM_FUNCTIONS_DICT.copy(),
+        custom_functions: CUSTOM_FUNCTIONS_DICT_TYPE = CUSTOM_FUNCTIONS_DICT.copy(),
         drop_duplicates: bool = True,
     ):
         self.mbox_path: Path = to_Path(mbox_path)
@@ -79,14 +78,14 @@ class Magmail:
         self,
         message: Union[Message, mboxMessage],
         path: Optional[Union[str, Path]] = None,
-        drop_duplicates=True,
+        drop_duplicates: bool=True,
     ) -> None:
         if drop_duplicates and self.is_mail_exist(message):
             return
 
         self.add_mail(self._create_mail(message, path))
 
-    def is_mail_exist(self, message: Union[Message, mboxMessage]):
+    def is_mail_exist(self, message: Union[Message, mboxMessage]) -> bool:
         for mail in self.emails:
             if mail.message.as_string() == message.as_string():
                 return True
@@ -139,7 +138,7 @@ class Magmail:
                             message, eml_path, drop_duplicates=self.drop_duplicates
                         )
 
-    def split_emails(self, n: int) -> Generator[list[Mail], None, None]:
+    def split_emails(self, n: int) -> Generator[List[Mail], None, None]:
         for idx in range(0, self.total(), n):
             yield self.emails[idx : idx + n]
 

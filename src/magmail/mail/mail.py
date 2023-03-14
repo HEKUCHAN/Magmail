@@ -14,22 +14,22 @@ from magmail.static import (
     DEFAULT_AUTO_CLEAN,
     FILTER_CONTENTS_TYPE,
     CUSTOM_FUNCTIONS_DICT,
+    CUSTOM_FUNCTIONS_DICT_TYPE,
     CUSTOM_FUNCTIONS_ROOT_DICT_TYPE,
 )
 
 
 class Mail:
     total_instantiated = 0
-
+    Dict[str, Dict[str, Optional[Callable[[Any], Any]]]]
+    Dict[str, Dict[str, Callable[[Any], Any]]]
     def __init__(
         self,
         message: Union[Message, mboxMessage],
         auto_clean: bool = DEFAULT_AUTO_CLEAN,
         path: Optional[Union[str, Path]] = None,
         filters: Dict[str, FILTER_CONTENTS_TYPE] = {},
-        custom_functions: Dict[
-            str, Dict[str, Callable[[Any], Any]]
-        ] = CUSTOM_FUNCTIONS_DICT.copy(),
+        custom_functions: CUSTOM_FUNCTIONS_ROOT_DICT_TYPE  = CUSTOM_FUNCTIONS_DICT.copy(),
     ):
         self.path = path
         self.index = Mail.total_instantiated
@@ -53,12 +53,9 @@ class Mail:
         self.body_html = self._body.body_html
         self.body_plain = self._body.body_plain
 
-    def __getitem__(self, key: str) -> Optional[str]:
+    def __getitem__(self, key: str) -> Optional[Any]:
         key = to_attribute_name(key)
-        if hasattr(self, key):
-            return getattr(self, key)
-        else:
-            return None
+        return getattr(self, key ,None)
 
     def _get_headers(self) -> None:
         for header in self.message.items():
