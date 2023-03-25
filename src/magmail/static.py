@@ -8,7 +8,7 @@ DEFAULT_AUTO_CLEAN = True
 
 # Type
 FILTER_CONTENTS_TYPE = Union[str, List[str]]
-CUSTOM_FUNCTIONS_DICT_TYPE = Dict[str, Optional[Callable[[Any], Any]]]
+CUSTOM_FUNCTIONS_DICT_TYPE = Dict[str, Optional[Callable[[str], Any]]]
 CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = Dict[str, CUSTOM_FUNCTIONS_DICT_TYPE]
 DEFAULT_FILTER_CONTENTS_DICT: Dict[str, FILTER_CONTENTS_TYPE] = {"content_type": []}
 
@@ -65,6 +65,6 @@ CUSTOM_FUNCTIONS_DICT: CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = {
     },
 }
 
-CHANGE_HEADER_TYPE_FUNCTIONS = {
+CHANGE_HEADER_TYPE_FUNCTIONS: Optional[CUSTOM_FUNCTIONS_DICT_TYPE] = {
     "Date": parsedate_to_datetime,
 }

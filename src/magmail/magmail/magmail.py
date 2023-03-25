@@ -15,7 +15,7 @@ from magmail.static import (
     DEFAULT_AUTO_CLEAN,
     DEFAULT_COLUMNS,
     CUSTOM_FUNCTIONS_DICT,
-    CUSTOM_FUNCTIONS_DICT_TYPE,
+    CUSTOM_FUNCTIONS_ROOT_DICT_TYPE,
     DEFAULT_FILTER_CONTENTS_DICT,
     FILTER_CONTENTS_TYPE,
 )
@@ -27,15 +27,13 @@ class Magmail:
         mbox_path: Union[str, Path],
         auto_clean: bool = DEFAULT_AUTO_CLEAN,
         filters: Dict[str, FILTER_CONTENTS_TYPE] = DEFAULT_FILTER_CONTENTS_DICT.copy(),
-        custom_functions: CUSTOM_FUNCTIONS_DICT_TYPE = CUSTOM_FUNCTIONS_DICT.copy(),
+        custom_functions: CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = CUSTOM_FUNCTIONS_DICT.copy(),
         drop_duplicates: bool = True,
     ):
         self.mbox_path: Path = to_Path(mbox_path)
         self.auto_clean: bool = auto_clean
         self.filters: _Filter = _Filter(filters)
-        self.custom_functions: Dict[
-            str, Dict[str, Callable[[Any], Any]]
-        ] = custom_functions
+        self.custom_functions: CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = custom_functions
         self.drop_duplicates = drop_duplicates
 
         self.emails: List[Mail] = []

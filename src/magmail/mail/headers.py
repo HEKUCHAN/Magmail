@@ -1,10 +1,13 @@
-from typing import Any, Dict, List, Optional, Tuple, Union, Self
+from typing import Any, Dict, List, Optional, Tuple, Union, TypeVar
 
 from magmail.static import CUSTOM_FUNCTIONS_DICT_TYPE, CHANGE_HEADER_TYPE_FUNCTIONS
 from magmail.utils import to_attribute_name
 
 
 from .mail import _Header
+
+
+THeaders = TypeVar("THeaders", bound="_Headers")
 
 class _Headers:
     def __init__(
@@ -46,9 +49,10 @@ class _Headers:
 
     def __custom_headers(self, header: _Header) -> None:
         def change_type(function_dict: Optional[CUSTOM_FUNCTIONS_DICT_TYPE], header: _Header) -> None:
-            if not isinstance(function_dict,type(None)) and header.field in function_dict:
+            if function_dict is not None and header.field in function_dict:
                 func = function_dict[header.field]
-                header.body = func(header.body)
+                if func is not None:
+                    header.body = func(header.body)
 
         change_type(CHANGE_HEADER_TYPE_FUNCTIONS, header)
         change_type(self.__custom_functions, header)
@@ -75,7 +79,7 @@ class _Headers:
     def __dict__(self, value: Dict[str, Any]) -> None:
         self.__dict__ = value
 
-    def __iter__(self) -> Self:
+    def __iter__(self: THeaders) -> THeaders:
         self.i = 0
         return self
 
