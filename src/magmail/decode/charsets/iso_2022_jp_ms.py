@@ -69,7 +69,7 @@ def decode(byte: Union[bytes, str], error: str = "strict") -> Tuple[str, int]:
                 else:
                     raise UnicodeDecodeError(
                         'iso_2022_jp_ms',
-                        byte_array,
+                        byte,
                         index,
                         index + 1,
                         'invalid start byte'
