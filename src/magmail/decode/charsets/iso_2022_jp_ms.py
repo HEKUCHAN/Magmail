@@ -16,6 +16,7 @@ def decode(byte: Union[bytes, str], error: str = "strict") -> Tuple[str, int]:
     if isinstance(byte, str):
         return (byte, len(byte))
 
+    index = 0
     byte_decoded: List[str] = []
     byte_array: Iterator[int] = iter(array.array("B", byte))
     decode_type: Dict[str, bool] = {
@@ -39,12 +40,16 @@ def decode(byte: Union[bytes, str], error: str = "strict") -> Tuple[str, int]:
     def join_hex(first_byte: int, second_byte: int) -> str:
         return hex((first_byte << 8) + second_byte)
 
+    def next_byte(byte_array: Iterator[int]) -> int:
+        index += 1
+        return next(byte_array)
+
     try:
         while True:
-            byte_1 = next(byte_array)
+            byte_1 = next_byte(byte_array)
 
             if byte_1 == 0x1B:
-                byte_1, byte_2 = next(byte_array), next(byte_array)
+                byte_1, byte_2 = next_byte(byte_array), next_byte(byte_array)
 
                 if (byte_1, byte_2) == (0x28, 0x42):
                     # US-ASCII (`ESC ( B`)
@@ -62,7 +67,14 @@ def decode(byte: Union[bytes, str], error: str = "strict") -> Tuple[str, int]:
                     # JIS X 0208:1997 (`ESC $ B`)
                     set_decode_type("jis90")
                 else:
-                    raise UnicodeDecodeError()
+                    raise UnicodeDecodeError(
+                        'iso_2022_jp_ms',
+                        byte,
+                        index,
+                        index + 1,
+                        'invalid start byte'
+                    )
+
             elif has_decode_type():
                 if is_decode_type("ascii") and 0x00 <= byte_1 and byte_1 <= 0x7F:
                     # US-ASCII (`ESC ( B`)
@@ -73,7 +85,7 @@ def decode(byte: Union[bytes, str], error: str = "strict") -> Tuple[str, int]:
                     byte_decoded.append(chr(byte_1 + 0xFF40))
                 elif is_decode_type("jis78"):
                     # JIS X 0208:1978 (`ESC $ @`)
-                    byte_2 = next(byte_array)
+                    byte_2 = next_byte(byte_array)
 
                     if (
                         (0x21 <= byte_1 and byte_1 <= 0x28)
@@ -89,7 +101,7 @@ def decode(byte: Union[bytes, str], error: str = "strict") -> Tuple[str, int]:
                     # NEC特殊文字 (`ESC $ B`)
                     # NEC選定IBM拡張文字 (`ESC $ B`)
 
-                    byte_2 = next(byte_array)
+                    byte_2 = next_byte(byte_array)
 
                     if (
                         (0x21 <= byte_1 and byte_1 <= 0x28)
