@@ -17,6 +17,7 @@ class _Headers:
     ):
         self.__headers: List[_Header] = headers.copy()
         self.__custom_functions: Optional[CUSTOM_FUNCTIONS_DICT_TYPE] = custom_functions
+        self.__set_attribute()
 
     def add_header(self, header: _Header) -> None:
         self.__custom_headers(header)
@@ -25,6 +26,10 @@ class _Headers:
         setattr(self, key, header.body)
 
         return self.__headers.append(header)
+
+    def __set_attribute(self):
+        for header in self.__headers:
+            setattr(self, to_attribute_name(header.field), header.body)
 
     def search_header(self, key: str) -> Optional[str]:
         for field, body in self.__headers:
@@ -45,6 +50,8 @@ class _Headers:
         for i, header in enumerate(self.__headers):
             if header.field == key:
                 self.__headers[i] = value
+                self.__set_attribute()
+                return
         raise AttributeError(key)
 
     def __custom_headers(self, header: _Header) -> None:
@@ -70,6 +77,7 @@ class _Headers:
         for i, header in enumerate(self.__headers):
             if header.field == key:
                 self.__headers[i] = value
+                self.__set_attribute()
 
     @property
     def __dict__(self) -> Dict[str, Any]:
@@ -78,6 +86,7 @@ class _Headers:
     @__dict__.setter
     def __dict__(self, value: Dict[str, Any]) -> None:
         self.__dict__ = value
+        self.__set_attribute()
 
     def __iter__(self: THeaders) -> THeaders:
         self.i = 0
