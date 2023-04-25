@@ -1,12 +1,19 @@
 import keyword
 from pathlib import Path
-from typing import Union
+from typing import Any, Optional, Union
 
+def get_type_name(object: Any) -> Optional[str]:
+    return object.__class__.__name__
 
-def to_Path(string: Union[str, Path]) -> Path:
+def to_path(string: Union[str, Path]) -> Path:
     if isinstance(string, str):
         return Path(string)
-    return string
+    elif isinstance(string, Path):
+        return string
+
+    raise TypeError(
+        f"unsupported type(s) `{get_type_name(string)}`, Supported Only `str` or `pathlib.Path`."
+    )
 
 
 def to_attribute_name(name: str) -> str:

@@ -10,7 +10,7 @@ from typing import Any, Generator, Iterator, Optional, Union, List, Dict, Callab
 
 from .filter import _Filter
 from magmail.mail import Mail
-from magmail.utils import to_Path
+from magmail.utils import to_path
 from magmail.static import (
     DEFAULT_AUTO_CLEAN,
     DEFAULT_COLUMNS,
@@ -30,7 +30,7 @@ class Magmail:
         custom_functions: CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = CUSTOM_FUNCTIONS_DICT.copy(),
         drop_duplicates: bool = True,
     ):
-        self.mbox_path: Path = to_Path(mbox_path)
+        self.mbox_path: Path = to_path(mbox_path)
         self.auto_clean: bool = auto_clean
         self.filters: _Filter = _Filter(filters)
         self.custom_functions: CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = custom_functions
@@ -90,7 +90,7 @@ class Magmail:
         return False
 
     def add_mbox(self, mbox_path: Union[str, Path]) -> None:
-        mbox_path = to_Path(mbox_path)
+        mbox_path = to_path(mbox_path)
         filter_suffix = ".mbox"
 
         if not mbox_path.exists():
@@ -115,7 +115,7 @@ class Magmail:
                         )
 
     def add_eml(self, eml_path: Union[str, Path]) -> None:
-        eml_path = to_Path(eml_path)
+        eml_path = to_path(eml_path)
         filter_suffix = ".eml"
 
         if not eml_path.exists():
@@ -155,14 +155,14 @@ class Magmail:
         if extends_columns:
             columns.extend(extends_columns)
 
-        csv_path = to_Path(path)
+        csv_path = to_path(path)
 
         if slice_files > 1:
             if csv_path.is_dir():
                 if filename is None:
                     filename = Path("mbox.csv")
 
-                csv_filename = to_Path(filename)
+                csv_filename = to_path(filename)
 
                 for i in range(1, slice_files + 1):
                     csv_filename = csv_filename.with_suffix(".csv")
