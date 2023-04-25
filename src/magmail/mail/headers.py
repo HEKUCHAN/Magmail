@@ -27,7 +27,7 @@ class _Headers:
 
         return self.__headers.append(header)
 
-    def __set_attribute(self):
+    def __set_attribute(self) -> None:
         for header in self.__headers:
             setattr(self, to_attribute_name(header.field), header.body)
 
