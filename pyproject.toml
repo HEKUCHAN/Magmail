@@ -36,3 +36,8 @@ ignore_missing_imports = 'True'
 [[tool.mypy.overrides]]
 module = "magmail.*"
 implicit_reexport = true
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+]
