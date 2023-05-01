@@ -150,6 +150,7 @@ class Mail:
                 gen.flatten(self.mime)
 
         file_path = Path(path)
+        # TODO: 拡張子が間違っていたらエラーを出す
         if file_path.is_dir():
             file_path = file_path / f"{uuid.uuid4()}.eml"
             write(file_path)
