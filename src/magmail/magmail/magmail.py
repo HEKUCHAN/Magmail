@@ -92,6 +92,7 @@ class Magmail:
     def add_mbox(self, mbox_path: Union[str, Path]) -> None:
         mbox_path = to_path(mbox_path)
         filter_suffix = ".mbox"
+        # TODO: 知らない拡張子だったらエラーを出す
 
         if not mbox_path.exists():
             raise FileExistsError(mbox_path)
@@ -117,6 +118,7 @@ class Magmail:
     def add_eml(self, eml_path: Union[str, Path]) -> None:
         eml_path = to_path(eml_path)
         filter_suffix = ".eml"
+        # TODO: 知らない拡張子だったらエラーを出す
 
         if not eml_path.exists():
             raise FileNotFoundError(eml_path)
