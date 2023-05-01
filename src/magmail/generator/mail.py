@@ -17,9 +17,9 @@ from email.mime.application import MIMEApplication
 class Mail:
     def __init__(
         self,
-        to: Union[str, Tuple[str, str]] = "",
-        h_from: Union[str, Tuple[str, str]] = "",
-        cc_mail: Union[str, Tuple[str, str]] = "",
+        addr_to: Union[str, Tuple[str, str]] = "",
+        addr_from: Union[str, Tuple[str, str]] = "",
+        addr_cc: Union[str, Tuple[str, str]] = "",
         subject: str = "",
         message: Union[str, Dict[str, str]] = "",
         headers: Dict[str, str] = {},
@@ -28,9 +28,9 @@ class Mail:
         transfer_encoding: str = "base64",
         attache_files_path: Union[List[str], str] = [],
     ):
-        self.to = to
-        self.h_from = h_from
-        self.cc_mail = cc_mail
+        self.addr_to = addr_to
+        self.addr_from = addr_from
+        self.addr_cc = addr_cc
         self.subject = subject
         self.message = message
         self.headers = headers
@@ -56,12 +56,13 @@ class Mail:
     def __headers(self):
         headers: Dict[str, Union[str, Tuple[str, str]]] = {
             "Subject": self.subject,
-            "From": self.h_from,
-            "To": self.to,
-            "cc": self.cc_mail,
+            "From": self.addr_from,
+            "To": self.addr_to,
+            "cc": self.addr_cc,
         }
         headers.update(self.headers)
 
+        # TODO: addr_ccが配列の場合にも対応できるようにする
         for name, header in headers.items():
             if isinstance(header, tuple):
                 target_name = Header(header[0], self.encoding).encode()
@@ -113,7 +114,7 @@ class Mail:
                     _charset=self.encoding,
                 )
             )
-        
+
         # The Transfer Encoding was duplicated, so Fix that here
         # Example : `base64`, `base64`, `utf-8` -> `base64`, `utf-8`
         self.mime.set_payload(
