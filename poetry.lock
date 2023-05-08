@@ -703,6 +703,20 @@ htmlsoup = ["BeautifulSoup4"]
 source = ["Cython (>=0.29.7)"]
 
 [[package]]
+name = "markovify"
+version = "0.9.4"
+description = "A simple, extensible Markov chain generator. Uses include generating random semi-plausible sentences based on an existing text."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "markovify-0.9.4.tar.gz", hash = "sha256:eac0a156ed54bb6bede32ef20131813fbec9db70b515ead57b4d8887a16dfe39"},
+]
+
+[package.dependencies]
+unidecode = "*"
+
+[[package]]
 name = "markupsafe"
 version = "2.1.2"
 description = "Safely add untrusted strings to HTML/XML markup."
@@ -1265,6 +1279,18 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "shortuuid"
+version = "1.0.11"
+description = "A generator library for concise, unambiguous and URL-safe UUIDs."
+category = "main"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "shortuuid-1.0.11-py3-none-any.whl", hash = "sha256:27ea8f28b1bd0bf8f15057a3ece57275d2059d2b0bb02854f02189962c13b6aa"},
+    {file = "shortuuid-1.0.11.tar.gz", hash = "sha256:fc75f2615914815a8e4cb1501b3a513745cb66ef0fd5fc6fb9f8c3fa3481f789"},
+]
+
+[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -1489,6 +1515,49 @@ pure-eval = "*"
 tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
+name = "sudachidict-core"
+version = "20230110"
+description = "Sudachi Dictionary for SudachiPy - Core Edition"
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "SudachiDict-core-20230110.tar.gz", hash = "sha256:35e3fa212e797d23c2147816febb6a5b870c4fe81fa05ad94ece271f23ea4656"},
+]
+
+[package.dependencies]
+SudachiPy = ">=0.5,<0.7"
+
+[[package]]
+name = "sudachipy"
+version = "0.6.7"
+description = "Python version of Sudachi, the Japanese Morphological Analyzer"
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "SudachiPy-0.6.7-cp310-cp310-macosx_10_12_universal2.whl", hash = "sha256:8f14ae0ffeb5fa90c3c47fd25af0afdcec8cb3714f936c9cd4eb15132336148c"},
+    {file = "SudachiPy-0.6.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3e3f54006158d3112d86502f1ff3ab81f1d80c75d00ffeb853522f919a853063"},
+    {file = "SudachiPy-0.6.7-cp310-cp310-win_amd64.whl", hash = "sha256:9fdc7bd9d059821ef84e7600d69b150109ef5b71be0c68dce47616fce5bf8dac"},
+    {file = "SudachiPy-0.6.7-cp311-cp311-macosx_10_12_universal2.whl", hash = "sha256:5b7d5882e1450cdfd3235b14e569cde793d878fd018ade2871cb35e6f9f13ea6"},
+    {file = "SudachiPy-0.6.7-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:789d448bc5a3c5e0ed1e4bff505eed1be0fab3bf2e3480edd0b885c58bcd4cff"},
+    {file = "SudachiPy-0.6.7-cp311-cp311-win_amd64.whl", hash = "sha256:06e9af5af655bd74fcb793305efe0d46689b4827f295807b332f935abd974d83"},
+    {file = "SudachiPy-0.6.7-cp37-cp37m-macosx_10_12_universal2.whl", hash = "sha256:c660fb9dfd65d4d03109dfc5ab6b0e7415c79ed78c59fd456cd30e26ea6c340d"},
+    {file = "SudachiPy-0.6.7-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8f1aa21328289206520e62547d3ab8a62e1c6ed370a8b025585b302e1de772bc"},
+    {file = "SudachiPy-0.6.7-cp37-cp37m-win_amd64.whl", hash = "sha256:656628cd74b7483f1c10d25dee048983f062404f8cd04dfc3c5e28f987bc5a39"},
+    {file = "SudachiPy-0.6.7-cp38-cp38-macosx_10_12_universal2.whl", hash = "sha256:fb1085d372169df8187206dc505710d1a440f87523dbb287c4c639fb3d1eac78"},
+    {file = "SudachiPy-0.6.7-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b487890c499c927e8c6af2c76bdea3b8602f7c0a9145fe5e25cd9a82cbb96c05"},
+    {file = "SudachiPy-0.6.7-cp38-cp38-win_amd64.whl", hash = "sha256:4f60e20cd50a940f3ef57606a09f20ac2ef4262989f545e552eebb18b5484608"},
+    {file = "SudachiPy-0.6.7-cp39-cp39-macosx_10_12_universal2.whl", hash = "sha256:2d9ad67c54463eadce8728bf991c18d936b0756eedd3ed7661082aa36e7e5d60"},
+    {file = "SudachiPy-0.6.7-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d167cb59e044aff1123b534d045c66147ffa76a75196284e188c245af6fed013"},
+    {file = "SudachiPy-0.6.7-cp39-cp39-win_amd64.whl", hash = "sha256:4e368e7bfa83885fd9a6ffb0366fe73ce100caa72ab86f69b149091ce813da27"},
+    {file = "SudachiPy-0.6.7.tar.gz", hash = "sha256:e4fb026cc367e0dff7d0b8a2fce510e66d5bf7ef4728af76bfe63132b22753cd"},
+]
+
+[package.extras]
+tests = ["sudachidict-core", "tokenizers"]
+
+[[package]]
 name = "text-unidecode"
 version = "1.3"
 description = "The most basic Text::Unidecode port"
@@ -1609,4 +1678,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "aedd39e95610a9b94656d72226f373439996105755ab431f3550b503d5b42817"
+content-hash = "d1888a7662885c58ddeececfda52e3fb205d8a51d97693dbca738e93eb7a29f4"
