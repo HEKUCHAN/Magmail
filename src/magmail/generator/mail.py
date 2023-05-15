@@ -3,6 +3,7 @@ import uuid
 import quopri
 
 from pathlib import Path
+from types import GeneratorType
 from base64 import b64encode, b64decode
 from typing import Dict, List, Tuple, Union
 
@@ -13,13 +14,15 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 
+from magmail.utils import get_type_name
+
 
 class Mail:
     def __init__(
         self,
         to: Union[str, Tuple[str, str]] = "",
         h_from: Union[str, Tuple[str, str]] = "",
-        cc_mail: Union[str, Tuple[str, str]] = "",
+        cc_addr: List[Union[str, Tuple[str, str]]] = "",
         subject: str = "",
         message: Union[str, Dict[str, str]] = "",
         headers: Dict[str, str] = {},
@@ -30,7 +33,7 @@ class Mail:
     ):
         self.to = to
         self.h_from = h_from
-        self.cc_mail = cc_mail
+        self.cc_addr = cc_addr
         self.subject = subject
         self.message = message
         self.headers = headers
@@ -50,28 +53,29 @@ class Mail:
             self.transfer_encoding_func = b64encode
         elif self.transfer_encoding == "quoted-printable":
             self.transfer_encoding_func = quopri.encodestring
-        elif self.transfer_encoding == "7bit" or self.transfer_encoding == "8bit" or self.transfer_encoding == "binary":
-            self.transfer_encoding_func = lambda msg: msg # Do nothing
+        elif (
+            self.transfer_encoding == "7bit"
+            or self.transfer_encoding == "8bit"
+            or self.transfer_encoding == "binary"
+        ):
+            self.transfer_encoding_func = lambda msg: msg  # Do nothing
 
     def __headers(self):
         headers: Dict[str, Union[str, Tuple[str, str]]] = {
             "Subject": self.subject,
             "From": self.h_from,
             "To": self.to,
-            "cc": self.cc_mail,
+            "cc": self.cc_addr,
         }
         headers.update(self.headers)
 
         for name, header in headers.items():
-            if isinstance(header, tuple):
-                target_name = Header(header[0], self.encoding).encode()
-                email_addr = header[1]
+            formatted_header = self.format_header(header, self.encoding)
 
-                self.mime[name] = formataddr(
-                    (target_name, email_addr), charset=self.encoding
-                )
+            if len(formatted_header) > 1:
+                self.mime[name] = ", ".join([value for value in formatted_header])
             else:
-                self.mime[name] = Header(header, self.encoding).encode()
+                self.mime[name] = formatted_header
 
         self.mime["Date"] = formatdate()
 
@@ -80,13 +84,13 @@ class Mail:
             self.mime = MIMEText(
                 self.transfer_encoding_func(self.message.encode(self.encoding)),
                 "plain",
-                _charset=self.encoding
+                _charset=self.encoding,
             )
         elif self.mime_type == "html":
             self.mime = MIMEText(
                 self.transfer_encoding_func(self.message.encode(self.encoding)),
                 "html",
-                _charset=self.encoding
+                _charset=self.encoding,
             )
         elif self.mime_type == "multipart":
             self.mime = MIMEMultipart()
@@ -101,25 +105,27 @@ class Mail:
 
             self.mime.attach(
                 MIMEText(
-                    self.transfer_encoding_func(self.message["plain"].encode(self.encoding)),
+                    self.transfer_encoding_func(
+                        self.message["plain"].encode(self.encoding)
+                    ),
                     "plain",
                     _charset=self.encoding,
                 )
             )
             self.mime.attach(
                 MIMEText(
-                    self.transfer_encoding_func(self.message["html"].encode(self.encoding)),
+                    self.transfer_encoding_func(
+                        self.message["html"].encode(self.encoding)
+                    ),
                     "html",
                     _charset=self.encoding,
                 )
             )
-        
+
         # The Transfer Encoding was duplicated, so Fix that here
         # Example : `base64`, `base64`, `utf-8` -> `base64`, `utf-8`
-        self.mime.set_payload(
-            b64decode(self.mime.get_payload()).decode('utf-8')
-        )
-        self.mime.replace_header('Content-Transfer-Encoding', self.transfer_encoding)
+        self.mime.set_payload(b64decode(self.mime.get_payload()).decode("utf-8"))
+        self.mime.replace_header("Content-Transfer-Encoding", self.transfer_encoding)
 
     def __attach_files(self):
         if isinstance(self.attache_files_path, list):
@@ -154,3 +160,25 @@ class Mail:
             write(file_path)
         else:
             write(file_path)
+
+    def encode_header(self, value: str, encoding=None) -> str:
+            if value.isascii():
+                return value
+            else:
+                return Header(value, encoding).encode()
+            
+    def format_header(self, values: str, encoding=None) -> str:
+            if isinstance(values, tuple):
+                name_and_addr = (
+                    self.encode_header(value, encoding=encoding)
+                    for value in values
+                )
+                return formataddr(name_and_addr, charset=encoding)
+            elif isinstance(values, list):
+                return [self.format_header(value) for value in values]
+            elif isinstance(values, str):
+                return self.encode_header(values, encoding=encoding)
+            else:
+                raise TypeError(
+                    f"{get_type_name(values)} is not supported to will set header values."
+                )
