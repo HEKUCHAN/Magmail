@@ -56,7 +56,7 @@ class Magmail:
         elif self.mbox_path.suffix == ".eml":
             self.add_eml(self.mbox_path)
         else:
-            raise TypeError("Only supported .eml or .mbox files.")
+            raise TypeError("Only `.eml` or `.mbox` files are supported.")
 
     def _create_mail(
         self,
@@ -92,10 +92,12 @@ class Magmail:
     def add_mbox(self, mbox_path: Union[str, Path]) -> None:
         mbox_path = to_path(mbox_path)
         filter_suffix = ".mbox"
-        # TODO: 知らない拡張子だったらエラーを出す
+
+        if mbox_path.suffix != filter_suffix:
+            raise ValueError(f"Unknown file extension: {mbox_path.suffix}. Only `{filter_suffix}` files are supported.")
 
         if not mbox_path.exists():
-            raise FileExistsError(mbox_path)
+            raise FileNotFoundError(f"File not found: {mbox_path}")
 
         if mbox_path.is_file() and mbox_path.suffix == filter_suffix:
             mail_box = mailbox.mbox(mbox_path)
@@ -118,10 +120,12 @@ class Magmail:
     def add_eml(self, eml_path: Union[str, Path]) -> None:
         eml_path = to_path(eml_path)
         filter_suffix = ".eml"
-        # TODO: 知らない拡張子だったらエラーを出す
+
+        if eml_path.suffix != filter_suffix:
+            raise ValueError(f"Unknown file extension: {eml_path.suffix}. Only `{filter_suffix}` files are supported.")
 
         if not eml_path.exists():
-            raise FileNotFoundError(eml_path)
+            raise FileNotFoundError(f"File not found: {eml_path}")
 
         if eml_path.is_file() and eml_path.suffix == filter_suffix:
             with open(eml_path, "rb") as email_file:

@@ -23,7 +23,7 @@ class Seed:
             self.json_path = self.json_path / f"{uuid.uuid4()}.json"
 
         if self.json_path.suffix != 'json':
-            raise ValueError(f'unknown file extension: {self.json_path.suffix}, `.json` or directory path is only supported.')
+            raise ValueError(f'Unknown file extension: {self.json_path.suffix}, `.json` or directory path is only supported.')
 
     def add(
         self,
@@ -36,7 +36,7 @@ class Seed:
         encoding: str = "utf-8",
         mime_type: str = "plain",
         transfer_encoding: str = "base64",
-        attache_files_path: Union[List[str], str] = [],
+        attach_files_path: Union[List[str], str] = [],
     ):
         self.seeds.append({
             "addr_to": addr_to,
@@ -48,7 +48,7 @@ class Seed:
             "encoding": encoding,
             "mime_type": mime_type,
             "transfer_encoding": transfer_encoding,
-            "attache_files_path": attache_files_path,
+            "attach_files_path": attach_files_path,
         })
 
     def to_file(self):

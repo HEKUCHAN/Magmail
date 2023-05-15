@@ -86,7 +86,7 @@ class _Decoder:
             print("UNKNOWN")
             self._warning_decode()
         elif self.errors == "exception":
-            raise UnknownEncodingType("Can't detect charset, so cannot to decode")
+            raise UnknownEncodingType("Unable to detect character encoding, so decoding is not possible.")
         elif self.errors == "ignore":
             pass
 
@@ -95,6 +95,6 @@ class _Decoder:
             print("ERROR")
             self._warning_decode()
         elif self.errors == "exception":
-            raise CannotDetectEncodingError("Can't detect charset, so cannot to decode")
+            raise CannotDetectEncodingError("Unable to detect character encoding, so decoding is not possible.")
         elif self.errors == "ignore":
             pass

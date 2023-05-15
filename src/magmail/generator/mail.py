@@ -29,7 +29,7 @@ class Mail:
         encoding: str = "utf-8",
         mime_type: str = "plain",
         transfer_encoding: str = "base64",
-        attache_files_path: Union[List[str], str] = [],
+        attach_files_path: Union[List[str], str] = [],
     ):
         self.addr_to = addr_to
         self.addr_from = addr_from
@@ -39,7 +39,7 @@ class Mail:
         self.headers = headers
         self.encoding = encoding
         self.mime_type = mime_type.lower()
-        self.attache_files_path = attache_files_path
+        self.attach_files_path = attach_files_path
         self.transfer_encoding = transfer_encoding
         self.__set_transfer_encoding()
         self.__body()
@@ -96,12 +96,12 @@ class Mail:
             self.mime = MIMEMultipart()
 
             if not isinstance(self.message, dict):
-                # TODO: 型が間違っているということを書く
-                raise TypeError()
+                raise TypeError("Invalid type for 'message'. Expected dictionary.")
 
             if not "plain" in self.message or not "html" in self.message:
-                # TODO: 辞書である必要があって、ある値がないといけないというエラーを記述
-                raise ""
+                raise ValueError(
+                    "Missing required values in 'message' dictionary. Both 'plain' and 'html' keys are required."
+                )
 
             self.mime.attach(
                 MIMEText(
@@ -128,8 +128,8 @@ class Mail:
         self.mime.replace_header("Content-Transfer-Encoding", self.transfer_encoding)
 
     def __attach_files(self):
-        if isinstance(self.attache_files_path, list):
-            for file_path in self.attache_files_path:
+        if isinstance(self.attach_files_path, list):
+            for file_path in self.attach_files_path:
                 with open(file_path, "rb") as file:
                     attachment_file = MIMEApplication(file.read())
                 attachment_file.add_header(
@@ -139,12 +139,12 @@ class Mail:
                 )
                 self.mime.attach(attachment_file)
         else:
-            with open(self.attache_files_path, "rb") as file:
+            with open(self.attach_files_path, "rb") as file:
                 attachment_file = MIMEApplication(file.read())
             attachment_file.add_header(
                 "Content-Disposition",
                 "attachment",
-                filename=os.path.basename(self.attache_files_path),
+                filename=os.path.basename(self.attach_files_path),
             )
             self.mime.attach(attachment_file)
 
@@ -155,7 +155,12 @@ class Mail:
                 gen.flatten(self.mime)
 
         file_path = Path(path)
-        # TODO: 拡張子が間違っていたらエラーを出す
+
+        if file_path.suffix != ".eml":
+            raise ValueError(
+                f"Unsupported file extension: {file_path.suffix}. Only `.eml` extensions are supported."
+            )
+
         if file_path.is_dir():
             file_path = file_path / f"{uuid.uuid4()}.eml"
             write(file_path)
@@ -181,5 +186,5 @@ class Mail:
                 return self.encode_header(values, encoding=encoding)
             else:
                 raise TypeError(
-                    f"{get_type_name(values)} is not supported to will set header values."
+                    f"{get_type_name(values)} is not supported for setting header values."
                 )

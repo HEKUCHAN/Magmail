@@ -12,7 +12,7 @@ def to_path(string: Union[str, Path]) -> Path:
         return string
 
     raise TypeError(
-        f"unsupported type(s) `{get_type_name(string)}`, Supported Only `str` or `pathlib.Path`."
+        f"Unsupported type: `{get_type_name(string)}`. Only `str` or `pathlib.Path` are supported."
     )
 
 
