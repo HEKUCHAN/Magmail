@@ -20,9 +20,9 @@ from magmail.utils import get_type_name
 class Mail:
     def __init__(
         self,
-        to: Union[str, Tuple[str, str]] = "",
-        h_from: Union[str, Tuple[str, str]] = "",
-        cc_addr: List[Union[str, Tuple[str, str]]] = "",
+        addr_to: Union[str, Tuple[str, str]] = "",
+        addr_from: Union[str, Tuple[str, str]] = "",
+        addr_cc: Union[str, Tuple[str, str]] = "",
         subject: str = "",
         message: Union[str, Dict[str, str]] = "",
         headers: Dict[str, str] = {},
@@ -31,9 +31,9 @@ class Mail:
         transfer_encoding: str = "base64",
         attache_files_path: Union[List[str], str] = [],
     ):
-        self.to = to
-        self.h_from = h_from
-        self.cc_addr = cc_addr
+        self.addr_to = addr_to
+        self.addr_from = addr_from
+        self.addr_cc = addr_cc
         self.subject = subject
         self.message = message
         self.headers = headers
@@ -63,9 +63,9 @@ class Mail:
     def __headers(self):
         headers: Dict[str, Union[str, Tuple[str, str]]] = {
             "Subject": self.subject,
-            "From": self.h_from,
-            "To": self.to,
-            "cc": self.cc_addr,
+            "From": self.addr_from,
+            "To": self.addr_to,
+            "cc": self.addr_cc,
         }
         headers.update(self.headers)
 
@@ -155,6 +155,7 @@ class Mail:
                 gen.flatten(self.mime)
 
         file_path = Path(path)
+        # TODO: 拡張子が間違っていたらエラーを出す
         if file_path.is_dir():
             file_path = file_path / f"{uuid.uuid4()}.eml"
             write(file_path)
