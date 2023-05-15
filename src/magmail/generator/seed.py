@@ -10,12 +10,12 @@ class Seed:
     def __init__(
             self,
             json_path: Union[str, Path],
-            export_path: Union[str, Path],
+            export_eml_path: Union[str, Path],
             title: str = ''
         ):
         self.title = title
         self.json_path = to_path(json_path)
-        self.export_path = to_path(export_path)
+        self.export_eml_path = to_path(export_eml_path)
         self.seeds: List[Dict[str, Any]] = {}
 
 
@@ -55,7 +55,7 @@ class Seed:
         template_json = {
             "title": self.title,
             "json_path": self.json_path,
-            "export_path": self.export_path,
+            "export_eml_path": self.export_eml_path,
             "amount": len(self.seeds),
             "seeds": self.seeds
         }
