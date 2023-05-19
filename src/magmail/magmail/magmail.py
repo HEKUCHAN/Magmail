@@ -56,7 +56,7 @@ class Magmail:
         elif self.mbox_path.suffix == ".eml":
             self.add_eml(self.mbox_path)
         else:
-            raise TypeError("Only `.eml` or `.mbox` files are supported.")
+            raise TypeError("Only '.eml' or '.mbox' files are supported.")
 
     def _create_mail(
         self,
@@ -94,7 +94,7 @@ class Magmail:
         filter_suffix = ".mbox"
 
         if mbox_path.suffix != filter_suffix:
-            raise ValueError(f"Unknown file extension: {mbox_path.suffix}. Only `{filter_suffix}` files are supported.")
+            raise ValueError(f"Unknown file extension: {mbox_path.suffix}. Only '{filter_suffix}' files are supported.")
 
         if not mbox_path.exists():
             raise FileNotFoundError(f"File not found: {mbox_path}")
@@ -122,7 +122,7 @@ class Magmail:
         filter_suffix = ".eml"
 
         if eml_path.suffix != filter_suffix:
-            raise ValueError(f"Unknown file extension: {eml_path.suffix}. Only `{filter_suffix}` files are supported.")
+            raise ValueError(f"Unknown file extension: {eml_path.suffix}. Only '{filter_suffix}' files are supported.")
 
         if not eml_path.exists():
             raise FileNotFoundError(f"File not found: {eml_path}")

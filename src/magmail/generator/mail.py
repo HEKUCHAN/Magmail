@@ -1,11 +1,11 @@
+from email.charset import Charset
 import os
 import uuid
 import quopri
 
 from pathlib import Path
-from types import GeneratorType
 from base64 import b64encode, b64decode
-from typing import Dict, List, Tuple, Union
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 from email import generator
 from email.header import Header
@@ -14,7 +14,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 
-from magmail.utils import get_type_name
+from magmail.utils import get_type_name, to_path
 
 
 class Mail:
@@ -38,6 +38,7 @@ class Mail:
         self.message = message
         self.headers = headers
         self.encoding = encoding
+        self.mime: Union[MIMEText, MIMEMultipart]
         self.mime_type = mime_type.lower()
         self.attach_files_path = attach_files_path
         self.transfer_encoding = transfer_encoding
@@ -46,8 +47,8 @@ class Mail:
         self.__headers()
         self.__attach_files()
 
-    def __set_transfer_encoding(self):
-        self.transfer_encoding_func = None
+    def __set_transfer_encoding(self) -> None:
+        self.transfer_encoding_func: Any = None
 
         if self.transfer_encoding == "base64":
             self.transfer_encoding_func = b64encode
@@ -60,7 +61,7 @@ class Mail:
         ):
             self.transfer_encoding_func = lambda msg: msg  # Do nothing
 
-    def __headers(self):
+    def __headers(self) -> None:
         headers: Dict[str, Union[str, Tuple[str, str]]] = {
             "Subject": self.subject,
             "From": self.addr_from,
@@ -79,14 +80,20 @@ class Mail:
 
         self.mime["Date"] = formatdate()
 
-    def __body(self):
+    def __body(self) -> None:
         if self.mime_type == "plain":
+            if isinstance(self.message, dict):
+                raise TypeError("The 'message' argument cannot be a dictionary when mime_type is 'plain'.")
+
             self.mime = MIMEText(
                 self.transfer_encoding_func(self.message.encode(self.encoding)),
                 "plain",
                 _charset=self.encoding,
             )
         elif self.mime_type == "html":
+            if isinstance(self.message, dict):
+                raise TypeError("The 'message' argument cannot be a dictionary when mime_type is 'html'.")
+
             self.mime = MIMEText(
                 self.transfer_encoding_func(self.message.encode(self.encoding)),
                 "html",
@@ -123,11 +130,11 @@ class Mail:
             )
 
         # The Transfer Encoding was duplicated, so Fix that here
-        # Example : `base64`, `base64`, `utf-8` -> `base64`, `utf-8`
+        # Example : 'base64', 'base64', 'utf-8' -> 'base64', 'utf-8'
         self.mime.set_payload(b64decode(self.mime.get_payload()).decode("utf-8"))
         self.mime.replace_header("Content-Transfer-Encoding", self.transfer_encoding)
 
-    def __attach_files(self):
+    def __attach_files(self) -> None:
         if isinstance(self.attach_files_path, list):
             for file_path in self.attach_files_path:
                 with open(file_path, "rb") as file:
@@ -148,37 +155,38 @@ class Mail:
             )
             self.mime.attach(attachment_file)
 
-    def to_file(self, path="./"):
-        def write(path):
+    def to_file(self, path: Union[str, Path]="./") -> None:
+        def write(path: Union[str, Path]) -> None:
             with open(path, "w") as eml:
                 gen = generator.Generator(eml)
                 gen.flatten(self.mime)
 
-        file_path = Path(path)
+        file_path = to_path(path)
 
         if file_path.suffix != ".eml":
             raise ValueError(
-                f"Unsupported file extension: {file_path.suffix}. Only `.eml` extensions are supported."
+                f"Unsupported file extension: {file_path.suffix}. Only '.eml' extensions are supported."
             )
 
         if file_path.is_dir():
-            file_path = file_path / f"{uuid.uuid4()}.eml"
+            file_path = file_path / f"{uuid.uuid4()}.eml" 
             write(file_path)
         else:
             write(file_path)
 
-    def encode_header(self, value: str, encoding=None) -> str:
+    def encode_header(self, value: str, encoding: Optional[Union[Charset, str]]=None) -> str:
             if value.isascii():
                 return value
             else:
                 return Header(value, encoding).encode()
-            
-    def format_header(self, values: str, encoding=None) -> Union[str, List[str]]:
+
+    def format_header(self, values: Union[str, Tuple[str, str]], encoding: Union[Charset, str]='utf-8') -> Union[str, List[str]]:
             if isinstance(values, tuple):
-                name_and_addr = (
-                    self.encode_header(value, encoding=encoding)
-                    for value in values
+                name_and_addr: Tuple[Optional[str], str] = (
+                    self.encode_header(values[0], encoding=encoding),
+                    self.encode_header(values[1], encoding=encoding)
                 )
+
                 return formataddr(name_and_addr, charset=encoding)
             elif isinstance(values, list):
                 return [self.format_header(value) for value in values]

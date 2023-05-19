@@ -16,14 +16,13 @@ class Seed:
         self.title = title
         self.json_path = to_path(json_path)
         self.export_eml_path = to_path(export_eml_path)
-        self.seeds: List[Dict[str, Any]] = {}
-
+        self.seeds: List[Dict[str, Any]] = []
 
         if self.json_path.is_dir():
             self.json_path = self.json_path / f"{uuid.uuid4()}.json"
 
-        if self.json_path.suffix != 'json':
-            raise ValueError(f'Unknown file extension: {self.json_path.suffix}, `.json` or directory path is only supported.')
+        if self.json_path.suffix != '.json':
+            raise ValueError(f"Unknown file extension: {self.json_path.suffix}, '.json' or directory path is only supported.")
 
     def add(
         self,
@@ -37,7 +36,7 @@ class Seed:
         mime_type: str = "plain",
         transfer_encoding: str = "base64",
         attach_files_path: Union[List[str], str] = [],
-    ):
+    ) -> None:
         self.seeds.append({
             "addr_to": addr_to,
             "addr_from": addr_from,
@@ -51,7 +50,7 @@ class Seed:
             "attach_files_path": attach_files_path,
         })
 
-    def to_file(self):
+    def to_file(self) -> None:
         template_json = {
             "title": self.title,
             "json_path": self.json_path,
