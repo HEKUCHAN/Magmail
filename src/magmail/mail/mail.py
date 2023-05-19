@@ -23,13 +23,14 @@ class Mail:
     total_instantiated = 0
     Dict[str, Dict[str, Optional[Callable[[Any], Any]]]]
     Dict[str, Dict[str, Callable[[Any], Any]]]
+
     def __init__(
         self,
         message: Union[Message, mboxMessage],
         auto_clean: bool = DEFAULT_AUTO_CLEAN,
         path: Optional[Union[str, Path]] = None,
         filters: Dict[str, FILTER_CONTENTS_TYPE] = {},
-        custom_functions: CUSTOM_FUNCTIONS_ROOT_DICT_TYPE  = CUSTOM_FUNCTIONS_DICT.copy(),
+        custom_functions: CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = CUSTOM_FUNCTIONS_DICT.copy(),
     ):
         self.path = path
         self.index = Mail.total_instantiated
@@ -55,7 +56,7 @@ class Mail:
 
     def __getitem__(self, key: str) -> Optional[Any]:
         key = to_attribute_name(key)
-        return getattr(self, key ,None)
+        return getattr(self, key, None)
 
     def _get_headers(self) -> None:
         for header in self.message.items():

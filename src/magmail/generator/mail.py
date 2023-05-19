@@ -83,7 +83,9 @@ class Mail:
     def __body(self) -> None:
         if self.mime_type == "plain":
             if isinstance(self.message, dict):
-                raise TypeError("The 'message' argument cannot be a dictionary when mime_type is 'plain'.")
+                raise TypeError(
+                    "The 'message' argument cannot be a dictionary when mime_type is 'plain'."
+                )
 
             self.mime = MIMEText(
                 self.transfer_encoding_func(self.message.encode(self.encoding)),
@@ -92,7 +94,9 @@ class Mail:
             )
         elif self.mime_type == "html":
             if isinstance(self.message, dict):
-                raise TypeError("The 'message' argument cannot be a dictionary when mime_type is 'html'.")
+                raise TypeError(
+                    "The 'message' argument cannot be a dictionary when mime_type is 'html'."
+                )
 
             self.mime = MIMEText(
                 self.transfer_encoding_func(self.message.encode(self.encoding)),
@@ -155,7 +159,7 @@ class Mail:
             )
             self.mime.attach(attachment_file)
 
-    def to_file(self, path: Union[str, Path]="./") -> None:
+    def to_file(self, path: Union[str, Path] = "./") -> None:
         def write(path: Union[str, Path]) -> None:
             with open(path, "w") as eml:
                 gen = generator.Generator(eml)
@@ -169,30 +173,36 @@ class Mail:
             )
 
         if file_path.is_dir():
-            file_path = file_path / f"{uuid.uuid4()}.eml" 
+            file_path = file_path / f"{uuid.uuid4()}.eml"
             write(file_path)
         else:
             write(file_path)
 
-    def encode_header(self, value: str, encoding: Optional[Union[Charset, str]]=None) -> str:
-            if value.isascii():
-                return value
-            else:
-                return Header(value, encoding).encode()
+    def encode_header(
+        self, value: str, encoding: Optional[Union[Charset, str]] = None
+    ) -> str:
+        if value.isascii():
+            return value
+        else:
+            return Header(value, encoding).encode()
 
-    def format_header(self, values: Union[str, Tuple[str, str]], encoding: Union[Charset, str]='utf-8') -> Union[str, List[str]]:
-            if isinstance(values, tuple):
-                name_and_addr: Tuple[Optional[str], str] = (
-                    self.encode_header(values[0], encoding=encoding),
-                    self.encode_header(values[1], encoding=encoding)
-                )
+    def format_header(
+        self,
+        values: Union[str, Tuple[str, str]],
+        encoding: Union[Charset, str] = "utf-8",
+    ) -> Union[str, List[str]]:
+        if isinstance(values, tuple):
+            name_and_addr: Tuple[Optional[str], str] = (
+                self.encode_header(values[0], encoding=encoding),
+                self.encode_header(values[1], encoding=encoding),
+            )
 
-                return formataddr(name_and_addr, charset=encoding)
-            elif isinstance(values, list):
-                return [self.format_header(value) for value in values]
-            elif isinstance(values, str):
-                return self.encode_header(values, encoding=encoding)
-            else:
-                raise TypeError(
-                    f"{get_type_name(values)} is not supported for setting header values."
-                )
+            return formataddr(name_and_addr, charset=encoding)
+        elif isinstance(values, list):
+            return [self.format_header(value) for value in values]
+        elif isinstance(values, str):
+            return self.encode_header(values, encoding=encoding)
+        else:
+            raise TypeError(
+                f"{get_type_name(values)} is not supported for setting header values."
+            )

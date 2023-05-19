@@ -76,7 +76,7 @@ class Magmail:
         self,
         message: Union[Message, mboxMessage],
         path: Optional[Union[str, Path]] = None,
-        drop_duplicates: bool=True,
+        drop_duplicates: bool = True,
     ) -> None:
         if drop_duplicates and self.is_mail_exist(message):
             return
@@ -94,7 +94,9 @@ class Magmail:
         filter_suffix = ".mbox"
 
         if mbox_path.suffix != filter_suffix:
-            raise ValueError(f"Unknown file extension: {mbox_path.suffix}. Only '{filter_suffix}' files are supported.")
+            raise ValueError(
+                f"Unknown file extension: {mbox_path.suffix}. Only '{filter_suffix}' files are supported."
+            )
 
         if not mbox_path.exists():
             raise FileNotFoundError(f"File not found: {mbox_path}")
@@ -122,7 +124,9 @@ class Magmail:
         filter_suffix = ".eml"
 
         if eml_path.suffix != filter_suffix:
-            raise ValueError(f"Unknown file extension: {eml_path.suffix}. Only '{filter_suffix}' files are supported.")
+            raise ValueError(
+                f"Unknown file extension: {eml_path.suffix}. Only '{filter_suffix}' files are supported."
+            )
 
         if not eml_path.exists():
             raise FileNotFoundError(f"File not found: {eml_path}")

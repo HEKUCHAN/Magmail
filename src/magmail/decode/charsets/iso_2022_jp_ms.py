@@ -68,11 +68,7 @@ def decode(byte: Union[bytes, str], error: str = "strict") -> Tuple[str, int]:
                     set_decode_type("jis90")
                 else:
                     raise UnicodeDecodeError(
-                        'iso_2022_jp_ms',
-                        byte,
-                        index,
-                        index + 1,
-                        'invalid start byte'
+                        "iso_2022_jp_ms", byte, index, index + 1, "invalid start byte"
                     )
 
             elif has_decode_type():
@@ -125,6 +121,7 @@ def decode(byte: Union[bytes, str], error: str = "strict") -> Tuple[str, int]:
 
     return decoded_string, len(decoded_string)
 
+
 def search_iso_2022_jp_ms(name: str) -> Union[None, CodecInfo]:
     alias_name: List[str] = [
         "iso_2022_jp_ms",
@@ -138,4 +135,4 @@ def search_iso_2022_jp_ms(name: str) -> Union[None, CodecInfo]:
     if name not in alias_name:
         return None
 
-    return CodecInfo(name="iso2022_jp_ms", encode=None, decode=decode) # type: ignore
+    return CodecInfo(name="iso2022_jp_ms", encode=None, decode=decode)  # type: ignore
