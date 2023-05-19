@@ -72,7 +72,7 @@ class Mail:
         for name, header in headers.items():
             formatted_header = self.format_header(header, self.encoding)
 
-            if len(formatted_header) > 1:
+            if len(formatted_header) > 1 and isinstance(formatted_header, list):
                 self.mime[name] = ", ".join([value for value in formatted_header])
             else:
                 self.mime[name] = formatted_header
@@ -173,7 +173,7 @@ class Mail:
             else:
                 return Header(value, encoding).encode()
             
-    def format_header(self, values: str, encoding=None) -> str:
+    def format_header(self, values: str, encoding=None) -> Union[str, List[str]]:
             if isinstance(values, tuple):
                 name_and_addr = (
                     self.encode_header(value, encoding=encoding)
