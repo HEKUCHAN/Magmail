@@ -24,5 +24,7 @@ jobs:
         run: poetry install --no-interaction
       - name: black
         run: poetry run black .
-      - name: Run pre-commit
-        run: poetry run pre-commit run --all-files
+      - name: Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply Code Formatter Change
