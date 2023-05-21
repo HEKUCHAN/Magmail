@@ -24,7 +24,9 @@ jobs:
         run: poetry install --no-interaction
       - name: black
         run: poetry run black ./
-      - uses: stefanzweifel/git-auto-commit-action@v3.0.0
-        with:
-          commit_message: Apply Code Formatter Change
-          ref: ${{ github.head_ref }}
+      - name: Commit files
+        run: |
+          git add .
+          git commit -m "Apply Code Formatter"
+          git pull
+          git push
