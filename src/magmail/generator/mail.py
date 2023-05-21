@@ -29,7 +29,7 @@ class Mail:
         encoding: str = "utf-8",
         mime_type: str = "plain",
         transfer_encoding: str = "base64",
-        attach_files_path: Union[List[str], str] = [],
+        attache_files_path: Union[List[Union[str, Path]], Union[Path, str]] = [],
     ):
         self.addr_to = addr_to
         self.addr_from = addr_from
@@ -40,7 +40,11 @@ class Mail:
         self.encoding = encoding
         self.mime: Union[MIMEText, MIMEMultipart]
         self.mime_type = mime_type.lower()
-        self.attach_files_path = attach_files_path
+        self.attache_files_path = attache_files_path
+        if isinstance(self.attache_files_path, list):
+            self.attache_files_path = [
+                to_path(path) for path in self.attache_files_path
+            ]
         self.transfer_encoding = transfer_encoding
         self.__set_transfer_encoding()
         self.__body()
