@@ -2,6 +2,7 @@ import pytest
 from pathlib import Path
 from src.magmail.utils import to_path
 
+
 class TestToPathFunction:
     def test_string_path(self):
         sample_path = "/magmail/tests"
@@ -17,7 +18,9 @@ class TestToPathFunction:
             to_path(test_value)
 
     def test_custom_type_value_error(self):
-        class CustomType(): None
+        class CustomType:
+            None
+
         test_custom_type = CustomType()
 
         with pytest.raises(TypeError) as _e:

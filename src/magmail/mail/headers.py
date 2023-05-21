@@ -9,6 +9,7 @@ from .mail import _Header
 
 THeaders = TypeVar("THeaders", bound="_Headers")
 
+
 class _Headers:
     def __init__(
         self,
@@ -55,7 +56,9 @@ class _Headers:
         raise AttributeError(key)
 
     def __custom_headers(self, header: _Header) -> None:
-        def change_type(function_dict: Optional[CUSTOM_FUNCTIONS_DICT_TYPE], header: _Header) -> None:
+        def change_type(
+            function_dict: Optional[CUSTOM_FUNCTIONS_DICT_TYPE], header: _Header
+        ) -> None:
             if function_dict is not None and header.field in function_dict:
                 func = function_dict[header.field]
                 if func is not None:

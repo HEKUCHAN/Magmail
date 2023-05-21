@@ -50,8 +50,12 @@ class Mail:
             self.transfer_encoding_func = b64encode
         elif self.transfer_encoding == "quoted-printable":
             self.transfer_encoding_func = quopri.encodestring
-        elif self.transfer_encoding == "7bit" or self.transfer_encoding == "8bit" or self.transfer_encoding == "binary":
-            self.transfer_encoding_func = lambda msg: msg # Do nothing
+        elif (
+            self.transfer_encoding == "7bit"
+            or self.transfer_encoding == "8bit"
+            or self.transfer_encoding == "binary"
+        ):
+            self.transfer_encoding_func = lambda msg: msg  # Do nothing
 
     def __headers(self):
         headers: Dict[str, Union[str, Tuple[str, str]]] = {
@@ -80,13 +84,13 @@ class Mail:
             self.mime = MIMEText(
                 self.transfer_encoding_func(self.message.encode(self.encoding)),
                 "plain",
-                _charset=self.encoding
+                _charset=self.encoding,
             )
         elif self.mime_type == "html":
             self.mime = MIMEText(
                 self.transfer_encoding_func(self.message.encode(self.encoding)),
                 "html",
-                _charset=self.encoding
+                _charset=self.encoding,
             )
         elif self.mime_type == "multipart":
             self.mime = MIMEMultipart()
@@ -101,25 +105,27 @@ class Mail:
 
             self.mime.attach(
                 MIMEText(
-                    self.transfer_encoding_func(self.message["plain"].encode(self.encoding)),
+                    self.transfer_encoding_func(
+                        self.message["plain"].encode(self.encoding)
+                    ),
                     "plain",
                     _charset=self.encoding,
                 )
             )
             self.mime.attach(
                 MIMEText(
-                    self.transfer_encoding_func(self.message["html"].encode(self.encoding)),
+                    self.transfer_encoding_func(
+                        self.message["html"].encode(self.encoding)
+                    ),
                     "html",
                     _charset=self.encoding,
                 )
             )
-        
+
         # The Transfer Encoding was duplicated, so Fix that here
         # Example : `base64`, `base64`, `utf-8` -> `base64`, `utf-8`
-        self.mime.set_payload(
-            b64decode(self.mime.get_payload()).decode('utf-8')
-        )
-        self.mime.replace_header('Content-Transfer-Encoding', self.transfer_encoding)
+        self.mime.set_payload(b64decode(self.mime.get_payload()).decode("utf-8"))
+        self.mime.replace_header("Content-Transfer-Encoding", self.transfer_encoding)
 
     def __attach_files(self):
         if isinstance(self.attache_files_path, list):

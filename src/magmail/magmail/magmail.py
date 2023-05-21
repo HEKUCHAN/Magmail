@@ -63,7 +63,6 @@ class Magmail:
         message: Union[Message, mboxMessage],
         path: Optional[Union[str, Path]] = None,
     ) -> Mail:
-
         return Mail(
             message=message,
             path=path,
@@ -76,7 +75,7 @@ class Magmail:
         self,
         message: Union[Message, mboxMessage],
         path: Optional[Union[str, Path]] = None,
-        drop_duplicates: bool=True,
+        drop_duplicates: bool = True,
     ) -> None:
         if drop_duplicates and self.is_mail_exist(message):
             return

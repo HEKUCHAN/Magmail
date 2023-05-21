@@ -68,11 +68,7 @@ def decode(byte: Union[bytes, str], error: str = "strict") -> Tuple[str, int]:
                     set_decode_type("jis90")
                 else:
                     raise UnicodeDecodeError(
-                        'iso_2022_jp_ms',
-                        byte,
-                        index,
-                        index + 1,
-                        'invalid start byte'
+                        "iso_2022_jp_ms", byte, index, index + 1, "invalid start byte"
                     )
 
             elif has_decode_type():
