@@ -25,4 +25,4 @@ jobs:
       - name: black
         run: poetry run black .
       - name: Run pre-commit
-        run: pre-commit run --all-files
+        run: poetry run pre-commit run --all-files
