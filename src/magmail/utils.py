@@ -2,8 +2,10 @@ import keyword
 from pathlib import Path
 from typing import Any, Optional, Union
 
+
 def get_type_name(object: Any) -> Optional[str]:
     return object.__class__.__name__
+
 
 def to_path(string: Union[str, Path]) -> Path:
     if isinstance(string, str):
