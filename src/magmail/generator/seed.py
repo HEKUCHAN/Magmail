@@ -1,7 +1,7 @@
 import json
 import uuid
 from pathlib import Path
-from typing import Any, Dict, List, Union
+from typing import Any, Dict, List, Tuple, Union
 
 from magmail.utils import to_path
 
@@ -28,7 +28,7 @@ class Seed:
 
     def add(
         self,
-        addr_to: str = "",
+        addr_to: Union[str, Tuple[str, str], List[Union[str, Tuple[str, str]]]] = "",
         addr_from: str = "",
         addr_cc: Union[str, List[str]] = "",
         subject: str = "",

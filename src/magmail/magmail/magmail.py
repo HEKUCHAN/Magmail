@@ -6,7 +6,9 @@ from pathlib import Path
 from io import TextIOWrapper
 from mailbox import mboxMessage
 from email.message import Message
-from typing import Any, Generator, Iterator, Optional, Union, List, Dict, Callable
+from typing import Generator, Iterator, Optional, Union, List, Dict, Callable
+
+from magmail.types import CUSTOM_FUNCTIONS_ROOT_DICT_TYPE, FILTER_CONTENTS_TYPE
 
 from .filter import _Filter
 from magmail.mail import Mail
@@ -15,9 +17,7 @@ from magmail.static import (
     DEFAULT_AUTO_CLEAN,
     DEFAULT_COLUMNS,
     CUSTOM_FUNCTIONS_DICT,
-    CUSTOM_FUNCTIONS_ROOT_DICT_TYPE,
     DEFAULT_FILTER_CONTENTS_DICT,
-    FILTER_CONTENTS_TYPE,
 )
 
 

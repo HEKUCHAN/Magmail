@@ -17,11 +17,11 @@ from magmail.static import (
     DEFAULT_AUTO_CLEAN,
     HTML_COMMENTS_REGEX,
     HTML_STYLE_TAG_REGEX,
-    FILTER_CONTENTS_TYPE,
     HTML_SCRIPT_TAG_REGEX,
     FULL_WITH_SPACE_REGEX,
     UNICODE_FULL_WITH_SPACE_REGEX,
 )
+from magmail.types import FILTER_CONTENTS_TYPE
 
 
 class _Body:

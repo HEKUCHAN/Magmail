@@ -10,16 +10,9 @@ ISO2022_JP_SIMILAR_CHARSET_LIST = [
 
 CP932_SIMILAR_CHARSET = ["cp932", "shift_jis", "shift_jis_2004", "shift_jisx0213"]
 
-EUC_JP_SIMILAR_CHARSET = [
-    "euc_jp",
-    "euc_jis_2004",
-    "euc_jisx0213",
-]
+EUC_JP_SIMILAR_CHARSET = ["euc_jp", "euc_jis_2004", "euc_jisx0213"]
 
-ASCII_SIMILAR_CHARSET = [
-    "ascii",
-    "utf_8",
-]
+ASCII_SIMILAR_CHARSET = ["ascii", "utf_8"]
 
 SIMILAR_CHARSET_LIST = [
     ISO2022_JP_SIMILAR_CHARSET_LIST,

@@ -1,6 +1,7 @@
 from typing import Any, Dict, List, Optional, Tuple, Union, TypeVar
 
-from magmail.static import CUSTOM_FUNCTIONS_DICT_TYPE, CHANGE_HEADER_TYPE_FUNCTIONS
+from magmail.static import CHANGE_HEADER_TYPE_FUNCTIONS
+from magmail.types import CUSTOM_FUNCTIONS_DICT_TYPE
 from magmail.utils import to_attribute_name
 
 
