@@ -15,7 +15,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 
 from magmail.utils import get_type_name, to_path
-from magmail.types import ADDRESS_HEADER_TYPE
+from magmail.types import ADDRESS_HEADER_TYPE, HEADER_TYPE
 
 
 class Mail:
@@ -26,7 +26,7 @@ class Mail:
         addr_cc: Union[List[ADDRESS_HEADER_TYPE], ADDRESS_HEADER_TYPE] = "",
         subject: str = "",
         message: Union[str, Dict[str, str]] = "",
-        headers: Dict[str, str] = {},
+        headers: Dict[str, HEADER_TYPE] = {},
         encoding: str = "utf-8",
         mime_type: str = "plain",
         transfer_encoding: str = "base64",
@@ -67,7 +67,7 @@ class Mail:
             self.transfer_encoding_func = lambda msg: msg  # Do nothing
 
     def __headers(self) -> None:
-        headers: Dict[str, ADDRESS_HEADER_TYPE] = {
+        headers: Dict[str, HEADER_TYPE] = {
             "Subject": self.subject,
             "From": self.addr_from,
             "To": self.addr_to,
@@ -78,7 +78,7 @@ class Mail:
         for name, header in headers.items():
             formatted_header = self.format_header(header, self.encoding)
 
-            if len(formatted_header) > 1 and isinstance(formatted_header, list):
+            if isinstance(formatted_header, list):
                 self.mime[name] = ", ".join([value for value in formatted_header])
             else:
                 self.mime[name] = formatted_header
@@ -191,20 +191,29 @@ class Mail:
         else:
             return Header(value, encoding).encode()
 
-    def format_header(
-        self,
-        values: ADDRESS_HEADER_TYPE,
-        encoding: Union[Charset, str] = "utf-8",
-    ) -> Union[str, List[str]]:
-        if isinstance(values, tuple):
+    def encode_address(
+        self, address: ADDRESS_HEADER_TYPE, encoding: Union[Charset, str] = 'utf-8'
+    ) -> str:
+        if isinstance(address, str):
+            return self.encode_header(address, encoding=encoding)
+        elif isinstance(address, tuple):
             name_and_addr: Tuple[Optional[str], str] = (
-                self.encode_header(values[0], encoding=encoding),
-                self.encode_header(values[1], encoding=encoding),
+                self.encode_header(address[0], encoding=encoding),
+                self.encode_header(address[1], encoding=encoding),
             )
 
             return formataddr(name_and_addr, charset=encoding)
+
+    def format_header(
+        self,
+        values: HEADER_TYPE,
+        encoding: Union[Charset, str] = "utf-8",
+    ) -> Union[str, List[str]]:
+        if isinstance(values, tuple):
+            return self.encode_address(values, encoding=encoding)
         elif isinstance(values, list):
-            return [self.format_header(value) for value in values]
+            test = [self.encode_address(value) for value in values]
+            return test
         elif isinstance(values, str):
             return self.encode_header(values, encoding=encoding)
         else:
