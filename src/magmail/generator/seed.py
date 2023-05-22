@@ -13,8 +13,10 @@ class Seed:
         json_path: Union[str, Path],
         export_eml_path: Union[str, Path],
         title: str = "",
+        explain: str = "",
     ):
         self.title = title
+        self.explain = explain
         self.json_path = to_path(json_path)
         self.export_eml_path = to_path(export_eml_path)
         self.seeds: List[Dict[str, Any]] = []
@@ -39,9 +41,11 @@ class Seed:
         mime_type: str = "plain",
         transfer_encoding: str = "base64",
         attachment_file_paths: Union[List[str], str] = [],
+        comment: str = ""
     ) -> None:
         self.seeds.append(
             {
+                "comment": comment,
                 "addr_to": addr_to,
                 "addr_from": addr_from,
                 "addr_cc": addr_cc,
@@ -58,6 +62,7 @@ class Seed:
     def to_file(self) -> None:
         template_json = {
             "title": self.title,
+            "explain": self.explain,
             "json_path": str(self.json_path),
             "export_eml_path": str(self.export_eml_path),
             "amount": len(self.seeds),
