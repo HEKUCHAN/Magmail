@@ -41,11 +41,9 @@ class Seed:
         mime_type: str = "plain",
         transfer_encoding: str = "base64",
         attachment_file_paths: Union[List[str], str] = [],
-        comment: str = ""
     ) -> None:
         self.seeds.append(
             {
-                "comment": comment,
                 "addr_to": addr_to,
                 "addr_from": addr_from,
                 "addr_cc": addr_cc,
@@ -59,7 +57,7 @@ class Seed:
             }
         )
 
-    def to_file(self) -> None:
+    def to_file(self, encoding='utf-8', indent=4, ensure_ascii=True) -> None:
         template_json = {
             "title": self.title,
             "explain": self.explain,
@@ -69,5 +67,5 @@ class Seed:
             "seeds": self.seeds,
         }
 
-        with open(self.json_path, "w+") as file:
-            json.dump(template_json, file, indent=4)
+        with open(self.json_path, "w+", encoding=encoding) as file:
+            json.dump(template_json, file, indent=indent, ensure_ascii=ensure_ascii)
