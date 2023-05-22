@@ -63,7 +63,6 @@ class Magmail:
         message: Union[Message, mboxMessage],
         path: Optional[Union[str, Path]] = None,
     ) -> Mail:
-
         return Mail(
             message=message,
             path=path,
