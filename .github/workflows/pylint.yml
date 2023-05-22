@@ -17,28 +17,14 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.PAT }}
+      - name: Install Poetry
+        run: |
+          pipx install poetry
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-      # Poetry cache depends on OS, Python version and Poetry version.
-      - name: Cache Poetry cache
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pypoetry
-          key: poetry-cache-${{ runner.os }}-${{ steps.setup_python.outputs.python-version }}-${{ env.POETRY_VERSION }}
-      # virtualenv cache should depends on OS, Python version and `poetry.lock` (and optionally workflow files).
-      - name: Cache Packages
-        uses: actions/cache@v3
-        with:
-          path: ./venv/
-          key: poetry-local-${{ runner.os }}-${{ steps.setup_python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}-${{ hashFiles('.github/workflows/*.yml') }}
-      - name: Install Poetry
-        run: curl -sSL https://install.python-poetry.org | python3 -
-      - name: Add path for Poetry
-        run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
-      - name: Config Poetry
-        run: poetry config virtualenvs.in-project true --local
+          cache: 'poetry'
       - name: Install dependencies
         run: poetry install --with dev --no-interaction
       - name: black
