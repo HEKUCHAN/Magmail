@@ -17,13 +17,14 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.PAT }}
+      - name: Install Poetry
+        run: |
+          pipx install poetry
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'poetry'
-      - name: Config Poetry
-        run: poetry config virtualenvs.in-project true --local
       - name: Install dependencies
         run: poetry install --with dev --no-interaction
       - name: black
