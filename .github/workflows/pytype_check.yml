@@ -37,10 +37,8 @@ jobs:
         if: steps.poetry_cache_id.outputs.cache-hit != 'true'
         run: curl -sSL https://install.python-poetry.org | python3 -
       - name: Add path for Poetry
-        if: steps.poetry_cache_id.outputs.cache-hit != 'true'
         run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
       - name: Config Poetry
-        if: steps.poetry_cache_id.outputs.cache-hit != 'true'
         run: poetry config virtualenvs.in-project true --local
       - name: Install dependencies
         if: steps.python_dependecies_id.outputs.cache-hit != 'true'
