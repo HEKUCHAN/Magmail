@@ -1,14 +1,2 @@
-def sample(
-    a,
-    aa,
-    aaa,
-    aaaa,
-    aaaaa,
-    aaaaaa,
-    aaaaaaa,
-    aaaaaaaa,
-    aaaaaaaaa,
-    aaaaaaaaaa,
-    aaaaaaaaaaa,
-):
+def test(a, aa, aaaaaaaaa,aaa,aaaaa,aaaaaaa,aaaaaaaa):
     return
