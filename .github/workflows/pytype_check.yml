@@ -21,6 +21,6 @@ jobs:
       - name: Add path for Poetry
         run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
       - name: Install dependencies
-        run: poetry install --no-interaction --dev
+        run:  poetry install --with dev --no-interaction
       - name: mypy
         run: poetry run mypy --strict ./src
