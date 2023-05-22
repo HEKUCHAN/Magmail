@@ -2,6 +2,11 @@ name: Python Type Checker
 
 on: [push]
 
+env:
+  PYTHON_VERSION: "3.8.10"
+  POETRY_VERSION: "1.4.2"
+  POETRY_URL: https://install.python-poetry.org
+
 jobs:
   type-check:
     runs-on: ubuntu-latest
@@ -35,9 +40,9 @@ jobs:
           key: poetry-local-${{ runner.os }}-${{ steps.setup_python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}-${{ hashFiles('.github/workflows/*.yml') }}
       - name: Install Poetry
         if: steps.poetry_cache_id.outputs.cache-hit != 'true'
-        run: curl -sSL https://install.python-poetry.org | python3 -
-      - name: Add path for Poetry
-        run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+        run: |
+          curl -sSL ${{ env.POETRY_URL }} | python - --version ${{ env.POETRY_VERSION }}
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
       - name: Config Poetry
         run: poetry config virtualenvs.in-project true --local
       - name: Install dependencies
