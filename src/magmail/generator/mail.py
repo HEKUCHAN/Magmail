@@ -15,21 +15,22 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 
 from magmail.utils import get_type_name, to_path
+from magmail.types import ADDRESS_HEADER_TYPE
 
 
 class Mail:
     def __init__(
         self,
-        addr_to: Union[str, Tuple[str, str]] = "",
-        addr_from: Union[str, Tuple[str, str]] = "",
-        addr_cc: Union[str, Tuple[str, str]] = "",
+        addr_to: ADDRESS_HEADER_TYPE = "",
+        addr_from: ADDRESS_HEADER_TYPE = "",
+        addr_cc: Union[List[ADDRESS_HEADER_TYPE], ADDRESS_HEADER_TYPE] = "",
         subject: str = "",
         message: Union[str, Dict[str, str]] = "",
         headers: Dict[str, str] = {},
         encoding: str = "utf-8",
         mime_type: str = "plain",
         transfer_encoding: str = "base64",
-        attache_files_path: Union[List[Union[str, Path]], Union[Path, str]] = [],
+        attachment_file_paths: Union[List[Union[str, Path]], Union[Path, str]] = [],
     ):
         self.addr_to = addr_to
         self.addr_from = addr_from
@@ -40,10 +41,10 @@ class Mail:
         self.encoding = encoding
         self.mime: Union[MIMEText, MIMEMultipart]
         self.mime_type = mime_type.lower()
-        self.attache_files_path = attache_files_path
-        if isinstance(self.attache_files_path, list):
-            self.attache_files_path = [
-                to_path(path) for path in self.attache_files_path
+        self.attachment_file_paths = attachment_file_paths
+        if isinstance(self.attachment_file_paths, list):
+            self.attachment_file_paths = [
+                to_path(path) for path in self.attachment_file_paths
             ]
         self.transfer_encoding = transfer_encoding
         self.__set_transfer_encoding()
@@ -66,7 +67,7 @@ class Mail:
             self.transfer_encoding_func = lambda msg: msg  # Do nothing
 
     def __headers(self) -> None:
-        headers: Dict[str, Union[str, Tuple[str, str]]] = {
+        headers: Dict[str, ADDRESS_HEADER_TYPE] = {
             "Subject": self.subject,
             "From": self.addr_from,
             "To": self.addr_to,
@@ -143,8 +144,8 @@ class Mail:
         self.mime.replace_header("Content-Transfer-Encoding", self.transfer_encoding)
 
     def __attach_files(self) -> None:
-        if isinstance(self.attach_files_path, list):
-            for file_path in self.attach_files_path:
+        if isinstance(self.attachment_file_paths, list):
+            for file_path in self.attachment_file_paths:
                 with open(file_path, "rb") as file:
                     attachment_file = MIMEApplication(file.read())
                 attachment_file.add_header(
@@ -154,12 +155,12 @@ class Mail:
                 )
                 self.mime.attach(attachment_file)
         else:
-            with open(self.attach_files_path, "rb") as file:
+            with open(self.attachment_file_paths, "rb") as file:
                 attachment_file = MIMEApplication(file.read())
             attachment_file.add_header(
                 "Content-Disposition",
                 "attachment",
-                filename=os.path.basename(self.attach_files_path),
+                filename=os.path.basename(self.attachment_file_paths),
             )
             self.mime.attach(attachment_file)
 
@@ -192,7 +193,7 @@ class Mail:
 
     def format_header(
         self,
-        values: Union[str, Tuple[str, str]],
+        values: ADDRESS_HEADER_TYPE,
         encoding: Union[Charset, str] = "utf-8",
     ) -> Union[str, List[str]]:
         if isinstance(values, tuple):

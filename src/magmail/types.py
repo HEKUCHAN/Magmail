@@ -6,4 +6,4 @@ CUSTOM_FUNCTIONS_DICT_TYPE = Dict[str, Optional[Callable[[str], Any]]]
 CUSTOM_FUNCTIONS_ROOT_DICT_TYPE = Dict[str, CUSTOM_FUNCTIONS_DICT_TYPE]
 
 
-ADDRESS_TYPE = Union[str, Tuple[str, str]]
+ADDRESS_HEADER_TYPE = Union[str, Tuple[str, str]]

@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple, Union
 
 from magmail.utils import to_path
+from magmail.types import ADDRESS_HEADER_TYPE
 
 
 class Seed:
@@ -28,16 +29,16 @@ class Seed:
 
     def add(
         self,
-        addr_to: Union[str, Tuple[str, str], List[Union[str, Tuple[str, str]]]] = "",
-        addr_from: str = "",
-        addr_cc: Union[str, List[str]] = "",
+        addr_to: ADDRESS_HEADER_TYPE = "",
+        addr_from: ADDRESS_HEADER_TYPE = "",
+        addr_cc: Union[List[ADDRESS_HEADER_TYPE], ADDRESS_HEADER_TYPE] = "",
         subject: str = "",
         message: Union[str, Dict[str, str]] = "",
         headers: Dict[str, str] = {},
         encoding: str = "utf-8",
         mime_type: str = "plain",
         transfer_encoding: str = "base64",
-        attach_files_path: Union[List[str], str] = [],
+        attachment_file_paths: Union[List[str], str] = [],
     ) -> None:
         self.seeds.append(
             {
@@ -50,18 +51,18 @@ class Seed:
                 "encoding": encoding,
                 "mime_type": mime_type,
                 "transfer_encoding": transfer_encoding,
-                "attach_files_path": attach_files_path,
+                "attach_files_path": attachment_file_paths,
             }
         )
 
     def to_file(self) -> None:
         template_json = {
             "title": self.title,
-            "json_path": self.json_path,
-            "export_eml_path": self.export_eml_path,
+            "json_path": str(self.json_path),
+            "export_eml_path": str(self.export_eml_path),
             "amount": len(self.seeds),
             "seeds": self.seeds,
         }
 
-        with open(self.json_path, "w") as file:
+        with open(self.json_path, "w+") as file:
             json.dump(template_json, file, indent=4)
