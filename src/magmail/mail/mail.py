@@ -4,19 +4,15 @@ from email.message import Message
 from email.utils import parsedate_to_datetime
 from typing import Any, Callable, Dict, List, Optional, Union
 
+from magmail.types import CUSTOM_FUNCTIONS_ROOT_DICT_TYPE, FILTER_CONTENTS_TYPE
+
 
 from .body import _Body
 from .header import _Header
 from .headers import _Headers
 from magmail.magmail.filter import _Filter
 from magmail.utils import to_attribute_name
-from magmail.static import (
-    DEFAULT_AUTO_CLEAN,
-    FILTER_CONTENTS_TYPE,
-    CUSTOM_FUNCTIONS_DICT,
-    CUSTOM_FUNCTIONS_DICT_TYPE,
-    CUSTOM_FUNCTIONS_ROOT_DICT_TYPE,
-)
+from magmail.static import DEFAULT_AUTO_CLEAN, CUSTOM_FUNCTIONS_DICT
 
 
 class Mail:

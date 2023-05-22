@@ -6,7 +6,9 @@ from pathlib import Path
 from io import TextIOWrapper
 from mailbox import mboxMessage
 from email.message import Message
-from typing import Any, Generator, Iterator, Optional, Union, List, Dict, Callable
+from typing import Generator, Iterator, Optional, Union, List, Dict, Callable
+
+from magmail.types import CUSTOM_FUNCTIONS_ROOT_DICT_TYPE, FILTER_CONTENTS_TYPE
 
 from .filter import _Filter
 from magmail.mail import Mail
@@ -15,9 +17,7 @@ from magmail.static import (
     DEFAULT_AUTO_CLEAN,
     DEFAULT_COLUMNS,
     CUSTOM_FUNCTIONS_DICT,
-    CUSTOM_FUNCTIONS_ROOT_DICT_TYPE,
     DEFAULT_FILTER_CONTENTS_DICT,
-    FILTER_CONTENTS_TYPE,
 )
 
 
@@ -56,7 +56,7 @@ class Magmail:
         elif self.mbox_path.suffix == ".eml":
             self.add_eml(self.mbox_path)
         else:
-            raise TypeError("Only supported .eml or .mbox files.")
+            raise TypeError("Only '.eml' or '.mbox' files are supported.")
 
     def _create_mail(
         self,
@@ -92,8 +92,13 @@ class Magmail:
         mbox_path = to_path(mbox_path)
         filter_suffix = ".mbox"
 
+        if mbox_path.suffix != filter_suffix:
+            raise ValueError(
+                f"Unknown file extension: {mbox_path.suffix}. Only '{filter_suffix}' files are supported."
+            )
+
         if not mbox_path.exists():
-            raise FileExistsError(mbox_path)
+            raise FileNotFoundError(f"File not found: {mbox_path}")
 
         if mbox_path.is_file() and mbox_path.suffix == filter_suffix:
             mail_box = mailbox.mbox(mbox_path)
@@ -117,8 +122,13 @@ class Magmail:
         eml_path = to_path(eml_path)
         filter_suffix = ".eml"
 
+        if eml_path.suffix != filter_suffix:
+            raise ValueError(
+                f"Unknown file extension: {eml_path.suffix}. Only '{filter_suffix}' files are supported."
+            )
+
         if not eml_path.exists():
-            raise FileNotFoundError(eml_path)
+            raise FileNotFoundError(f"File not found: {eml_path}")
 
         if eml_path.is_file() and eml_path.suffix == filter_suffix:
             with open(eml_path, "rb") as email_file:

@@ -1,0 +1,20 @@
+{
+    "title": "Charset Seeds",
+    "json_path": "../seeds/charsets_seeds.json",
+    "export_eml_path": "../../../tests/test_files",
+    "amount": 1,
+    "seeds": [
+        {
+            "addr_to": "",
+            "addr_from": "",
+            "addr_cc": "",
+            "subject": "",
+            "message": "",
+            "headers": {},
+            "encoding": "utf-8",
+            "mime_type": "plain",
+            "transfer_encoding": "base64",
+            "attach_files_path": []
+        }
+    ]
+}
