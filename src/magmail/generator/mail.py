@@ -192,7 +192,7 @@ class Mail:
             return Header(value, encoding).encode()
 
     def encode_address(
-        self, address: ADDRESS_HEADER_TYPE, encoding: Union[Charset, str] = 'utf-8'
+        self, address: ADDRESS_HEADER_TYPE, encoding: Union[Charset, str] = "utf-8"
     ) -> str:
         if isinstance(address, str):
             return self.encode_header(address, encoding=encoding)
