@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple, Union
 
 from magmail.utils import to_path
-from magmail.types import ADDRESS_HEADER_TYPE
+from magmail.types import ADDRESS_HEADER_TYPE, HEADER_TYPE
 
 
 class Seed:
@@ -33,7 +33,7 @@ class Seed:
         self,
         addr_to: ADDRESS_HEADER_TYPE = "",
         addr_from: ADDRESS_HEADER_TYPE = "",
-        addr_cc: Union[List[ADDRESS_HEADER_TYPE], ADDRESS_HEADER_TYPE] = "",
+        addr_cc: HEADER_TYPE = "",
         subject: str = "",
         message: Union[str, Dict[str, str]] = "",
         headers: Dict[str, str] = {},
@@ -57,7 +57,9 @@ class Seed:
             }
         )
 
-    def to_file(self, encoding='utf-8', indent=4, ensure_ascii=True) -> None:
+    def to_file(
+        self, encoding: str ="utf-8", indent: int = 4, ensure_ascii: bool = True
+    ) -> None:
         template_json = {
             "title": self.title,
             "explain": self.explain,
