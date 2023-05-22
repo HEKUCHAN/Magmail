@@ -5,7 +5,12 @@ on: [push]
 jobs:
   python-black:
     runs-on: ubuntu-latest
-    if: ${{ !contains(github.event.head_commit.message, 'Apply Code Formatter Change') }}
+    if: |
+      ${{
+        !contains(github.event.head_commit.message, 'Apply Code Formatter Change') &&
+        !github.event.pull_request &&
+        !github.event.pull_request.merged
+      }}
     strategy:
       matrix:
         python-version: ["3.8"]
