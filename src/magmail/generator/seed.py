@@ -58,7 +58,7 @@ class Seed:
         )
 
     def to_file(
-        self, encoding: str ="utf-8", indent: int = 4, ensure_ascii: bool = True
+        self, encoding: str = "utf-8", indent: int = 4, ensure_ascii: bool = True
     ) -> None:
         template_json = {
             "title": self.title,
