@@ -1,8 +1,4 @@
-import random
-import shortuuid
-from typing import Dict, Union
 from faker import Faker
-from collections import OrderedDict
 
 fake = {"en": Faker("en-US"), "ja": Faker("ja_JP")}
 
