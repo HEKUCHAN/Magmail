@@ -1,7 +1,7 @@
 import json
 import uuid
 from pathlib import Path
-from typing import Any, Dict, List, Tuple, Union
+from typing import Any, Dict, List, Union
 
 from magmail.utils import to_path
 from magmail.types import ADDRESS_HEADER_TYPE, HEADER_TYPE
@@ -53,7 +53,7 @@ class Seed:
                 "encoding": encoding,
                 "mime_type": mime_type,
                 "transfer_encoding": transfer_encoding,
-                "attach_files_path": attachment_file_paths,
+                "attachment_file_paths": attachment_file_paths,
             }
         )
 
