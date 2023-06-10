@@ -1,21 +1,19 @@
 import os
 import random
-from typing import List, Union
 
-from magmail.generator import Seed, gen_email, gen_word, gen_name
+from magmail.generator import Seed, gen_email, gen_name, gen_word
 from magmail.types import HEADER_TYPE
-
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 generator = Seed(
     json_path="../seeds/normal_en_seeds.json",
-    export_eml_path="../../../tests/test_files/eml/normal_en/",
+    export_eml_path="../../../../../tests/test_files/eml/normal_en/",
     title="Normal English Seeds",
     explain="Normal English mail samples",
 )
 
-LANG = 'en'
+LANG = "en"
 
 for i in range(75):
     cc_range = 5
