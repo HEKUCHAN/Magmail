@@ -1,11 +1,9 @@
 import uuid
-import pprint
 import json
-from typing import Union
+from typing import Union, Any
 from pathlib import Path
 
 from magmail.utils import to_path
-from magmail.generator import Mail
 
 
 class Reader:
@@ -21,15 +19,21 @@ class Reader:
 
         self.read()
 
-    def read(self):
+    def read(self) -> None:
         with open(self.json_path, "r") as file:
-            json_file = json.load(file)
-
-        pprint.pprint(json_file)
+            self.data = self.serializer(json.load(file))
 
     @classmethod
-    def serializer(cls, eml_json):
-        pass
+    def serializer(cls, eml_json: Any) -> Any:
+        for seed_key, seed in enumerate(eml_json["seeds"]):
+            for addr in seed["addr_cc"]:
+                if isinstance(addr, list):
+                    addr = tuple(addr)
+                    eml_json["seeds"][seed_key]["addr_cc"] = addr
 
-    def to_file(self):
-        pass
+            if isinstance(seed["addr_to"], list):
+                eml_json["seeds"][seed_key]["addr_to"] = tuple(seed["addr_to"])
+
+            if isinstance(seed["addr_from"], list):
+                eml_json["seeds"][seed_key]["addr_from"] = tuple(seed["addr_from"])
+        return eml_json
