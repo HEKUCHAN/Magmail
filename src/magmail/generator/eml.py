@@ -41,7 +41,7 @@ class Eml:
                     **seed
                 ).to_file(export_eml_path / f"{self.json_path.stem}-{i}.eml")
 
-    def create_parent_dic(self, path: Union[str, Path]):
+    def create_parent_dic(self, path: Union[str, Path]) -> None:
         if not isinstance(path, Path):
             path = to_path(path)
 
