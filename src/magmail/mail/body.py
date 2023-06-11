@@ -1,5 +1,4 @@
 import html
-from pathlib import Path
 from mailbox import mboxMessage
 from email.message import Message
 from typing import Callable, Dict, Optional, Union

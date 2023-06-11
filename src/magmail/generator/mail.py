@@ -1,4 +1,3 @@
-from email.charset import Charset
 import os
 import uuid
 import quopri
@@ -9,6 +8,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from email import generator
 from email.header import Header
+from email.charset import Charset
 from email.utils import formatdate, formataddr
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart

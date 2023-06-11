@@ -1,8 +1,7 @@
 from pathlib import Path
 from mailbox import mboxMessage
 from email.message import Message
-from email.utils import parsedate_to_datetime
-from typing import Any, Callable, Dict, List, Optional, Union
+from typing import Any, Callable, Dict, Optional, Union
 
 from magmail.types import CUSTOM_FUNCTIONS_ROOT_DICT_TYPE, FILTER_CONTENTS_TYPE
 

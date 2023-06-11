@@ -1,10 +1,18 @@
-import random
-import shortuuid
+from typing import Any
+from faker import Faker
+
+fake = {"en": Faker("en-US"), "ja": Faker("ja_JP")}
+
+DEFAULT_LOCAL = "ja"
 
 
-def generate_email() -> str:
-    return f"{shortuuid.uuid()[:10]}@{shortuuid.uuid()[:4]}.{shortuuid.uuid(pad_length=3)[:3]}"
+def gen_email(lang: str = DEFAULT_LOCAL) -> Any:
+    return fake[lang].email()
 
 
-def generate_japanese(length: int = 20) -> str:
-    return "".join(chr(random.choice(range(0x4E00, 0x9FD5))) for _ in range(length))
+def gen_name(lang: str = DEFAULT_LOCAL) -> Any:
+    return fake[lang].name()
+
+
+def gen_word(length: int = 250, lang: str = DEFAULT_LOCAL) -> Any:
+    return fake[lang].text(max_nb_chars=length)
