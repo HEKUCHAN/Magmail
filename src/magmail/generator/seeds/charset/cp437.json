@@ -1,0 +1,279 @@
+{
+  "title": "Charset `cp437` Test",
+  "explain": "Test cp437",
+  "json_path": "..\\seeds\\charset\\cp437.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\cp437",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "Cassandra Fuller",
+        "ytorres@example.net"
+      ],
+      "addr_from": [
+        "Crystal Ayala",
+        "craig93@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 1",
+      "message": "Adult section thus project direction star hundred. Chance design ok common indicate politics. Building officer environment.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "James Wells",
+        "singletonshelley@example.org"
+      ],
+      "addr_from": [
+        "Wendy Williams",
+        "lopezrobert@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 2",
+      "message": "Increase partner white bill not since explain. Now media edge seat apply set a. Method management society perform claim phone four.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Billy Castro",
+        "ymartin@example.net"
+      ],
+      "addr_from": [
+        "Tamara Brown",
+        "jefferykim@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 3",
+      "message": "Big much factor process truth fast wall address. Create everybody film I card.\nStuff decade left protect. Series easy instead. Total writer her team yourself receive.\nData create leave person amount. Letter office something according.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Matthew Haley",
+        "james47@example.com"
+      ],
+      "addr_from": [
+        "Michelle Collins",
+        "zholland@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 4",
+      "message": "Great foot sea recognize group former leader. Option at attention should than medical conference. Not kind daughter.\nTonight method arm old performance country. Difficult turn hit last west.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Ariel Fields",
+        "karen78@example.com"
+      ],
+      "addr_from": [
+        "Brittany Lang",
+        "fbrown@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 5",
+      "message": "Fund character space mention billion authority young. Task increase reduce. Seven analysis arm reach ready in face maintain. Series wife into forward outside sing.\nTheory wind score than south school.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "William Love",
+        "boylelouis@example.org"
+      ],
+      "addr_from": [
+        "Anthony Powers",
+        "marshallpaul@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 6",
+      "message": "Walk two return focus lot example. Positive remain amount would wind. Maintain standard day staff suggest yard. Future human born toward collection.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "John Craig",
+        "thomas00@example.com"
+      ],
+      "addr_from": [
+        "Todd Ortiz",
+        "jeffery95@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 7",
+      "message": "Kind help which effort both. Often most father evidence book design bar.\nCertainly her direction rich. Congress firm social build.\nSeem agency however over page carry should learn. Whether example day artist bar stay building century.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Kathryn Raymond",
+        "yford@example.com"
+      ],
+      "addr_from": [
+        "Kevin Summers",
+        "tracy75@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 8",
+      "message": "Maybe small study prepare people avoid market.\nDrop land he treatment.\nDirector figure resource nature what south safe. Every right give or building chair food answer.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Laura Graham",
+        "iwest@example.net"
+      ],
+      "addr_from": [
+        "Kenneth Ellis",
+        "wilsonstephanie@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 9",
+      "message": "Suffer enjoy fill. Century yet himself history company he education order. Pm space among choose property eight.\nDinner friend rule work set analysis institution artist. Girl across night nice clearly.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Scott Davis",
+        "jstephens@example.net"
+      ],
+      "addr_from": [
+        "Ian Roberts",
+        "coreymoreno@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 10",
+      "message": "Night thus name model. Cut wear year run join represent. Create phone any reflect.\nState off simply final right painting than.\nHerself president kid it mention begin blood. Matter stop attorney glass information against develop.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Maureen Gaines",
+        "ewilliams@example.net"
+      ],
+      "addr_from": [
+        "Brian Warner",
+        "kylieyang@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 11",
+      "message": "Still him whatever including goal one act sort. Thus speech lead. Control down usually sell air yeah account yard.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Amy Ramirez",
+        "stewartkathy@example.net"
+      ],
+      "addr_from": [
+        "Neil Martin",
+        "robertsmith@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 12",
+      "message": "Similar likely without during yeah bar gun forward. Serious arm else. Yeah people thousand through read.\nAlready economic government.\nContinue individual light authority my. Sometimes we trial where safe measure shoulder. Suffer card cover floor.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Joseph Warner",
+        "mary16@example.com"
+      ],
+      "addr_from": [
+        "Sharon King",
+        "david32@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 13",
+      "message": "Which kid say design fund interest institution. Know above meet item.\nDevelop there name know fill fund address. Read add hour training fine performance guess. Dream pull dog environmental enjoy court.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Destiny Robertson",
+        "huangaaron@example.org"
+      ],
+      "addr_from": [
+        "Donna Brown DDS",
+        "mgomez@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 14",
+      "message": "Nation when lay mouth record we remember. Visit source fact need apply shoulder do.\nFeeling so series energy. Outside table manager stuff.\nView need knowledge life wife into. But guess name travel huge well.\nEither section begin without.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Amanda Moses",
+        "ehill@example.com"
+      ],
+      "addr_from": [
+        "Jeffrey Smith",
+        "iduke@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp437 - 15",
+      "message": "Oil hour contain head recent fill. Draw dog animal. Air so media positive hair with value.\nDetail matter pick cultural city serve society.\nModel small commercial that face thing score. Upon role technology man seven group total easy.",
+      "headers": {},
+      "encoding": "cp437",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

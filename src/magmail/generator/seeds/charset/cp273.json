@@ -1,0 +1,279 @@
+{
+  "title": "Charset `cp273` Test",
+  "explain": "Test cp273",
+  "json_path": "..\\seeds\\charset\\cp273.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\cp273",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "Mathilde He\u00df B.Sc.",
+        "ziegertmohammed@example.org"
+      ],
+      "addr_from": [
+        "Helmar Benthin B.Eng.",
+        "zhaase@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 1",
+      "message": "Offen Boden trinken bis hei\u00df Hilfe. Sieben einigen oben. Sohn m\u00f6glich schreien darauf uns Junge spielen.\nStellen klein hinter Erde Polizei bekommen Familie. Merken Geschenk mit Fahrrad.\nPlatz nie sind.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Leokadia Kruschwitz",
+        "utlustek@example.net"
+      ],
+      "addr_from": [
+        "Jasmina Speer-J\u00e4kel",
+        "antoniettaroskoth@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 2",
+      "message": "Gab Leben Sache anfangen erst dumm reich. Wieder Mama h\u00e4ngen \u00f6ffnen. Junge fallen nach m\u00fcde gleich \u00fcber.\nWollen gestern schnell erz\u00e4hlen. Hand d\u00fcrfen fangen fressen die d\u00fcrfen doch. Glas Junge Sonne nun Mutter Stein.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Herrmann Martin",
+        "geiseldelia@example.com"
+      ],
+      "addr_from": [
+        "Rico Sager-Faust",
+        "joanasoeding@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 3",
+      "message": "Verlieren vorbei tot das nah machen tief. Finger Hund setzen Schwester im ihm.\nGerade richtig Auge um nehmen. H\u00e4ngen fr\u00f6hlich h\u00e4ngen Arzt wird ihr Winter. Mama dauern weg Finger mal f\u00fcnf klein. Nichts Geld bis Tisch lustig.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Immo Ehlert B.Sc.",
+        "tuerkan02@example.net"
+      ],
+      "addr_from": [
+        "Ute Mosemann MBA.",
+        "hans-willi70@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 4",
+      "message": "Wissen wissen haben Angst viel. Mutter sieht Fu\u00df lustig Fu\u00df. Stehen heute leise gehen.\nEr es sollen kaufen. Reiten dann Fisch fast sich. Opa Mutter doch Teller sechs.\nKlasse mit ihn heraus. Frei drehen warten davon Freude.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Herr Andre Kruschwitz",
+        "iseip@example.com"
+      ],
+      "addr_from": [
+        "Joseph Pruschke",
+        "sylwiakobelt@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 5",
+      "message": "Einige Eis Mensch rechnen blau Zeit. Wir Boden mit Haare weinen Fahrrad mal wei\u00df.\nStellen mit leise sprechen weiter ein Stra\u00dfe. Mama Ding schicken packen tragen aber fast gegen.\nGr\u00fcn Geschenk drau\u00dfen \u00fcber viel Sonne n\u00e4chste.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Ricarda Cichorius B.Sc.",
+        "theodoros22@example.com"
+      ],
+      "addr_from": [
+        "Herr Tomislav Drubin B.Eng.",
+        "stavros25@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 6",
+      "message": "Machen Onkel Weihnachten Zimmer Vater Polizei fallen. Doch bringen Sonntag in. Nennen sehen denn Papa singen.\nReiten langsam halten Spa\u00df. Lehrer ob an Hase bis glauben erz\u00e4hlen ihm.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Cengiz Dussen van",
+        "seifertmarlen@example.net"
+      ],
+      "addr_from": [
+        "Dipl.-Ing. Anett Sager",
+        "gnatzivanka@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 7",
+      "message": "Zusammen Fu\u00df noch fiel gestern. Unten Stra\u00dfe Luft schlafen wieder packen. Wird gesund fressen sofort sieben.\nDick dabei machen drau\u00dfen \u00fcberall. Unter dann Haus Wissen noch.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Gundolf Jacob",
+        "zahnpatrik@example.net"
+      ],
+      "addr_from": [
+        "Zdravko Krein-Gute",
+        "imeldastaude@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 8",
+      "message": "Gegen dir neun am. Sonntag Apfel Feuer Sonne sehr sonst schreiben ihr. Lange lieb hoch sechs. Sonst Weg oben Mensch Arbeit Fenster als.\nHilfe genau gibt jung fr\u00fch gestern. Ins Berg hart Lehrerin Sonne bleiben. Ja fliegen die ganz verstecken dick.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Prof. Ilse Otto B.A.",
+        "karenpechel@example.com"
+      ],
+      "addr_from": [
+        "Friedrich Ritter",
+        "cseidel@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 9",
+      "message": "Name n\u00e4chste und unten Bruder. Wald den helfen hei\u00df. Rennen kein sollen an scheinen verstehen.\nHoch lieb hart Ende. Haus setzen Sonntag. Opa Sonntag hoch.\nDann bin T\u00fcr gestern Sohn laut. Dir vielleicht wohl erkl\u00e4ren.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Prof. Bernd Bauer",
+        "hullrich@example.org"
+      ],
+      "addr_from": [
+        "Marianna Ernst-Matth\u00e4i",
+        "cplath@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 10",
+      "message": "Waschen Tisch kalt gro\u00df. Sprechen Haare vier Wohnung.\nSchwester einmal Land arbeiten. Oma Essen am finden vor oft zur.\nNacht kann Ferien zeigen m\u00f6glich. Nennen beide Sonntag beim nennen fast Sonntag. Schlafen werden um endlich.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Hubert M\u00fchle B.Sc.",
+        "stahremilie@example.net"
+      ],
+      "addr_from": [
+        "Damian Grein Groth-Jopich",
+        "beeryvette@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 11",
+      "message": "Sitzen Schiff hoch fr\u00fcher. Hund Name nennen Licht Nacht vom sp\u00e4t. Glauben verlieren fiel Loch. Erst Mensch Ferien Stadt traurig sollen mehr.\nOb an durch arbeiten Wald bin Apfel. Warum Gl\u00fcck los fliegen hart.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Brunhilde Meyer",
+        "cpreiss@example.com"
+      ],
+      "addr_from": [
+        "Ing. S\u00fckr\u00fc Meyer B.Eng.",
+        "stiffelanke@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 12",
+      "message": "Ohne man tun.\nNun wissen hier Maus.\nWerfen Name kommen warum sehr. Bild Stra\u00dfe Glas legen Mann warten.\nZur\u00fcck sehr gehen schwer Welt. Sp\u00e4t warum Garten deshalb.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Heino Junitz",
+        "zitahermighausen@example.org"
+      ],
+      "addr_from": [
+        "Jonas Ernst",
+        "khein@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 13",
+      "message": "Bild Jahr gelb Frage gesund. Geschenk sieben noch Abend. Vom schenken tun sofort.\nName Papa Beispiel. Herr wirklich turnen leise glauben gern Garten immer.\nRad Zahl neu fressen hier. Antworten schauen wie bleiben gut Frage dein.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Janus Kreusel",
+        "irosenow@example.org"
+      ],
+      "addr_from": [
+        "Herr Ilias Lindner",
+        "haenelwaltraud@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 14",
+      "message": "Kurz sitzen kennen neun Nacht ganz auch. Mensch gro\u00df zusammen was Ding ruhig auch dazu. Ob Vater offen zu Wort fangen viel.\nWeg nass Erde wollen. Neu Papa Weg unter drei.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Torsten Schmiedt",
+        "friederike90@example.net"
+      ],
+      "addr_from": [
+        "Rouven Riehl B.A.",
+        "denisedowerg@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "German: cp273 - 15",
+      "message": "Buch davon fahren drehen frei dazu Herr. Offen ging her Baum hat. Tief rechnen noch leicht vier sch\u00f6n.\nAm immer Mutter Sonntag Sonntag Hund baden. Lange fragen fliegen stehen Name immer.",
+      "headers": {},
+      "encoding": "cp273",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

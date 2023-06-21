@@ -1,0 +1,279 @@
+{
+  "title": "Charset `iso2022_kr` Test",
+  "explain": "Test iso2022_kr",
+  "json_path": "..\\seeds\\charset\\iso2022_kr.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\iso2022_kr",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "\uae40\uc608\uc9c0",
+        "yeweon48@example.org"
+      ],
+      "addr_from": [
+        "\uae40\ubbfc\uc218",
+        "geonu12@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 1",
+      "message": "Accusamus eum voluptates. Rerum tempora necessitatibus.\nEst labore voluptatibus pariatur ut iste aspernatur. Modi architecto quos harum. Fugiat explicabo corrupti dignissimos ab.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc1a1\uc9c0\uc6d0",
+        "qyang@example.org"
+      ],
+      "addr_from": [
+        "\uac15\uc900\uc601",
+        "muneungyeong@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 2",
+      "message": "Provident reiciendis saepe earum ut dicta excepturi. Eius aliquid praesentium illo. Quibusdam enim ea repellat.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ucd5c\uacbd\ud76c",
+        "baegseohyeon@example.com"
+      ],
+      "addr_from": [
+        "\uac15\uc120\uc601",
+        "bagjeongho@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 3",
+      "message": "Asperiores eaque ipsum eligendi soluta. Amet in cum velit culpa.\nSunt voluptatem nulla explicabo libero. Quas consequatur asperiores incidunt quod voluptatem. Libero nesciunt similique commodi distinctio tempore.\nVel sed atque consequatur possimus.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ubc15\uc9c0\ud6c4",
+        "yeonggil73@example.com"
+      ],
+      "addr_from": [
+        "\uace0\uc9c0\ubbfc",
+        "gimsanghun@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 4",
+      "message": "Minus id officiis tenetur repudiandae neque. Illo debitis animi aliquam vitae quam autem. Corporis nesciunt voluptatem placeat suscipit consectetur blanditiis.\nEveniet rerum earum molestiae impedit dolorum. Adipisci tempore id non.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ubc15\uc601\uc790",
+        "sunja95@example.org"
+      ],
+      "addr_from": [
+        "\uc774\uc9c0\ud6c8",
+        "gimyeonggil@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 5",
+      "message": "In provident expedita qui iusto mollitia maiores dolore. Facere earum non alias sequi. At recusandae eveniet rem eaque adipisci.\nCommodi cum voluptatibus commodi sapiente. Perferendis veniam sequi ducimus praesentium animi.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc548\uacbd\uc218",
+        "geonu53@example.com"
+      ],
+      "addr_from": [
+        "\uc774\uc0c1\ud638",
+        "coeboram@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 6",
+      "message": "Nihil id quis vel fugit. Provident nobis facere velit et ullam. Excepturi nemo fuga porro numquam vero numquam.\nFugiat nobis commodi cumque. Corrupti quia at repellendus. Rerum in excepturi nam nesciunt autem.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc774\uc601\ud658",
+        "eunseo93@example.net"
+      ],
+      "addr_from": [
+        "\uae40\ucd98\uc790",
+        "baemiyeong@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 7",
+      "message": "Iure ratione asperiores illo laboriosam fugit a. Laudantium similique hic dolores dolorum quas.\nEnim nam illo dignissimos.\nImpedit deserunt doloremque harum porro eligendi nobis et. Fugit est nesciunt aperiam sint.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ubc15\ubbfc\uc218",
+        "ncoe@example.net"
+      ],
+      "addr_from": [
+        "\uc591\uc2b9\ud604",
+        "ijunhyeog@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 8",
+      "message": "Tempore architecto fuga consectetur aliquid. Cupiditate non architecto aliquam beatae totam accusantium. Voluptatibus quis repudiandae amet dignissimos laborum odio.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uae40\ud604\uc8fc",
+        "ojungsu@example.org"
+      ],
+      "addr_from": [
+        "\uc774\ud604\uc815",
+        "bagboram@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 9",
+      "message": "Iure aliquid assumenda reprehenderit delectus. Iste molestias eligendi deleniti delectus. Consequuntur enim ex voluptatibus quibusdam quae quas vero.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc774\uc815\uc218",
+        "rhan@example.net"
+      ],
+      "addr_from": [
+        "\uc804\uc9c0\uc601",
+        "myeongjagim@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 10",
+      "message": "Veritatis nulla perferendis dolorum eius. Distinctio optio quam dolore reprehenderit.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc774\uc815\uc6c5",
+        "simjuweon@example.org"
+      ],
+      "addr_from": [
+        "\ubc15\uacbd\ud76c",
+        "yunjeongnam@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 11",
+      "message": "Esse dolores similique ipsam. Eum expedita quod voluptas facilis. Repellat minus aperiam aut alias.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc1a1\uad11\uc218",
+        "jeongsun26@example.net"
+      ],
+      "addr_from": [
+        "\uc1a1\uc7ac\ud638",
+        "jihunbag@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 12",
+      "message": "Officiis aspernatur consequatur nostrum autem. Fugit dolorum autem exercitationem. Veritatis et tempore.\nVoluptate vero quae nemo eum aspernatur. Illo laboriosam voluptatum earum.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc774\uc608\uc900",
+        "jieun14@example.net"
+      ],
+      "addr_from": [
+        "\uae40\ubbf8\uc815",
+        "bagseongsu@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 13",
+      "message": "Fuga labore quas nemo iusto quos nobis dignissimos. Asperiores et reprehenderit perferendis nobis magnam suscipit. Aliquid non illum voluptates vitae quod vel.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc774\uba85\uc219",
+        "songjiyeon@example.org"
+      ],
+      "addr_from": [
+        "\uae40\uacbd\uc790",
+        "eunjeong64@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 14",
+      "message": "Aliquid quidem architecto expedita itaque ratione. Consectetur fugiat iusto ipsum sequi. Dolor tempore architecto rem quidem voluptate tempora animi.\nMagnam provident repellendus doloribus. Quia dignissimos voluptatum ad ad.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc774\ub3d9\ud604",
+        "wgweon@example.net"
+      ],
+      "addr_from": [
+        "\uacfd\uc608\uc6d0",
+        "doyun81@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: iso2022_kr - 15",
+      "message": "At officiis labore. Facere cupiditate quidem ex distinctio in sunt. Ipsa at cum dicta accusamus.\nUllam accusantium sed delectus dolores. Debitis dolores asperiores. Ab eligendi rerum. Illum ullam blanditiis ea non dolorem quos.",
+      "headers": {},
+      "encoding": "iso2022_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

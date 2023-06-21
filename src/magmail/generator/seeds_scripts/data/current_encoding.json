@@ -1,0 +1,195 @@
+{
+  "English": [
+    "ascii",
+    "cp037",
+    "cp437"
+  ],
+  "Traditional_Chinese": [
+    "big5",
+    "big5hkscs",
+    "cp950"
+  ],
+  "German": [
+    "cp273"
+  ],
+  "Hebrew": [
+    "cp424",
+    "cp856",
+    "cp862",
+    "cp1255",
+    "iso8859_8"
+  ],
+  "Western_Europe": [
+    "cp500",
+    "cp850",
+    "cp858",
+    "cp1140",
+    "cp1252",
+    "iso2022_jp_2",
+    "latin_1",
+    "iso8859_15",
+    "mac_roman"
+  ],
+  "Arabic": [
+    "cp720",
+    "cp864",
+    "cp1256",
+    "iso8859_6"
+  ],
+  "Greek": [
+    "cp737",
+    "cp869",
+    "cp875",
+    "cp1253",
+    "iso2022_jp_2",
+    "iso8859_7",
+    "mac_greek"
+  ],
+  "Baltic_languages": [
+    "cp775",
+    "cp1257",
+    "iso8859_4",
+    "iso8859_13"
+  ],
+  "Central_and_Eastern_Europe": [
+    "cp852",
+    "cp1250",
+    "iso8859_2",
+    "mac_latin2"
+  ],
+  "Bulgarian": [
+    "cp855",
+    "cp1251",
+    "iso8859_5",
+    "mac_cyrillic"
+  ],
+  "Byelorussian": [
+    "cp855",
+    "cp1251",
+    "iso8859_5",
+    "mac_cyrillic"
+  ],
+  "Macedonian": [
+    "cp855",
+    "cp1251",
+    "iso8859_5",
+    "mac_cyrillic"
+  ],
+  "Russian": [
+    "cp855",
+    "cp866",
+    "cp1251",
+    "iso8859_5",
+    "koi8_r",
+    "mac_cyrillic"
+  ],
+  "Serbian": [
+    "cp855",
+    "cp1251",
+    "iso8859_5",
+    "mac_cyrillic"
+  ],
+  "Turkish": [
+    "cp857",
+    "cp1026",
+    "cp1254",
+    "iso8859_9",
+    "mac_turkish"
+  ],
+  "Portuguese": [
+    "cp860"
+  ],
+  "Icelandic": [
+    "cp861",
+    "mac_iceland"
+  ],
+  "Canadian": [
+    "cp863"
+  ],
+  "Danish": [
+    "cp865"
+  ],
+  "Norwegian": [
+    "cp865"
+  ],
+  "Thai": [
+    "cp874"
+  ],
+  "Japanese": [
+    "cp932",
+    "euc_jp",
+    "euc_jis_2004",
+    "euc_jisx0213",
+    "iso2022_jp",
+    "iso2022_jp_1",
+    "iso2022_jp_2",
+    "iso2022_jp_2004",
+    "iso2022_jp_3",
+    "iso2022_jp_ext",
+    "shift_jis",
+    "shift_jis_2004",
+    "shift_jisx0213"
+  ],
+  "Korean": [
+    "cp949",
+    "euc_kr",
+    "iso2022_jp_2",
+    "iso2022_kr",
+    "johab"
+  ],
+  "Urdu": [
+    "cp1006"
+  ],
+  "Ukrainian": [
+    "cp1125",
+    "koi8_u"
+  ],
+  "Vietnamese": [
+    "cp1258"
+  ],
+  "Simplified_Chinese": [
+    "gb2312",
+    "hz",
+    "iso2022_jp_2"
+  ],
+  "Unified_Chinese": [
+    "gbk",
+    "gb18030"
+  ],
+  "Esperanto": [
+    "iso8859_3"
+  ],
+  "Maltese": [
+    "iso8859_3"
+  ],
+  "Nordic_languages": [
+    "iso8859_10"
+  ],
+  "Thai_languages": [
+    "iso8859_11"
+  ],
+  "Celtic_languages": [
+    "iso8859_14"
+  ],
+  "South-Eastern_Europe": [
+    "iso8859_16"
+  ],
+  "Tajik": [
+    "koi8_t"
+  ],
+  "Kazakh": [
+    "kz1048",
+    "ptcp154"
+  ],
+  "All": [
+    "utf_32",
+    "utf_32_be",
+    "utf_32_le",
+    "utf_16",
+    "utf_16_be",
+    "utf_16_le",
+    "utf_7",
+    "utf_8",
+    "utf_8_sig"
+  ]
+}

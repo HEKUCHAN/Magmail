@@ -1,0 +1,279 @@
+{
+  "title": "Charset `cp860` Test",
+  "explain": "Test cp860",
+  "json_path": "..\\seeds\\charset\\cp860.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\cp860",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "Noah Rocha",
+        "arianacosta@example.com"
+      ],
+      "addr_from": [
+        "Joel Gaspar",
+        "manuelrocha@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 1",
+      "message": "Laboriosam reprehenderit reprehenderit exercitationem. Esse repudiandae earum magni laborum commodi omnis. Occaecati at accusantium molestias eius.\nUnde aperiam sed possimus. Atque fugit exercitationem praesentium veritatis quos.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Lu\u00eds Pereira",
+        "jlourenco@example.org"
+      ],
+      "addr_from": [
+        "Diogo Antunes",
+        "antoniogomes@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 2",
+      "message": "Voluptatum repudiandae ipsam adipisci minus blanditiis. Sed asperiores architecto aspernatur quo soluta voluptatibus voluptatibus. Est consectetur quis ea molestias.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Filipe S\u00e1",
+        "mouradavid@example.org"
+      ],
+      "addr_from": [
+        "Hugo Paiva",
+        "bruna33@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 3",
+      "message": "Non dignissimos accusamus praesentium culpa perspiciatis nulla. Libero sit nulla. Repellendus laborum occaecati ab id dignissimos voluptates.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Martim Leite",
+        "xmartins@example.net"
+      ],
+      "addr_from": [
+        "Dinis Gon\u00e7alves",
+        "dmacedo@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 4",
+      "message": "Iste exercitationem ut numquam atque. Doloremque natus ut ad est aliquam nemo.\nSimilique blanditiis omnis fuga nobis. Architecto voluptatum hic pariatur.\nVoluptas eos deleniti eveniet.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Benjamim Pinto",
+        "afonso97@example.com"
+      ],
+      "addr_from": [
+        "Emanuel Tavares",
+        "msa@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 5",
+      "message": "Tempora distinctio amet error ratione. Ullam dolore doloribus numquam eveniet nesciunt. Quidem omnis eum tempora dolorum. Maxime aut id.\nCum cum hic. Facere dolor ipsam labore.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Cristiano da Abreu",
+        "machadocesar@example.net"
+      ],
+      "addr_from": [
+        "N\u00faria Macedo",
+        "leitekevin@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 6",
+      "message": "Amet assumenda veniam fuga minus.\nAccusantium maxime ipsa voluptates iste quaerat voluptatum. Doloremque culpa modi consectetur repellendus. Voluptatibus minus atque asperiores magnam corporis commodi.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Clara Pereira",
+        "tomemiranda@example.com"
+      ],
+      "addr_from": [
+        "Mara-Clara Sousa",
+        "rbrito@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 7",
+      "message": "Numquam corrupti doloremque assumenda ut accusantium. Praesentium minus quia facere cupiditate.\nDelectus vitae quos iusto mollitia iure. Perspiciatis nihil accusamus debitis.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Sofia Barros",
+        "pachecoalicia@example.org"
+      ],
+      "addr_from": [
+        "Salvador Neves",
+        "francisca34@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 8",
+      "message": "Maiores ad exercitationem. Illum fugiat corrupti. Aliquam minus facilis laborum.\nAssumenda harum totam nulla qui voluptas. Soluta molestiae accusantium quaerat modi dolor iusto.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Catarina Nunes",
+        "alexandra90@example.net"
+      ],
+      "addr_from": [
+        "Alice S\u00e1",
+        "yara18@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 9",
+      "message": "Pariatur nobis vero consectetur possimus suscipit. Itaque at placeat accusamus quae.\nVelit eaque minima ratione libero. Consectetur aspernatur velit perferendis. Sint at sint vero neque.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Micael Figueiredo",
+        "oneves@example.net"
+      ],
+      "addr_from": [
+        "Lara Monteiro",
+        "ndomingues@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 10",
+      "message": "Exercitationem asperiores quidem natus vero non facere. Vero minima ratione sapiente.\nVoluptate accusamus expedita vel accusamus inventore.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Tom\u00e9 Fonseca",
+        "soraia08@example.com"
+      ],
+      "addr_from": [
+        "Andr\u00e9 Correia",
+        "tsantos@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 11",
+      "message": "Dicta excepturi fuga voluptatibus quis maxime sit. Libero totam id veniam. Sapiente sequi aspernatur ratione sed aut perspiciatis est.\nRem quasi maxime amet perferendis. Facere repellat ut quae vel rem.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Lia da Castro",
+        "soareslourenco@example.net"
+      ],
+      "addr_from": [
+        "Diego Brito",
+        "sara73@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 12",
+      "message": "Molestias asperiores voluptatibus voluptate. Harum veritatis eius officia maiores optio qui praesentium. Voluptatibus sunt necessitatibus cupiditate pariatur temporibus totam fuga.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Tiago Oliveira",
+        "vicentemauro@example.net"
+      ],
+      "addr_from": [
+        "Ana Campos",
+        "gustavo79@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 13",
+      "message": "Perspiciatis possimus optio nisi ducimus minima. Tenetur nesciunt amet sunt necessitatibus ipsa officiis.\nLibero quae dolorem. Facere quidem vitae unde voluptas fuga corrupti.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Alice Assun\u00e7\u00e3o",
+        "vitor14@example.net"
+      ],
+      "addr_from": [
+        "Paulo Guerreiro",
+        "valentetome@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 14",
+      "message": "Aperiam neque optio. Dicta mollitia vero sunt impedit voluptatum vel quia. Voluptatum quia repellat.\nLibero culpa ut aut architecto saepe inventore. Doloribus ipsum eos quae provident atque veritatis ab. Et consequuntur fugit.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Fernando Batista",
+        "sandrooliveira@example.net"
+      ],
+      "addr_from": [
+        "Diana-Maria Freitas",
+        "vmachado@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Portuguese: cp860 - 15",
+      "message": "Quo explicabo asperiores placeat quas delectus cupiditate. Perspiciatis ducimus cum sunt quia nulla. Ea odit vitae perferendis placeat perspiciatis. Dolorum fugiat ut tempore.\nBlanditiis quasi ab non quasi eum. Exercitationem sint qui cum dolorum.",
+      "headers": {},
+      "encoding": "cp860",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

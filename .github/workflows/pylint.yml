@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: poetry install --with dev --no-interaction
       - name: black
-        run: poetry run black .
+        run: poetry run black --check .
       - name: Auto Commit
         if: github.event_name == 'pull_request'
         uses: stefanzweifel/git-auto-commit-action@v4

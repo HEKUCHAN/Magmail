@@ -1,0 +1,279 @@
+{
+  "title": "Charset `johab` Test",
+  "explain": "Test johab",
+  "json_path": "..\\seeds\\charset\\johab.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\johab",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "\uc815\uc601\ud638",
+        "seoseongho@example.com"
+      ],
+      "addr_from": [
+        "\uae40\uc601\uc9c4",
+        "jiweon14@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 1",
+      "message": "Fugiat placeat facilis molestiae voluptatem blanditiis fugit voluptas.\nConsequatur ea unde atque dicta. Unde consectetur soluta eius laborum. Explicabo iure nobis odio repudiandae.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uae40\uc900\uc11c",
+        "tbag@example.org"
+      ],
+      "addr_from": [
+        "\uae40\ub3c4\uc724",
+        "qbae@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 2",
+      "message": "Quam ipsa ex quasi. Quia minima eveniet dolorum.\nSaepe assumenda magnam. Impedit dolorem numquam quia provident architecto officia rerum. Eaque veritatis dolore eaque delectus.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ubc15\uc7ac\ud604",
+        "yeongja60@example.org"
+      ],
+      "addr_from": [
+        "\uc190\uc724\uc11c",
+        "yunseo55@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 3",
+      "message": "Accusantium minima ea veritatis perferendis aliquam ab. Unde optio cum alias asperiores ea fugiat. Minus qui illo vel adipisci.\nNumquam aut doloremque architecto. Atque quos qui quo soluta reprehenderit assumenda commodi.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uae40\uc131\ud604",
+        "jihye13@example.net"
+      ],
+      "addr_from": [
+        "\uae40\ubbfc\uc11c",
+        "sonsujin@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 4",
+      "message": "Laboriosam asperiores reiciendis commodi. Suscipit unde fugit itaque.\nAut quos necessitatibus similique eos. Dignissimos quaerat eos inventore ea at odit. Molestias exercitationem corrupti voluptatum laborum quidem.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ubc15\uc0c1\ucca0",
+        "jgang@example.org"
+      ],
+      "addr_from": [
+        "\uc774\uc9c0\ud604",
+        "seongho24@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 5",
+      "message": "Fugit pariatur cupiditate dolore excepturi. Odio enim provident corrupti. Expedita nam iste vero alias hic expedita eaque.\nLabore excepturi vel rerum ipsam. Rerum accusantium animi id provident.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ucd5c\uc740\uc8fc",
+        "cunjajang@example.com"
+      ],
+      "addr_from": [
+        "\ucd5c\uc601\uc218",
+        "hyeonsugsong@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 6",
+      "message": "Omnis aut sequi facere. Libero corrupti atque dignissimos adipisci provident facilis eum. Minima vitae officia sequi eius.\nNeque qui deserunt mollitia nulla. Perferendis maxime natus quasi eaque illum ratione.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc11c\uc2dc\uc6b0",
+        "ugu@example.org"
+      ],
+      "addr_from": [
+        "\uc870\uc2dc\uc6b0",
+        "ybag@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 7",
+      "message": "Vero fugiat quisquam minus. Natus eligendi occaecati. Voluptatibus quibusdam porro.\nAssumenda excepturi repellendus et voluptas libero alias. Impedit iusto consectetur fugiat iste ipsum molestias. Quam nulla nihil eius at.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ub958\ubcf4\ub78c",
+        "pcoe@example.net"
+      ],
+      "addr_from": [
+        "\uc1a1\uc2b9\ubbfc",
+        "coeseonghun@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 8",
+      "message": "Excepturi at iusto saepe eveniet. Occaecati excepturi fuga quaerat nihil.\nAb enim assumenda saepe temporibus natus dignissimos. Molestiae unde autem voluptate. Doloremque hic optio consequatur.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ub958\ud558\uc740",
+        "donghyeoni@example.com"
+      ],
+      "addr_from": [
+        "\uae40\uc9c0\uc740",
+        "li@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 9",
+      "message": "Tenetur magni distinctio eius porro. Veniam sed quas quidem officia officia sequi.\nCommodi repudiandae aliquid. Nostrum quaerat corrupti similique.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc774\ubbfc\uc900",
+        "bagyeongho@example.org"
+      ],
+      "addr_from": [
+        "\uc131\uc0c1\ud604",
+        "jeongsun88@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 10",
+      "message": "Minus iste exercitationem. Ducimus tempora sapiente necessitatibus. Nobis assumenda iure.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ucd5c\uc21c\uc625",
+        "hyeonu77@example.net"
+      ],
+      "addr_from": [
+        "\ub958\ud61c\uc9c4",
+        "fi@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 11",
+      "message": "Soluta odio molestias aspernatur ea. Fugit fugiat beatae velit nostrum et natus. Expedita magni ex.\nRatione consequuntur debitis. Enim fugit voluptates voluptas voluptatem nisi. Libero labore quos omnis.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ud64d\uc625\uc790",
+        "geonu88@example.net"
+      ],
+      "addr_from": [
+        "\ubc31\uc601\uc21c",
+        "jeongsu71@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 12",
+      "message": "Porro corporis tempore commodi nam odio esse exercitationem. Doloremque quae illum expedita reiciendis nostrum. Debitis suscipit cupiditate consectetur at.\nSoluta illum sint. Doloremque ipsa dicta ducimus quibusdam dolorum.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc9c4\uc7ac\ud604",
+        "cunjagim@example.net"
+      ],
+      "addr_from": [
+        "\uae40\uc131\uc218",
+        "heojeongho@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 13",
+      "message": "Sunt accusamus sunt pariatur pariatur. Voluptates non dolor recusandae sunt. Error eos reiciendis tempore.\nAssumenda laboriosam adipisci cumque deleniti odit.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc11c\uc601\uae38",
+        "ii@example.net"
+      ],
+      "addr_from": [
+        "\ub098\uc6b0\uc9c4",
+        "yeongja74@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 14",
+      "message": "Saepe dolorem occaecati exercitationem enim atque iusto dolores. Et perspiciatis doloremque non provident rerum.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uae40\uc900\uc11c",
+        "wbaeg@example.net"
+      ],
+      "addr_from": [
+        "\uc591\uacbd\uc790",
+        "jeonyeongceol@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: johab - 15",
+      "message": "Suscipit doloremque autem est deserunt accusamus libero quidem. Aliquid fugit magnam dignissimos. Fugiat repellat praesentium ea.",
+      "headers": {},
+      "encoding": "johab",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

@@ -7,7 +7,11 @@ from magmail.utils import to_path
 
 
 class Reader:
-    def __init__(self, json_path: Union[str, Path]):
+    def __init__(
+        self,
+        json_path: Union[str, Path],
+        encoding: str = "utf-8",
+    ):
         self.json_path = to_path(json_path)
         if self.json_path.is_dir():
             self.json_path = self.json_path / f"{uuid.uuid4()}.json"
@@ -17,10 +21,10 @@ class Reader:
                 f"Unknown file extension: {self.json_path.suffix}, '.json' or directory path is only supported."
             )
 
-        self.read()
+        self.read(encoding=encoding)
 
-    def read(self) -> None:
-        with open(self.json_path, "r") as file:
+    def read(self, encoding: str = "utf-8") -> None:
+        with open(self.json_path, "r", encoding=encoding) as file:
             self.data = self.serializer(json.load(file))
 
     @classmethod

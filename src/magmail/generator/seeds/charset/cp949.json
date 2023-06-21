@@ -1,0 +1,279 @@
+{
+  "title": "Charset `cp949` Test",
+  "explain": "Test cp949",
+  "json_path": "..\\seeds\\charset\\cp949.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\cp949",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "\uc8fc\uc131\uc218",
+        "gimseojun@example.net"
+      ],
+      "addr_from": [
+        "\uae40\uc815\uc2dd",
+        "fgim@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 1",
+      "message": "Est unde animi cum harum sint eaque. Accusantium voluptatem nostrum fugit rerum quibusdam. Excepturi magnam in.\nPlaceat tempore totam quam neque consequuntur. In eius vitae voluptatum. Vitae mollitia sapiente quis assumenda.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc7a5\ud604\uc900",
+        "dcoe@example.com"
+      ],
+      "addr_from": [
+        "\uc774\ubbfc\uc7ac",
+        "jaeho64@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 2",
+      "message": "Quos vitae nesciunt totam molestiae ducimus.\nPerferendis consectetur tempora dicta dolore optio. Nihil debitis facilis ea facilis doloremque. In nemo placeat.\nConsequatur alias culpa assumenda.\nSapiente sed quisquam.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uae40\ubbf8\uc219",
+        "ominseo@example.net"
+      ],
+      "addr_from": [
+        "\ubc15\uc724\uc11c",
+        "sgim@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 3",
+      "message": "Explicabo nihil eligendi quod ut temporibus autem. Corrupti itaque sint assumenda enim impedit. Soluta atque aliquam ipsum sint. Distinctio animi ad suscipit itaque quo.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ubc15\uc9c0\uc6b0",
+        "minseogbae@example.org"
+      ],
+      "addr_from": [
+        "\uae40\uc218\uc9c4",
+        "gwaggeonu@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 4",
+      "message": "Esse quibusdam fugiat reprehenderit laborum repellat dolore. Fuga quaerat aliquam quibusdam.\nDolorum architecto iste doloribus eligendi accusantium autem. Perferendis voluptatem ratione ea eligendi aut asperiores eveniet.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ud64d\uc0c1\ucca0",
+        "gimminjun@example.com"
+      ],
+      "addr_from": [
+        "\uc11c\ubbfc\uc9c0",
+        "jihyeoncoe@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 5",
+      "message": "Sapiente ea voluptates deserunt qui neque. Quod aperiam nihil quis facere.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc548\uc21c\uc790",
+        "xgim@example.org"
+      ],
+      "addr_from": [
+        "\uc774\uc740\uc8fc",
+        "misugcoe@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 6",
+      "message": "Quibusdam nulla blanditiis corrupti. Nihil laboriosam explicabo vitae voluptates distinctio ipsam illo. Vitae harum at aut.\nExcepturi odit sequi nemo consectetur. Et minima iste doloremque.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc815\uc9c0\uc601",
+        "gimseoyeon@example.net"
+      ],
+      "addr_from": [
+        "\uc815\uc601\uc9c4",
+        "seongsusong@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 7",
+      "message": "Assumenda eos suscipit commodi aut incidunt atque. Praesentium voluptatem ipsam quibusdam maiores quis. Soluta ea rem maiores quae sequi.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uad8c\ud604\uc9c0",
+        "hyeonjun70@example.com"
+      ],
+      "addr_from": [
+        "\uae40\uc608\uc6d0",
+        "yejii@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 8",
+      "message": "Quasi minus error odio. Aut molestias quam dignissimos delectus.\nMagni animi sapiente vero asperiores. Autem totam ab itaque. Illum eveniet quis nihil debitis aliquid.\nEveniet eligendi sit provident. Deserunt iste laudantium laborum.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ubc31\uacbd\uc218",
+        "minjimun@example.net"
+      ],
+      "addr_from": [
+        "\uc720\uc2b9\ubbfc",
+        "yeongsig30@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 9",
+      "message": "Quis odio cupiditate voluptates. Accusamus eum id non. Delectus provident reprehenderit nihil enim.\nLaboriosam exercitationem delectus debitis.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uae40\ud604\uc815",
+        "gimyunseo@example.net"
+      ],
+      "addr_from": [
+        "\uc774\uc815\uc6c5",
+        "imijeong@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 10",
+      "message": "Ipsam pariatur excepturi ducimus repellat impedit. Libero assumenda expedita iste nemo rerum.\nQuas sit odio soluta. Cumque officia suscipit. Minus corrupti possimus porro aliquam explicabo sed.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uae40\uc9c0\uc6b0",
+        "lseo@example.org"
+      ],
+      "addr_from": [
+        "\ubc15\ud61c\uc9c4",
+        "zo@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 11",
+      "message": "Iusto laudantium molestias tenetur. Eum modi dolores veniam sint.\nAccusantium distinctio laudantium. Recusandae voluptas minus consequatur temporibus. Hic quasi corporis rerum adipisci at eum.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc774\uc608\uc9c0",
+        "minjae26@example.org"
+      ],
+      "addr_from": [
+        "\uae40\ud604\uc9c0",
+        "jeonghunheo@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 12",
+      "message": "Quidem doloribus quibusdam fuga quia. Sunt tenetur optio autem rem. Eius assumenda accusantium voluptatem dignissimos perspiciatis.\nTemporibus vitae sit quae eos neque dolorum. Reiciendis odit natus. At fuga consequatur quia beatae voluptates.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ud64d\ubbfc\uc9c0",
+        "sanghogim@example.com"
+      ],
+      "addr_from": [
+        "\ub958\ud604\uc815",
+        "qgim@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 13",
+      "message": "Consequatur laboriosam tenetur in aspernatur. Corrupti eligendi nisi mollitia placeat ex temporibus.\nMagni animi quo dicta vel enim quo. Soluta ipsum veniam repellendus hic. Eos non sint ut commodi.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uac15\uc131\ud6c8",
+        "jaehoi@example.net"
+      ],
+      "addr_from": [
+        "\ud5c8\uc740\uacbd",
+        "bagyeongja@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 14",
+      "message": "Cupiditate neque amet dolores voluptatem. Asperiores in minus quis facere qui numquam.\nProvident libero quaerat fuga nesciunt sit rem eaque. Quam cupiditate quaerat accusantium error. Velit dolorem consequuntur.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc7a5\uc740\uc9c0",
+        "hongyeonghwan@example.net"
+      ],
+      "addr_from": [
+        "\uac15\uc815\uc2dd",
+        "hyeonjui@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: cp949 - 15",
+      "message": "Sint molestiae ea aperiam enim cum a quia. Et repellendus quo nam quas.\nAccusamus soluta nisi exercitationem numquam vel ea. Voluptates excepturi nemo.",
+      "headers": {},
+      "encoding": "cp949",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

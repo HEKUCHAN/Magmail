@@ -1,0 +1,279 @@
+{
+  "title": "Charset `cp865` Test",
+  "explain": "Test cp865",
+  "json_path": "..\\seeds\\charset\\cp865.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\cp865",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "Timmy Schou",
+        "uolesen@example.net"
+      ],
+      "addr_from": [
+        "Maya Krogh",
+        "kristoffersenken@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 1",
+      "message": "Univers overlevelse fantasi advarsel investering hals. Episode desperat spore opskrift bombe fordi junior japansk. Kamp for\u00e5r \u00e5rti.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Fru Natasha Jessen",
+        "nicoline73@example.net"
+      ],
+      "addr_from": [
+        "Steve Krogh",
+        "wovergaard@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 2",
+      "message": "Stat d\u00e5rligst mund vi procedure romantisk laver l\u00f8g. Gen sandhed smag klinik tilstedev\u00e6relse.\nRessource luft kage historiker dag if\u00f8lge kat. N\u00f8d kolesterol magtfulde grine d\u00f8d bl\u00e5 udenlandsk.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Johan Toft",
+        "ythygesen@example.net"
+      ],
+      "addr_from": [
+        "Michael Thomsen",
+        "christensenkarlo@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 3",
+      "message": "Morder tur l\u00e6ge tegning. Sikkerhed stjerne terrorist r\u00e5d arbejde. D\u00e5rligt stil d\u00e5rligst skygge.\nDe overrasket tur store. Batteri kul k\u00f8n. Smag midt dimension.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Odette Brandt",
+        "friisoda@example.net"
+      ],
+      "addr_from": [
+        "Gorm Overgaard-Bruun",
+        "josefinetoft@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 4",
+      "message": "Forbi ankomme venlig s\u00e6dvanlig s\u00e5 angst model. Legeme romantisk besked tjene.\nMajor skilt karakter investering TV personale. Massiv afg\u00f8rende fysisk sjovt gerne flaske. Overbevise konventionelle medicinsk kul \u00e5r tilmeld.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Prof. Sofia Skov",
+        "weenanorgaard@example.com"
+      ],
+      "addr_from": [
+        "Nicolaj Jeppesen",
+        "christiansenchristoffer@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 5",
+      "message": "Kollektion urban domf\u00e6ldelse skandale spids opf\u00f8rsel tur. Politik retf\u00e6rdig sandhed tage. Guvern\u00f8r fond bold.\nMad mangfoldighed frokost aften restaurant invitere unders\u00f8gelse.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Sofie Johansen-Overgaard",
+        "nissencatrine@example.org"
+      ],
+      "addr_from": [
+        "Tanja Lind",
+        "troels15@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 6",
+      "message": "Plukke invitere emne overrasket version musiker. Central formand eksempel sandsynligvis baggrund kant. Afspejle data tung overs\u00e6tte kilde.\nTjene time smuds erkende samme st\u00e5ende. Over m\u00e5ler vil begravelse.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Elna J\u00f8rgensen",
+        "benthekjaer@example.com"
+      ],
+      "addr_from": [
+        "Ib Jepsen",
+        "ingrid04@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 7",
+      "message": "Regime gentage race erstatte adgang kan. Forkert luft jord par.\nProblem oplade nat fattige forklare konsensus.\nFysisk os kop forbi begravelse. Hospital fl\u00f8de samme time bind virkelighed. Mord majs politisk politimand henviser p\u00e5 ret offentlig.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Ragnar N\u00f8rgaard",
+        "connyjakobsen@example.net"
+      ],
+      "addr_from": [
+        "Otto Kristensen",
+        "einarpedersen@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 8",
+      "message": "Selv overraskende jet k\u00f8ret\u00f8j omsorg operation konsensus. Vital betyder ord overs\u00e6tte v\u00e6g.\nUmulig f\u00f8dsel etage hals b\u00e6re kan. Uddanne enhed s\u00e5 nu film tilladelse.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Zenia Bruun-Jacobsen",
+        "frandsenvera@example.org"
+      ],
+      "addr_from": [
+        "Cecilie Mathiasen",
+        "ipedersen@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 9",
+      "message": "Binde aftensmad overbevise fuldt. Insistere vise legeme mig g\u00e5 live sp\u00e6nding. Vedtage sammenh\u00e6ng vind konventionelle d\u00e5rligst \u00e5rhundrede sommer.\nPerson projekt virkelig indsigt jo. Mursten dr\u00e6be chip.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Elias Mathiasen",
+        "schmidtkenneth@example.net"
+      ],
+      "addr_from": [
+        "Finn Danielsen-Vestergaard",
+        "ludvig23@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 10",
+      "message": "Klinge samling helt synge flytte spore. Seng stat skov modtage universel. Spids afg\u00f8rende desuden fantasi.\nTil officer vild eksisterer sp\u00f8rge ting ventilator. Formue for\u00e5r flyselskab hende. Masser n\u00e6vne snart v\u00e5ben talt fodbold altid.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Prof. Zara Rasmussen",
+        "erling02@example.org"
+      ],
+      "addr_from": [
+        "Nicolai Mikkelsen",
+        "fdahl@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 11",
+      "message": "Anerkende forudsige stand p\u00e6n hele ligge hud. Talt sky kunst hel.\nFed oplade l\u00e6ngde vestlig nogen individuel titel.\nFodbold vigtigste tillid deltage opdage formode. Desuden lille videnskab hul \u00e5rsag universitetsomr\u00e5de henvise.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Univ.Prof. Herbert Andreasen",
+        "zchristiansen@example.org"
+      ],
+      "addr_from": [
+        "Univ.Prof. Bitten Olsen",
+        "karlojohansen@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 12",
+      "message": "Din afdeling ledsage rolle. Kriterier bes\u00f8gende r\u00f8g arbejde lejlighed milj\u00f8m\u00e6ssigt.\nTage dr\u00e6be omr\u00e5de vestlig fiasko spekulerer f\u00f8lge. Observation baseball let varsel passager hundrede sp\u00e6nding. Minde vital angreb lave politimand stor fru.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Berta Pedersen",
+        "christoffersenelisabeth@example.org"
+      ],
+      "addr_from": [
+        "Michelle Laursen",
+        "valdemarnissen@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 13",
+      "message": "Grave personale begr\u00e6nset ankomst titel h\u00f8jttaler vind. Kollektion peber bag. Hed forbyde afgr\u00f8de flygtning skandale.\nAndet tid mere kamp enhed aftensmad n\u00e5. Levested indlysende bred succes taske medier.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Elisabeth Mortensen",
+        "ydajohnsen@example.net"
+      ],
+      "addr_from": [
+        "Minna Koch",
+        "andresenpoul@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 14",
+      "message": "Parkere distrikt enorm gr\u00e6spl\u00e6ne t\u00e6ttere vital vise h\u00f8re. Figur olie misbrug hals flytte. Begr\u00e6nset sang nat fange.\nVejen invitere st\u00e5 hjerte. Ur n\u00e6rme stat syv. Ekspert behandling had indvirkning veje flyselskab skrivebord.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "William \u00d8stergaard",
+        "andersenyasmin@example.com"
+      ],
+      "addr_from": [
+        "Emilie M\u00f8ller",
+        "paula02@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Danish: cp865 - 15",
+      "message": "Television trykke universitetsomr\u00e5de forlig stipendium din. Trussel d\u00f8d meget n\u00e5 pulver b\u00e5nd r\u00f8g.",
+      "headers": {},
+      "encoding": "cp865",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

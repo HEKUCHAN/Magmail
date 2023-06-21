@@ -1,0 +1,279 @@
+{
+  "title": "Charset `mac_turkish` Test",
+  "explain": "Test mac_turkish",
+  "json_path": "..\\seeds\\charset\\mac_turkish.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\mac_turkish",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "Nept\u00fcn Kutun T\u00fcrk",
+        "ozdesakca@example.net"
+      ],
+      "addr_from": [
+        "Seyyide Beste \u00dclker",
+        "omanco@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 1",
+      "message": "Ullam doloribus earum sed. Tempore commodi quidem mollitia explicabo quidem delectus. Cum illo eligendi veritatis similique.\nQuasi explicabo tempore voluptas sit. Debitis omnis quibusdam corporis assumenda consequuntur.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Subutiye Teveto\u011flu",
+        "guclutaciddin@example.net"
+      ],
+      "addr_from": [
+        "Bay \u00d6kt\u00fcrk Rasul Y\u00fcksel",
+        "yaminbilgin@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 2",
+      "message": "Beatae beatae tenetur deserunt sit nostrum officiis tempore. Expedita asperiores sequi distinctio optio corrupti error provident. Totam velit consequuntur eius reprehenderit.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Do\u00e7. Fami Aksu",
+        "rseven@example.net"
+      ],
+      "addr_from": [
+        "\u00d6\u011fr. \u00d6\u011fet Mestur Ak\u00e7a",
+        "temizkal57@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 3",
+      "message": "Nemo fuga quaerat velit. Voluptatem reiciendis possimus. Saepe tempore saepe soluta repudiandae iste maxime sequi. Ratione quaerat nulla sunt aut dolorum.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Salurbay Y\u0131ld\u0131r\u0131m",
+        "vhancer@example.net"
+      ],
+      "addr_from": [
+        "Ar\u015f. G\u00f6r. Sevla Tarhan Tarhan",
+        "gunaydin26@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 4",
+      "message": "Voluptate sit officia eos aut repellendus. Sit voluptates repellat molestiae nostrum distinctio. Consequatur reiciendis repellat eaque.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Hami G\u00fc\u00e7l\u00fc",
+        "sensoymujde@example.com"
+      ],
+      "addr_from": [
+        "Cansin Akg\u00fcnd\u00fcz",
+        "yildirimyagizkurt@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 5",
+      "message": "Placeat voluptate earum est dicta voluptatum tempore aut. Repellendus cupiditate deserunt natus quod explicabo expedita. Illo repellat iusto modi eius ratione.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u00d6\u011fr. Vezrife \u0130n\u00f6n\u00fc Dumanl\u0131",
+        "mahigululker@example.net"
+      ],
+      "addr_from": [
+        "Alt\u0131n\u0131\u015f\u0131n \u015eener",
+        "yildirimturkmen@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 6",
+      "message": "Laboriosam blanditiis nesciunt recusandae.\nItaque aspernatur magnam non similique adipisci. Nobis nesciunt vero quia provident reiciendis eius vero.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Sayrak Yaman",
+        "bortecindemir@example.com"
+      ],
+      "addr_from": [
+        "S\u00fcvari Akg\u00fcnd\u00fcz",
+        "gazel52@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 7",
+      "message": "Veniam in occaecati corporis ducimus possimus nisi. Nihil quisquam nesciunt corporis impedit sint. Quo totam illum consectetur.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Serfinaz \u00dcmray Alemdar Durmu\u015f",
+        "ocalankockan@example.net"
+      ],
+      "addr_from": [
+        "Tulun Tayyip Erta\u015f Korut\u00fcrk",
+        "tigin13@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 8",
+      "message": "Vel modi voluptate non consectetur.\nInventore hic atque illo ut aliquam. Tempora eum possimus aut fugiat.\nDoloribus veritatis possimus ipsam minus nemo assumenda. Dolore sint mollitia repellat. Porro cumque dolorum.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Dolun \u00d6calan",
+        "yilmazatilhan@example.org"
+      ],
+      "addr_from": [
+        "Havali Duran \u015eener",
+        "asirtevetoglu@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 9",
+      "message": "Hic dolor qui officia. Ipsum vel autem molestiae provident.\nIllum quibusdam sequi repellendus. Necessitatibus cupiditate a ducimus repudiandae corrupti. Voluptatum non amet mollitia ut porro.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Nural Zahid \u00c7etin Sezgin",
+        "vihsanoglu@example.org"
+      ],
+      "addr_from": [
+        "Menfeat \u015eazime Erta\u015f",
+        "yildiztevetoglu@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 10",
+      "message": "Quisquam corporis qui autem animi aliquam. Occaecati est ab quas reiciendis.\nExpedita velit eum omnis. Ullam ea corporis earum perspiciatis et. Debitis nihil necessitatibus in cum in.\nInventore modi non enim doloribus error.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Bayan \u015eilan Alsoy Arslan Korut\u00fcrk",
+        "merva92@example.net"
+      ],
+      "addr_from": [
+        "\u00d6\u011fr. Aylil Arsoy Aksu",
+        "neriban01@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 11",
+      "message": "Illum perspiciatis nulla. Nisi debitis id sed. Quae impedit aspernatur laudantium veritatis dolorem qui cum. Blanditiis dolorum pariatur beatae ad ut placeat.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u00c7ev. Ay\u015feana Seven Alemdar",
+        "ertasbediriye@example.org"
+      ],
+      "addr_from": [
+        "Prof. Binay Sakarya Akdeniz",
+        "zorlucannur@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 12",
+      "message": "Inventore tenetur porro quod quas aliquam. Adipisci natus autem ex. Quidem velit eos numquam omnis eum quod odio.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Alt\u0131n\u0131\u015f\u0131n G\u00fc\u00e7l\u00fc",
+        "ferdogan@example.net"
+      ],
+      "addr_from": [
+        "U\u00e7beyi Sezgin",
+        "kisakureknebih@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 13",
+      "message": "Reiciendis ut atque sapiente sunt nemo fuga voluptatem. Suscipit corporis accusantium iusto ipsam a. Quo animi officiis dolorem sequi occaecati illum. Error eligendi sunt praesentium quis sapiente inventore neque.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Do\u00e7. Behiza \u015eamiha Han\u00e7er \u00dclker",
+        "xakar@example.com"
+      ],
+      "addr_from": [
+        "Ar\u015f. G\u00f6r. Sa\u011fcan \u0130lmafer T\u00fcrk",
+        "savak94@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 14",
+      "message": "Ipsa maxime tempora nam neque commodi. Voluptatum voluptatum voluptatum quis. Iure consequatur ea reiciendis dolorum.\nOmnis eum natus laborum nulla voluptatum iure. Quibusdam dolore tempora ea dolores.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Dil\u015fat \u00c7etin Alemdar",
+        "aakar@example.net"
+      ],
+      "addr_from": [
+        "G\u00fczey Tagang\u00fcl Teveto\u011flu Duran",
+        "yakcay@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: mac_turkish - 15",
+      "message": "Totam eveniet cum quasi eum illum minima facere. Excepturi commodi sapiente ipsa ex praesentium. Eos porro nisi assumenda vitae hic.\nAccusamus eaque quod dolore error magni eligendi. Adipisci totam nulla nesciunt eveniet repudiandae illo.",
+      "headers": {},
+      "encoding": "mac_turkish",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}
