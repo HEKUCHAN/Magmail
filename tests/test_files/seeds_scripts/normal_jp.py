@@ -10,7 +10,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 generator = Seed(
     json_path="../seeds/normal_jp_seeds.json",
-    export_eml_path="../../../../../tests/test_files/eml/normal_jp/",
+    export_eml_path="../tests/test_files/eml/normal_jp/",
     title="Normal Japanese Seeds",
     explain="Normal Japanese mail samples. (encoding=UTF-8)",
 )

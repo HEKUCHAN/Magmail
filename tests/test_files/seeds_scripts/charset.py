@@ -3,7 +3,6 @@ import json
 from faker import Faker
 
 from magmail.generator import Seed
-from magmail.generator.generate import gen_email, gen_name, gen_word
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -61,7 +60,7 @@ for lang, charsets in lang_encode_dict.items():
                 if not charset in generator_dict:
                     generator_dict[charset] = Seed(
                         json_path=f"../seeds/charset/{charset}.json",
-                        export_eml_path=f"../../../../../tests/test_files/eml/charset/{charset}/",
+                        export_eml_path=f"../tests/test_files/eml/charset/{charset}/",
                         title=f"Charset `{charset}` Test",
                         explain=f"Test {charset}",
                     )
