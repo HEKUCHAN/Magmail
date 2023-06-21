@@ -69,5 +69,14 @@ class Seed:
             "seeds": self.seeds,
         }
 
-        with open(self.json_path, "w+", encoding=encoding) as file:
+        self.create_parent_dic(self.json_path.parent)
+
+        with open(self.json_path, "w", encoding=encoding) as file:
             json.dump(template_json, file, indent=indent, ensure_ascii=ensure_ascii)
+
+    @classmethod
+    def create_parent_dic(self, path: Union[str, Path]) -> None:
+        if not isinstance(path, Path):
+            path = to_path(path)
+
+        path.mkdir(parents=True, exist_ok=True)
