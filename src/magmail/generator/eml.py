@@ -14,22 +14,17 @@ class Eml:
         self.files.sort(key=lambda reader: natural_keys(reader.json_path.name))
         self.init()
 
-    def read(self, encoding: str='utf-8') -> None:
+    def read(self, encoding: str = "utf-8") -> None:
         if not self.json_path.is_dir() and self.json_path.suffix != ".json":
             raise ValueError(
                 f"Unknown file extension: {self.json_path.suffix}, '.json' or directory path is only supported."
             )
 
         if self.json_path.is_dir():
-            for file in self.json_path.glob('**/*.json'):
-                self.files.append(
-                    Reader(file, encoding=encoding)
-                )
+            for file in self.json_path.glob("**/*.json"):
+                self.files.append(Reader(file, encoding=encoding))
         else:
-            self.files.append(
-                Reader(self.json_path)
-            )
-
+            self.files.append(Reader(self.json_path))
 
     def init(self) -> None:
         for file in self.files:
@@ -40,10 +35,8 @@ class Eml:
             self.create_parent_dic(export_eml_path)
 
             for i, seed in enumerate(file.data["seeds"]):
-                print(seed['subject'])
-                Mail(
-                    **seed
-                ).to_file(export_eml_path / f"{self.json_path.stem}-{i}.eml")
+                print(seed["subject"])
+                Mail(**seed).to_file(export_eml_path / f"{self.json_path.stem}-{i}.eml")
 
     def create_parent_dic(self, path: Union[str, Path]) -> None:
         if not isinstance(path, Path):

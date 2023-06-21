@@ -139,7 +139,9 @@ class Mail:
             )
 
         if self.encoding == "shift_jis" or self.encoding == "euc_jp":
-            self.mime.replace_header("Content-Type", f'text/plain; charset="{self.encoding}"')
+            self.mime.replace_header(
+                "Content-Type", f'text/plain; charset="{self.encoding}"'
+            )
         self.mime.set_payload(b64decode(self.mime.get_payload(decode=False)))
         self.mime.replace_header("Content-Transfer-Encoding", self.transfer_encoding)
 
@@ -164,7 +166,7 @@ class Mail:
             )
             self.mime.attach(attachment_file)
 
-    def to_file(self, path: Union[str, Path] = "./", encoding: str='utf-8') -> None:
+    def to_file(self, path: Union[str, Path] = "./", encoding: str = "utf-8") -> None:
         def write(path: Union[str, Path]) -> None:
             with open(path, "w", encoding=encoding) as eml:
                 gen = generator.Generator(eml)

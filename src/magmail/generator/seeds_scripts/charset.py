@@ -12,8 +12,8 @@ LANG_FAKER_DICT = {
     "Traditional_Chinese": Faker("zh-TW"),
     "German": Faker("de_DE"),
     "Hebrew": Faker("he_IL"),
-    "Western_Europe": None, # Unknown
-    "Arabic": None, # NON TEXT METHOD
+    "Western_Europe": None,  # Unknown
+    "Arabic": None,  # NON TEXT METHOD
     "Greek": Faker("el_GR"),
     "Baltic_languages": None,
     "Central_and_Eastern_Europe": None,
@@ -32,19 +32,19 @@ LANG_FAKER_DICT = {
     "Japanese": Faker("ja_JP"),
     "Korean": Faker("ko_KR"),
     "Urdu": None,
-    "Ukrainian": None, # NON TEXT METHOD
+    "Ukrainian": None,  # NON TEXT METHOD
     "Vietnamese": Faker("vi_VN"),
     "Simplified Chinese": Faker("zh-CN"),
     "Unified Chinese": Faker("zh-CN"),
     "Esperanto": None,
     "Maltese": Faker("mt_MT"),
-    "Nordic_languages": None, # Unknown
-    "Thai_languages": None, # Unknown
-    "Celtic_languages": None, # Unknown
-    "South-Eastern_Europe": None, # Unknown
-    "Tajik": None, # Unknown
-    "Kazakh": None, # Unknown
-    "All": None, # Don't need
+    "Nordic_languages": None,  # Unknown
+    "Thai_languages": None,  # Unknown
+    "Celtic_languages": None,  # Unknown
+    "South-Eastern_Europe": None,  # Unknown
+    "Tajik": None,  # Unknown
+    "Kazakh": None,  # Unknown
+    "All": None,  # Don't need
 }
 
 generator_dict = {}
@@ -75,7 +75,7 @@ for lang, charsets in lang_encode_dict.items():
                         addr_from=(faker.name(), faker.email()),
                         subject=f"{lang}: {charset} - {i}",
                         message=faker.text(max_nb_chars=250),
-                        encoding=charset
+                        encoding=charset,
                     )
 
 for generator in generator_dict.values():
