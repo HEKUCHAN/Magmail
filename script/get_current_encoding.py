@@ -24,13 +24,10 @@ rows = table.findAll("tr")
 lang_encode_dict = {}
 for row in rows[1:]:
     charset = row.select_one("td:nth-child(1) p")
-    charset = re.sub(r'\n', "", charset.get_text())
+    charset = re.sub(r"\n", "", charset.get_text())
 
     language = row.select_one("td:nth-child(3) p")
-    language = re.split(
-        r', *|,',
-        re.sub(r'\n', "", language.get_text())
-    )
+    language = re.split(r", *|,", re.sub(r"\n", "", language.get_text()))
 
     for lang in language:
         lang = lang.replace(" ", "_")
