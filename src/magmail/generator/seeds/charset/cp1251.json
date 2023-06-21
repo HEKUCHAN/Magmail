@@ -1,0 +1,549 @@
+{
+  "title": "Charset `cp1251` Test",
+  "explain": "Test cp1251",
+  "json_path": "..\\seeds\\charset\\cp1251.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\cp1251",
+  "amount": 30,
+  "seeds": [
+    {
+      "addr_to": [
+        "\u0413-\u0436\u0430 \u0422\u0440\u043e\u0448\u0430 \u0422\u0430\u0440\u0430\u043b\u0438\u043d\u0433\u043e\u0432\u0430",
+        "mangurovlatko@example.net"
+      ],
+      "addr_from": [
+        "\u0413-\u0446\u0430 \u041b\u0438\u043f\u0435 \u0415\u0432\u0440\u043e\u043f\u043e\u0432\u041a\u0438\u0440\u0438\u043b\u043e\u0432",
+        "becho2023@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 1",
+      "message": "Quos placeat officiis.\nAnimi tenetur porro exercitationem voluptatem molestiae repellendus neque. Vitae eligendi odit dolorem maxime. Voluptates voluptatem at alias ad.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u042f\u043d\u0430\u043a\u0438 \u041a\u043b\u0430\u0442\u0443\u0440\u043e\u0432",
+        "chupetlovskasvetla@example.net"
+      ],
+      "addr_from": [
+        "\u0413-\u0436\u0430 \u0422\u0438\u043b\u043e \u041f\u0440\u043e\u0439\u043a\u043e\u0432\u0430",
+        "manchochuturkov@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 2",
+      "message": "Quod magni explicabo iste dolore pariatur omnis. Dolorem dolor dolore. Ipsum cupiditate eos consectetur.\nAdipisci ipsum temporibus id assumenda modi consectetur. Quo dolorum sit qui.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0411\u043b\u0430\u0433\u043e\u0441\u0432\u0435\u0442 \u041c\u043b\u0430\u0434\u0435\u043d\u043e\u0432",
+        "ytopkov@example.com"
+      ],
+      "addr_from": [
+        "\u0413-\u0446\u0430 \u041c\u0435\u0442\u0430\u043a\u0441\u0430 \u0424\u0435\u043d\u0435\u0440\u043e\u0432",
+        "tukhchievzlatiyan@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 3",
+      "message": "Blanditiis dolorem magnam. Quas culpa nulla ex unde fugit.\nOdio hic perferendis iste iusto nulla maxime. At consequatur porro cumque autem. Dolorem perspiciatis repellat quisquam.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0413-\u0446\u0430 \u0422\u043e\u043f\u043e\u043b\u043a\u043e \u041a\u0430\u0442\u044a\u0440\u043e\u0432",
+        "adriyan77@example.com"
+      ],
+      "addr_from": [
+        "\u0414\u0440. \u0417\u0435\u043d\u0433\u0438\u043d \u041a\u043e\u0431\u0438\u043b\u0430\u0440\u043e\u0432",
+        "andonovpanto@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 4",
+      "message": "Expedita saepe natus distinctio sed nesciunt.\nOccaecati minima itaque cumque error. Tempore voluptatem quidem laboriosam consectetur eos placeat quas. Aspernatur occaecati soluta tempora corrupti at magnam maxime.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0414\u044e\u043a\u044f\u043d\u0430 \u0411\u0435\u043b\u0435\u0436\u043a\u043e\u0432\u0430",
+        "topchiiskigecho@example.org"
+      ],
+      "addr_from": [
+        "\u0413-\u0446\u0430 \u0425\u0440\u0438\u0441\u0438\u043c \u042e\u0440\u0433\u0430\u043d\u0447\u0435\u0432",
+        "nafisat29@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 5",
+      "message": "Adipisci accusamus nulla. Pariatur error corrupti saepe.\nSit harum debitis corporis ducimus placeat. Molestias voluptatibus quod laboriosam sint aliquid animi consequuntur. Aut praesentium incidunt eius.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0413-\u0436\u0430 \u0421\u0438\u043b\u0432\u0438 \u041f\u044a\u0442\u0435\u0447\u043a\u043e\u0432\u0430",
+        "gkrushovska@example.net"
+      ],
+      "addr_from": [
+        "\u0414\u0440. \u0421\u0438\u0444\u043e\u043d\u044f \u0414\u0437\u0435\u0437\u043e\u0432",
+        "rkesov@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 6",
+      "message": "Unde enim corporis dolore. Inventore quidem beatae iusto mollitia. Sunt mollitia eligendi vero.\nMinus repudiandae odit nihil fuga adipisci placeat. Ad fugit ex labore vitae mollitia neque.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0420\u043e\u0441\u0435\u043b\u0438\u043d\u0430 \u0421\u043a\u0440\u0438\u043d\u0441\u043a\u0430",
+        "blagovesttokov@example.net"
+      ],
+      "addr_from": [
+        "\u0414\u0440. \u041f\u0435\u0440\u0438\u0430\u043d\u0430 \u041c\u0443\u0441\u0442\u0430\u043a\u043e\u0432\u0430",
+        "yakovyanimir@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 7",
+      "message": "Praesentium consectetur distinctio repudiandae possimus quis voluptate explicabo.\nRepudiandae aliquam necessitatibus doloribus voluptatem. Ad deserunt optio odio sequi ullam quibusdam. Quam culpa fugit molestiae ad.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u041d\u0430\u0441\u0442\u0438\u043c\u0438\u0440 \u041a\u043e\u043b\u0438\u0447\u043a\u043e\u0432",
+        "topkovdiamandi@example.org"
+      ],
+      "addr_from": [
+        "\u041c\u0430\u0440\u043a-\u0430\u043d\u0442\u043e\u043d\u0438\u0439 \u0415\u0432\u0440\u043e\u043f\u043e\u0432\u041a\u0438\u0440\u0438\u043b\u043e\u0432",
+        "rimpopovrosenka@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 8",
+      "message": "Accusamus error impedit exercitationem. Numquam hic quod optio sit maiores. Dolorem facilis saepe nesciunt similique.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0413-\u0446\u0430 \u043f\u0435\u0440\u0443\u043d\u0430 \u041a\u0443\u0440\u0442\u0430\u043a\u043e\u0432\u0430",
+        "kkuchev@example.com"
+      ],
+      "addr_from": [
+        "\u0426\u0432\u0435\u0442\u043e\u043b\u0438\u043b\u0438\u044f \u042f\u0440\u043a\u043e\u0432\u0430",
+        "petromiltsitskov@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 9",
+      "message": "Doloremque libero consequatur est odio. Suscipit odio beatae deleniti sapiente assumenda inventore. Aspernatur ex soluta cumque neque.\nDeserunt ad vitae. Eum reprehenderit nostrum a. Provident ipsum dolorum tempore animi dolor explicabo dicta.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u041d\u043e\u043d\u0430 \u0412\u0430\u043c\u043f\u0438\u0440\u0441\u043a\u0430",
+        "purvanovavesna@example.net"
+      ],
+      "addr_from": [
+        "\u0413-\u0446\u0430 \u042f\u043d\u043a\u043e \u0421\u0438\u043c\u0435\u043e\u043d\u043e\u0432",
+        "proikovapetrana@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 10",
+      "message": "Minus aliquid commodi vel.\nOmnis aliquam fuga quos ipsam. Nobis alias quaerat error alias. Officiis natus ipsam itaque modi.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0420\u0443\u0441\u0430\u043b\u0438\u044f \u041f\u0438\u0449\u043e\u0432\u043a\u043e\u043b\u0435\u0432\u0430",
+        "chavdar2010@example.org"
+      ],
+      "addr_from": [
+        "\u0421\u0442\u0435\u043b\u0438\u043d\u0430 \u0413\u0440\u0430\u0434\u0438\u043d\u0430\u0440\u043e\u0432\u0430",
+        "firomuev@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 11",
+      "message": "Nihil possimus laborum error excepturi ex. Enim dignissimos ducimus necessitatibus. Autem at veritatis nisi voluptatem suscipit. Impedit nam quos dolore explicabo.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0420\u043e\u043c\u0435\u043d \u0417\u043b\u0430\u0442\u043a\u043e\u0432",
+        "todorovakalina@example.org"
+      ],
+      "addr_from": [
+        "\u0421\u0442\u043e\u0438\u043c\u0435\u043d\u0430 \u041c\u0443\u0441\u0442\u0430\u043a\u043e\u0432\u0430",
+        "etsitskov@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 12",
+      "message": "Animi iste dolores rem. Voluptatum libero esse dicta suscipit.\nOdio quisquam voluptatibus ut nisi vero. Perferendis optio architecto iure non qui vel. Quos molestiae ratione aut.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0411\u0435\u043b\u0438\u0441\u0438\u043c\u0430 \u0421\u043e\u043f\u0430\u0434\u0436\u0438\u0435\u0432\u0430",
+        "shturbovrinaldo@example.com"
+      ],
+      "addr_from": [
+        "\u0413-\u0446\u0430 \u0426\u043e\u043b\u0430 \u0411\u0430\u043b\u043a\u0430\u043d\u0441\u043a\u0430",
+        "chonar1990@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 13",
+      "message": "Asperiores consectetur nostrum ea est reprehenderit aliquam. Dolorum harum error explicabo quos impedit voluptas.\nExplicabo libero perferendis quod commodi.\nFacere pariatur quas necessitatibus cupiditate ad.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0413-\u0446\u0430 \u041a\u0438\u043c\u0431\u043e \u0413\u044c\u043e\u043a\u043e\u0432",
+        "ioliyanzlatkov@example.org"
+      ],
+      "addr_from": [
+        "\u0414\u0440. \u0411\u0435\u0447\u043e \u0421\u043c\u044a\u0440\u0434\u0430\u043d\u0441\u043a\u0438",
+        "gerokhvurchilkov@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 14",
+      "message": "Recusandae in maxime magni ducimus quisquam reiciendis.\nFugiat architecto debitis sed numquam reprehenderit veritatis. Fugiat adipisci odit iusto accusantium repellendus. Beatae nesciunt blanditiis recusandae consequuntur.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0414\u0435\u0432\u0438 \u041c\u0443\u0441\u0442\u0430\u043a\u043e\u0432\u0430",
+        "pacharuzkapavlina@example.com"
+      ],
+      "addr_from": [
+        "\u0411\u0430\u0433\u0440\u0430 \u0411\u0435\u043b\u043e\u043a\u043e\u043d\u0441\u043a\u0430-\u0412\u0440\u0430\u0436\u0430\u043b\u0441\u043a\u0430",
+        "dea2004@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Bulgarian: cp1251 - 15",
+      "message": "In saepe tempora eligendi magni rem. Nostrum alias minus nobis culpa quibusdam repellat.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u041d\u043e\u043d\u043d\u0430 \u0411\u043e\u0440\u0438\u0441\u043e\u0432\u043d\u0430 \u0414\u0430\u0432\u044b\u0434\u043e\u0432\u0430",
+        "martjan1990@example.net"
+      ],
+      "addr_from": [
+        "\u041d\u0430\u0434\u0435\u0436\u0434\u0430 \u0412\u0430\u043b\u0435\u043d\u0442\u0438\u043d\u043e\u0432\u043d\u0430 \u0428\u0435\u0441\u0442\u0430\u043a\u043e\u0432\u0430",
+        "zemeljanova@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 1",
+      "message": "\u0425\u043e\u0437\u044f\u0439\u043a\u0430 \u043d\u0430\u043f\u0440\u0430\u0432\u043e \u043c\u0435\u0434\u0438\u0446\u0438\u043d\u0430 \u043a\u0430\u0437\u043d\u044c \u043a\u043e\u0440\u0438\u0447\u043d\u0435\u0432\u044b\u0439 \u0432\u0438\u0442\u0440\u0438\u043d\u0430. \u041f\u0430\u0440\u0435\u043d\u044c \u0431\u0430\u0431\u043e\u0447\u043a\u0430 \u043f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u043f\u0440\u0438\u0437\u044b\u0432 \u043d\u0430\u043b\u0435\u0432\u043e \u0436\u0438\u0442\u044c \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0435 \u043e\u0447\u043a\u043e.\n\u041e\u0442\u043c\u0435\u0442\u0438\u0442\u044c \u043a\u043e\u0441\u043c\u043e\u0441 \u0431\u0440\u0438\u0433\u0430\u0434\u0430 \u0441\u043e\u0432\u0435\u0442 \u0447\u0443\u0432\u0441\u0442\u0432\u043e. \u042d\u0444\u0444\u0435\u043a\u0442 \u0432\u0438\u0434\u043d\u0435\u0442\u044c\u0441\u044f \u043b\u043e\u0436\u0438\u0442\u044c\u0441\u044f. \u0413\u0440\u0443\u0434\u044c \u043d\u0430\u0440\u043e\u0434 \u0441\u043e\u0432\u0435\u0442\u043e\u0432\u0430\u0442\u044c.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u041a\u0438\u0441\u0435\u043b\u0435\u0432 \u0424\u043e\u043c\u0430 \u0418\u0437\u043e\u0442\u043e\u0432\u0438\u0447",
+        "xterenteva@example.com"
+      ],
+      "addr_from": [
+        "\u0421\u0432\u044f\u0442\u043e\u0441\u043b\u0430\u0432 \u0424\u043e\u043c\u0438\u0447 \u042e\u0434\u0438\u043d",
+        "denisvorontsov@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 2",
+      "message": "\u0411\u0430\u043a \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c \u043f\u043b\u043e\u0434 \u0440\u043e\u0441\u0430 \u0441\u0432\u0435\u0436\u0438\u0439 \u0433\u043e\u043b\u0443\u0431\u0447\u0438\u043a \u043f\u043e\u0442\u043e\u043c. \u041c\u0435\u0434\u0438\u0446\u0438\u043d\u0430 \u0438\u043d\u0432\u0430\u043b\u0438\u0434 \u0438\u0437\u0440\u0435\u0434\u043a\u0430 \u0434\u043e\u0448\u043b\u044b\u0439 \u043d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u043d\u0435\u0432\u044b\u043d\u043e\u0441\u0438\u043c\u044b\u0439 \u0442\u0435\u0440\u043c\u0438\u043d. \u0424\u043e\u043d\u0430\u0440\u0438\u043a \u0442\u0440\u0435\u0432\u043e\u0433\u0430 \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u0437\u0430\u043f\u043b\u0430\u043a\u0430\u0442\u044c \u0448\u043b\u0435\u043c \u043b\u0435\u0432\u044b\u0439 \u0444\u0430\u043a\u0443\u043b\u044c\u0442\u0435\u0442.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0411\u043e\u0431\u044b\u043b\u0435\u0432\u0430 \u0424\u0430\u0438\u043d\u0430 \u0410\u0441\u043a\u043e\u043b\u044c\u0434\u043e\u0432\u043d\u0430",
+        "fedot1995@example.net"
+      ],
+      "addr_from": [
+        "\u0422\u0430\u0438\u0441\u0438\u044f \u0413\u0440\u0438\u0433\u043e\u0440\u044c\u0435\u0432\u043d\u0430 \u0420\u043e\u043c\u0430\u043d\u043e\u0432\u0430",
+        "braginaregina@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 3",
+      "message": "\u041e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0435 \u0432\u044b\u0440\u0430\u0436\u0435\u043d\u0438\u0435 \u043f\u0435\u0441\u0435\u043d\u043a\u0430 \u0431\u043e\u0442\u0438\u043d\u043e\u043a \u043f\u043e\u043b\u0435\u0432\u043e\u0439 \u0433\u043e\u0441\u043f\u043e\u0434\u044c \u043d\u0435\u0434\u043e\u0441\u0442\u0430\u0442\u043e\u043a. \u041f\u043e\u0445\u043e\u0440\u043e\u043d\u044b \u043f\u0440\u043e\u0442\u044f\u0433\u0438\u0432\u0430\u0442\u044c \u044f\u0440\u043a\u043e \u0441\u043e\u0432\u0435\u0449\u0430\u043d\u0438\u0435 \u0437\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u0435.\n\u0413\u043e\u0440\u044c\u043a\u0438\u0439 \u0444\u0443\u043d\u043a\u0446\u0438\u044f \u043c\u043e\u0442\u043e\u0446\u0438\u043a\u043b \u0434\u0430\u043b\u044c\u043d\u0438\u0439 \u0441\u043e\u043c\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0439. \u041f\u0440\u043e\u0445\u043e\u0434 \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0435\u0441\u043d\u044f.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0413\u0443\u0449\u0438\u043d\u0430 \u0413\u043b\u0430\u0444\u0438\u0440\u0430 \u0410\u043d\u0430\u0442\u043e\u043b\u044c\u0435\u0432\u043d\u0430",
+        "kondrat2008@example.org"
+      ],
+      "addr_from": [
+        "\u041a\u043e\u043c\u0430\u0440\u043e\u0432 \u0415\u0432\u0441\u0442\u0430\u0444\u0438\u0439 \u0411\u0440\u043e\u043d\u0438\u0441\u043b\u0430\u0432\u043e\u0432\u0438\u0447",
+        "svjatopolk31@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 4",
+      "message": "\u0414\u043e\u0431\u0438\u0442\u044c\u0441\u044f \u0445\u043e\u043b\u043e\u0434\u043d\u043e \u043f\u043b\u044f\u0441\u0430\u0442\u044c \u043f\u043e\u043c\u0438\u043c\u043e \u0437\u0430\u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c. \u041c\u0435\u0442\u0430\u043b\u043b \u043b\u043e\u0436\u0438\u0442\u044c\u0441\u044f \u0433\u043e\u0441\u043f\u043e\u0436\u0430 \u0432\u044b\u0442\u0430\u0441\u043a\u0438\u0432\u0430\u0442\u044c \u0443\u0433\u0440\u043e\u0437\u0430 \u0432\u0435\u0434\u044c.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u041b\u0443\u0447\u0435\u0437\u0430\u0440 \u0424\u0435\u0434\u043e\u0441\u0435\u0435\u0432\u0438\u0447 \u0412\u043e\u0440\u043e\u043d\u043e\u0432",
+        "gleb_1986@example.net"
+      ],
+      "addr_from": [
+        "\u0415\u043b\u0435\u043d\u0430 \u041d\u0438\u043b\u043e\u0432\u043d\u0430 \u0429\u0443\u043a\u0438\u043d\u0430",
+        "matve_15@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 5",
+      "message": "\u0415\u0434\u0438\u043d\u044b\u0439 \u043f\u0430\u043b\u0435\u0446 \u043e\u0447\u043a\u043e \u0447\u0443\u0432\u0441\u0442\u0432\u043e \u0441\u043a\u0440\u044b\u0442\u044b\u0439. \u0412\u044b\u0440\u0430\u0436\u0435\u043d\u043d\u044b\u0439 \u0441\u0435\u043a\u0443\u043d\u0434\u0430 \u0441\u0442\u0440\u0430\u0441\u0442\u044c \u0442\u043e\u0440\u0433\u043e\u0432\u043b\u044f \u043e\u0442\u043c\u0435\u0442\u0438\u0442\u044c \u0443\u0432\u0435\u043b\u0438\u0447\u0438\u0432\u0430\u0442\u044c\u0441\u044f. \u041f\u043e\u0435\u0437\u0434 \u043d\u043e\u0441\u043e\u043a \u043a\u043e\u0440\u043e\u0431\u043a\u0430 \u0442\u0435\u043c\u043d\u0435\u0442\u044c \u043d\u0430\u0445\u043e\u0434\u0438\u0442\u044c \u0434\u043e\u0448\u043b\u044b\u0439 \u043e\u0442\u0440\u0430\u0436\u0435\u043d\u0438\u0435. \u041a\u043e\u0441\u043c\u043e\u0441 \u0434\u0435\u043d\u044c\u0433\u0438 \u0432\u043e\u0437\u043c\u0443\u0442\u0438\u0442\u044c\u0441\u044f \u043d\u0430\u043b\u043e\u0433\u043e\u0432\u044b\u0439 \u043e\u0441\u0432\u043e\u0431\u043e\u0434\u0438\u0442\u044c \u0432\u0447\u0435\u0440\u0430 \u0432\u0441\u0442\u0430\u0442\u044c.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u041d\u0430\u0442\u0430\u043b\u044c\u044f \u0410\u043d\u0442\u043e\u043d\u043e\u0432\u043d\u0430 \u041a\u0430\u043b\u0438\u043d\u0438\u043d\u0430",
+        "izotkonovalov@example.org"
+      ],
+      "addr_from": [
+        "\u041f\u0440\u043e\u0445\u043e\u0440\u043e\u0432\u0430 \u0418\u0440\u0438\u043d\u0430 \u041d\u0438\u043a\u0438\u0444\u043e\u0440\u043e\u0432\u043d\u0430",
+        "evdokimovaevdokija@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 6",
+      "message": "\u0421\u043f\u043e\u0440\u0442 \u043a\u043e\u043b\u044c\u0446\u043e \u044d\u0444\u0444\u0435\u043a\u0442 \u043f\u0435\u0440\u0435\u0431\u0438\u0432\u0430\u0442\u044c \u043b\u043e\u043c\u0430\u0442\u044c \u0434\u0440\u043e\u0433\u043d\u0443\u0442\u044c. \u0410\u0436 \u043d\u0438\u0437\u043a\u0438\u0439 \u0442\u0440\u0443\u0431\u043a\u0430 \u043f\u043e\u043a\u0438\u0434\u0430\u0442\u044c.\n\u0421\u0443\u0441\u0442\u0430\u0432 \u0442\u043e\u0432\u0430\u0440 \u0431\u0435\u043b\u044c\u0435 \u0430\u043b\u043b\u0435\u044f \u043e\u0437\u043d\u0430\u0447\u0430\u0442\u044c \u0447\u0435\u0440\u0435\u0437 \u043d\u0430\u0436\u0430\u0442\u044c. \u0423\u0432\u0435\u043b\u0438\u0447\u0438\u0432\u0430\u0442\u044c\u0441\u044f \u0438\u043d\u0442\u0435\u043b\u043b\u0435\u043a\u0442\u0443\u0430\u043b\u044c\u043d\u044b\u0439 \u0445\u043b\u0435\u0431 \u0441\u043b\u0430\u0432\u043d\u044b\u0439 \u0431\u0435\u0441\u043f\u043e\u043c\u043e\u0449\u043d\u044b\u0439 \u043f\u043e\u0440\u043e\u0433.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0412\u0430\u0440\u0432\u0430\u0440\u0430 \u041c\u0438\u0440\u043e\u043d\u043e\u0432\u043d\u0430 \u0410\u043d\u0434\u0440\u0435\u0435\u0432\u0430",
+        "kornil_1993@example.com"
+      ],
+      "addr_from": [
+        "\u041b\u043e\u0440\u0430 \u0417\u0430\u0445\u0430\u0440\u043e\u0432\u043d\u0430 \u0421\u0443\u0431\u0431\u043e\u0442\u0438\u043d\u0430",
+        "kapitonignatov@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 7",
+      "message": "\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u044c \u043d\u0430\u0442\u043a\u043d\u0443\u0442\u044c\u0441\u044f. \u0420\u0435\u0431\u044f\u0442\u0438\u0448\u043a\u0438 \u043f\u043e\u0440\u0442 \u043a\u043e\u043c\u0430\u043d\u0434\u0438\u0440 \u0432\u0440\u044f\u0434.\n\u041a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u044f \u043e\u0442\u0432\u0435\u0442\u0438\u0442\u044c \u043f\u043e\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u0434\u043e\u0441\u0442\u043e\u0438\u043d\u0441\u0442\u0432\u043e \u0434\u0430\u043b\u044c\u043d\u0438\u0439 \u043f\u043e\u0441\u0438\u0434\u0435\u0442\u044c \u0434\u0435\u043b\u043e\u0432\u043e\u0439. \u0418\u0434\u0435\u044f \u043c\u0443\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u043f\u0440\u0438\u043b\u0438\u0447\u043d\u044b\u0439 \u0446\u0435\u043f\u043e\u0447\u043a\u0430 \u043c\u0435\u0442\u0430\u043b\u043b \u0441\u0432\u0435\u0442\u0438\u043b\u043e \u0448\u043b\u0435\u043c. \u041a\u043e\u0436\u0430 \u0431\u043e\u0435\u0446 \u043f\u0440\u0435\u0436\u043d\u0438\u0439.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0422\u0430\u0438\u0441\u0438\u044f \u041c\u0430\u0442\u0432\u0435\u0435\u0432\u043d\u0430 \u041e\u0440\u0435\u0445\u043e\u0432\u0430",
+        "savelevvitali@example.com"
+      ],
+      "addr_from": [
+        "\u041a\u043e\u0432\u0430\u043b\u0435\u0432 \u0420\u043e\u043c\u0430\u043d \u0413\u0435\u0440\u0442\u0440\u0443\u0434\u043e\u0432\u0438\u0447",
+        "karl74@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 8",
+      "message": "\u041f\u0440\u0438\u0440\u043e\u0434\u0430 \u043a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u044f \u0441\u043b\u0438\u0448\u043a\u043e\u043c \u0442\u0440\u0443\u0431\u043a\u0430 \u043f\u0440\u043e\u0431\u043e\u0432\u0430\u0442\u044c \u0437\u0430\u0431\u0438\u0440\u0430\u0442\u044c.\n\u041a\u0430\u043a\u043e\u0439 \u0434\u044c\u044f\u0432\u043e\u043b \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c. \u0420\u0430\u0439\u043a\u043e\u043c \u0432\u043e\u0439\u0442\u0438 \u0442\u0435\u0441\u043d\u043e \u0437\u0438\u043c\u0430 \u043c\u0438\u043b\u043b\u0438\u0430\u0440\u0434 \u0445\u043e\u0442\u0435\u0442\u044c \u0440\u0435\u0448\u0435\u043d\u0438\u0435.\n\u041b\u0435\u043d\u0438\u043d\u0433\u0440\u0430\u0434 \u0432\u044b\u0432\u0435\u0441\u0442\u0438 \u0447\u0435\u0442\u043a\u043e \u0434\u0443\u0440\u0430\u0446\u043a\u0438\u0439. \u041a\u043e\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u044f \u0438\u0441\u043f\u043e\u043b\u043d\u044f\u0442\u044c \u043a\u0440\u0443\u0442\u043e\u0439 \u043a\u0430\u0440\u0430\u043d\u0434\u0430\u0448 \u043e\u0447\u0443\u0442\u0438\u0442\u044c\u0441\u044f.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0411\u0435\u043b\u044f\u0435\u0432 \u0412\u0438\u043a\u0442\u043e\u0440\u0438\u043d \u0410\u0440\u0442\u0451\u043c\u043e\u0432\u0438\u0447",
+        "larisa_39@example.org"
+      ],
+      "addr_from": [
+        "\u0413\u0440\u043e\u043c\u043e\u0432 \u041c\u0438\u043b\u0435\u043d \u0422\u0435\u0439\u043c\u0443\u0440\u0430\u0437\u043e\u0432\u0438\u0447",
+        "wguseva@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 9",
+      "message": "\u0422\u0440\u0443\u0431\u043a\u0430 \u0440\u043e\u0442 \u0431\u0430\u043d\u043a \u043b\u0430\u043f\u0430 \u0442\u0435\u043c\u043d\u0435\u0442\u044c \u043f\u0440\u043e\u0442\u044f\u0433\u0438\u0432\u0430\u0442\u044c.\n\u0414\u044c\u044f\u0432\u043e\u043b \u043f\u043e\u043c\u043e\u043b\u0447\u0430\u0442\u044c \u043d\u0435\u0443\u0434\u043e\u0431\u043d\u043e \u043e\u0442\u0434\u0435\u043b \u043f\u0435\u0440\u0435\u0434\u043e. \u041c\u0435\u0445\u0430\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0441\u0432\u0435\u0436\u0438\u0439 \u043f\u0440\u043e\u0432\u0430\u043b \u043b\u0435\u0442\u0435\u0442\u044c \u043f\u0430\u0434\u0430\u043b\u044c \u0433\u043e\u0441\u043f\u043e\u0434\u044c.\n\u0418\u0434\u0435\u044f \u0442\u044f\u0436\u0435\u043b\u044b\u0439 \u0431\u0435\u0433\u0430\u0442\u044c \u043b\u0435\u0442\u0435\u0442\u044c \u043f\u0430\u043b\u0430\u0442\u0430. \u041e\u0447\u0435\u0440\u0435\u0434\u043d\u043e\u0439 \u043e\u0437\u043d\u0430\u0447\u0430\u0442\u044c \u043f\u0430\u0441\u0442\u044c \u0432\u0438\u0442\u0440\u0438\u043d\u0430 \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043c\u043e\u0442\u043e\u0446\u0438\u043a\u043b \u043e\u0442\u0434\u0435\u043b.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u041e\u0440\u043b\u043e\u0432\u0430 \u041f\u043e\u043b\u0438\u043d\u0430 \u0421\u0432\u044f\u0442\u043e\u0441\u043b\u0430\u0432\u043e\u0432\u043d\u0430",
+        "amos_68@example.net"
+      ],
+      "addr_from": [
+        "\u042e\u0432\u0435\u043d\u0430\u043b\u0438\u0439 \u0410\u0434\u0440\u0438\u0430\u043d\u043e\u0432\u0438\u0447 \u0413\u0443\u043b\u044f\u0435\u0432",
+        "bolshakovazinaida@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 10",
+      "message": "\u0417\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u0435 \u0430\u043d\u0430\u043b\u0438\u0437 \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u0438\u0435 \u0431\u043e\u043b\u0435\u0435 \u043b\u0435\u0442\u0435\u0442\u044c. \u041b\u0435\u0433\u043a\u043e \u043d\u0430\u043f\u0440\u0430\u0432\u043e \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 \u0437\u0438\u043c\u0430 \u0441\u0442\u0430\u043a\u0430\u043d \u043d\u043e\u0447\u044c \u0442\u0435\u043c\u043d\u0435\u0442\u044c. \u0412\u0442\u043e\u0440\u043e\u0439 \u0441\u043e\u0432\u0435\u0442 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e\u0441\u0442\u044c \u043e\u0447\u0443\u0442\u0438\u0442\u044c\u0441\u044f.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u041a\u0438\u0440\u0438\u043b\u043b\u043e\u0432\u0430 \u0421\u0432\u0435\u0442\u043b\u0430\u043d\u0430 \u041c\u0430\u043a\u0430\u0440\u043e\u0432\u043d\u0430",
+        "romanovvenedikt@example.com"
+      ],
+      "addr_from": [
+        "\u0412\u0430\u043b\u0435\u0440\u0438\u0439 \u0412\u043b\u0430\u0434\u0438\u043b\u0435\u043d\u043e\u0432\u0438\u0447 \u0410\u0440\u0445\u0438\u043f\u043e\u0432",
+        "filimon_1999@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 11",
+      "message": "\u041f\u0435\u0440\u0435\u0434\u043e \u043f\u0440\u043e\u0442\u044f\u0433\u0438\u0432\u0430\u0442\u044c \u043f\u0430\u043b\u0430\u0442\u0430 \u0442\u043e\u0440\u0433\u043e\u0432\u043b\u044f \u043f\u0440\u0435\u0436\u043d\u0438\u0439 \u043f\u0440\u043e\u0445\u043e\u0434. \u0422\u0435\u0440\u043c\u0438\u043d \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0432\u044b\u0432\u0435\u0441\u0442\u0438 \u043c\u044f\u0433\u043a\u0438\u0439 \u043c\u0430\u043b\u044c\u0447\u0438\u0448\u043a\u0430 \u043d\u0430\u0445\u043e\u0434\u0438\u0442\u044c. \u0423\u043f\u043e\u0440\u043d\u043e \u0440\u0430\u0437\u0432\u043e\u0434\u0438\u0442\u044c \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u043f\u0440\u0435\u043b\u0435\u0441\u0442\u044c.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u041c\u0438\u0445\u0435\u0439 \u041c\u0430\u0440\u0441\u043e\u0432\u0438\u0447 \u0420\u043e\u0436\u043a\u043e\u0432",
+        "kudrjashovavera@example.net"
+      ],
+      "addr_from": [
+        "\u041a\u043e\u043c\u0438\u0441\u0441\u0430\u0440\u043e\u0432\u0430 \u0420\u0430\u0438\u0441\u0430 \u0421\u0432\u044f\u0442\u043e\u0441\u043b\u0430\u0432\u043e\u0432\u043d\u0430",
+        "hsharapov@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 12",
+      "message": "\u0412\u0438\u0442\u0440\u0438\u043d\u0430 \u0440\u0430\u0437\u0432\u0435\u0440\u043d\u0443\u0442\u044c\u0441\u044f \u043e\u043a\u043e\u043b\u043e \u043f\u043e\u0442\u044f\u043d\u0443\u0442\u044c\u0441\u044f \u0441\u043b\u0430\u0432\u043d\u044b\u0439. \u041c\u0430\u043b\u044c\u0447\u0438\u0448\u043a\u0430 \u043c\u0438\u043b\u043b\u0438\u0430\u0440\u0434 \u043e\u0442\u044a\u0435\u0437\u0434 \u0438\u043d\u043e\u0439. \u0426\u0435\u043b\u044c \u0447\u0442\u043e \u043b\u0435\u0432\u044b\u0439 \u043a\u043e\u043c\u0430\u043d\u0434\u0438\u0440.\n\u041c\u0430\u043d\u0435\u0440\u0430 \u0442\u044f\u0436\u0435\u043b\u044b\u0439 \u0446\u0435\u043f\u043e\u0447\u043a\u0430 \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0435. \u041f\u0440\u0438\u043b\u0438\u0447\u043d\u044b\u0439 \u0441\u0430\u043b\u043e\u043d \u0441\u043f\u0430\u043b\u0438\u0442\u044c \u043f\u0435\u0440\u0435\u0441\u0435\u0447\u044c.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u041f\u0440\u0430\u0441\u043a\u043e\u0432\u044c\u044f \u0410\u0440\u0442\u0435\u043c\u043e\u0432\u043d\u0430 \u0410\u0433\u0430\u0444\u043e\u043d\u043e\u0432\u0430",
+        "nrusakova@example.net"
+      ],
+      "addr_from": [
+        "\u042e\u0434\u0438\u043d\u0430 \u0424\u0430\u0438\u043d\u0430 \u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432\u043d\u0430",
+        "cgavrilova@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 13",
+      "message": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0431\u043e\u043b\u0435\u0435 \u043d\u0435\u0440\u0432\u043d\u043e \u0430\u0436 \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u043f\u0440\u0435\u0436\u0434\u0435 \u043e\u0442\u0432\u0435\u0442\u0438\u0442\u044c. \u0414\u043e\u0441\u0442\u043e\u0438\u043d\u0441\u0442\u0432\u043e \u0447\u0443\u0432\u0441\u0442\u0432\u043e \u043e\u0431\u0438\u0434\u0430 \u0440\u043e\u0442\u0430 \u043f\u043e\u0442\u043e\u043c. \u041d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u0443\u0441\u043f\u043e\u043a\u043e\u0438\u0442\u044c\u0441\u044f \u0432\u0441\u0442\u0430\u0442\u044c \u043a\u043e\u043c\u0430\u043d\u0434\u0430.\n\u0410\u0440\u043c\u0435\u0439\u0441\u043a\u0438\u0439 \u043d\u0430\u043f\u0440\u0430\u0432\u043e \u0441\u043e\u043b\u043d\u0446\u0435 \u043f\u043e\u043a\u043e\u043b\u0435\u043d\u0438\u0435 \u0441\u043f\u043e\u0441\u043e\u0431 \u043a\u0438\u0434\u0430\u0442\u044c \u043c\u0430\u0442\u0435\u0440\u0438\u044f. \u041f\u0430\u0434\u0430\u043b\u044c \u043f\u043e\u0440\u044f\u0434\u043e\u043a \u043f\u043e\u043a\u043e\u043b\u0435\u043d\u0438\u0435 \u043f\u043e\u043c\u043e\u043b\u0447\u0430\u0442\u044c \u0444\u0443\u043d\u043a\u0446\u0438\u044f \u0437\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u0435.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0421\u043f\u0438\u0440\u0438\u0434\u043e\u043d \u0411\u043e\u0433\u0434\u0430\u043d\u043e\u0432\u0438\u0447 \u041d\u043e\u0432\u0438\u043a\u043e\u0432",
+        "mbragina@example.net"
+      ],
+      "addr_from": [
+        "\u0418\u0441\u0430\u0435\u0432 \u0415\u0444\u0440\u0435\u043c \u0413\u0435\u043e\u0440\u0433\u0438\u0435\u0432\u0438\u0447",
+        "blinovaakulina@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 14",
+      "message": "\u0412\u044b\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0438\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u044f \u043f\u043e\u0441\u0442\u043e\u044f\u043d\u043d\u044b\u0439 \u0440\u0435\u0434\u0430\u043a\u0442\u043e\u0440 \u0432\u043e\u0437\u043d\u0438\u043a\u043d\u043e\u0432\u0435\u043d\u0438\u0435. \u0413\u0440\u0443\u0441\u0442\u043d\u044b\u0439 \u043e\u0431\u0438\u0434\u0430 \u043f\u0440\u043e\u0445\u043e\u0434 \u0437\u0430\u0447\u0435\u043c \u044d\u043f\u043e\u0445\u0430 \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c. \u041e\u043a\u043e\u043b\u043e \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0435 \u0432\u0437\u0434\u0440\u043e\u0433\u043d\u0443\u0442\u044c \u0441\u0432\u0435\u0440\u043a\u0430\u0442\u044c \u043f\u043e\u0435\u0437\u0434 \u043d\u043e\u0436 \u043d\u0435\u043f\u0440\u0430\u0432\u0434\u0430 \u0431\u0440\u0438\u0433\u0430\u0434\u0430.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430 \u0421\u0442\u0430\u043d\u0438\u0441\u043b\u0430\u0432\u043e\u0432\u043d\u0430 \u0421\u043e\u043b\u043e\u0432\u044c\u0435\u0432\u0430",
+        "mlapin@example.com"
+      ],
+      "addr_from": [
+        "\u0410\u043d\u0433\u0435\u043b\u0438\u043d\u0430 \u041f\u0435\u0442\u0440\u043e\u0432\u043d\u0430 \u0415\u0432\u0441\u0435\u0435\u0432\u0430",
+        "kolobovaanzhela@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Russian: cp1251 - 15",
+      "message": "\u0412\u044b\u0433\u043d\u0430\u0442\u044c \u0441\u0430\u043c\u043e\u0441\u0442\u043e\u044f\u0442\u0435\u043b\u044c\u043d\u043e \u043a\u043e\u043b\u043b\u0435\u043a\u0442\u0438\u0432. \u0418\u0437\u0440\u0435\u0434\u043a\u0430 \u0437\u0430 \u0442\u0440\u044f\u0441\u0442\u0438 \u0434\u043e\u043c\u0430\u0448\u043d\u0438\u0439 \u043f\u0440\u0438 \u0441\u043f\u043e\u0440\u0442. \u0420\u043e\u0441\u043a\u043e\u0448\u043d\u044b\u0439 \u0440\u0430\u0439 \u0441\u043f\u0430\u043b\u0438\u0442\u044c \u043f\u043b\u043e\u0434 \u0447\u0435\u0440\u0435\u0437.\n\u0411\u043e\u0442\u0438\u043d\u043e\u043a \u0432\u0430\u0436\u043d\u044b\u0439 \u0433\u043e\u0440\u044c\u043a\u0438\u0439 \u043e\u0434\u0438\u043d\u043d\u0430\u0434\u0446\u0430\u0442\u044c \u0440\u0430\u0437\u0432\u0435\u0440\u043d\u0443\u0442\u044c\u0441\u044f \u0444\u0430\u043a\u0443\u043b\u044c\u0442\u0435\u0442. \u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442 \u043f\u0440\u0430\u0432\u044b\u0439 \u0444\u043e\u043d\u0430\u0440\u0438\u043a \u043f\u0435\u0440\u0435\u0441\u0435\u0447\u044c \u043d\u0430\u0441\u043b\u0430\u0436\u0434\u0435\u043d\u0438\u0435 \u0443\u043f\u043e\u0440.",
+      "headers": {},
+      "encoding": "cp1251",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

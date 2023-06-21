@@ -1,0 +1,279 @@
+{
+  "title": "Charset `ascii` Test",
+  "explain": "Test ascii",
+  "json_path": "..\\seeds\\charset\\ascii.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\ascii",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "Debra Smith",
+        "denisehansen@example.com"
+      ],
+      "addr_from": [
+        "Paula Holland",
+        "ecarter@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 1",
+      "message": "It necessary matter pass. The rich environmental radio.\nPlay term nature ready. Across instead probably weight skin break.\nPast join might benefit. Office heart watch side significant box. Box job find husband father admit manager.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Deborah Poole",
+        "maria10@example.net"
+      ],
+      "addr_from": [
+        "Carolyn Kim",
+        "erica19@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 2",
+      "message": "Sit necessary challenge wind loss. Traditional owner guy wide edge phone fact.\nOutside answer happy idea. Plan type leader ball receive cause. Including produce half.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Jesse Wu",
+        "camposolivia@example.net"
+      ],
+      "addr_from": [
+        "Lisa Baker",
+        "kimberlywilliams@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 3",
+      "message": "Impact sea exactly manager. Write practice brother seven remember mouth four security.\nDinner daughter together page white court. Military energy rate road three always daughter.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Brett Ray",
+        "mcdanieljoel@example.com"
+      ],
+      "addr_from": [
+        "Kathleen Crosby",
+        "thompsonscott@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 4",
+      "message": "Ask week short. Spend war order prove shoulder little. Why citizen which pick road.\nCourt forward business. Success science specific everybody collection describe. Capital write place.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Kevin Young",
+        "davisgabriel@example.org"
+      ],
+      "addr_from": [
+        "Tonya Scott",
+        "carlos47@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 5",
+      "message": "Physical down mind technology. Tell large doctor before. Race could loss stuff.\nWhen look job subject force top travel. Office bag fly soldier usually.\nCentury deep only decide nation throughout.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "David Bailey",
+        "sherristewart@example.org"
+      ],
+      "addr_from": [
+        "Kevin Wagner",
+        "lramos@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 6",
+      "message": "Improve wall include increase. Into card language.\nSecond quite phone candidate put investment. Civil about alone cup life.\nThree rich color number whose. Collection some cold effect same up. Guess home ago.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Summer Owens",
+        "ogarcia@example.org"
+      ],
+      "addr_from": [
+        "Autumn Garcia",
+        "ramossara@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 7",
+      "message": "Station during federal. Just after draw. Realize history body story candidate. Factor table learn third.\nSon hotel door. Third road particularly help week. Forget leave crime parent red.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Amber Brewer",
+        "stonelisa@example.net"
+      ],
+      "addr_from": [
+        "Casey Sandoval",
+        "weaverthomas@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 8",
+      "message": "Picture several serve. And property history step wall society. Room can still do leader.\nPoor exactly smile TV eight. Least or education quickly. Charge candidate reveal baby. Account think address pass.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "James Burton",
+        "jayers@example.net"
+      ],
+      "addr_from": [
+        "Tammy Owen",
+        "heathermueller@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 9",
+      "message": "Against beat on page. Close so lay account. Leader glass head gun edge walk best.\nMr what case player. Others degree professor produce idea send like. Argue a trip rest experience buy. Whatever step according simply start chair.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Sheila Todd",
+        "dstephens@example.net"
+      ],
+      "addr_from": [
+        "Roy Bradley",
+        "svasquez@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 10",
+      "message": "State structure necessary debate. Six rate most certainly imagine. Better discover away discussion different despite. Couple again although.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "James Miller",
+        "cobbmark@example.org"
+      ],
+      "addr_from": [
+        "Rebecca Mccall",
+        "henryflores@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 11",
+      "message": "Top fall choose woman area something style particular. Court protect pretty once step field.\nAvoid the might church course. Model idea worker assume expert. Open form last thought kid since discover.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Rebecca Walker",
+        "maryhoward@example.com"
+      ],
+      "addr_from": [
+        "Sarah Kennedy",
+        "jennifer59@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 12",
+      "message": "No ground daughter expect music despite miss. Him at get respond.\nDeal capital court either his. Beautiful floor call day buy.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Rodney Wiley",
+        "lancepalmer@example.com"
+      ],
+      "addr_from": [
+        "Michael Weiss",
+        "hnguyen@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 13",
+      "message": "Pull party ability why. Security another manage summer line know law. Building tree dinner pull form it tell.\nEight election middle bank player. Trial product range at citizen.\nAll national behind over deal.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "James Whitney",
+        "melissaobrien@example.net"
+      ],
+      "addr_from": [
+        "Christopher Lee",
+        "lsalazar@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 14",
+      "message": "Level bit follow born stay animal. Soldier owner would management group. Myself likely lead social table. Company attention we yet might individual just.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Richard Ferguson",
+        "winterstanya@example.org"
+      ],
+      "addr_from": [
+        "Valerie Good",
+        "bradley01@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: ascii - 15",
+      "message": "Exactly country why modern draw. Before you tend reflect. Kitchen within plan.\nYou notice film.\nLook cost lead study also culture. Toward issue hold true least set speak. Name chair left modern bag.",
+      "headers": {},
+      "encoding": "ascii",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

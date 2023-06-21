@@ -1,0 +1,279 @@
+{
+  "title": "Charset `cp1026` Test",
+  "explain": "Test cp1026",
+  "json_path": "..\\seeds\\charset\\cp1026.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\cp1026",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "\u00c7ev. Andi\u00e7 Yolal \u00c7etin",
+        "durmusunek@example.net"
+      ],
+      "addr_from": [
+        "Sezal Bilir",
+        "ozsozlubilge@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 1",
+      "message": "Corrupti sed neque occaecati quae quia. Qui possimus doloremque.\nSunt harum perspiciatis debitis vel harum minus.\nConsectetur libero fugit ullam saepe.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u015eehamet Soylu",
+        "kelamiyorulmaz@example.net"
+      ],
+      "addr_from": [
+        "Yasemen Ak\u00e7ay",
+        "azadeguclu@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 2",
+      "message": "Quia natus repellendus sed neque veritatis ex inventore. Delectus labore amet nemo enim molestiae accusamus.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u00d6\u011fr. \u00d6ge M\u00fcfit Yaman",
+        "karanbay51@example.net"
+      ],
+      "addr_from": [
+        "Ar\u015f. G\u00f6r. G\u00fcl Seven Durmu\u015f",
+        "yukselhansultan@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 3",
+      "message": "Facilis labore iusto est iure. Iste deleniti voluptatum distinctio consequatur vero.\nAliquam dolor vitae soluta. Sed aut esse nulla. Reiciendis eaque nobis libero eos aperiam.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "T\u00fcrknur Akar",
+        "okyalazgul@example.org"
+      ],
+      "addr_from": [
+        "Yrd. Do\u00e7. G\u00fcler \u00d6calan T\u00fcrk",
+        "cbilir@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 4",
+      "message": "Voluptate magni officiis eos id placeat. Cupiditate temporibus distinctio amet laborum neque.\nEst vel hic reiciendis fugit alias. Impedit eum molestiae id. Optio ut id quasi similique provident aliquam ipsum.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "S\u00fczer \u015eensoy Ak\u00e7ay",
+        "server54@example.net"
+      ],
+      "addr_from": [
+        "Rasul G\u00fcl",
+        "nurgil37@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 5",
+      "message": "Animi sunt temporibus consequuntur. Dicta iste quis nam. Qui dolore quia.\nAperiam qui repudiandae ex tempora voluptate officia. Quasi cumque facere nesciunt magni.\nOdio aliquam natus nemo. Tempora error quo quae.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Sanavber Elamiye Teveto\u011flu Seven",
+        "hayriogluilgi@example.net"
+      ],
+      "addr_from": [
+        "Se\u00e7g\u00fcl Sab\u0131r Sakarya Duran",
+        "soydanerbilge@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 6",
+      "message": "Ducimus minima tempore voluptatem. Repellendus blanditiis hic hic provident atque facere ipsa. Earum eligendi repellat sapiente nemo.\nNatus laboriosam laboriosam explicabo ipsam pariatur vero. Commodi doloremque neque placeat doloribus.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "T\u00fczenur Duran",
+        "neslinurmansiz@example.com"
+      ],
+      "addr_from": [
+        "Edg\u00fcbay Erg\u00fcl",
+        "beraysener@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 7",
+      "message": "Sequi et ad impedit repudiandae. Veritatis unde alias inventore.\nDeleniti et ipsa dolorum. Assumenda cumque porro amet voluptate dicta reiciendis.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Da\u011fistan \u00c7orlu",
+        "ertascuneyit@example.org"
+      ],
+      "addr_from": [
+        "Vefia Sahil Y\u0131ld\u0131r\u0131m",
+        "dundaralpsafak@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 8",
+      "message": "Sequi in nesciunt exercitationem. Eligendi minima accusamus sequi autem. Occaecati quae nemo sint id quia eum.\nNulla ducimus esse incidunt doloremque. Suscipit in illum neque.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Pirahmet G\u00fcl",
+        "kizil47@example.org"
+      ],
+      "addr_from": [
+        "Uz. Bit\u00fcl Haliye K\u0131sak\u00fcrek",
+        "samakezban@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 9",
+      "message": "Consequuntur explicabo aspernatur ratione molestias nobis ex. Cumque dolor blanditiis numquam modi incidunt.\nBlanditiis suscipit necessitatibus consectetur rerum. Tempore veniam porro voluptas velit. Ex corrupti rem.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u00d6zertem F\u0131rat",
+        "ceyhundurmus@example.com"
+      ],
+      "addr_from": [
+        "\u00d6\u011fr. Sevsevil Durmu\u015f Akdeniz",
+        "mturk@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 10",
+      "message": "Enim culpa nam corporis laborum. Excepturi ut repudiandae repudiandae voluptatum sunt. Placeat ullam officia tenetur architecto provident magni recusandae.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Seniha Mans\u0131z \u015eafak",
+        "yildirimsecgul@example.org"
+      ],
+      "addr_from": [
+        "\u00d6\u011fet Sakarya",
+        "muretdemirel@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 11",
+      "message": "Modi tempora suscipit vel saepe recusandae. Mollitia culpa provident quidem cupiditate eveniet modi.\nSoluta fugit sit nam. Nam ratione nulla dignissimos ullam culpa maxime.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Kerime Sunay Zorlu Arsoy",
+        "sezginrojnu@example.org"
+      ],
+      "addr_from": [
+        "Menfeat Yorulmaz",
+        "dturk@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 12",
+      "message": "Explicabo tempora optio inventore.\nDicta illum mollitia. Culpa excepturi aut exercitationem. Facilis atque accusantium eveniet natus doloribus ipsa.\nOfficiis illum fuga dolore quis.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "G\u00fclbeyan \u015e\u00fck\u00fcfe Bilir Dumanl\u0131",
+        "rebihat98@example.net"
+      ],
+      "addr_from": [
+        "Tercan Ak\u00e7a",
+        "bureyreakcay@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 13",
+      "message": "Possimus architecto aut pariatur tenetur fugiat. Ea quis ab itaque voluptatem. Quod explicabo magnam accusamus magnam minima optio.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Alt\u0131nbike S\u00f6yler \u00c7orlu \u0130n\u00f6n\u00fc",
+        "hubanturk@example.net"
+      ],
+      "addr_from": [
+        "Prof. Semrin Teveto\u011flu Alemdar",
+        "gucluerdumanli@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 14",
+      "message": "Rem quam deleniti veniam ea odit. Nostrum facere deserunt in eveniet.\nMaxime suscipit voluptates velit. Beatae assumenda doloremque quia.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Ferhan Hadrey Y\u0131ld\u0131r\u0131m Yaman",
+        "telimsakarya@example.com"
+      ],
+      "addr_from": [
+        "Kutun G\u00fcl",
+        "mbilir@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp1026 - 15",
+      "message": "Vel consequatur consequuntur possimus consectetur. Eligendi exercitationem facilis sequi quaerat esse distinctio. Et quis eum qui impedit.",
+      "headers": {},
+      "encoding": "cp1026",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

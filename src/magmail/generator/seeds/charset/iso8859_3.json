@@ -1,0 +1,279 @@
+{
+  "title": "Charset `iso8859_3` Test",
+  "explain": "Test iso8859_3",
+  "json_path": "..\\seeds\\charset\\iso8859_3.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\iso8859_3",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "Theresa Nelson",
+        "zrhodes@example.org"
+      ],
+      "addr_from": [
+        "Ivan Harris",
+        "gshort@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 1",
+      "message": "Reprehenderit veritatis laborum inventore consequatur ab enim.\nVoluptatum asperiores hic est totam libero a. Eligendi exercitationem est itaque quis.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Robert Lee",
+        "ogarcia@example.com"
+      ],
+      "addr_from": [
+        "Teresa Owen",
+        "norma87@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 2",
+      "message": "Expedita veniam harum totam modi odit. Expedita nisi eius neque ex nihil.\nQuam beatae error dicta recusandae. Similique sit hic alias rerum quasi.\nModi rerum aperiam porro distinctio. Dolores quasi natus consequatur.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "David Salas",
+        "jeffrey66@example.com"
+      ],
+      "addr_from": [
+        "Christopher Baird",
+        "wanda23@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 3",
+      "message": "Recusandae quo perferendis in nisi.\nNeque a suscipit placeat magni enim similique. Aperiam molestiae temporibus error. Iste dignissimos culpa quis nihil beatae doloremque.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Diane Robinson",
+        "richardkrueger@example.com"
+      ],
+      "addr_from": [
+        "Michael Archer",
+        "davidduncan@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 4",
+      "message": "Quia officia occaecati atque est. Debitis animi accusantium esse. Ratione est sint amet.\nSimilique debitis labore aspernatur quas excepturi. Aliquam dolorem asperiores a dicta.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Thomas Green",
+        "ponceshelly@example.com"
+      ],
+      "addr_from": [
+        "Alison Ramos",
+        "stephanie41@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 5",
+      "message": "Animi libero fugit dolorum pariatur. Odit distinctio quia necessitatibus occaecati deleniti. Unde aperiam non iste cupiditate sequi.\nAperiam rem eos dolore ad maiores qui.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Shawna Reed",
+        "johnsonjoseph@example.net"
+      ],
+      "addr_from": [
+        "Rachel Luna",
+        "annaross@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 6",
+      "message": "Eaque enim commodi quam possimus iste sit mollitia. Repellat ipsum labore.\nQui sunt natus laudantium. Aliquam quas eligendi harum repellendus reiciendis. Blanditiis quae reprehenderit minima alias occaecati.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "April Bruce",
+        "bmolina@example.org"
+      ],
+      "addr_from": [
+        "Anita Turner",
+        "smccoy@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 7",
+      "message": "Cumque hic magnam hic. Quidem repudiandae debitis nihil. Facilis facilis quis voluptates expedita aut.\nLabore at consequatur perferendis. Accusantium cumque molestiae debitis aperiam.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Ashley Duncan",
+        "tiffany42@example.com"
+      ],
+      "addr_from": [
+        "Linda Davis",
+        "xwilliams@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 8",
+      "message": "Corrupti eius impedit enim. Provident aspernatur in placeat nam aspernatur. Atque cupiditate architecto est reprehenderit. Recusandae occaecati modi voluptas quia.\nVeniam tempora aperiam eligendi consectetur. Voluptatum reprehenderit non asperiores.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Jose Cordova",
+        "michaelashley@example.org"
+      ],
+      "addr_from": [
+        "Kenneth Johnson",
+        "oconnelllaura@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 9",
+      "message": "Occaecati atque officia perferendis. Error ex inventore aut. At soluta quisquam reprehenderit sunt minus.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Casey Lucas",
+        "piercegregory@example.net"
+      ],
+      "addr_from": [
+        "Bruce Villa",
+        "jose15@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 10",
+      "message": "Iure vel modi quos culpa. Dolore commodi ipsa fugit. Reiciendis laboriosam reprehenderit alias fugiat nemo animi explicabo.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Faith Lee",
+        "ptrujillo@example.net"
+      ],
+      "addr_from": [
+        "Danielle Obrien",
+        "jessewalters@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 11",
+      "message": "Alias assumenda voluptatum aperiam. Quam ratione eveniet itaque neque.\nVoluptatibus nostrum error tenetur fugit pariatur. Perferendis dolores quis dolor aspernatur amet sed. Quaerat occaecati repellendus corporis odit explicabo numquam.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Jonathan Goodwin",
+        "wagnerjoseph@example.com"
+      ],
+      "addr_from": [
+        "Leslie David",
+        "browningkatherine@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 12",
+      "message": "Nisi porro nulla quisquam cupiditate quia atque ab. Cupiditate doloremque voluptates quo. Ipsa doloremque necessitatibus qui eaque molestiae deserunt.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Daniel Mccarthy",
+        "uwalton@example.com"
+      ],
+      "addr_from": [
+        "Tony Owens",
+        "vrasmussen@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 13",
+      "message": "Explicabo optio magnam vero fuga. Vero nostrum iste mollitia earum sequi.\nSoluta ab cupiditate dolorem porro quaerat nisi. Veritatis aspernatur non quam.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Dakota Johnson",
+        "brett07@example.org"
+      ],
+      "addr_from": [
+        "Nicole Stevens",
+        "daughertyjerry@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 14",
+      "message": "Ipsam eveniet quibusdam labore quis voluptas. Provident maxime ut optio ducimus quia reiciendis. Officia tempora laboriosam aut dolores.\nExplicabo voluptatibus voluptas.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Mr. Shane Wright",
+        "jimmy29@example.com"
+      ],
+      "addr_from": [
+        "Jennifer Tucker",
+        "qmorales@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Maltese: iso8859_3 - 15",
+      "message": "Natus incidunt modi labore voluptatibus. Illo occaecati iure.\nSed labore adipisci ipsam. Voluptatum quis quidem alias corrupti quos.\nCulpa alias repellendus quidem quae tempora. Molestias officia accusamus cum illum dolorum quibusdam.",
+      "headers": {},
+      "encoding": "iso8859_3",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

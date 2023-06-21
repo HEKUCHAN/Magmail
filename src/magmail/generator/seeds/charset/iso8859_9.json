@@ -1,0 +1,279 @@
+{
+  "title": "Charset `iso8859_9` Test",
+  "explain": "Test iso8859_9",
+  "json_path": "..\\seeds\\charset\\iso8859_9.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\iso8859_9",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "Sa\u011f\u0131t Y\u00fcksel",
+        "erogulaksu@example.com"
+      ],
+      "addr_from": [
+        "Aynilhayat Sezer",
+        "hzengin@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 1",
+      "message": "Asperiores velit nesciunt consequatur sunt non. Ipsam dolorum cupiditate. Placeat ducimus accusantium.\nUnde accusamus alias sint velit repellendus dolorem. Occaecati officiis mollitia facilis quaerat.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Aliihsan Soylu",
+        "sbilge@example.net"
+      ],
+      "addr_from": [
+        "G\u00fcrc\u00fcye \u0130hsano\u011flu",
+        "yildirimcalti@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 2",
+      "message": "Reiciendis iure at nesciunt tempora fuga.\nUt aut provident aliquam in iste repudiandae. Animi harum corporis molestias sit maxime.\nVoluptate aut ex saepe iusto adipisci. Similique quibusdam vel est fugiat vero numquam. Quis doloribus magni voluptas.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "G\u00fcld\u00fcnya Han\u00e7er",
+        "evcimen53@example.net"
+      ],
+      "addr_from": [
+        "D\u00f6lensoy Aslan",
+        "dogansah04@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 3",
+      "message": "Facere amet maxime molestiae. Impedit velit minus inventore voluptates quia. Eveniet accusamus labore nisi.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Dr. Fadile Adviye Durmu\u015f",
+        "ugurgulen@example.com"
+      ],
+      "addr_from": [
+        "Abdulkadir Erg\u00fcl",
+        "ggulen@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 4",
+      "message": "Impedit perferendis esse delectus labore expedita. Quam facilis et voluptatem eaque omnis repudiandae. Eveniet error atque qui.\nMollitia esse quam fugit.\nNumquam eum ipsum eum ea. Consequatur eaque aut incidunt. Molestias quam neque quisquam eos ex.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Ferinaz Aslan",
+        "naideaksu@example.net"
+      ],
+      "addr_from": [
+        "Oru\u00e7 Sezginba\u015f Erg\u00fcl Demirel",
+        "koruturkortak@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 5",
+      "message": "Molestiae suscipit aspernatur similique cupiditate. Pariatur distinctio doloribus rerum iure.\nNon hic doloribus asperiores mollitia. Accusamus quisquam veritatis tempora est.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Sayg\u0131n Bilgin G\u00fcl",
+        "dumanliunsever@example.net"
+      ],
+      "addr_from": [
+        "\u00d6\u011fr. \u015e\u00f6hret Tarhan \u00c7amurcuo\u011flu",
+        "bsensoy@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 6",
+      "message": "Accusantium velit consectetur tenetur excepturi recusandae laudantium velit. Doloribus fugiat temporibus veritatis iusto earum natus. Voluptates voluptatem delectus iste saepe a.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Yrd. Do\u00e7. Y\u00fccel \u00c7al\u0131m Yaman \u0130hsano\u011flu",
+        "narslan@example.org"
+      ],
+      "addr_from": [
+        "\u00d6\u011fr. Giz Zorlu",
+        "boratasgul@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 7",
+      "message": "Porro optio pariatur illo cupiditate. Est natus ex dignissimos non sapiente reiciendis ut.\nSit in saepe quas eveniet ad alias. Minima saepe alias repellat sed.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Akbo\u011fa G\u00fcl",
+        "milaysama@example.com"
+      ],
+      "addr_from": [
+        "Misra G\u00fc\u00e7l\u00fc",
+        "mevludiye31@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 8",
+      "message": "Facilis provident sequi explicabo. Tempore a nobis exercitationem ut.\nSequi officiis sed eum commodi expedita consequuntur sapiente. Porro natus perferendis rem culpa culpa consectetur veritatis. Repudiandae repellat beatae temporibus.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "G\u00f6k\u00e7e \u00c7etin G\u00fcl",
+        "sahnurayihsanoglu@example.org"
+      ],
+      "addr_from": [
+        "Okt. L\u00e2le Erdo\u011fan Han\u00e7er",
+        "seyyide61@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 9",
+      "message": "Odit quia necessitatibus quaerat vitae repellendus natus. Aliquid optio cum hic debitis deleniti. Officiis iusto dolores consectetur magni.\nFugiat cupiditate consectetur distinctio dolor earum quo. Asperiores corporis mollitia sapiente.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Yeneral Bilir",
+        "tinalsoylu@example.com"
+      ],
+      "addr_from": [
+        "\u0130hsan Ufukay \u0130n\u00f6n\u00fc",
+        "akinalihsanoglu@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 10",
+      "message": "Deleniti architecto doloremque provident. Omnis nostrum id illo vel sint.\nExercitationem aperiam minima sed. Nulla ea ad est architecto. Sapiente cumque dignissimos pariatur.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Av. Esmanperi Zevl\u00fcde Akar",
+        "ceraslan@example.com"
+      ],
+      "addr_from": [
+        "\u00d6\u011fr. Ferahdiba \u00c7amurcuo\u011flu Arsoy",
+        "arslanadem@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 11",
+      "message": "Iure adipisci reprehenderit quaerat ipsam reprehenderit eum. Provident odio sit numquam nemo. Aliquam omnis quos adipisci maxime repellat.\nEaque molestiae unde. Ipsum consectetur et deleniti explicabo eius quas.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "M\u00f6hsim F\u0131rat",
+        "esenturk45@example.com"
+      ],
+      "addr_from": [
+        "Prof. Divan Ayt\u00f6z Akg\u00fcnd\u00fcz",
+        "harbinaz21@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 12",
+      "message": "Facilis libero beatae quasi sequi. Harum ad nemo adipisci ea labore possimus.\nDolor facere a doloremque illum. Ex eligendi provident facere adipisci.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Prof. Beriye Bilir Durmu\u015f",
+        "tevetogluashan@example.org"
+      ],
+      "addr_from": [
+        "\u0130de Sezgin",
+        "kayit99@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 13",
+      "message": "Voluptas magni blanditiis laudantium. Quod ex consequatur magni ex incidunt debitis.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Ar\u015f. G\u00f6r. Sadeti F\u0131rat Alemdar",
+        "naz04@example.com"
+      ],
+      "addr_from": [
+        "Ba\u015fay Y\u00fcksel",
+        "ualemdar@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 14",
+      "message": "Temporibus consectetur dignissimos quod amet. Iure ipsum accusamus doloremque quia perspiciatis. Laborum reprehenderit sed commodi.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Elgin Sat\u0131a \u00c7orlu",
+        "arikolduran@example.org"
+      ],
+      "addr_from": [
+        "El\u00f6ve Korut\u00fcrk",
+        "cezayirakar@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: iso8859_9 - 15",
+      "message": "Quas qui aspernatur totam laborum quasi provident.\nUllam adipisci accusamus. Harum quis provident aliquid dignissimos facilis. Saepe provident officiis porro facere deleniti.",
+      "headers": {},
+      "encoding": "iso8859_9",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

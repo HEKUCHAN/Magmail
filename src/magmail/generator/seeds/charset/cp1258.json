@@ -1,0 +1,279 @@
+{
+  "title": "Charset `cp1258` Test",
+  "explain": "Test cp1258",
+  "json_path": "..\\seeds\\charset\\cp1258.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\cp1258",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "Jennifer Mathis",
+        "samuelvasquez@example.net"
+      ],
+      "addr_from": [
+        "Meghan Allen",
+        "dorseykayla@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 1",
+      "message": "Voluptatum quia cum quae accusamus aperiam. Odio ab amet libero officia quasi voluptatem.\nBeatae recusandae sequi cupiditate. Cupiditate itaque consequatur repellendus.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Olivia Hall",
+        "uhorne@example.net"
+      ],
+      "addr_from": [
+        "Kathleen Johnson",
+        "morrischristopher@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 2",
+      "message": "Exercitationem impedit provident quod quos illo nulla. Aliquid in fugiat.\nNostrum voluptatum dolorem vero harum sed. Sequi quae vitae soluta nam nemo magni. Quia quaerat dicta quidem minus.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Carrie Rose",
+        "armstrongkathy@example.com"
+      ],
+      "addr_from": [
+        "Brenda Ross",
+        "bwilliams@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 3",
+      "message": "Vero quo voluptates nisi cum at accusamus esse. Rerum at voluptatibus eaque dolores. Explicabo praesentium itaque minus nostrum.\nEnim libero ea eum quam. Velit quisquam beatae mollitia pariatur saepe. Assumenda ullam eaque.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Sheila Brown",
+        "daniel09@example.org"
+      ],
+      "addr_from": [
+        "Angela Lewis",
+        "wellsmichelle@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 4",
+      "message": "Distinctio error unde. Alias placeat qui totam quos doloremque.\nEius minima quisquam sit atque. Ratione necessitatibus ex.\nNecessitatibus distinctio animi consectetur adipisci laudantium. Numquam debitis iusto laudantium dolore.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Jordan Hamilton",
+        "mcknightalexandra@example.org"
+      ],
+      "addr_from": [
+        "Thomas Henderson",
+        "reillynicholas@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 5",
+      "message": "Dolorem sint iure vitae quos sint. Non laborum incidunt cumque ducimus.\nFacilis pariatur quia mollitia. Ab quidem assumenda neque.\nExcepturi dolore ipsum at libero. Quae aspernatur repellendus quos veniam cum deleniti.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Jack Hendricks",
+        "moransharon@example.org"
+      ],
+      "addr_from": [
+        "Heather Baker",
+        "zsteele@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 6",
+      "message": "Voluptate ratione molestias cumque voluptas ex neque. Iste minima placeat fugiat eaque.\nPraesentium laboriosam iste non temporibus quod. Dolore omnis tempora voluptas placeat. Deserunt inventore laboriosam id mollitia.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Eric Sheppard",
+        "tracystewart@example.com"
+      ],
+      "addr_from": [
+        "Jeremy Becker",
+        "qbautista@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 7",
+      "message": "Eligendi illum soluta autem quisquam. Ratione fugit deserunt aut fuga. Amet perspiciatis ad est a temporibus pariatur.\nTemporibus porro ea fugiat quibusdam. Suscipit quaerat repellat eligendi deleniti. Ad ex consequuntur ullam.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Thomas White",
+        "uvaughan@example.org"
+      ],
+      "addr_from": [
+        "Derrick Caldwell",
+        "timothy30@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 8",
+      "message": "Sit dolorem aspernatur voluptatum consequatur ad. Aliquam similique dicta porro totam optio. Repellendus saepe a id accusantium placeat veniam.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Samantha Benson",
+        "tara05@example.org"
+      ],
+      "addr_from": [
+        "Logan Kramer",
+        "mary63@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 9",
+      "message": "Optio odit dignissimos. Sed consectetur corrupti repellendus. Alias ducimus expedita doloribus architecto mollitia.\nMagnam modi pariatur consequuntur voluptate beatae.\nNihil accusamus impedit ut molestias placeat. Est soluta in.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Christina Shah",
+        "rglover@example.com"
+      ],
+      "addr_from": [
+        "Timothy Pham",
+        "medinascott@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 10",
+      "message": "Vel quae quam enim eaque. Ducimus dolorum dolorem sed inventore officiis repellendus. Cum amet repellat voluptates omnis minima nihil.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Samuel Lee",
+        "lopezerika@example.net"
+      ],
+      "addr_from": [
+        "Joseph Morris",
+        "harrisjon@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 11",
+      "message": "Esse placeat officia maxime perspiciatis aut. Autem vitae veritatis nulla sapiente non maxime.\nIn fugit harum enim quasi error. Aperiam vel aperiam numquam tempore. Dolor ipsa placeat consequatur nostrum libero sint.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Joshua Alvarado",
+        "brownleah@example.net"
+      ],
+      "addr_from": [
+        "Ashley Alvarado",
+        "keith17@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 12",
+      "message": "Occaecati corporis possimus sequi modi quod ipsam. Fuga corporis quisquam quisquam. Ullam soluta odio quos reprehenderit reiciendis reiciendis.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Nicole Arnold",
+        "nicole11@example.net"
+      ],
+      "addr_from": [
+        "Elizabeth Matthews",
+        "hcameron@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 13",
+      "message": "Aut praesentium vitae id quas aperiam. Blanditiis accusamus excepturi odio illum. Aperiam ea possimus pariatur animi fugit.\nEsse laboriosam pariatur illum neque et. Autem rerum suscipit. Praesentium distinctio vel illo.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Nathan Thomas",
+        "jramirez@example.org"
+      ],
+      "addr_from": [
+        "Carol Hicks",
+        "christopherwilliams@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 14",
+      "message": "Impedit aliquam laudantium temporibus temporibus doloremque ipsa. Cupiditate repellendus fuga id earum quae assumenda. Facilis corporis ullam possimus est.\nAliquid consectetur iusto velit nesciunt provident.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Gina Garcia",
+        "masondustin@example.net"
+      ],
+      "addr_from": [
+        "Michael Rosales",
+        "donaldgordon@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Vietnamese: cp1258 - 15",
+      "message": "Officiis numquam facilis ipsam dignissimos. Adipisci eum delectus iusto.\nNeque laboriosam quis. Voluptatibus odio expedita excepturi voluptatem dolores.",
+      "headers": {},
+      "encoding": "cp1258",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

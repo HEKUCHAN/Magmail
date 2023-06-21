@@ -1,0 +1,279 @@
+{
+  "title": "Charset `cp863` Test",
+  "explain": "Test cp863",
+  "json_path": "..\\seeds\\charset\\cp863.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\cp863",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "Manon Nguyen",
+        "alemay@example.org"
+      ],
+      "addr_from": [
+        "Xavier Pelletier",
+        "jonathandurand@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 1",
+      "message": "Reprehenderit facilis qui repudiandae expedita possimus. Sint nulla sed fugit. Facilis laborum dignissimos eligendi.\nNeque vero neque rerum. Occaecati qui earum doloremque soluta aliquam. Sit veritatis accusantium atque fugiat suscipit.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u00c9douard-Guy Lapierre",
+        "duchesnetherese@example.net"
+      ],
+      "addr_from": [
+        "Patricia Boily-Blouin",
+        "gilbert72@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 2",
+      "message": "Amet voluptatum cupiditate provident iure maiores quis. Distinctio impedit nesciunt ipsum voluptate.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Jacques Gingras",
+        "auroreouellet@example.com"
+      ],
+      "addr_from": [
+        "Alexandra St-Pierre",
+        "lucascormier@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 3",
+      "message": "Unde optio officia voluptate voluptatibus quas. Tempora velit impedit dolorem cupiditate. Alias animi debitis.\nAdipisci eligendi recusandae ratione numquam at. Eaque commodi minima impedit tempore cupiditate corporis accusamus.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Zo\u00e9 Nadeau",
+        "ipouliot@example.org"
+      ],
+      "addr_from": [
+        "M\u00e9lanie B\u00e9lisle",
+        "jeannegiroux@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 4",
+      "message": "Blanditiis totam ratione. Impedit dicta perspiciatis quisquam eligendi architecto esse. Quisquam repellat molestiae corrupti ea saepe.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Victor Fontaine",
+        "royolivia@example.com"
+      ],
+      "addr_from": [
+        "S\u00e9bastien Daigle",
+        "dominiqueaudet@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 5",
+      "message": "Ipsa ipsum ut accusamus ad magni. Eveniet consequuntur placeat aut architecto quia aperiam. Aperiam molestias sapiente sequi ab a. Aliquam fuga id hic vero cumque.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Paul-Ren\u00e9 Houde",
+        "dominique56@example.org"
+      ],
+      "addr_from": [
+        "Jean Lemieux",
+        "denis38@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 6",
+      "message": "Voluptatibus fugit deserunt minima voluptas repellat debitis. Placeat alias nam dolorum eum soluta. Iure maxime nisi occaecati labore.\nTempora mollitia eaque officia commodi quam. Distinctio ab tempore.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Andr\u00e9e Bernier-Grenier",
+        "vhebert@example.net"
+      ],
+      "addr_from": [
+        "Olivia Fontaine",
+        "uchouinard@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 7",
+      "message": "Enim magni labore dolores doloribus eaque. Maxime voluptates earum dicta asperiores suscipit.\nLaboriosam voluptates modi ut. Ullam debitis magnam veniam minus unde. Alias officia fugiat. Molestias culpa necessitatibus.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Agn\u00e8s B\u00e9lisle",
+        "bissonchristiane@example.org"
+      ],
+      "addr_from": [
+        "Odette Beaudry",
+        "dferland@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 8",
+      "message": "Animi nesciunt voluptatibus unde accusantium. Animi voluptatem dolore incidunt. Voluptatum inventore consequuntur harum.\nCorporis commodi labore veritatis fuga nesciunt minus. Assumenda ex commodi facere non aspernatur dolore.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Odette Lebel",
+        "veroniqueleduc@example.org"
+      ],
+      "addr_from": [
+        "Paul Leduc",
+        "timotheecormier@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 9",
+      "message": "Perspiciatis ea modi quis. Incidunt consequuntur natus minus deserunt ad. Dolores maxime blanditiis cupiditate error ex dignissimos. Voluptas dolore quaerat animi id totam sint occaecati.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Michel Chouinard",
+        "lussierroger@example.com"
+      ],
+      "addr_from": [
+        "Rosalie Richer",
+        "jean57@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 10",
+      "message": "Cumque atque tempora doloremque. Enim beatae voluptate voluptatum. A mollitia rerum assumenda in deserunt.\nRecusandae quo et doloribus debitis dolores. Quibusdam beatae tenetur praesentium.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Jean Paquette",
+        "beaudrybernard@example.net"
+      ],
+      "addr_from": [
+        "Henri Duchesne-Nguyen",
+        "leclercdominique@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 11",
+      "message": "Doloremque esse odit sint provident qui laudantium nostrum. Officiis fugiat dolore laudantium illo. Aliquam repudiandae cumque ea ut nulla.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Odette Raymond-Gravel",
+        "cbenoit@example.org"
+      ],
+      "addr_from": [
+        "Alexis Bolduc",
+        "chouinardraphael@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 12",
+      "message": "Ratione corporis iusto optio voluptatem accusantium. Quos quisquam dolorem voluptas. Delectus ullam repellendus saepe soluta.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Jean Marcoux",
+        "denise34@example.org"
+      ],
+      "addr_from": [
+        "Jacques Leduc",
+        "elise26@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 13",
+      "message": "Quasi accusamus enim iste tempora. Eum placeat eveniet reiciendis quisquam fuga mollitia.\nAb harum repellendus. Voluptatem deserunt ducimus sed ad.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Christelle Asselin",
+        "boilyemmanuel@example.com"
+      ],
+      "addr_from": [
+        "Denis Harvey",
+        "vanessa78@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 14",
+      "message": "Corporis deserunt incidunt quaerat laboriosam. Reiciendis voluptatem at beatae asperiores voluptas.\nTotam officiis placeat magni. Similique fugit non impedit rerum. Natus minus molestiae.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Caroline Fournier",
+        "kevindupuis@example.net"
+      ],
+      "addr_from": [
+        "P\u00e9n\u00e9lope-Margaret Soucy",
+        "gabriellefrechette@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Canadian: cp863 - 15",
+      "message": "Error nam unde. Voluptates illo aut voluptatum delectus. A sequi quia dolor suscipit.\nSequi ad laboriosam nesciunt labore fugiat. Molestias doloremque voluptate nihil.",
+      "headers": {},
+      "encoding": "cp863",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

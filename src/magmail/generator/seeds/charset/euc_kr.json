@@ -1,0 +1,279 @@
+{
+  "title": "Charset `euc_kr` Test",
+  "explain": "Test euc_kr",
+  "json_path": "..\\seeds\\charset\\euc_kr.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\euc_kr",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "\ud5c8\uad11\uc218",
+        "sunogi@example.org"
+      ],
+      "addr_from": [
+        "\uc720\uc900\ud638",
+        "misug02@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 1",
+      "message": "Beatae libero accusantium harum ea placeat. Reiciendis assumenda ipsa animi alias.\nDelectus illo enim minima maiores explicabo.\nMollitia delectus consequuntur asperiores sunt alias. Nobis ipsam libero autem. Molestias quasi numquam dicta ut.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ucd5c\uc740\uc9c0",
+        "myeongsugi@example.org"
+      ],
+      "addr_from": [
+        "\ub958\uad11\uc218",
+        "yeongsig55@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 2",
+      "message": "Quibusdam a quibusdam earum. Sint quibusdam cum ipsa odit fugit.\nDucimus recusandae et. Accusantium libero quidem quaerat debitis repellendus minus quas. Inventore iusto rem blanditiis cum velit eveniet.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uae40\uc21c\uc790",
+        "jiu53@example.net"
+      ],
+      "addr_from": [
+        "\uc774\uc9c0\ud6c4",
+        "gimseoyeong@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 3",
+      "message": "Cumque praesentium rem perferendis adipisci. Ipsam quam incidunt modi expedita.\nProvident adipisci qui placeat. Nihil fugit suscipit. Nobis tempore perspiciatis doloremque quia.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ubc15\ubcd1\ucca0",
+        "igim@example.org"
+      ],
+      "addr_from": [
+        "\uc774\uc740\uacbd",
+        "xi@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 4",
+      "message": "Id optio ratione. Consequatur excepturi excepturi asperiores. Corrupti culpa possimus illum iusto quis.\nIure nostrum suscipit sit at. Illo esse dolore dolore porro provident maxime.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc870\uc2dc\uc6b0",
+        "oyun@example.com"
+      ],
+      "addr_from": [
+        "\uc774\uc218\ube48",
+        "mca@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 5",
+      "message": "Numquam quo enim officiis similique. Rerum fuga at alias reiciendis.\nOfficia natus natus ea. Praesentium laboriosam soluta nam tenetur fugiat beatae.\nDoloremque vel velit impedit aut dolorum occaecati.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc774\uc9c4\uc6b0",
+        "coegyeongja@example.org"
+      ],
+      "addr_from": [
+        "\uc774\uc11c\uc601",
+        "mijeong91@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 6",
+      "message": "Cum nemo inventore cupiditate maxime atque molestiae. Nulla atque maiores optio sunt nemo deleniti.\nRecusandae consequuntur blanditiis harum explicabo blanditiis ipsam. Nihil nobis et maiores id nam.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uae40\uc9c0\uc740",
+        "vi@example.net"
+      ],
+      "addr_from": [
+        "\uae40\uc8fc\uc6d0",
+        "ono@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 7",
+      "message": "Molestias omnis minima suscipit. Accusantium doloremque quam nisi accusantium a eius earum. Ratione perferendis soluta facere eos.\nVoluptas illum nihil. Ullam quas ad.\nVitae architecto nesciunt voluptatibus similique. Enim expedita dolorem dolor ea.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc11c\uc601\ud76c",
+        "jihugim@example.com"
+      ],
+      "addr_from": [
+        "\uc774\uc9c0\uc740",
+        "yeonghwani@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 8",
+      "message": "Sapiente ea saepe delectus exercitationem. Cumque ullam possimus animi. Ipsam iste rem debitis nesciunt maiores accusamus.\nVoluptatibus sit ullam quos dolores a magnam facilis. Consequatur quod ipsa sed ab maiores ratione.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ud558\ubcf4\ub78c",
+        "seonghunjang@example.com"
+      ],
+      "addr_from": [
+        "\uc774\ubcf4\ub78c",
+        "dryu@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 9",
+      "message": "Explicabo aperiam veniam accusamus. Perferendis minima tenetur modi. Doloremque sint accusamus quas.\nQuaerat impedit nostrum similique voluptatem ratione. Nisi possimus velit iusto doloribus ea vero.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc774\uc815\uc790",
+        "ogsunjin@example.com"
+      ],
+      "addr_from": [
+        "\uc11c\uc885\uc218",
+        "ri@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 10",
+      "message": "Recusandae iure accusamus quo ab ut dolorum. Accusamus quam odio.\nDoloribus perferendis illum laboriosam sed reiciendis. Nisi illum a doloribus ipsum neque laboriosam.\nQuam architecto debitis iste. Voluptatem suscipit libero amet.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uae40\ubbf8\uc815",
+        "jieun27@example.org"
+      ],
+      "addr_from": [
+        "\uc2e0\uc120\uc601",
+        "igim@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 11",
+      "message": "Cum eius consequatur libero accusantium. Culpa ducimus omnis reprehenderit.\nAt doloribus nemo quia cum expedita. Repellat est facilis. Dicta culpa pariatur quas aliquam quasi praesentium.\nRem beatae modi dolorum nostrum alias eius in.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ucd5c\uc131\ud604",
+        "ojeonghun@example.org"
+      ],
+      "addr_from": [
+        "\ucd5c\uc218\ubbfc",
+        "yejuni@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 12",
+      "message": "Ipsam omnis quas sapiente debitis minus porro nostrum. Velit ullam rem rem tempora rerum praesentium. Dicta cupiditate sint dolore ad.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc624\ud558\uc740",
+        "pim@example.net"
+      ],
+      "addr_from": [
+        "\uae40\uacbd\ud76c",
+        "jiyeonbag@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 13",
+      "message": "Nisi ducimus quisquam corporis magnam. Quia illum incidunt ea. Reiciendis perferendis doloremque provident.\nHic veniam dolorem iure enim. Quidem tempore assumenda temporibus.\nQui sit quaerat ducimus reprehenderit quibusdam vitae.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\uc774\uc601\uae38",
+        "sgweon@example.org"
+      ],
+      "addr_from": [
+        "\ud55c\uc11c\uc601",
+        "gimminseog@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 14",
+      "message": "Facilis alias debitis doloribus impedit ab. Nobis nihil praesentium eos iste consequatur magnam. Modi beatae ea vel.\nSed corporis minima facilis. Itaque ut ipsa ullam ullam.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\ubc15\uc9c4\uc6b0",
+        "vi@example.net"
+      ],
+      "addr_from": [
+        "\uc774\ubcf4\ub78c",
+        "iseongmin@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Korean: euc_kr - 15",
+      "message": "Atque deleniti dignissimos. Minus repudiandae omnis dolorem velit culpa. Error ipsum minima sunt.\nTemporibus dignissimos cumque tenetur totam fugiat maiores. Suscipit sapiente voluptatum architecto nemo odio esse.",
+      "headers": {},
+      "encoding": "euc_kr",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "title": "Charset `cp037` Test",
+  "explain": "Test cp037",
+  "json_path": "..\\seeds\\charset\\cp037.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\cp037",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "Todd Lawrence",
+        "umclean@example.net"
+      ],
+      "addr_from": [
+        "David Hernandez",
+        "elizabeth24@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 1",
+      "message": "Whom mother student practice majority. Safe it hotel fight new especially. Fast mother sure along.\nCapital simple edge church out plant magazine. Movement herself owner single I medical. Economy child time another relate.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Jennifer Hall",
+        "thomaspaul@example.com"
+      ],
+      "addr_from": [
+        "Connie Soto",
+        "judith67@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 2",
+      "message": "Answer future possible change main front professional.\nUnderstand phone suggest town.\nLeave threat ball design.\nStore live share since somebody father skill. Family doctor thank specific though. Fact expert meeting teach truth that avoid.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Mrs. Tanya Hall",
+        "hermaneric@example.org"
+      ],
+      "addr_from": [
+        "Michelle Carter",
+        "drogers@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 3",
+      "message": "History worker identify.\nSense professional car decade. Loss herself present major world. Job former attack. Suddenly include college recognize stuff.\nThank if here kind word. Particular always relationship south church.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Charles Berry",
+        "laurenwinters@example.net"
+      ],
+      "addr_from": [
+        "Michelle Thompson",
+        "qhart@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 4",
+      "message": "Analysis radio above tell decide room. Pick audience week rather throw age coach. Fish eight candidate.\nToday example herself land serious whatever individual. Cost step agreement prove small else cover. Individual yet eye purpose police employee.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Nancy Lopez",
+        "tina03@example.net"
+      ],
+      "addr_from": [
+        "Heidi Miller",
+        "istephens@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 5",
+      "message": "Walk voice business participant above. Painting clear method door board serve themselves. Job agency order hour officer.\nCitizen else song rule news. Now avoid great let drive. Write pay them care view site.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Amanda Jones",
+        "alexandriamccullough@example.com"
+      ],
+      "addr_from": [
+        "John Burke",
+        "sarah58@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 6",
+      "message": "Usually suffer thousand one stock might. Per shake star.\nWith fine natural break recent mission. Up conference factor new save question plan. Sea green movement ten.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Sarah Thomas",
+        "zwarner@example.net"
+      ],
+      "addr_from": [
+        "Nicole Gray",
+        "georgewilson@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 7",
+      "message": "Travel form mother nothing man attention collection. White challenge among money exactly director. Offer morning film song PM inside.\nParent TV her. Risk tax author large. Option others tell charge senior.\nMr local environment relationship.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Angela Barrett",
+        "singhrachel@example.org"
+      ],
+      "addr_from": [
+        "Laura Garcia",
+        "melody70@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 8",
+      "message": "Position beyond identify effect cut writer effect rich.\nRequire whom be interest drug teach. Them former room investment analysis. Region chair natural investment back rock agent. Small space dream or.\nPush arrive prove generation plan seven.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Kevin Sandoval",
+        "morrowwendy@example.net"
+      ],
+      "addr_from": [
+        "David Baker",
+        "gregoryramos@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 9",
+      "message": "Development clearly movie believe. Performance young key peace upon.\nLike cultural impact water staff process.\nForce team general measure. Already beat cause bill. Mind who agreement learn part recently.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Meghan Brennan",
+        "sydneythompson@example.org"
+      ],
+      "addr_from": [
+        "Elizabeth Johnson",
+        "pgilbert@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 10",
+      "message": "Upon seek radio decade car phone present. Employee rest glass ten paper risk oil join.\nEconomy hundred treat or. Too even music age.\nEnvironment personal group nor focus card measure.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Donald Adams",
+        "osmith@example.org"
+      ],
+      "addr_from": [
+        "Jordan Blake",
+        "cortezbrian@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 11",
+      "message": "Tough tell western sea coach great general. Anyone imagine rise she individual smile western.\nDevelopment make ability might simple. Activity whole themselves would.\nPeace party eye hospital notice peace mouth.\nCarry treat decision must real claim.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Julia Reese",
+        "osanchez@example.com"
+      ],
+      "addr_from": [
+        "Mrs. Heather Bowen",
+        "xmoore@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 12",
+      "message": "Young civil drive best onto manager international. Military world always long offer accept. Nation health can former activity religious arm.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Shannon Martinez",
+        "blake14@example.org"
+      ],
+      "addr_from": [
+        "Jerry White",
+        "washingtonstanley@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 13",
+      "message": "Conference sing style mention general around indeed.\nMiddle economic good current. Make alone truth whatever. Skill big money build.\nConsider show state low painting structure medical.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Mary Mccarthy",
+        "ricardobarker@example.com"
+      ],
+      "addr_from": [
+        "Timothy Smith",
+        "ebutler@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 14",
+      "message": "Any return whether available before. Billion also anyone piece opportunity.\nSon shake treatment. Action area return six mention keep until. It fight pass to.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Michael Mcclure",
+        "sarah04@example.net"
+      ],
+      "addr_from": [
+        "Michael Pacheco",
+        "wbeard@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "English: cp037 - 15",
+      "message": "Decide right girl. Turn for west serious action. Fact talk condition manage.\nCustomer happen boy. Enter much throw he week. While total Democrat organization enjoy.",
+      "headers": {},
+      "encoding": "cp037",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}

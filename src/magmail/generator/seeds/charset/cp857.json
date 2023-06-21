@@ -1,0 +1,279 @@
+{
+  "title": "Charset `cp857` Test",
+  "explain": "Test cp857",
+  "json_path": "..\\seeds\\charset\\cp857.json",
+  "export_eml_path": "..\\..\\..\\..\\..\\tests\\test_files\\eml\\charset\\cp857",
+  "amount": 15,
+  "seeds": [
+    {
+      "addr_to": [
+        "L\u00fcfen Durmu\u015f",
+        "yucelcamurcuoglu@example.com"
+      ],
+      "addr_from": [
+        "G\u00fc\u00e7al G\u00fc\u00e7l\u00fc",
+        "fbilir@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 1",
+      "message": "Repudiandae in dolore animi blanditiis pariatur.\nVoluptatum at suscipit harum. Inventore non totam iste.\nSunt adipisci deleniti voluptas exercitationem quam. Aspernatur amet nam. Quisquam incidunt recusandae. Quae ipsum ullam vitae dolor.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Rafia Alemdar",
+        "ikaradeniz@example.org"
+      ],
+      "addr_from": [
+        "Prof. Zennun Aksu",
+        "tule62@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 2",
+      "message": "Voluptatibus quia quas dicta. Non tempora odio architecto dolorem dignissimos.\nEius quia mollitia. Pariatur explicabo eum veritatis. Aliquid aliquid voluptate.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Korugan \u00d6zok\u00e7u \u015eener G\u00fclen",
+        "sezginhenife@example.net"
+      ],
+      "addr_from": [
+        "Prof. Tezol U\u00e7beyi Demir",
+        "akgunduzmazlum@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 3",
+      "message": "Voluptatum vel minima porro accusantium totam natus quam. Numquam libero cum a ducimus adipisci. Perspiciatis earum distinctio reiciendis quaerat corrupti.\nPariatur accusamus mollitia. Delectus dolorem nobis dolor.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Hayret Bilir",
+        "tasviryilmaz@example.com"
+      ],
+      "addr_from": [
+        "Bayruhan Sezer",
+        "kiyasisama@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 4",
+      "message": "Tempora libero doloribus nam aspernatur id eos. Qui necessitatibus inventore repudiandae temporibus mollitia esse.\nOfficiis alias esse veritatis sint.\nConsectetur omnis molestias. Illo nulla corrupti ab. Repudiandae dolore voluptatibus.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "K\u0131rg\u0131z Abdulmenaf Ak\u00e7ay \u00c7orlu",
+        "hanbikenihsanoglu@example.com"
+      ],
+      "addr_from": [
+        "Prof. Y\u00fccel Akar Mans\u0131z",
+        "sahir86@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 5",
+      "message": "At iusto praesentium. Consequatur quaerat voluptate numquam non voluptates incidunt. Deserunt cupiditate vitae placeat modi.\nEius veritatis maxime quia reprehenderit repellendus laborum explicabo. Deleniti autem perspiciatis alias.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "S\u00fccaettin Akg\u00fcnd\u00fcz",
+        "eulker@example.com"
+      ],
+      "addr_from": [
+        "Merva Soylu Bilge",
+        "gunsererdogan@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 6",
+      "message": "Eos impedit excepturi fuga cupiditate recusandae libero. Laboriosam nihil voluptas sequi mollitia autem maiores. Doloremque consequatur consequatur odit aut necessitatibus.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u00d6\u011fr. Acarkan Yah\u015fi Duran",
+        "cinerksakarya@example.org"
+      ],
+      "addr_from": [
+        "Nurda S\u0131rriye \u015eener \u00d6calan",
+        "nirgul52@example.com"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 7",
+      "message": "Vel natus corporis reprehenderit deserunt. Veritatis necessitatibus deleniti natus. Commodi numquam beatae in.\nUllam iste aliquid dolores. Soluta doloribus sequi ex esse occaecati autem.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u00dc\u00e7g\u00fcl Aksu",
+        "senerdemiriz@example.com"
+      ],
+      "addr_from": [
+        "Tanyu T\u00fcrk",
+        "bilgezubeyde@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 8",
+      "message": "Repellat praesentium necessitatibus quae dolorum cumque. Nihil adipisci quas alias.\nDolorem ipsa aliquid similique doloribus error. Inventore ratione earum.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Z\u00fcheyla Ay\u00fclker Bilir",
+        "hsoylu@example.org"
+      ],
+      "addr_from": [
+        "Av. Nurveren Ni\u011fmet Eraslan",
+        "okturk08@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 9",
+      "message": "Optio mollitia accusamus adipisci exercitationem. Eaque et quidem corrupti magni cumque dolorum. Error explicabo id molestias. Fugit ea fugit quisquam nihil qui ratione.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Bay Gazel Ak\u00e7ay",
+        "zenginsamahat@example.net"
+      ],
+      "addr_from": [
+        "Neyran G\u00fclsiye Akg\u00fcnd\u00fcz Bilge",
+        "corlufirdevis@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 10",
+      "message": "Exercitationem et animi ad aperiam nemo assumenda. Odit non aut quisquam minima ex.\nVoluptatem doloribus accusantium eius accusamus culpa culpa. Repellendus voluptate nostrum.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "\u00d6\u011fr. Vefia \u015eafak Teveto\u011flu",
+        "zemzem55@example.com"
+      ],
+      "addr_from": [
+        "Eraycan K\u0131sak\u00fcrek",
+        "sezerbasay@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 11",
+      "message": "Quaerat ab maxime repellendus. Repellendus totam hic explicabo accusamus laborum eius. Ex deleniti iure officiis similique voluptatum iste.\nVel sapiente vero fugiat recusandae pariatur ad. Blanditiis quaerat suscipit magnam ad omnis corporis.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "K\u0131l\u0131\u00e7bay Sar\u0131cabay Han\u00e7er Y\u0131lmaz",
+        "akgunduzseyda@example.net"
+      ],
+      "addr_from": [
+        "\u00c7ev. \u0130ntihap Yaman",
+        "zdemir@example.org"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 12",
+      "message": "Amet sit molestiae fugiat voluptas ducimus ipsum eos. Cumque aliquam pariatur neque earum adipisci.\nTenetur quaerat qui adipisci deserunt qui odit. Vitae debitis iste nulla laboriosam. Quis ratione minima.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Derkay \u00d6\u011fet Zorlu",
+        "oget49@example.com"
+      ],
+      "addr_from": [
+        "\u00d6\u011fr. Cantez Sezer",
+        "deryanur40@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 13",
+      "message": "Quas cumque vitae excepturi voluptatum excepturi laudantium. Quas laborum molestias suscipit similique. Voluptas necessitatibus eum.\nIllum autem explicabo voluptatibus. Dolore corporis laborum itaque. Inventore consequatur libero consequuntur.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Kefser Anka Zengin",
+        "vtevetoglu@example.com"
+      ],
+      "addr_from": [
+        "\u00c7ev. Sarpk\u0131n Zorlu",
+        "vaslan@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 14",
+      "message": "Nobis rem veritatis quia praesentium odio non. Ipsum hic veniam reiciendis impedit.\nAmet quisquam ut vel perferendis laborum. Ab quod voluptatem delectus aliquam voluptatem sequi. Repellat optio esse dolor sapiente eligendi.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    },
+    {
+      "addr_to": [
+        "Demiry\u00fcrek Demir",
+        "kutgunakcay@example.org"
+      ],
+      "addr_from": [
+        "Dr. Jankat Ak\u00e7ay",
+        "tezcancetin@example.net"
+      ],
+      "addr_cc": "",
+      "subject": "Turkish: cp857 - 15",
+      "message": "Velit assumenda quidem non iste alias. Dignissimos omnis earum laudantium reprehenderit qui blanditiis laboriosam. Maiores neque quisquam esse nesciunt blanditiis asperiores.",
+      "headers": {},
+      "encoding": "cp857",
+      "mime_type": "plain",
+      "transfer_encoding": "base64",
+      "attachment_file_paths": []
+    }
+  ]
+}
