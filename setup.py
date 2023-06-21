@@ -17,7 +17,19 @@ setup(
     author="HEKUTA",
     author_email="Heitorhirose@gmail.com",
     url="https://github.com/HEKUCHAN/Magmail",
-    packages=find_packages("src"),
+    packages=find_packages(
+        "src",
+        exclude=[
+            'magmail/generator/seeds',
+            'magmail/generator/seeds_scripts',
+            'generator/seeds',
+            'generator/seeds_scripts',
+            'src/magmail/generator/seeds',
+            'src/magmail/generator/seeds_scripts',
+            'seeds',
+            'seeds_scripts',
+        ]
+    ),
     package_dir={"": "src"},
     install_requires=_requires_from_file("requirements.txt"),
     include_package_data=True,
