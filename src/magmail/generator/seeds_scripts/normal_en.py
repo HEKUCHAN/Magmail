@@ -2,7 +2,7 @@ import os
 import random
 from faker import Faker
 
-from magmail.generator import Seed, gen_email, gen_name, gen_word
+from magmail.generator import Seed
 from magmail.types import HEADER_TYPE
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))

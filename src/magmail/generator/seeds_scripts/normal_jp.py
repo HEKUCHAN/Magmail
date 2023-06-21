@@ -2,7 +2,7 @@ import os
 import random
 from faker import Faker
 
-from magmail.generator import Seed, gen_email, gen_word, gen_name
+from magmail.generator import Seed
 from magmail.types import HEADER_TYPE
 
 
