@@ -138,9 +138,10 @@ class Mail:
                 )
             )
 
-        # The Transfer Encoding was duplicated, so Fix that here
-        # Example : 'base64', 'base64', 'utf-8' -> 'base64', 'utf-8'
-        self.mime.set_payload(b64decode(self.mime.get_payload()).decode("utf-8"))
+        if self.encoding == "shift_jis" or self.encoding == "euc_jp":
+            self.mime.output_encoding = self.encoding
+            self.mime.replace_header("Content-Type", f'text/plain; charset="{self.encoding}"')
+        self.mime.set_payload(b64decode(self.mime.get_payload(decode=False)))
         self.mime.replace_header("Content-Transfer-Encoding", self.transfer_encoding)
 
     def __attach_files(self) -> None:
@@ -164,9 +165,9 @@ class Mail:
             )
             self.mime.attach(attachment_file)
 
-    def to_file(self, path: Union[str, Path] = "./") -> None:
+    def to_file(self, path: Union[str, Path] = "./", encoding: str='utf-8') -> None:
         def write(path: Union[str, Path]) -> None:
-            with open(path, "w") as eml:
+            with open(path, "w", encoding=encoding) as eml:
                 gen = generator.Generator(eml)
                 gen.flatten(self.mime)
 
