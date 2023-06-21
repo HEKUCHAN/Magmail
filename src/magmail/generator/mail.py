@@ -139,7 +139,6 @@ class Mail:
             )
 
         if self.encoding == "shift_jis" or self.encoding == "euc_jp":
-            self.mime.output_encoding = self.encoding
             self.mime.replace_header("Content-Type", f'text/plain; charset="{self.encoding}"')
         self.mime.set_payload(b64decode(self.mime.get_payload(decode=False)))
         self.mime.replace_header("Content-Transfer-Encoding", self.transfer_encoding)

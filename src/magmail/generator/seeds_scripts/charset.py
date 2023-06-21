@@ -57,25 +57,26 @@ for lang, charsets in lang_encode_dict.items():
     for charset in charsets:
         if lang in LANG_FAKER_DICT and not LANG_FAKER_DICT[lang] is None:
             faker = LANG_FAKER_DICT[lang]
-            if not charset in generator_dict:
-                generator_dict[charset] = Seed(
-                    json_path=f"../seeds/charset/{charset}.json",
-                    export_eml_path=f"../../../../../tests/test_files/eml/charset/{charset}/",
-                    title=f"Charset `{charset}` Test",
-                    explain=f"Test {charset}",
-                )
+            if faker is not None:
+                if not charset in generator_dict:
+                    generator_dict[charset] = Seed(
+                        json_path=f"../seeds/charset/{charset}.json",
+                        export_eml_path=f"../../../../../tests/test_files/eml/charset/{charset}/",
+                        title=f"Charset `{charset}` Test",
+                        explain=f"Test {charset}",
+                    )
 
-            print(f"Generating... : Charset: {charset}, Language: {lang}")
+                print(f"Generating... : Charset: {charset}, Language: {lang}")
 
-            for i in range(1, 16):
-                generator = generator_dict[charset]
-                generator.add(
-                    addr_to=(faker.name(), faker.email()),
-                    addr_from=(faker.name(), faker.email()),
-                    subject=f"{lang}: {charset} - {i}",
-                    message=faker.text(max_nb_chars=250),
-                    encoding=charset
-                )
+                for i in range(1, 16):
+                    generator = generator_dict[charset]
+                    generator.add(
+                        addr_to=(faker.name(), faker.email()),
+                        addr_from=(faker.name(), faker.email()),
+                        subject=f"{lang}: {charset} - {i}",
+                        message=faker.text(max_nb_chars=250),
+                        encoding=charset
+                    )
 
 for generator in generator_dict.values():
     generator.to_file(indent=2, encoding="utf-8")

@@ -1,7 +1,7 @@
 import re
 import keyword
 from pathlib import Path
-from typing import Any, Optional, Union
+from typing import Any, List, Union
 
 
 def get_type_name(object: Any) -> Any:
@@ -31,10 +31,10 @@ def to_attribute_name(name: str) -> str:
 
     return name
 
-def atoi(text):
+def atoi(text: str) -> Union[int, str]:
     return int(text) if text.isdigit() else text
 
-def natural_keys(text):
+def natural_keys(text: str) ->  List[Union[int, str]]:
     '''
     alist.sort(key=natural_keys) sorts in human order
     http://nedbatchelder.com/blog/200712/human_sorting.html
